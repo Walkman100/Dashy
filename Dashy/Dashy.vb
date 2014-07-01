@@ -21,8 +21,8 @@
 
     Sub GetStaticData()
         'FileSystem
-        For Each item In My.Computer.FileSystem.Drives
-            ComboBox1.Items.Add(item)
+        For Each drive In My.Computer.FileSystem.Drives
+            ComboBox1.Items.Add(drive)
         Next
         lblProgramFilesDir.Text = Environment.GetEnvironmentVariable("PROGRAMFILES")
         'Performance
