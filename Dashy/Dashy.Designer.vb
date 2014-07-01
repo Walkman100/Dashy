@@ -67,6 +67,13 @@ Partial Class Dashy
         Me.lblOperatingSystem = New System.Windows.Forms.Label()
         Me.PictureBox1 = New System.Windows.Forms.PictureBox()
         Me.Label4 = New System.Windows.Forms.Label()
+        Me.Panel5 = New System.Windows.Forms.Panel()
+        Me.Label5 = New System.Windows.Forms.Label()
+        Me.Label6 = New System.Windows.Forms.Label()
+        Me.Label8 = New System.Windows.Forms.Label()
+        Me.PictureBox2 = New System.Windows.Forms.PictureBox()
+        Me.Label9 = New System.Windows.Forms.Label()
+        Me.Monitor_Network = New System.Windows.Forms.Timer(Me.components)
         Me.Menubar.SuspendLayout()
         CType(Me.imgHarddrive, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.Panel1.SuspendLayout()
@@ -76,6 +83,8 @@ Partial Class Dashy
         CType(Me.imgHardware, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.Panel4.SuspendLayout()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.Panel5.SuspendLayout()
+        CType(Me.PictureBox2, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'Menubar
@@ -83,7 +92,7 @@ Partial Class Dashy
         Me.Menubar.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.DashyToolStripMenuItem, Me.HelpToolStripMenuItem1})
         Me.Menubar.Location = New System.Drawing.Point(0, 0)
         Me.Menubar.Name = "Menubar"
-        Me.Menubar.Size = New System.Drawing.Size(1052, 24)
+        Me.Menubar.Size = New System.Drawing.Size(1348, 24)
         Me.Menubar.TabIndex = 0
         Me.Menubar.Text = "MenuStrip1"
         '
@@ -135,7 +144,7 @@ Partial Class Dashy
         '
         Me.Statusbar.Location = New System.Drawing.Point(0, 392)
         Me.Statusbar.Name = "Statusbar"
-        Me.Statusbar.Size = New System.Drawing.Size(1052, 22)
+        Me.Statusbar.Size = New System.Drawing.Size(1348, 22)
         Me.Statusbar.TabIndex = 1
         Me.Statusbar.Text = "StatusStrip1"
         '
@@ -466,11 +475,76 @@ Partial Class Dashy
         Me.Label4.TabIndex = 3
         Me.Label4.Text = "System"
         '
+        'Panel5
+        '
+        Me.Panel5.BackColor = System.Drawing.SystemColors.ControlLight
+        Me.Panel5.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.Panel5.Controls.Add(Me.Label5)
+        Me.Panel5.Controls.Add(Me.Label6)
+        Me.Panel5.Controls.Add(Me.Label8)
+        Me.Panel5.Controls.Add(Me.PictureBox2)
+        Me.Panel5.Controls.Add(Me.Label9)
+        Me.Panel5.Location = New System.Drawing.Point(1044, 92)
+        Me.Panel5.Name = "Panel5"
+        Me.Panel5.Size = New System.Drawing.Size(252, 293)
+        Me.Panel5.TabIndex = 8
+        '
+        'Label5
+        '
+        Me.Label5.AutoSize = True
+        Me.Label5.Font = New System.Drawing.Font("Trebuchet MS", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label5.Location = New System.Drawing.Point(3, 115)
+        Me.Label5.Name = "Label5"
+        Me.Label5.Size = New System.Drawing.Size(99, 18)
+        Me.Label5.TabIndex = 6
+        Me.Label5.Text = "Logged in user:"
+        '
+        'Label6
+        '
+        Me.Label6.AutoSize = True
+        Me.Label6.Font = New System.Drawing.Font("Trebuchet MS", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label6.Location = New System.Drawing.Point(3, 97)
+        Me.Label6.Name = "Label6"
+        Me.Label6.Size = New System.Drawing.Size(75, 18)
+        Me.Label6.TabIndex = 5
+        Me.Label6.Text = "OS Version:"
+        '
+        'Label8
+        '
+        Me.Label8.AutoSize = True
+        Me.Label8.Font = New System.Drawing.Font("Trebuchet MS", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label8.Location = New System.Drawing.Point(3, 79)
+        Me.Label8.Name = "Label8"
+        Me.Label8.Size = New System.Drawing.Size(29, 18)
+        Me.Label8.TabIndex = 4
+        Me.Label8.Text = "OS:"
+        '
+        'PictureBox2
+        '
+        Me.PictureBox2.Image = Global.Dashy.My.Resources.Resources._1404236744_kservices
+        Me.PictureBox2.Location = New System.Drawing.Point(3, 3)
+        Me.PictureBox2.Name = "PictureBox2"
+        Me.PictureBox2.Size = New System.Drawing.Size(64, 64)
+        Me.PictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
+        Me.PictureBox2.TabIndex = 2
+        Me.PictureBox2.TabStop = False
+        '
+        'Label9
+        '
+        Me.Label9.AutoSize = True
+        Me.Label9.Font = New System.Drawing.Font("Trebuchet MS", 15.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label9.Location = New System.Drawing.Point(70, 18)
+        Me.Label9.Name = "Label9"
+        Me.Label9.Size = New System.Drawing.Size(91, 27)
+        Me.Label9.TabIndex = 3
+        Me.Label9.Text = "Network"
+        '
         'Dashy
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(1052, 414)
+        Me.ClientSize = New System.Drawing.Size(1348, 414)
+        Me.Controls.Add(Me.Panel5)
         Me.Controls.Add(Me.Panel4)
         Me.Controls.Add(Me.Label7)
         Me.Controls.Add(Me.Panel3)
@@ -496,6 +570,9 @@ Partial Class Dashy
         Me.Panel4.ResumeLayout(False)
         Me.Panel4.PerformLayout()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).EndInit()
+        Me.Panel5.ResumeLayout(False)
+        Me.Panel5.PerformLayout()
+        CType(Me.PictureBox2, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -543,5 +620,12 @@ Partial Class Dashy
     Friend WithEvents DocumentationToolStripMenuItem1 As System.Windows.Forms.ToolStripMenuItem
     Friend WithEvents CheckForUpdatesToolStripMenuItem1 As System.Windows.Forms.ToolStripMenuItem
     Friend WithEvents AboutDashyToolStripMenuItem1 As System.Windows.Forms.ToolStripMenuItem
+    Friend WithEvents Panel5 As System.Windows.Forms.Panel
+    Friend WithEvents Label5 As System.Windows.Forms.Label
+    Friend WithEvents Label6 As System.Windows.Forms.Label
+    Friend WithEvents Label8 As System.Windows.Forms.Label
+    Friend WithEvents PictureBox2 As System.Windows.Forms.PictureBox
+    Friend WithEvents Label9 As System.Windows.Forms.Label
+    Friend WithEvents Monitor_Network As System.Windows.Forms.Timer
 
 End Class
