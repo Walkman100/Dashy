@@ -101,10 +101,10 @@ Partial Class Dashy
         'lblDashy
         '
         Me.lblDashy.AutoSize = True
-        Me.lblDashy.Font = New System.Drawing.Font("Microsoft Sans Serif", 27.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblDashy.Font = New System.Drawing.Font("Trebuchet MS", 27.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.lblDashy.Location = New System.Drawing.Point(12, 24)
         Me.lblDashy.Name = "lblDashy"
-        Me.lblDashy.Size = New System.Drawing.Size(125, 42)
+        Me.lblDashy.Size = New System.Drawing.Size(115, 46)
         Me.lblDashy.TabIndex = 0
         Me.lblDashy.Text = "Dashy"
         '
@@ -148,10 +148,10 @@ Partial Class Dashy
         'lblavailvirtualmem
         '
         Me.lblavailvirtualmem.AutoSize = True
-        Me.lblavailvirtualmem.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!)
+        Me.lblavailvirtualmem.Font = New System.Drawing.Font("Trebuchet MS", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.lblavailvirtualmem.Location = New System.Drawing.Point(3, 79)
         Me.lblavailvirtualmem.Name = "lblavailvirtualmem"
-        Me.lblavailvirtualmem.Size = New System.Drawing.Size(158, 16)
+        Me.lblavailvirtualmem.Size = New System.Drawing.Size(158, 18)
         Me.lblavailvirtualmem.TabIndex = 4
         Me.lblavailvirtualmem.Text = "Available virtual memory:"
         '
@@ -168,10 +168,10 @@ Partial Class Dashy
         'lblPerformance
         '
         Me.lblPerformance.AutoSize = True
-        Me.lblPerformance.Font = New System.Drawing.Font("Microsoft Sans Serif", 15.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblPerformance.Font = New System.Drawing.Font("Trebuchet MS", 15.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.lblPerformance.Location = New System.Drawing.Point(70, 18)
         Me.lblPerformance.Name = "lblPerformance"
-        Me.lblPerformance.Size = New System.Drawing.Size(134, 25)
+        Me.lblPerformance.Size = New System.Drawing.Size(130, 27)
         Me.lblPerformance.TabIndex = 3
         Me.lblPerformance.Text = "Performance"
         '
@@ -214,10 +214,10 @@ Partial Class Dashy
         'lblArch
         '
         Me.lblArch.AutoSize = True
-        Me.lblArch.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblArch.Font = New System.Drawing.Font("Trebuchet MS", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.lblArch.Location = New System.Drawing.Point(3, 79)
         Me.lblArch.Name = "lblArch"
-        Me.lblArch.Size = New System.Drawing.Size(81, 16)
+        Me.lblArch.Size = New System.Drawing.Size(85, 18)
         Me.lblArch.TabIndex = 4
         Me.lblArch.Text = "Architecture:"
         '
@@ -234,20 +234,20 @@ Partial Class Dashy
         'lblHardware
         '
         Me.lblHardware.AutoSize = True
-        Me.lblHardware.Font = New System.Drawing.Font("Microsoft Sans Serif", 15.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblHardware.Font = New System.Drawing.Font("Trebuchet MS", 15.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.lblHardware.Location = New System.Drawing.Point(70, 18)
         Me.lblHardware.Name = "lblHardware"
-        Me.lblHardware.Size = New System.Drawing.Size(104, 25)
+        Me.lblHardware.Size = New System.Drawing.Size(105, 27)
         Me.lblHardware.TabIndex = 3
         Me.lblHardware.Text = "Hardware"
         '
         'Label7
         '
         Me.Label7.AutoSize = True
-        Me.Label7.Font = New System.Drawing.Font("Microsoft Sans Serif", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label7.Font = New System.Drawing.Font("Trebuchet MS", 11.25!, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label7.Location = New System.Drawing.Point(15, 66)
         Me.Label7.Name = "Label7"
-        Me.Label7.Size = New System.Drawing.Size(148, 18)
+        Me.Label7.Size = New System.Drawing.Size(162, 20)
         Me.Label7.TabIndex = 7
         Me.Label7.Text = "Monitoring everything"
         '
@@ -257,50 +257,50 @@ Partial Class Dashy
         'lblavailphysicalmem
         '
         Me.lblavailphysicalmem.AutoSize = True
-        Me.lblavailphysicalmem.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!)
+        Me.lblavailphysicalmem.Font = New System.Drawing.Font("Trebuchet MS", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.lblavailphysicalmem.Location = New System.Drawing.Point(3, 95)
         Me.lblavailphysicalmem.Name = "lblavailphysicalmem"
-        Me.lblavailphysicalmem.Size = New System.Drawing.Size(173, 16)
+        Me.lblavailphysicalmem.Size = New System.Drawing.Size(166, 18)
         Me.lblavailphysicalmem.TabIndex = 5
         Me.lblavailphysicalmem.Text = "Available physical memory:"
         '
         'lbltotalvirtualmem
         '
         Me.lbltotalvirtualmem.AutoSize = True
-        Me.lbltotalvirtualmem.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!)
+        Me.lbltotalvirtualmem.Font = New System.Drawing.Font("Trebuchet MS", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.lbltotalvirtualmem.Location = New System.Drawing.Point(3, 111)
         Me.lbltotalvirtualmem.Name = "lbltotalvirtualmem"
-        Me.lbltotalvirtualmem.Size = New System.Drawing.Size(132, 16)
+        Me.lbltotalvirtualmem.Size = New System.Drawing.Size(134, 18)
         Me.lbltotalvirtualmem.TabIndex = 6
         Me.lbltotalvirtualmem.Text = "Total virtual memory:"
         '
         'lbltotalphysicalmem
         '
         Me.lbltotalphysicalmem.AutoSize = True
-        Me.lbltotalphysicalmem.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!)
+        Me.lbltotalphysicalmem.Font = New System.Drawing.Font("Trebuchet MS", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.lbltotalphysicalmem.Location = New System.Drawing.Point(3, 127)
         Me.lbltotalphysicalmem.Name = "lbltotalphysicalmem"
-        Me.lbltotalphysicalmem.Size = New System.Drawing.Size(147, 16)
+        Me.lbltotalphysicalmem.Size = New System.Drawing.Size(142, 18)
         Me.lbltotalphysicalmem.TabIndex = 7
         Me.lbltotalphysicalmem.Text = "Total physical memory:"
         '
         'lblFileSystem
         '
         Me.lblFileSystem.AutoSize = True
-        Me.lblFileSystem.Font = New System.Drawing.Font("Microsoft Sans Serif", 15.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblFileSystem.Font = New System.Drawing.Font("Trebuchet MS", 15.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.lblFileSystem.Location = New System.Drawing.Point(70, 18)
         Me.lblFileSystem.Name = "lblFileSystem"
-        Me.lblFileSystem.Size = New System.Drawing.Size(118, 25)
+        Me.lblFileSystem.Size = New System.Drawing.Size(110, 27)
         Me.lblFileSystem.TabIndex = 8
         Me.lblFileSystem.Text = "FileSystem"
         '
         'Label1
         '
         Me.Label1.AutoSize = True
-        Me.Label1.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!)
+        Me.Label1.Font = New System.Drawing.Font("Trebuchet MS", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label1.Location = New System.Drawing.Point(3, 79)
         Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(85, 16)
+        Me.Label1.Size = New System.Drawing.Size(91, 18)
         Me.Label1.TabIndex = 8
         Me.Label1.Text = "List of drives:"
         '
@@ -318,10 +318,10 @@ Partial Class Dashy
         'Label2
         '
         Me.Label2.AutoSize = True
-        Me.Label2.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!)
+        Me.Label2.Font = New System.Drawing.Font("Trebuchet MS", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label2.Location = New System.Drawing.Point(4, 111)
         Me.Label2.Name = "Label2"
-        Me.Label2.Size = New System.Drawing.Size(86, 16)
+        Me.Label2.Size = New System.Drawing.Size(89, 18)
         Me.Label2.TabIndex = 10
         Me.Label2.Text = "No. of drives:"
         '
