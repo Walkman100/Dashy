@@ -33,6 +33,11 @@
         Else
             lblArch.Text = "Architecture: 32-Bit"
         End If
+        lblProcessors.Text = "Processors: " & Environment.ProcessorCount
+        'System
+        lblOperatingSystem.Text = "OS:" & My.Computer.Info.OSFullName
+        lblOSVersion.Text = "OS Version: " & My.Computer.Info.OSVersion
+        lblLoggedInUser.Text = "Logged in user: " & Environment.UserName
     End Sub
 
     Private Sub Monitor_FileSystem_Tick(sender As Object, e As EventArgs) Handles Monitor_FileSystem.Tick
