@@ -23,15 +23,29 @@ Partial Class Dashy
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
         Me.components = New System.ComponentModel.Container()
+        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(Dashy))
         Me.Menubar = New System.Windows.Forms.MenuStrip()
         Me.DashyToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.MinimizeToTrayToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.QuitDashyToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.HelpToolStripMenuItem1 = New System.Windows.Forms.ToolStripMenuItem()
+        Me.DocumentationToolStripMenuItem1 = New System.Windows.Forms.ToolStripMenuItem()
+        Me.CheckForUpdatesToolStripMenuItem1 = New System.Windows.Forms.ToolStripMenuItem()
+        Me.AboutDashyToolStripMenuItem1 = New System.Windows.Forms.ToolStripMenuItem()
         Me.Statusbar = New System.Windows.Forms.StatusStrip()
         Me.lblDashy = New System.Windows.Forms.Label()
         Me.imgHarddrive = New System.Windows.Forms.PictureBox()
         Me.Panel1 = New System.Windows.Forms.Panel()
+        Me.lblProgramFilesDir = New System.Windows.Forms.Label()
+        Me.Label3 = New System.Windows.Forms.Label()
+        Me.Label2 = New System.Windows.Forms.Label()
+        Me.ComboBox1 = New System.Windows.Forms.ComboBox()
+        Me.Label1 = New System.Windows.Forms.Label()
+        Me.lblFileSystem = New System.Windows.Forms.Label()
         Me.Panel2 = New System.Windows.Forms.Panel()
+        Me.lbltotalphysicalmem = New System.Windows.Forms.Label()
+        Me.lbltotalvirtualmem = New System.Windows.Forms.Label()
+        Me.lblavailphysicalmem = New System.Windows.Forms.Label()
         Me.lblavailvirtualmem = New System.Windows.Forms.Label()
         Me.imgPerformance = New System.Windows.Forms.PictureBox()
         Me.lblPerformance = New System.Windows.Forms.Label()
@@ -40,32 +54,19 @@ Partial Class Dashy
         Me.CheckForUpdatesToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.AboutDashyToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.Panel3 = New System.Windows.Forms.Panel()
+        Me.lblProcessors = New System.Windows.Forms.Label()
         Me.lblArch = New System.Windows.Forms.Label()
         Me.imgHardware = New System.Windows.Forms.PictureBox()
         Me.lblHardware = New System.Windows.Forms.Label()
         Me.Label7 = New System.Windows.Forms.Label()
         Me.Monitor_Performance = New System.Windows.Forms.Timer(Me.components)
-        Me.lblavailphysicalmem = New System.Windows.Forms.Label()
-        Me.lbltotalvirtualmem = New System.Windows.Forms.Label()
-        Me.lbltotalphysicalmem = New System.Windows.Forms.Label()
-        Me.lblFileSystem = New System.Windows.Forms.Label()
-        Me.Label1 = New System.Windows.Forms.Label()
         Me.Monitor_FileSystem = New System.Windows.Forms.Timer(Me.components)
-        Me.Label2 = New System.Windows.Forms.Label()
-        Me.ComboBox1 = New System.Windows.Forms.ComboBox()
         Me.Panel4 = New System.Windows.Forms.Panel()
+        Me.lblLoggedInUser = New System.Windows.Forms.Label()
+        Me.lblOSVersion = New System.Windows.Forms.Label()
         Me.lblOperatingSystem = New System.Windows.Forms.Label()
         Me.PictureBox1 = New System.Windows.Forms.PictureBox()
         Me.Label4 = New System.Windows.Forms.Label()
-        Me.lblOSVersion = New System.Windows.Forms.Label()
-        Me.Label3 = New System.Windows.Forms.Label()
-        Me.Label5 = New System.Windows.Forms.Label()
-        Me.lblProcessors = New System.Windows.Forms.Label()
-        Me.lblLoggedInUser = New System.Windows.Forms.Label()
-        Me.HelpToolStripMenuItem1 = New System.Windows.Forms.ToolStripMenuItem()
-        Me.DocumentationToolStripMenuItem1 = New System.Windows.Forms.ToolStripMenuItem()
-        Me.CheckForUpdatesToolStripMenuItem1 = New System.Windows.Forms.ToolStripMenuItem()
-        Me.AboutDashyToolStripMenuItem1 = New System.Windows.Forms.ToolStripMenuItem()
         Me.Menubar.SuspendLayout()
         CType(Me.imgHarddrive, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.Panel1.SuspendLayout()
@@ -105,6 +106,31 @@ Partial Class Dashy
         Me.QuitDashyToolStripMenuItem.Size = New System.Drawing.Size(160, 22)
         Me.QuitDashyToolStripMenuItem.Text = "&Quit Dashy"
         '
+        'HelpToolStripMenuItem1
+        '
+        Me.HelpToolStripMenuItem1.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.DocumentationToolStripMenuItem1, Me.CheckForUpdatesToolStripMenuItem1, Me.AboutDashyToolStripMenuItem1})
+        Me.HelpToolStripMenuItem1.Name = "HelpToolStripMenuItem1"
+        Me.HelpToolStripMenuItem1.Size = New System.Drawing.Size(44, 20)
+        Me.HelpToolStripMenuItem1.Text = "&Help"
+        '
+        'DocumentationToolStripMenuItem1
+        '
+        Me.DocumentationToolStripMenuItem1.Name = "DocumentationToolStripMenuItem1"
+        Me.DocumentationToolStripMenuItem1.Size = New System.Drawing.Size(170, 22)
+        Me.DocumentationToolStripMenuItem1.Text = "&Documentation"
+        '
+        'CheckForUpdatesToolStripMenuItem1
+        '
+        Me.CheckForUpdatesToolStripMenuItem1.Name = "CheckForUpdatesToolStripMenuItem1"
+        Me.CheckForUpdatesToolStripMenuItem1.Size = New System.Drawing.Size(170, 22)
+        Me.CheckForUpdatesToolStripMenuItem1.Text = "&Check for updates"
+        '
+        'AboutDashyToolStripMenuItem1
+        '
+        Me.AboutDashyToolStripMenuItem1.Name = "AboutDashyToolStripMenuItem1"
+        Me.AboutDashyToolStripMenuItem1.Size = New System.Drawing.Size(170, 22)
+        Me.AboutDashyToolStripMenuItem1.Text = "&About Dashy"
+        '
         'Statusbar
         '
         Me.Statusbar.Location = New System.Drawing.Point(0, 392)
@@ -125,7 +151,7 @@ Partial Class Dashy
         '
         'imgHarddrive
         '
-        Me.imgHarddrive.Image = Global.Dashy.My.Resources.Resources._1404236756_harddrive
+        Me.imgHarddrive.Image = CType(resources.GetObject("imgHarddrive.Image"), System.Drawing.Image)
         Me.imgHarddrive.Location = New System.Drawing.Point(3, 3)
         Me.imgHarddrive.Name = "imgHarddrive"
         Me.imgHarddrive.Size = New System.Drawing.Size(64, 64)
@@ -137,7 +163,7 @@ Partial Class Dashy
         '
         Me.Panel1.BackColor = System.Drawing.SystemColors.ControlLight
         Me.Panel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.Panel1.Controls.Add(Me.Label5)
+        Me.Panel1.Controls.Add(Me.lblProgramFilesDir)
         Me.Panel1.Controls.Add(Me.Label3)
         Me.Panel1.Controls.Add(Me.Label2)
         Me.Panel1.Controls.Add(Me.ComboBox1)
@@ -148,6 +174,64 @@ Partial Class Dashy
         Me.Panel1.Name = "Panel1"
         Me.Panel1.Size = New System.Drawing.Size(252, 293)
         Me.Panel1.TabIndex = 4
+        '
+        'lblProgramFilesDir
+        '
+        Me.lblProgramFilesDir.AutoSize = True
+        Me.lblProgramFilesDir.Font = New System.Drawing.Font("Trebuchet MS", 9.75!, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblProgramFilesDir.Location = New System.Drawing.Point(5, 147)
+        Me.lblProgramFilesDir.Name = "lblProgramFilesDir"
+        Me.lblProgramFilesDir.Size = New System.Drawing.Size(31, 18)
+        Me.lblProgramFilesDir.TabIndex = 12
+        Me.lblProgramFilesDir.Text = "N/A"
+        '
+        'Label3
+        '
+        Me.Label3.AutoSize = True
+        Me.Label3.Font = New System.Drawing.Font("Trebuchet MS", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label3.Location = New System.Drawing.Point(5, 129)
+        Me.Label3.Name = "Label3"
+        Me.Label3.Size = New System.Drawing.Size(148, 18)
+        Me.Label3.TabIndex = 11
+        Me.Label3.Text = "Program Files directory:"
+        '
+        'Label2
+        '
+        Me.Label2.AutoSize = True
+        Me.Label2.Font = New System.Drawing.Font("Trebuchet MS", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label2.Location = New System.Drawing.Point(4, 111)
+        Me.Label2.Name = "Label2"
+        Me.Label2.Size = New System.Drawing.Size(89, 18)
+        Me.Label2.TabIndex = 10
+        Me.Label2.Text = "No. of drives:"
+        '
+        'ComboBox1
+        '
+        Me.ComboBox1.FormattingEnabled = True
+        Me.ComboBox1.Location = New System.Drawing.Point(100, 79)
+        Me.ComboBox1.Name = "ComboBox1"
+        Me.ComboBox1.Size = New System.Drawing.Size(149, 21)
+        Me.ComboBox1.TabIndex = 9
+        '
+        'Label1
+        '
+        Me.Label1.AutoSize = True
+        Me.Label1.Font = New System.Drawing.Font("Trebuchet MS", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label1.Location = New System.Drawing.Point(3, 79)
+        Me.Label1.Name = "Label1"
+        Me.Label1.Size = New System.Drawing.Size(91, 18)
+        Me.Label1.TabIndex = 8
+        Me.Label1.Text = "List of drives:"
+        '
+        'lblFileSystem
+        '
+        Me.lblFileSystem.AutoSize = True
+        Me.lblFileSystem.Font = New System.Drawing.Font("Trebuchet MS", 15.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblFileSystem.Location = New System.Drawing.Point(70, 18)
+        Me.lblFileSystem.Name = "lblFileSystem"
+        Me.lblFileSystem.Size = New System.Drawing.Size(110, 27)
+        Me.lblFileSystem.TabIndex = 8
+        Me.lblFileSystem.Text = "FileSystem"
         '
         'Panel2
         '
@@ -164,6 +248,36 @@ Partial Class Dashy
         Me.Panel2.Size = New System.Drawing.Size(252, 293)
         Me.Panel2.TabIndex = 5
         '
+        'lbltotalphysicalmem
+        '
+        Me.lbltotalphysicalmem.AutoSize = True
+        Me.lbltotalphysicalmem.Font = New System.Drawing.Font("Trebuchet MS", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lbltotalphysicalmem.Location = New System.Drawing.Point(3, 127)
+        Me.lbltotalphysicalmem.Name = "lbltotalphysicalmem"
+        Me.lbltotalphysicalmem.Size = New System.Drawing.Size(142, 18)
+        Me.lbltotalphysicalmem.TabIndex = 7
+        Me.lbltotalphysicalmem.Text = "Total physical memory:"
+        '
+        'lbltotalvirtualmem
+        '
+        Me.lbltotalvirtualmem.AutoSize = True
+        Me.lbltotalvirtualmem.Font = New System.Drawing.Font("Trebuchet MS", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lbltotalvirtualmem.Location = New System.Drawing.Point(3, 111)
+        Me.lbltotalvirtualmem.Name = "lbltotalvirtualmem"
+        Me.lbltotalvirtualmem.Size = New System.Drawing.Size(134, 18)
+        Me.lbltotalvirtualmem.TabIndex = 6
+        Me.lbltotalvirtualmem.Text = "Total virtual memory:"
+        '
+        'lblavailphysicalmem
+        '
+        Me.lblavailphysicalmem.AutoSize = True
+        Me.lblavailphysicalmem.Font = New System.Drawing.Font("Trebuchet MS", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblavailphysicalmem.Location = New System.Drawing.Point(3, 95)
+        Me.lblavailphysicalmem.Name = "lblavailphysicalmem"
+        Me.lblavailphysicalmem.Size = New System.Drawing.Size(166, 18)
+        Me.lblavailphysicalmem.TabIndex = 5
+        Me.lblavailphysicalmem.Text = "Available physical memory:"
+        '
         'lblavailvirtualmem
         '
         Me.lblavailvirtualmem.AutoSize = True
@@ -176,7 +290,7 @@ Partial Class Dashy
         '
         'imgPerformance
         '
-        Me.imgPerformance.Image = Global.Dashy.My.Resources.Resources._1404236737_daemons
+        Me.imgPerformance.Image = CType(resources.GetObject("imgPerformance.Image"), System.Drawing.Image)
         Me.imgPerformance.Location = New System.Drawing.Point(3, 3)
         Me.imgPerformance.Name = "imgPerformance"
         Me.imgPerformance.Size = New System.Drawing.Size(64, 64)
@@ -232,6 +346,16 @@ Partial Class Dashy
         Me.Panel3.Size = New System.Drawing.Size(252, 293)
         Me.Panel3.TabIndex = 6
         '
+        'lblProcessors
+        '
+        Me.lblProcessors.AutoSize = True
+        Me.lblProcessors.Font = New System.Drawing.Font("Trebuchet MS", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblProcessors.Location = New System.Drawing.Point(3, 97)
+        Me.lblProcessors.Name = "lblProcessors"
+        Me.lblProcessors.Size = New System.Drawing.Size(74, 18)
+        Me.lblProcessors.TabIndex = 5
+        Me.lblProcessors.Text = "Processors:"
+        '
         'lblArch
         '
         Me.lblArch.AutoSize = True
@@ -244,7 +368,7 @@ Partial Class Dashy
         '
         'imgHardware
         '
-        Me.imgHardware.Image = Global.Dashy.My.Resources.Resources._1404236747_package_utilities
+        Me.imgHardware.Image = CType(resources.GetObject("imgHardware.Image"), System.Drawing.Image)
         Me.imgHardware.Location = New System.Drawing.Point(3, 3)
         Me.imgHardware.Name = "imgHardware"
         Me.imgHardware.Size = New System.Drawing.Size(64, 64)
@@ -275,76 +399,8 @@ Partial Class Dashy
         'Monitor_Performance
         '
         '
-        'lblavailphysicalmem
-        '
-        Me.lblavailphysicalmem.AutoSize = True
-        Me.lblavailphysicalmem.Font = New System.Drawing.Font("Trebuchet MS", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lblavailphysicalmem.Location = New System.Drawing.Point(3, 95)
-        Me.lblavailphysicalmem.Name = "lblavailphysicalmem"
-        Me.lblavailphysicalmem.Size = New System.Drawing.Size(166, 18)
-        Me.lblavailphysicalmem.TabIndex = 5
-        Me.lblavailphysicalmem.Text = "Available physical memory:"
-        '
-        'lbltotalvirtualmem
-        '
-        Me.lbltotalvirtualmem.AutoSize = True
-        Me.lbltotalvirtualmem.Font = New System.Drawing.Font("Trebuchet MS", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lbltotalvirtualmem.Location = New System.Drawing.Point(3, 111)
-        Me.lbltotalvirtualmem.Name = "lbltotalvirtualmem"
-        Me.lbltotalvirtualmem.Size = New System.Drawing.Size(134, 18)
-        Me.lbltotalvirtualmem.TabIndex = 6
-        Me.lbltotalvirtualmem.Text = "Total virtual memory:"
-        '
-        'lbltotalphysicalmem
-        '
-        Me.lbltotalphysicalmem.AutoSize = True
-        Me.lbltotalphysicalmem.Font = New System.Drawing.Font("Trebuchet MS", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lbltotalphysicalmem.Location = New System.Drawing.Point(3, 127)
-        Me.lbltotalphysicalmem.Name = "lbltotalphysicalmem"
-        Me.lbltotalphysicalmem.Size = New System.Drawing.Size(142, 18)
-        Me.lbltotalphysicalmem.TabIndex = 7
-        Me.lbltotalphysicalmem.Text = "Total physical memory:"
-        '
-        'lblFileSystem
-        '
-        Me.lblFileSystem.AutoSize = True
-        Me.lblFileSystem.Font = New System.Drawing.Font("Trebuchet MS", 15.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lblFileSystem.Location = New System.Drawing.Point(70, 18)
-        Me.lblFileSystem.Name = "lblFileSystem"
-        Me.lblFileSystem.Size = New System.Drawing.Size(110, 27)
-        Me.lblFileSystem.TabIndex = 8
-        Me.lblFileSystem.Text = "FileSystem"
-        '
-        'Label1
-        '
-        Me.Label1.AutoSize = True
-        Me.Label1.Font = New System.Drawing.Font("Trebuchet MS", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label1.Location = New System.Drawing.Point(3, 79)
-        Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(91, 18)
-        Me.Label1.TabIndex = 8
-        Me.Label1.Text = "List of drives:"
-        '
         'Monitor_FileSystem
         '
-        '
-        'Label2
-        '
-        Me.Label2.AutoSize = True
-        Me.Label2.Font = New System.Drawing.Font("Trebuchet MS", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label2.Location = New System.Drawing.Point(4, 111)
-        Me.Label2.Name = "Label2"
-        Me.Label2.Size = New System.Drawing.Size(89, 18)
-        Me.Label2.TabIndex = 10
-        Me.Label2.Text = "No. of drives:"
-        '
-        'ComboBox1
-        '
-        Me.ComboBox1.FormattingEnabled = True
-        Me.ComboBox1.Location = New System.Drawing.Point(100, 79)
-        Me.ComboBox1.Name = "ComboBox1"
-        Me.ComboBox1.Size = New System.Drawing.Size(149, 21)
-        Me.ComboBox1.TabIndex = 9
         '
         'Panel4
         '
@@ -359,6 +415,26 @@ Partial Class Dashy
         Me.Panel4.Name = "Panel4"
         Me.Panel4.Size = New System.Drawing.Size(252, 293)
         Me.Panel4.TabIndex = 7
+        '
+        'lblLoggedInUser
+        '
+        Me.lblLoggedInUser.AutoSize = True
+        Me.lblLoggedInUser.Font = New System.Drawing.Font("Trebuchet MS", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblLoggedInUser.Location = New System.Drawing.Point(3, 115)
+        Me.lblLoggedInUser.Name = "lblLoggedInUser"
+        Me.lblLoggedInUser.Size = New System.Drawing.Size(99, 18)
+        Me.lblLoggedInUser.TabIndex = 6
+        Me.lblLoggedInUser.Text = "Logged in user:"
+        '
+        'lblOSVersion
+        '
+        Me.lblOSVersion.AutoSize = True
+        Me.lblOSVersion.Font = New System.Drawing.Font("Trebuchet MS", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblOSVersion.Location = New System.Drawing.Point(3, 97)
+        Me.lblOSVersion.Name = "lblOSVersion"
+        Me.lblOSVersion.Size = New System.Drawing.Size(75, 18)
+        Me.lblOSVersion.TabIndex = 5
+        Me.lblOSVersion.Text = "OS Version:"
         '
         'lblOperatingSystem
         '
@@ -389,81 +465,6 @@ Partial Class Dashy
         Me.Label4.Size = New System.Drawing.Size(76, 27)
         Me.Label4.TabIndex = 3
         Me.Label4.Text = "System"
-        '
-        'lblOSVersion
-        '
-        Me.lblOSVersion.AutoSize = True
-        Me.lblOSVersion.Font = New System.Drawing.Font("Trebuchet MS", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lblOSVersion.Location = New System.Drawing.Point(3, 97)
-        Me.lblOSVersion.Name = "lblOSVersion"
-        Me.lblOSVersion.Size = New System.Drawing.Size(75, 18)
-        Me.lblOSVersion.TabIndex = 5
-        Me.lblOSVersion.Text = "OS Version:"
-        '
-        'Label3
-        '
-        Me.Label3.AutoSize = True
-        Me.Label3.Font = New System.Drawing.Font("Trebuchet MS", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label3.Location = New System.Drawing.Point(5, 129)
-        Me.Label3.Name = "Label3"
-        Me.Label3.Size = New System.Drawing.Size(148, 18)
-        Me.Label3.TabIndex = 11
-        Me.Label3.Text = "Program Files directory:"
-        '
-        'Label5
-        '
-        Me.Label5.AutoSize = True
-        Me.Label5.Font = New System.Drawing.Font("Trebuchet MS", 9.75!, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label5.Location = New System.Drawing.Point(5, 147)
-        Me.Label5.Name = "Label5"
-        Me.Label5.Size = New System.Drawing.Size(31, 18)
-        Me.Label5.TabIndex = 12
-        Me.Label5.Text = "N/A"
-        '
-        'lblProcessors
-        '
-        Me.lblProcessors.AutoSize = True
-        Me.lblProcessors.Font = New System.Drawing.Font("Trebuchet MS", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lblProcessors.Location = New System.Drawing.Point(3, 97)
-        Me.lblProcessors.Name = "lblProcessors"
-        Me.lblProcessors.Size = New System.Drawing.Size(74, 18)
-        Me.lblProcessors.TabIndex = 5
-        Me.lblProcessors.Text = "Processors:"
-        '
-        'lblLoggedInUser
-        '
-        Me.lblLoggedInUser.AutoSize = True
-        Me.lblLoggedInUser.Font = New System.Drawing.Font("Trebuchet MS", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lblLoggedInUser.Location = New System.Drawing.Point(3, 115)
-        Me.lblLoggedInUser.Name = "lblLoggedInUser"
-        Me.lblLoggedInUser.Size = New System.Drawing.Size(99, 18)
-        Me.lblLoggedInUser.TabIndex = 6
-        Me.lblLoggedInUser.Text = "Logged in user:"
-        '
-        'HelpToolStripMenuItem1
-        '
-        Me.HelpToolStripMenuItem1.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.DocumentationToolStripMenuItem1, Me.CheckForUpdatesToolStripMenuItem1, Me.AboutDashyToolStripMenuItem1})
-        Me.HelpToolStripMenuItem1.Name = "HelpToolStripMenuItem1"
-        Me.HelpToolStripMenuItem1.Size = New System.Drawing.Size(44, 20)
-        Me.HelpToolStripMenuItem1.Text = "&Help"
-        '
-        'DocumentationToolStripMenuItem1
-        '
-        Me.DocumentationToolStripMenuItem1.Name = "DocumentationToolStripMenuItem1"
-        Me.DocumentationToolStripMenuItem1.Size = New System.Drawing.Size(170, 22)
-        Me.DocumentationToolStripMenuItem1.Text = "&Documentation"
-        '
-        'CheckForUpdatesToolStripMenuItem1
-        '
-        Me.CheckForUpdatesToolStripMenuItem1.Name = "CheckForUpdatesToolStripMenuItem1"
-        Me.CheckForUpdatesToolStripMenuItem1.Size = New System.Drawing.Size(170, 22)
-        Me.CheckForUpdatesToolStripMenuItem1.Text = "&Check for updates"
-        '
-        'AboutDashyToolStripMenuItem1
-        '
-        Me.AboutDashyToolStripMenuItem1.Name = "AboutDashyToolStripMenuItem1"
-        Me.AboutDashyToolStripMenuItem1.Size = New System.Drawing.Size(170, 22)
-        Me.AboutDashyToolStripMenuItem1.Text = "&About Dashy"
         '
         'Dashy
         '
@@ -534,7 +535,7 @@ Partial Class Dashy
     Friend WithEvents PictureBox1 As System.Windows.Forms.PictureBox
     Friend WithEvents Label4 As System.Windows.Forms.Label
     Friend WithEvents lblOSVersion As System.Windows.Forms.Label
-    Friend WithEvents Label5 As System.Windows.Forms.Label
+    Friend WithEvents lblProgramFilesDir As System.Windows.Forms.Label
     Friend WithEvents Label3 As System.Windows.Forms.Label
     Friend WithEvents lblProcessors As System.Windows.Forms.Label
     Friend WithEvents lblLoggedInUser As System.Windows.Forms.Label

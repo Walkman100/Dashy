@@ -24,6 +24,7 @@
         For Each item In My.Computer.FileSystem.Drives
             ComboBox1.Items.Add(item)
         Next
+        lblProgramFilesDir.Text = Environment.GetEnvironmentVariable("PROGRAMFILES")
         'Performance
         lbltotalvirtualmem.Text = "Total virtual memory: " & My.Computer.Info.TotalVirtualMemory
         lbltotalphysicalmem.Text = "Total physical memory: " & My.Computer.Info.TotalPhysicalMemory
