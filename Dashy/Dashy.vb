@@ -17,6 +17,7 @@
         GetStaticData()
         Monitor_FileSystem.Start()
         Monitor_Performance.Start()
+        Monitor_Network.Start()
     End Sub
 
     Sub GetStaticData()
