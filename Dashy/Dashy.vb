@@ -1,10 +1,10 @@
 ﻿Public Class Dashy
 
-    Private Sub QuitDashyToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles QuitDashyToolStripMenuItem.Click
+    Private Sub QuitDashyToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles tsmiQuit.Click
         Application.Exit()
     End Sub
 
-    Private Sub MinimizeToTrayToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles MinimizeToTrayToolStripMenuItem.Click
+    Private Sub MinimizeToTrayToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles tsmiMinimizeToTray.Click
         Me.Hide()
     End Sub
 
@@ -18,14 +18,15 @@
         Monitor_FileSystem.Start()
         Monitor_Performance.Start()
         Monitor_Network.Start()
+        KeyChecker.Start()
     End Sub
 
     Sub GetStaticData()
         'FileSystem
         For Each drive In My.Computer.FileSystem.Drives
-            ComboBox1.Items.Add(drive)
+            cbListofDrivesValue.Items.Add(drive)
         Next
-        lblProgramFilesDir.Text = Environment.GetEnvironmentVariable("PROGRAMFILES")
+        lblProgramFilesDirectoryValue.Text = Environment.GetEnvironmentVariable("PROGRAMFILES")
         'Performance
         lbltotalvirtualmem.Text = "Total virtual memory: " & My.Computer.Info.TotalVirtualMemory
         lbltotalphysicalmem.Text = "Total physical memory: " & My.Computer.Info.TotalPhysicalMemory
@@ -43,14 +44,30 @@
     End Sub
 
     Private Sub Monitor_FileSystem_Tick(sender As Object, e As EventArgs) Handles Monitor_FileSystem.Tick
-        Label2.Text = "No. of drives: " & My.Computer.FileSystem.Drives.Count
+        lblNumberofDrives.Text = "No. of drives: " & My.Computer.FileSystem.Drives.Count
     End Sub
 
     Private Sub Monitor_Network_Tick(sender As Object, e As EventArgs) Handles Monitor_Network.Tick
         If My.Computer.Network.IsAvailable = True Then
-            lblNetworkConnected.Text = "Conncetd to network: Yes"
+            lblNetworkConnected.Text = "Connected to network: Yes"
         Else
-            lblNetworkConnected.Text = "Conncetd to network: No"
+            lblNetworkConnected.Text = "Connected to network: No"
+        End If
+        Try
+            My.Computer.Network.Ping(My.Settings.Dashy_SiteToPing)
+            lblInternetConnection.Text = "Internet connection: Yes"
+        Catch ex As Exception
+            lblInternetConnection.Text = "Internet connection: No"
+        End Try
+    End Sub
+
+    Private Sub KeyChecker_Tick(sender As Object, e As EventArgs) Handles KeyChecker.Tick
+        If My.Computer.Keyboard.CtrlKeyDown And My.Computer.Keyboard.ShiftKeyDown Then
+            If Me.Visible = True Then
+                Me.Visible = False
+            Else
+                Me.Visible = True
+            End If
         End If
     End Sub
 End Class
