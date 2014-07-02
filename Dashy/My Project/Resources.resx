@@ -130,4 +130,7 @@
   <data name="_1404236756_harddrive" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\images\1404236756_harddrive.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="_1404314626_Globe" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\images\1404314626_Globe.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
 </root>

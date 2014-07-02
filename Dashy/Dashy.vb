@@ -44,4 +44,12 @@
     Private Sub Monitor_FileSystem_Tick(sender As Object, e As EventArgs) Handles Monitor_FileSystem.Tick
         Label2.Text = "No. of drives: " & My.Computer.FileSystem.Drives.Count
     End Sub
+
+    Private Sub Monitor_Network_Tick(sender As Object, e As EventArgs) Handles Monitor_Network.Tick
+        If My.Computer.Network.IsAvailable = True Then
+            lblNetworkConnected.Text = "Conncetd to network: Yes"
+        Else
+            lblNetworkConnected.Text = "Conncetd to network: No"
+        End If
+    End Sub
 End Class

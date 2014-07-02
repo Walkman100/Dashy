@@ -34,7 +34,6 @@ Partial Class Dashy
         Me.AboutDashyToolStripMenuItem1 = New System.Windows.Forms.ToolStripMenuItem()
         Me.Statusbar = New System.Windows.Forms.StatusStrip()
         Me.lblDashy = New System.Windows.Forms.Label()
-        Me.imgHarddrive = New System.Windows.Forms.PictureBox()
         Me.Panel1 = New System.Windows.Forms.Panel()
         Me.lblProgramFilesDir = New System.Windows.Forms.Label()
         Me.Label3 = New System.Windows.Forms.Label()
@@ -47,7 +46,6 @@ Partial Class Dashy
         Me.lbltotalvirtualmem = New System.Windows.Forms.Label()
         Me.lblavailphysicalmem = New System.Windows.Forms.Label()
         Me.lblavailvirtualmem = New System.Windows.Forms.Label()
-        Me.imgPerformance = New System.Windows.Forms.PictureBox()
         Me.lblPerformance = New System.Windows.Forms.Label()
         Me.HelpToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.DocumentationToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
@@ -56,7 +54,6 @@ Partial Class Dashy
         Me.Panel3 = New System.Windows.Forms.Panel()
         Me.lblProcessors = New System.Windows.Forms.Label()
         Me.lblArch = New System.Windows.Forms.Label()
-        Me.imgHardware = New System.Windows.Forms.PictureBox()
         Me.lblHardware = New System.Windows.Forms.Label()
         Me.Label7 = New System.Windows.Forms.Label()
         Me.Monitor_Performance = New System.Windows.Forms.Timer(Me.components)
@@ -65,26 +62,29 @@ Partial Class Dashy
         Me.lblLoggedInUser = New System.Windows.Forms.Label()
         Me.lblOSVersion = New System.Windows.Forms.Label()
         Me.lblOperatingSystem = New System.Windows.Forms.Label()
-        Me.PictureBox1 = New System.Windows.Forms.PictureBox()
         Me.Label4 = New System.Windows.Forms.Label()
         Me.Panel5 = New System.Windows.Forms.Panel()
         Me.Label5 = New System.Windows.Forms.Label()
         Me.Label6 = New System.Windows.Forms.Label()
-        Me.Label8 = New System.Windows.Forms.Label()
-        Me.PictureBox2 = New System.Windows.Forms.PictureBox()
+        Me.lblNetworkConnected = New System.Windows.Forms.Label()
         Me.Label9 = New System.Windows.Forms.Label()
+        Me.PictureBox2 = New System.Windows.Forms.PictureBox()
+        Me.PictureBox1 = New System.Windows.Forms.PictureBox()
+        Me.imgHardware = New System.Windows.Forms.PictureBox()
+        Me.imgPerformance = New System.Windows.Forms.PictureBox()
+        Me.imgHarddrive = New System.Windows.Forms.PictureBox()
         Me.Monitor_Network = New System.Windows.Forms.Timer(Me.components)
         Me.Menubar.SuspendLayout()
-        CType(Me.imgHarddrive, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.Panel1.SuspendLayout()
         Me.Panel2.SuspendLayout()
-        CType(Me.imgPerformance, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.Panel3.SuspendLayout()
-        CType(Me.imgHardware, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.Panel4.SuspendLayout()
-        CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.Panel5.SuspendLayout()
         CType(Me.PictureBox2, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.imgHardware, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.imgPerformance, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.imgHarddrive, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'Menubar
@@ -157,16 +157,6 @@ Partial Class Dashy
         Me.lblDashy.Size = New System.Drawing.Size(115, 46)
         Me.lblDashy.TabIndex = 0
         Me.lblDashy.Text = "Dashy"
-        '
-        'imgHarddrive
-        '
-        Me.imgHarddrive.Image = CType(resources.GetObject("imgHarddrive.Image"), System.Drawing.Image)
-        Me.imgHarddrive.Location = New System.Drawing.Point(3, 3)
-        Me.imgHarddrive.Name = "imgHarddrive"
-        Me.imgHarddrive.Size = New System.Drawing.Size(64, 64)
-        Me.imgHarddrive.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
-        Me.imgHarddrive.TabIndex = 2
-        Me.imgHarddrive.TabStop = False
         '
         'Panel1
         '
@@ -297,16 +287,6 @@ Partial Class Dashy
         Me.lblavailvirtualmem.TabIndex = 4
         Me.lblavailvirtualmem.Text = "Available virtual memory:"
         '
-        'imgPerformance
-        '
-        Me.imgPerformance.Image = CType(resources.GetObject("imgPerformance.Image"), System.Drawing.Image)
-        Me.imgPerformance.Location = New System.Drawing.Point(3, 3)
-        Me.imgPerformance.Name = "imgPerformance"
-        Me.imgPerformance.Size = New System.Drawing.Size(64, 64)
-        Me.imgPerformance.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
-        Me.imgPerformance.TabIndex = 2
-        Me.imgPerformance.TabStop = False
-        '
         'lblPerformance
         '
         Me.lblPerformance.AutoSize = True
@@ -374,16 +354,6 @@ Partial Class Dashy
         Me.lblArch.Size = New System.Drawing.Size(85, 18)
         Me.lblArch.TabIndex = 4
         Me.lblArch.Text = "Architecture:"
-        '
-        'imgHardware
-        '
-        Me.imgHardware.Image = CType(resources.GetObject("imgHardware.Image"), System.Drawing.Image)
-        Me.imgHardware.Location = New System.Drawing.Point(3, 3)
-        Me.imgHardware.Name = "imgHardware"
-        Me.imgHardware.Size = New System.Drawing.Size(64, 64)
-        Me.imgHardware.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
-        Me.imgHardware.TabIndex = 2
-        Me.imgHardware.TabStop = False
         '
         'lblHardware
         '
@@ -455,16 +425,6 @@ Partial Class Dashy
         Me.lblOperatingSystem.TabIndex = 4
         Me.lblOperatingSystem.Text = "OS:"
         '
-        'PictureBox1
-        '
-        Me.PictureBox1.Image = Global.Dashy.My.Resources.Resources._1404236744_kservices
-        Me.PictureBox1.Location = New System.Drawing.Point(3, 3)
-        Me.PictureBox1.Name = "PictureBox1"
-        Me.PictureBox1.Size = New System.Drawing.Size(64, 64)
-        Me.PictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
-        Me.PictureBox1.TabIndex = 2
-        Me.PictureBox1.TabStop = False
-        '
         'Label4
         '
         Me.Label4.AutoSize = True
@@ -481,7 +441,7 @@ Partial Class Dashy
         Me.Panel5.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
         Me.Panel5.Controls.Add(Me.Label5)
         Me.Panel5.Controls.Add(Me.Label6)
-        Me.Panel5.Controls.Add(Me.Label8)
+        Me.Panel5.Controls.Add(Me.lblNetworkConnected)
         Me.Panel5.Controls.Add(Me.PictureBox2)
         Me.Panel5.Controls.Add(Me.Label9)
         Me.Panel5.Location = New System.Drawing.Point(1044, 92)
@@ -509,25 +469,15 @@ Partial Class Dashy
         Me.Label6.TabIndex = 5
         Me.Label6.Text = "OS Version:"
         '
-        'Label8
+        'lblNetworkConnected
         '
-        Me.Label8.AutoSize = True
-        Me.Label8.Font = New System.Drawing.Font("Trebuchet MS", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label8.Location = New System.Drawing.Point(3, 79)
-        Me.Label8.Name = "Label8"
-        Me.Label8.Size = New System.Drawing.Size(29, 18)
-        Me.Label8.TabIndex = 4
-        Me.Label8.Text = "OS:"
-        '
-        'PictureBox2
-        '
-        Me.PictureBox2.Image = Global.Dashy.My.Resources.Resources._1404236744_kservices
-        Me.PictureBox2.Location = New System.Drawing.Point(3, 3)
-        Me.PictureBox2.Name = "PictureBox2"
-        Me.PictureBox2.Size = New System.Drawing.Size(64, 64)
-        Me.PictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
-        Me.PictureBox2.TabIndex = 2
-        Me.PictureBox2.TabStop = False
+        Me.lblNetworkConnected.AutoSize = True
+        Me.lblNetworkConnected.Font = New System.Drawing.Font("Trebuchet MS", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblNetworkConnected.Location = New System.Drawing.Point(3, 79)
+        Me.lblNetworkConnected.Name = "lblNetworkConnected"
+        Me.lblNetworkConnected.Size = New System.Drawing.Size(168, 18)
+        Me.lblNetworkConnected.TabIndex = 4
+        Me.lblNetworkConnected.Text = "Connected to network: N/A"
         '
         'Label9
         '
@@ -538,6 +488,59 @@ Partial Class Dashy
         Me.Label9.Size = New System.Drawing.Size(91, 27)
         Me.Label9.TabIndex = 3
         Me.Label9.Text = "Network"
+        '
+        'PictureBox2
+        '
+        Me.PictureBox2.Image = Global.Dashy.My.Resources.Resources._1404314626_Globe
+        Me.PictureBox2.Location = New System.Drawing.Point(3, 3)
+        Me.PictureBox2.Name = "PictureBox2"
+        Me.PictureBox2.Size = New System.Drawing.Size(64, 64)
+        Me.PictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
+        Me.PictureBox2.TabIndex = 2
+        Me.PictureBox2.TabStop = False
+        '
+        'PictureBox1
+        '
+        Me.PictureBox1.Image = Global.Dashy.My.Resources.Resources._1404236744_kservices
+        Me.PictureBox1.Location = New System.Drawing.Point(3, 3)
+        Me.PictureBox1.Name = "PictureBox1"
+        Me.PictureBox1.Size = New System.Drawing.Size(64, 64)
+        Me.PictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
+        Me.PictureBox1.TabIndex = 2
+        Me.PictureBox1.TabStop = False
+        '
+        'imgHardware
+        '
+        Me.imgHardware.Image = CType(resources.GetObject("imgHardware.Image"), System.Drawing.Image)
+        Me.imgHardware.Location = New System.Drawing.Point(3, 3)
+        Me.imgHardware.Name = "imgHardware"
+        Me.imgHardware.Size = New System.Drawing.Size(64, 64)
+        Me.imgHardware.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
+        Me.imgHardware.TabIndex = 2
+        Me.imgHardware.TabStop = False
+        '
+        'imgPerformance
+        '
+        Me.imgPerformance.Image = CType(resources.GetObject("imgPerformance.Image"), System.Drawing.Image)
+        Me.imgPerformance.Location = New System.Drawing.Point(3, 3)
+        Me.imgPerformance.Name = "imgPerformance"
+        Me.imgPerformance.Size = New System.Drawing.Size(64, 64)
+        Me.imgPerformance.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
+        Me.imgPerformance.TabIndex = 2
+        Me.imgPerformance.TabStop = False
+        '
+        'imgHarddrive
+        '
+        Me.imgHarddrive.Image = CType(resources.GetObject("imgHarddrive.Image"), System.Drawing.Image)
+        Me.imgHarddrive.Location = New System.Drawing.Point(3, 3)
+        Me.imgHarddrive.Name = "imgHarddrive"
+        Me.imgHarddrive.Size = New System.Drawing.Size(64, 64)
+        Me.imgHarddrive.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
+        Me.imgHarddrive.TabIndex = 2
+        Me.imgHarddrive.TabStop = False
+        '
+        'Monitor_Network
+        '
         '
         'Dashy
         '
@@ -558,21 +561,21 @@ Partial Class Dashy
         Me.Text = "Dashy"
         Me.Menubar.ResumeLayout(False)
         Me.Menubar.PerformLayout()
-        CType(Me.imgHarddrive, System.ComponentModel.ISupportInitialize).EndInit()
         Me.Panel1.ResumeLayout(False)
         Me.Panel1.PerformLayout()
         Me.Panel2.ResumeLayout(False)
         Me.Panel2.PerformLayout()
-        CType(Me.imgPerformance, System.ComponentModel.ISupportInitialize).EndInit()
         Me.Panel3.ResumeLayout(False)
         Me.Panel3.PerformLayout()
-        CType(Me.imgHardware, System.ComponentModel.ISupportInitialize).EndInit()
         Me.Panel4.ResumeLayout(False)
         Me.Panel4.PerformLayout()
-        CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.Panel5.ResumeLayout(False)
         Me.Panel5.PerformLayout()
         CType(Me.PictureBox2, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.imgHardware, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.imgPerformance, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.imgHarddrive, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -623,7 +626,7 @@ Partial Class Dashy
     Friend WithEvents Panel5 As System.Windows.Forms.Panel
     Friend WithEvents Label5 As System.Windows.Forms.Label
     Friend WithEvents Label6 As System.Windows.Forms.Label
-    Friend WithEvents Label8 As System.Windows.Forms.Label
+    Friend WithEvents lblNetworkConnected As System.Windows.Forms.Label
     Friend WithEvents PictureBox2 As System.Windows.Forms.PictureBox
     Friend WithEvents Label9 As System.Windows.Forms.Label
     Friend WithEvents Monitor_Network As System.Windows.Forms.Timer
