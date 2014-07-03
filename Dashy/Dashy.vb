@@ -14,7 +14,7 @@
     End Sub
 
     Private Sub Dashy_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-        Me.Visible = My.Settings.Dashy_UI_HideOnStartup
+        If My.Settings.Dashy_UI_HideOnStartup = True Then Me.Visible = False
         GetStaticData()
         Monitor_FileSystem.Start()
         Monitor_Performance.Start()

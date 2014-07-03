@@ -28,6 +28,9 @@ Partial Class Dashy
         Me.tsmiDashy = New System.Windows.Forms.ToolStripMenuItem()
         Me.tsmiMinimizeToTray = New System.Windows.Forms.ToolStripMenuItem()
         Me.tsmiQuit = New System.Windows.Forms.ToolStripMenuItem()
+        Me.tsmiEdit = New System.Windows.Forms.ToolStripMenuItem()
+        Me.tsmiTools = New System.Windows.Forms.ToolStripMenuItem()
+        Me.tsmiPreferences = New System.Windows.Forms.ToolStripMenuItem()
         Me.tsmiHelp = New System.Windows.Forms.ToolStripMenuItem()
         Me.tsmiDocumentation = New System.Windows.Forms.ToolStripMenuItem()
         Me.tsmiCheckForUpdates = New System.Windows.Forms.ToolStripMenuItem()
@@ -74,6 +77,7 @@ Partial Class Dashy
         Me.lblNetwork = New System.Windows.Forms.Label()
         Me.Monitor_Network = New System.Windows.Forms.Timer(Me.components)
         Me.KeyChecker = New System.Windows.Forms.Timer(Me.components)
+        Me.tsmiSeperator1 = New System.Windows.Forms.ToolStripSeparator()
         Me.Menubar.SuspendLayout()
         Me.pnlFileSystemPanel.SuspendLayout()
         CType(Me.imgHarddrive, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -89,7 +93,7 @@ Partial Class Dashy
         '
         'Menubar
         '
-        Me.Menubar.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.tsmiDashy, Me.tsmiHelp})
+        Me.Menubar.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.tsmiDashy, Me.tsmiEdit, Me.tsmiTools, Me.tsmiHelp})
         Me.Menubar.Location = New System.Drawing.Point(0, 0)
         Me.Menubar.Name = "Menubar"
         Me.Menubar.Size = New System.Drawing.Size(1348, 24)
@@ -98,7 +102,7 @@ Partial Class Dashy
         '
         'tsmiDashy
         '
-        Me.tsmiDashy.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.tsmiMinimizeToTray, Me.tsmiQuit})
+        Me.tsmiDashy.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.tsmiSeperator1, Me.tsmiMinimizeToTray, Me.tsmiQuit})
         Me.tsmiDashy.Name = "tsmiDashy"
         Me.tsmiDashy.Size = New System.Drawing.Size(51, 20)
         Me.tsmiDashy.Text = "&Dashy"
@@ -114,6 +118,25 @@ Partial Class Dashy
         Me.tsmiQuit.Name = "tsmiQuit"
         Me.tsmiQuit.Size = New System.Drawing.Size(160, 22)
         Me.tsmiQuit.Text = "&Quit Dashy"
+        '
+        'tsmiEdit
+        '
+        Me.tsmiEdit.Name = "tsmiEdit"
+        Me.tsmiEdit.Size = New System.Drawing.Size(39, 20)
+        Me.tsmiEdit.Text = "&Edit"
+        '
+        'tsmiTools
+        '
+        Me.tsmiTools.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.tsmiPreferences})
+        Me.tsmiTools.Name = "tsmiTools"
+        Me.tsmiTools.Size = New System.Drawing.Size(48, 20)
+        Me.tsmiTools.Text = "&Tools"
+        '
+        'tsmiPreferences
+        '
+        Me.tsmiPreferences.Name = "tsmiPreferences"
+        Me.tsmiPreferences.Size = New System.Drawing.Size(135, 22)
+        Me.tsmiPreferences.Text = "&Preferences"
         '
         'tsmiHelp
         '
@@ -534,6 +557,11 @@ Partial Class Dashy
         'KeyChecker
         '
         '
+        'tsmiSeperator1
+        '
+        Me.tsmiSeperator1.Name = "tsmiSeperator1"
+        Me.tsmiSeperator1.Size = New System.Drawing.Size(157, 6)
+        '
         'Dashy
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -630,5 +658,9 @@ Partial Class Dashy
     Friend WithEvents lblNetwork As System.Windows.Forms.Label
     Friend WithEvents Monitor_Network As System.Windows.Forms.Timer
     Friend WithEvents KeyChecker As System.Windows.Forms.Timer
+    Friend WithEvents tsmiEdit As System.Windows.Forms.ToolStripMenuItem
+    Friend WithEvents tsmiTools As System.Windows.Forms.ToolStripMenuItem
+    Friend WithEvents tsmiPreferences As System.Windows.Forms.ToolStripMenuItem
+    Friend WithEvents tsmiSeperator1 As System.Windows.Forms.ToolStripSeparator
 
 End Class
