@@ -65,6 +65,18 @@ Namespace My
                 Me("Dashy_SiteToPing") = value
             End Set
         End Property
+        
+        <Global.System.Configuration.UserScopedSettingAttribute(),  _
+         Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.Configuration.DefaultSettingValueAttribute("False")>  _
+        Public Property Dashy_UI_HideOnStartup() As Boolean
+            Get
+                Return CType(Me("Dashy_UI_HideOnStartup"),Boolean)
+            End Get
+            Set
+                Me("Dashy_UI_HideOnStartup") = value
+            End Set
+        End Property
     End Class
 End Namespace
 
