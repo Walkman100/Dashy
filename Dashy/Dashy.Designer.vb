@@ -26,6 +26,7 @@ Partial Class Dashy
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(Dashy))
         Me.Menubar = New System.Windows.Forms.MenuStrip()
         Me.tsmiDashy = New System.Windows.Forms.ToolStripMenuItem()
+        Me.tsmiSeperator1 = New System.Windows.Forms.ToolStripSeparator()
         Me.tsmiMinimizeToTray = New System.Windows.Forms.ToolStripMenuItem()
         Me.tsmiQuit = New System.Windows.Forms.ToolStripMenuItem()
         Me.tsmiEdit = New System.Windows.Forms.ToolStripMenuItem()
@@ -77,7 +78,6 @@ Partial Class Dashy
         Me.lblNetwork = New System.Windows.Forms.Label()
         Me.Monitor_Network = New System.Windows.Forms.Timer(Me.components)
         Me.KeyChecker = New System.Windows.Forms.Timer(Me.components)
-        Me.tsmiSeperator1 = New System.Windows.Forms.ToolStripSeparator()
         Me.Menubar.SuspendLayout()
         Me.pnlFileSystemPanel.SuspendLayout()
         CType(Me.imgHarddrive, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -106,6 +106,11 @@ Partial Class Dashy
         Me.tsmiDashy.Name = "tsmiDashy"
         Me.tsmiDashy.Size = New System.Drawing.Size(51, 20)
         Me.tsmiDashy.Text = "&Dashy"
+        '
+        'tsmiSeperator1
+        '
+        Me.tsmiSeperator1.Name = "tsmiSeperator1"
+        Me.tsmiSeperator1.Size = New System.Drawing.Size(157, 6)
         '
         'tsmiMinimizeToTray
         '
@@ -556,11 +561,6 @@ Partial Class Dashy
         '
         'KeyChecker
         '
-        '
-        'tsmiSeperator1
-        '
-        Me.tsmiSeperator1.Name = "tsmiSeperator1"
-        Me.tsmiSeperator1.Size = New System.Drawing.Size(157, 6)
         '
         'Dashy
         '

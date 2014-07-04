@@ -71,4 +71,12 @@
             End If
         End If
     End Sub
+
+    Private Sub tsmiAboutDashy_Click(sender As Object, e As EventArgs) Handles tsmiAboutDashy.Click
+        About.ShowDialog()
+    End Sub
+
+    Private Sub tsmiCheckForUpdates_Click(sender As Object, e As EventArgs) Handles tsmiCheckForUpdates.Click
+        Updates.ShowDialog()
+    End Sub
 End Class

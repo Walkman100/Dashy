@@ -77,6 +77,18 @@ Namespace My
                 Me("Dashy_UI_HideOnStartup") = value
             End Set
         End Property
+        
+        <Global.System.Configuration.UserScopedSettingAttribute(),  _
+         Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.Configuration.DefaultSettingValueAttribute("False")>  _
+        Public Property Dashy_INT_DoubleClickCopy() As Boolean
+            Get
+                Return CType(Me("Dashy_INT_DoubleClickCopy"),Boolean)
+            End Get
+            Set
+                Me("Dashy_INT_DoubleClickCopy") = value
+            End Set
+        End Property
     End Class
 End Namespace
 

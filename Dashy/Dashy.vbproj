@@ -112,6 +112,9 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
+    <EmbeddedResource Include="About.resx">
+      <DependentUpon>About.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Dashy.resx">
       <DependentUpon>Dashy.vb</DependentUpon>
     </EmbeddedResource>
@@ -120,6 +123,12 @@
       <LastGenOutput>Resources.Designer.vb</LastGenOutput>
       <CustomToolNamespace>My.Resources</CustomToolNamespace>
       <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Preferences.resx">
+      <DependentUpon>Preferences.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Updates.resx">
+      <DependentUpon>Updates.vb</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
