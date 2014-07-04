@@ -28,6 +28,7 @@
             cbListofDrivesValue.Items.Add(drive)
         Next
         lblProgramFilesDirectoryValue.Text = Environment.GetEnvironmentVariable("PROGRAMFILES")
+        lblHomePathValue.Text = Environment.GetEnvironmentVariable("HOMEPATH")
         'Performance
         lbltotalvirtualmem.Text = "Total virtual memory: " & My.Computer.Info.TotalVirtualMemory
         lbltotalphysicalmem.Text = "Total physical memory: " & My.Computer.Info.TotalPhysicalMemory

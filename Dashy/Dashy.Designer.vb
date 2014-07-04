@@ -78,6 +78,8 @@ Partial Class Dashy
         Me.lblNetwork = New System.Windows.Forms.Label()
         Me.Monitor_Network = New System.Windows.Forms.Timer(Me.components)
         Me.KeyChecker = New System.Windows.Forms.Timer(Me.components)
+        Me.lblHomePathValue = New System.Windows.Forms.Label()
+        Me.lblHomePath = New System.Windows.Forms.Label()
         Me.Menubar.SuspendLayout()
         Me.pnlFileSystemPanel.SuspendLayout()
         CType(Me.imgHarddrive, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -190,6 +192,8 @@ Partial Class Dashy
         '
         Me.pnlFileSystemPanel.BackColor = System.Drawing.SystemColors.ControlLight
         Me.pnlFileSystemPanel.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.pnlFileSystemPanel.Controls.Add(Me.lblHomePathValue)
+        Me.pnlFileSystemPanel.Controls.Add(Me.lblHomePath)
         Me.pnlFileSystemPanel.Controls.Add(Me.lblProgramFilesDirectoryValue)
         Me.pnlFileSystemPanel.Controls.Add(Me.lblProgramFilesDirectory)
         Me.pnlFileSystemPanel.Controls.Add(Me.lblNumberofDrives)
@@ -562,6 +566,26 @@ Partial Class Dashy
         'KeyChecker
         '
         '
+        'lblHomePathValue
+        '
+        Me.lblHomePathValue.AutoSize = True
+        Me.lblHomePathValue.Font = New System.Drawing.Font("Trebuchet MS", 9.75!, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblHomePathValue.Location = New System.Drawing.Point(5, 183)
+        Me.lblHomePathValue.Name = "lblHomePathValue"
+        Me.lblHomePathValue.Size = New System.Drawing.Size(31, 18)
+        Me.lblHomePathValue.TabIndex = 14
+        Me.lblHomePathValue.Text = "N/A"
+        '
+        'lblHomePath
+        '
+        Me.lblHomePath.AutoSize = True
+        Me.lblHomePath.Font = New System.Drawing.Font("Trebuchet MS", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblHomePath.Location = New System.Drawing.Point(5, 165)
+        Me.lblHomePath.Name = "lblHomePath"
+        Me.lblHomePath.Size = New System.Drawing.Size(77, 18)
+        Me.lblHomePath.TabIndex = 13
+        Me.lblHomePath.Text = "Home path:"
+        '
         'Dashy
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -662,5 +686,7 @@ Partial Class Dashy
     Friend WithEvents tsmiTools As System.Windows.Forms.ToolStripMenuItem
     Friend WithEvents tsmiPreferences As System.Windows.Forms.ToolStripMenuItem
     Friend WithEvents tsmiSeperator1 As System.Windows.Forms.ToolStripSeparator
+    Friend WithEvents lblHomePathValue As System.Windows.Forms.Label
+    Friend WithEvents lblHomePath As System.Windows.Forms.Label
 
 End Class
