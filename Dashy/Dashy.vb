@@ -27,6 +27,7 @@
         For Each drive In My.Computer.FileSystem.Drives
             cbListofDrivesValue.Items.Add(drive)
         Next
+        'Thanks to @Walkman100 for the Environment Variables code below (The next two lines of code):
         lblProgramFilesDirectoryValue.Text = Environment.GetEnvironmentVariable("PROGRAMFILES")
         lblHomePathValue.Text = Environment.GetEnvironmentVariable("HOMEPATH")
         'Performance
