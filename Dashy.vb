@@ -34,16 +34,16 @@
         Next
 
         'Performance:
-        PerformanceAvailVirtualMem.Text = "Available virtual memory: " & My.Computer.Info.AvailableVirtualMemory
-        PerformanceAvailPhysicalMem.Text = "Available physical memory: " & My.Computer.Info.AvailablePhysicalMemory
-        PerformanceTotalVirtualMem.Text = "Total virtual memory: " & My.Computer.Info.TotalVirtualMemory
-        PerformancePagefile.Text = Environment.SystemPageSize
-        PerformanceUptime.Text = Environment.TickCount / 1000 'Seconds since startup
-        PerformanceMemoryUsedByDashy.Text = Environment.WorkingSet
+        PerformanceTotalVirtualMem.Text = "Total virtual memory: " & My.Computer.Info.TotalVirtualMemory & " bytes"
+        PerformanceAvailPhysicalMem.Text = "Available physical memory: " & My.Computer.Info.AvailablePhysicalMemory & " bytes"
+        PerformanceAvailVirtualMem.Text = "Available virtual memory: " & My.Computer.Info.AvailableVirtualMemory & " bytes"
+        PerformancePagefile.Text = "Pagefile Size: " & Environment.SystemPageSize
+        PerformanceUptime.Text = "Up-time: " & Environment.TickCount / 1000 'Seconds since startup
+        PerformanceMemoryUsedByDashy.Text = "Physical memory used by Dashy: " & Environment.WorkingSet & " bytes"
         ' Clock
         PerformanceClockGMT.Text = My.Computer.Clock.GmtTime
         PerformanceClockLocal.Text = My.Computer.Clock.LocalTime
-        PerformanceClockTick.Text = My.Computer.Clock.TickCount
+        PerformanceClockTick.Text = "Millisecond count: " & My.Computer.Clock.TickCount
         ' Clipboard
         PerformanceClipboard.Text = "Clipboard Contents:"
         If My.Computer.Clipboard.ContainsAudio Then
@@ -69,46 +69,50 @@
 
         'Hardware:
         HardwareProcessorCount.Text = "Processors: " & Environment.ProcessorCount
-        HardwareTotalPhysicalMem.Text = "Total physical memory: " & My.Computer.Info.TotalPhysicalMemory
-        HardwareMouseWheel.Text = My.Computer.Mouse.WheelExists
-        HardwareScreenBounds.Text = My.Computer.Screen.Bounds.ToString
-        HardwareScreenName.Text = My.Computer.Screen.DeviceName
-        HardwareScreenPrimary.Text = My.Computer.Screen.Primary
+        HardwareTotalPhysicalMem.Text = "Total physical memory: " & My.Computer.Info.TotalPhysicalMemory & " bytes"
+        If My.Computer.Mouse.WheelExists Then
+            HardwareMouseWheel.Text = "Mouse Wheel: Exists"
+        Else
+            HardwareMouseWheel.Text = "Mouse Wheel: Doesn't exist"
+        End If
+        HardwareScreenName.Text = "Screen Device Name: " & My.Computer.Screen.DeviceName
+        HardwareScreenPrimary.Text = "Primary screen: " & My.Computer.Screen.Primary
+        HardwareScreenBounds.Text = "Screen Bounds:" & vbNewLine & My.Computer.Screen.Bounds.ToString
 
         'System:
         SystemOS.Text = "OS: " & My.Computer.Info.OSFullName
         SystemOSInfoVersion.Text = "OS Version: " & My.Computer.Info.OSVersion
-        SystemOSEnvironVersion.Text = Environment.OSVersion.ToString
-        SystemOSPlatform.Text = My.Computer.Info.OSPlatform
-        If Environment.Is64BitOperatingSystem = True Then
+        SystemOSEnvironVersion.Text = "Full OS Name: " & Environment.OSVersion.ToString
+        SystemOSPlatform.Text = "OS Platform: " & My.Computer.Info.OSPlatform
+        If Environment.Is64BitOperatingSystem Then
             SystemOSArch.Text = "OS Arch: 64-Bit"
         Else
             SystemOSArch.Text = "OS Arch: 32-Bit"
         End If
-        SystemNameEN.Text = Environment.MachineName
-        SystemNameComputer.Text = My.Computer.Name
-        SystemDomain.Text = Environment.UserDomainName
-        SystemLoggedInUser.Text = "Logged in user: " & Environment.UserName
-        SystemInteractiveMode.Text = Environment.UserInteractive
-        SystemShutdownStarted.Text = Environment.HasShutdownStarted
-        SystemDashyArch.Text = Environment.Is64BitProcess
-        SystemScrollLines.Text = My.Computer.Mouse.WheelScrollLines
-        SystemScreenBitsPerPixel.Text = My.Computer.Screen.BitsPerPixel
-        SystemWorkingArea.Text = My.Computer.Screen.WorkingArea.ToString
+        SystemNameEN.Text = "EN.MachineName: " & Environment.MachineName
+        SystemNameComputer.Text = "Computer.Name: " & My.Computer.Name
+        SystemDomain.Text = "Domain: " & Environment.UserDomainName
+        SystemLoggedInUser.Text = "Logged in user: " & Environment.UserName & My.User.Name
+        SystemInteractiveMode.Text = "Running in interactive mode: " & Environment.UserInteractive
+        SystemShutdownStarted.Text = "Shutdown started: " & Environment.HasShutdownStarted
+        If Environment.Is64BitProcess Then
+            SystemDashyArch.Text = "Process Arch: 64-Bit"
+        Else
+            SystemDashyArch.Text = "Process Arch: 32-Bit"
+        End If
+        SystemScrollLines.Text = "Lines to scroll with scroll wheel: " & My.Computer.Mouse.WheelScrollLines
+        SystemScreenBitsPerPixel.Text = "Screen Bits per pixel: " & My.Computer.Screen.BitsPerPixel
+        SystemWorkingArea.Text = "Screen working area: " & vbNewLine & My.Computer.Screen.WorkingArea.ToString
 
         'Network:
         If My.Computer.Network.IsAvailable = True Then
             NetworkIsConnected.Text = "Connected to network: Yes"
             NetworkInternetConnection.Text = "Internet connection: Checking..."
-            Try
-                My.Computer.Network.Ping(My.Settings.SiteToPing)
+            If My.Computer.Network.Ping(My.Settings.SiteToPing) = True Then
                 NetworkInternetConnection.Text = "Internet connection: Yes"
-            Catch ex As Exception
-                NetworkInternetConnection.Text = "Internet connection:" & vbNewLine & ex.ToString
-                If NetworkSplitContainer.SplitterDistance = 121 Then
-                    NetworkSplitContainer.SplitterDistance = 160
-                End If
-            End Try
+            Else
+                NetworkInternetConnection.Text = "Internet connection: No"
+            End If
         Else
             NetworkIsConnected.Text = "Connected to network: No"
             NetworkInternetConnection.Text = "Internet connection: N/A"

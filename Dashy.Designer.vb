@@ -96,9 +96,11 @@ Partial Class Dashy
         Me.NetworkSplitContainer = New System.Windows.Forms.SplitContainer()
         Me.NetworkSerialPortNamesLBL = New System.Windows.Forms.Label()
         Me.PerformanceClipboard = New System.Windows.Forms.Label()
-        Me.PerformanceClockGMT = New System.Windows.Forms.Label()
-        Me.PerformanceClockLocal = New System.Windows.Forms.Label()
         Me.PerformanceClockTick = New System.Windows.Forms.Label()
+        Me.PerformanceClockLocal = New System.Windows.Forms.Label()
+        Me.PerformanceClockLocalLBL = New System.Windows.Forms.Label()
+        Me.PerformanceClockGMT = New System.Windows.Forms.Label()
+        Me.PerformanceClockGMTLBL = New System.Windows.Forms.Label()
         Me.FileSystemPanel.SuspendLayout()
         CType(Me.FileSystemImg, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.PerformancePanel.SuspendLayout()
@@ -141,7 +143,7 @@ Partial Class Dashy
         Me.FileSystemPanel.Controls.Add(Me.FileSystemImg)
         Me.FileSystemPanel.Location = New System.Drawing.Point(12, 12)
         Me.FileSystemPanel.Name = "FileSystemPanel"
-        Me.FileSystemPanel.Size = New System.Drawing.Size(252, 443)
+        Me.FileSystemPanel.Size = New System.Drawing.Size(252, 397)
         Me.FileSystemPanel.TabIndex = 4
         '
         'FileSystemHomePath
@@ -229,9 +231,11 @@ Partial Class Dashy
         Me.PerformancePanel.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom), System.Windows.Forms.AnchorStyles)
         Me.PerformancePanel.BackColor = System.Drawing.SystemColors.ControlLight
         Me.PerformancePanel.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.PerformancePanel.Controls.Add(Me.PerformanceClockTick)
         Me.PerformancePanel.Controls.Add(Me.PerformanceClockLocal)
+        Me.PerformancePanel.Controls.Add(Me.PerformanceClockLocalLBL)
         Me.PerformancePanel.Controls.Add(Me.PerformanceClockGMT)
+        Me.PerformancePanel.Controls.Add(Me.PerformanceClockGMTLBL)
+        Me.PerformancePanel.Controls.Add(Me.PerformanceClockTick)
         Me.PerformancePanel.Controls.Add(Me.PerformanceClipboard)
         Me.PerformancePanel.Controls.Add(Me.PerformancePagefile)
         Me.PerformancePanel.Controls.Add(Me.PerformanceUptime)
@@ -243,7 +247,7 @@ Partial Class Dashy
         Me.PerformancePanel.Controls.Add(Me.PerformanceLbl)
         Me.PerformancePanel.Location = New System.Drawing.Point(270, 12)
         Me.PerformancePanel.Name = "PerformancePanel"
-        Me.PerformancePanel.Size = New System.Drawing.Size(252, 443)
+        Me.PerformancePanel.Size = New System.Drawing.Size(252, 397)
         Me.PerformancePanel.TabIndex = 5
         '
         'HardwareTotalPhysicalMem
@@ -346,7 +350,7 @@ Partial Class Dashy
         Me.HardwarePanel.Controls.Add(Me.HardwareLbl)
         Me.HardwarePanel.Location = New System.Drawing.Point(528, 12)
         Me.HardwarePanel.Name = "HardwarePanel"
-        Me.HardwarePanel.Size = New System.Drawing.Size(252, 443)
+        Me.HardwarePanel.Size = New System.Drawing.Size(252, 397)
         Me.HardwarePanel.TabIndex = 6
         '
         'HardwareProcessorCount
@@ -413,7 +417,7 @@ Partial Class Dashy
         Me.SystemPanel.Controls.Add(Me.SystemLbl)
         Me.SystemPanel.Location = New System.Drawing.Point(786, 12)
         Me.SystemPanel.Name = "SystemPanel"
-        Me.SystemPanel.Size = New System.Drawing.Size(252, 443)
+        Me.SystemPanel.Size = New System.Drawing.Size(252, 397)
         Me.SystemPanel.TabIndex = 7
         '
         'SystemLoggedInUser
@@ -432,9 +436,9 @@ Partial Class Dashy
         Me.SystemOSInfoVersion.Font = New System.Drawing.Font("Trebuchet MS", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.SystemOSInfoVersion.Location = New System.Drawing.Point(3, 97)
         Me.SystemOSInfoVersion.Name = "SystemOSInfoVersion"
-        Me.SystemOSInfoVersion.Size = New System.Drawing.Size(176, 18)
+        Me.SystemOSInfoVersion.Size = New System.Drawing.Size(148, 18)
         Me.SystemOSInfoVersion.TabIndex = 5
-        Me.SystemOSInfoVersion.Text = "Info.OS Version: Checking..."
+        Me.SystemOSInfoVersion.Text = "OS Version: Checking..."
         '
         'SystemOS
         '
@@ -475,7 +479,7 @@ Partial Class Dashy
         Me.NetworkPanel.Controls.Add(Me.NetworkSplitContainer)
         Me.NetworkPanel.Location = New System.Drawing.Point(1044, 12)
         Me.NetworkPanel.Name = "NetworkPanel"
-        Me.NetworkPanel.Size = New System.Drawing.Size(252, 443)
+        Me.NetworkPanel.Size = New System.Drawing.Size(252, 397)
         Me.NetworkPanel.TabIndex = 8
         '
         'NetworkInternetConnection
@@ -532,6 +536,7 @@ Partial Class Dashy
         '
         'FileSystemDriveListFS
         '
+        Me.FileSystemDriveListFS.ColumnWidth = 40
         Me.FileSystemDriveListFS.Dock = System.Windows.Forms.DockStyle.Fill
         Me.FileSystemDriveListFS.Font = New System.Drawing.Font("Trebuchet MS", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.FileSystemDriveListFS.FormattingEnabled = True
@@ -542,7 +547,7 @@ Partial Class Dashy
         Me.FileSystemDriveListFS.MultiColumn = True
         Me.FileSystemDriveListFS.Name = "FileSystemDriveListFS"
         Me.FileSystemDriveListFS.SelectionMode = System.Windows.Forms.SelectionMode.None
-        Me.FileSystemDriveListFS.Size = New System.Drawing.Size(230, 114)
+        Me.FileSystemDriveListFS.Size = New System.Drawing.Size(230, 68)
         Me.FileSystemDriveListFS.TabIndex = 15
         '
         'HardwareMouseWheel
@@ -559,7 +564,7 @@ Partial Class Dashy
         '
         Me.HardwareScreenBounds.AutoSize = True
         Me.HardwareScreenBounds.Font = New System.Drawing.Font("Trebuchet MS", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.HardwareScreenBounds.Location = New System.Drawing.Point(3, 124)
+        Me.HardwareScreenBounds.Location = New System.Drawing.Point(3, 160)
         Me.HardwareScreenBounds.Name = "HardwareScreenBounds"
         Me.HardwareScreenBounds.Size = New System.Drawing.Size(169, 18)
         Me.HardwareScreenBounds.TabIndex = 9
@@ -569,17 +574,17 @@ Partial Class Dashy
         '
         Me.HardwareScreenName.AutoSize = True
         Me.HardwareScreenName.Font = New System.Drawing.Font("Trebuchet MS", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.HardwareScreenName.Location = New System.Drawing.Point(3, 142)
+        Me.HardwareScreenName.Location = New System.Drawing.Point(3, 124)
         Me.HardwareScreenName.Name = "HardwareScreenName"
-        Me.HardwareScreenName.Size = New System.Drawing.Size(161, 18)
+        Me.HardwareScreenName.Size = New System.Drawing.Size(204, 18)
         Me.HardwareScreenName.TabIndex = 10
-        Me.HardwareScreenName.Text = "Screen Name: Checking..."
+        Me.HardwareScreenName.Text = "Screen Device Name: Checking..."
         '
         'HardwareScreenPrimary
         '
         Me.HardwareScreenPrimary.AutoSize = True
         Me.HardwareScreenPrimary.Font = New System.Drawing.Font("Trebuchet MS", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.HardwareScreenPrimary.Location = New System.Drawing.Point(3, 160)
+        Me.HardwareScreenPrimary.Location = New System.Drawing.Point(3, 142)
         Me.HardwareScreenPrimary.Name = "HardwareScreenPrimary"
         Me.HardwareScreenPrimary.Size = New System.Drawing.Size(172, 18)
         Me.HardwareScreenPrimary.TabIndex = 11
@@ -656,7 +661,7 @@ Partial Class Dashy
         Me.FileSystemDrivesTabControl.Location = New System.Drawing.Point(3, 289)
         Me.FileSystemDrivesTabControl.Name = "FileSystemDrivesTabControl"
         Me.FileSystemDrivesTabControl.SelectedIndex = 0
-        Me.FileSystemDrivesTabControl.Size = New System.Drawing.Size(244, 149)
+        Me.FileSystemDrivesTabControl.Size = New System.Drawing.Size(244, 103)
         Me.FileSystemDrivesTabControl.TabIndex = 22
         '
         'FileSystemDrivesTabFS
@@ -666,7 +671,7 @@ Partial Class Dashy
         Me.FileSystemDrivesTabFS.Location = New System.Drawing.Point(4, 25)
         Me.FileSystemDrivesTabFS.Name = "FileSystemDrivesTabFS"
         Me.FileSystemDrivesTabFS.Padding = New System.Windows.Forms.Padding(3)
-        Me.FileSystemDrivesTabFS.Size = New System.Drawing.Size(236, 120)
+        Me.FileSystemDrivesTabFS.Size = New System.Drawing.Size(236, 74)
         Me.FileSystemDrivesTabFS.TabIndex = 0
         Me.FileSystemDrivesTabFS.Text = "FileSystem.Drives"
         Me.FileSystemDrivesTabFS.UseVisualStyleBackColor = True
@@ -678,13 +683,14 @@ Partial Class Dashy
         Me.FileSystemDrivesTabEN.Location = New System.Drawing.Point(4, 25)
         Me.FileSystemDrivesTabEN.Name = "FileSystemDrivesTabEN"
         Me.FileSystemDrivesTabEN.Padding = New System.Windows.Forms.Padding(3)
-        Me.FileSystemDrivesTabEN.Size = New System.Drawing.Size(236, 120)
+        Me.FileSystemDrivesTabEN.Size = New System.Drawing.Size(236, 74)
         Me.FileSystemDrivesTabEN.TabIndex = 1
         Me.FileSystemDrivesTabEN.Text = "Environment.Drives"
         Me.FileSystemDrivesTabEN.UseVisualStyleBackColor = True
         '
         'FileSystemDriveListEN
         '
+        Me.FileSystemDriveListEN.ColumnWidth = 40
         Me.FileSystemDriveListEN.Dock = System.Windows.Forms.DockStyle.Fill
         Me.FileSystemDriveListEN.Font = New System.Drawing.Font("Trebuchet MS", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.FileSystemDriveListEN.FormattingEnabled = True
@@ -695,7 +701,7 @@ Partial Class Dashy
         Me.FileSystemDriveListEN.MultiColumn = True
         Me.FileSystemDriveListEN.Name = "FileSystemDriveListEN"
         Me.FileSystemDriveListEN.SelectionMode = System.Windows.Forms.SelectionMode.None
-        Me.FileSystemDriveListEN.Size = New System.Drawing.Size(230, 114)
+        Me.FileSystemDriveListEN.Size = New System.Drawing.Size(230, 68)
         Me.FileSystemDriveListEN.TabIndex = 16
         '
         'PerformanceMemoryUsedByDashy
@@ -734,9 +740,9 @@ Partial Class Dashy
         Me.SystemOSEnvironVersion.Font = New System.Drawing.Font("Trebuchet MS", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.SystemOSEnvironVersion.Location = New System.Drawing.Point(3, 115)
         Me.SystemOSEnvironVersion.Name = "SystemOSEnvironVersion"
-        Me.SystemOSEnvironVersion.Size = New System.Drawing.Size(168, 18)
+        Me.SystemOSEnvironVersion.Size = New System.Drawing.Size(162, 18)
         Me.SystemOSEnvironVersion.TabIndex = 7
-        Me.SystemOSEnvironVersion.Text = "EN.OS Version: Checking..."
+        Me.SystemOSEnvironVersion.Text = "Full OS Name: Checking..."
         '
         'SystemOSPlatform
         '
@@ -850,7 +856,7 @@ Partial Class Dashy
         Me.NetworkSerialPortNames.Location = New System.Drawing.Point(3, 24)
         Me.NetworkSerialPortNames.Name = "NetworkSerialPortNames"
         Me.NetworkSerialPortNames.SelectionMode = System.Windows.Forms.SelectionMode.None
-        Me.NetworkSerialPortNames.Size = New System.Drawing.Size(242, 286)
+        Me.NetworkSerialPortNames.Size = New System.Drawing.Size(242, 240)
         Me.NetworkSerialPortNames.TabIndex = 16
         '
         'NetworkSplitContainer
@@ -875,7 +881,7 @@ Partial Class Dashy
         Me.NetworkSplitContainer.Panel2.Controls.Add(Me.NetworkSerialPortNamesLBL)
         Me.NetworkSplitContainer.Panel2.Controls.Add(Me.NetworkSerialPortNames)
         Me.NetworkSplitContainer.Panel2MinSize = 50
-        Me.NetworkSplitContainer.Size = New System.Drawing.Size(250, 441)
+        Me.NetworkSplitContainer.Size = New System.Drawing.Size(250, 395)
         Me.NetworkSplitContainer.SplitterDistance = 121
         Me.NetworkSplitContainer.TabIndex = 18
         '
@@ -894,47 +900,67 @@ Partial Class Dashy
         '
         Me.PerformanceClipboard.AutoSize = True
         Me.PerformanceClipboard.Font = New System.Drawing.Font("Trebuchet MS", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.PerformanceClipboard.Location = New System.Drawing.Point(3, 250)
+        Me.PerformanceClipboard.Location = New System.Drawing.Point(3, 286)
         Me.PerformanceClipboard.Name = "PerformanceClipboard"
         Me.PerformanceClipboard.Size = New System.Drawing.Size(196, 18)
         Me.PerformanceClipboard.TabIndex = 10
         Me.PerformanceClipboard.Text = "Clipboard Contents: Checking..."
         '
-        'PerformanceClockGMT
-        '
-        Me.PerformanceClockGMT.AutoSize = True
-        Me.PerformanceClockGMT.Font = New System.Drawing.Font("Trebuchet MS", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.PerformanceClockGMT.Location = New System.Drawing.Point(3, 187)
-        Me.PerformanceClockGMT.Name = "PerformanceClockGMT"
-        Me.PerformanceClockGMT.Size = New System.Drawing.Size(181, 18)
-        Me.PerformanceClockGMT.TabIndex = 11
-        Me.PerformanceClockGMT.Text = "Clock GMT Time: Checking..."
-        '
-        'PerformanceClockLocal
-        '
-        Me.PerformanceClockLocal.AutoSize = True
-        Me.PerformanceClockLocal.Font = New System.Drawing.Font("Trebuchet MS", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.PerformanceClockLocal.Location = New System.Drawing.Point(3, 205)
-        Me.PerformanceClockLocal.Name = "PerformanceClockLocal"
-        Me.PerformanceClockLocal.Size = New System.Drawing.Size(184, 18)
-        Me.PerformanceClockLocal.TabIndex = 12
-        Me.PerformanceClockLocal.Text = "Clock Local Time: Checking..."
-        '
         'PerformanceClockTick
         '
         Me.PerformanceClockTick.AutoSize = True
         Me.PerformanceClockTick.Font = New System.Drawing.Font("Trebuchet MS", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.PerformanceClockTick.Location = New System.Drawing.Point(3, 223)
+        Me.PerformanceClockTick.Location = New System.Drawing.Point(3, 259)
         Me.PerformanceClockTick.Name = "PerformanceClockTick"
         Me.PerformanceClockTick.Size = New System.Drawing.Size(185, 18)
         Me.PerformanceClockTick.TabIndex = 13
         Me.PerformanceClockTick.Text = "Millisecond count: Checking..."
         '
+        'PerformanceClockLocal
+        '
+        Me.PerformanceClockLocal.AutoSize = True
+        Me.PerformanceClockLocal.Font = New System.Drawing.Font("Trebuchet MS", 9.75!, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.PerformanceClockLocal.Location = New System.Drawing.Point(3, 241)
+        Me.PerformanceClockLocal.Name = "PerformanceClockLocal"
+        Me.PerformanceClockLocal.Size = New System.Drawing.Size(76, 18)
+        Me.PerformanceClockLocal.TabIndex = 20
+        Me.PerformanceClockLocal.Text = "Checking..."
+        '
+        'PerformanceClockLocalLBL
+        '
+        Me.PerformanceClockLocalLBL.AutoSize = True
+        Me.PerformanceClockLocalLBL.Font = New System.Drawing.Font("Trebuchet MS", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.PerformanceClockLocalLBL.Location = New System.Drawing.Point(3, 223)
+        Me.PerformanceClockLocalLBL.Name = "PerformanceClockLocalLBL"
+        Me.PerformanceClockLocalLBL.Size = New System.Drawing.Size(112, 18)
+        Me.PerformanceClockLocalLBL.TabIndex = 19
+        Me.PerformanceClockLocalLBL.Text = "Clock Local Time:"
+        '
+        'PerformanceClockGMT
+        '
+        Me.PerformanceClockGMT.AutoSize = True
+        Me.PerformanceClockGMT.Font = New System.Drawing.Font("Trebuchet MS", 9.75!, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.PerformanceClockGMT.Location = New System.Drawing.Point(3, 205)
+        Me.PerformanceClockGMT.Name = "PerformanceClockGMT"
+        Me.PerformanceClockGMT.Size = New System.Drawing.Size(76, 18)
+        Me.PerformanceClockGMT.TabIndex = 18
+        Me.PerformanceClockGMT.Text = "Checking..."
+        '
+        'PerformanceClockGMTLBL
+        '
+        Me.PerformanceClockGMTLBL.AutoSize = True
+        Me.PerformanceClockGMTLBL.Font = New System.Drawing.Font("Trebuchet MS", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.PerformanceClockGMTLBL.Location = New System.Drawing.Point(3, 187)
+        Me.PerformanceClockGMTLBL.Name = "PerformanceClockGMTLBL"
+        Me.PerformanceClockGMTLBL.Size = New System.Drawing.Size(109, 18)
+        Me.PerformanceClockGMTLBL.TabIndex = 17
+        Me.PerformanceClockGMTLBL.Text = "Clock GMT Time:"
+        '
         'Dashy
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(1310, 462)
+        Me.ClientSize = New System.Drawing.Size(1310, 416)
         Me.Controls.Add(Me.NetworkPanel)
         Me.Controls.Add(Me.SystemPanel)
         Me.Controls.Add(Me.HardwarePanel)
@@ -1041,8 +1067,10 @@ Partial Class Dashy
     Friend WithEvents NetworkSplitContainer As System.Windows.Forms.SplitContainer
     Friend WithEvents NetworkSerialPortNamesLBL As System.Windows.Forms.Label
     Friend WithEvents PerformanceClockTick As System.Windows.Forms.Label
-    Friend WithEvents PerformanceClockLocal As System.Windows.Forms.Label
-    Friend WithEvents PerformanceClockGMT As System.Windows.Forms.Label
     Friend WithEvents PerformanceClipboard As System.Windows.Forms.Label
+    Friend WithEvents PerformanceClockLocal As System.Windows.Forms.Label
+    Friend WithEvents PerformanceClockLocalLBL As System.Windows.Forms.Label
+    Friend WithEvents PerformanceClockGMT As System.Windows.Forms.Label
+    Friend WithEvents PerformanceClockGMTLBL As System.Windows.Forms.Label
 
 End Class
