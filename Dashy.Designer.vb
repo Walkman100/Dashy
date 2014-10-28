@@ -26,7 +26,6 @@ Partial Class Dashy
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(Dashy))
         Me.Menubar = New System.Windows.Forms.MenuStrip()
         Me.tsmiDashy = New System.Windows.Forms.ToolStripMenuItem()
-        Me.tsmiSeperator1 = New System.Windows.Forms.ToolStripSeparator()
         Me.tsmiMinimizeToTray = New System.Windows.Forms.ToolStripMenuItem()
         Me.tsmiQuit = New System.Windows.Forms.ToolStripMenuItem()
         Me.tsmiEdit = New System.Windows.Forms.ToolStripMenuItem()
@@ -39,6 +38,8 @@ Partial Class Dashy
         Me.Statusbar = New System.Windows.Forms.StatusStrip()
         Me.lblDashy = New System.Windows.Forms.Label()
         Me.pnlFileSystemPanel = New System.Windows.Forms.Panel()
+        Me.lblHomePathValue = New System.Windows.Forms.Label()
+        Me.lblHomePath = New System.Windows.Forms.Label()
         Me.lblProgramFilesDirectoryValue = New System.Windows.Forms.Label()
         Me.lblProgramFilesDirectory = New System.Windows.Forms.Label()
         Me.lblNumberofDrives = New System.Windows.Forms.Label()
@@ -78,8 +79,6 @@ Partial Class Dashy
         Me.lblNetwork = New System.Windows.Forms.Label()
         Me.Monitor_Network = New System.Windows.Forms.Timer(Me.components)
         Me.KeyChecker = New System.Windows.Forms.Timer(Me.components)
-        Me.lblHomePathValue = New System.Windows.Forms.Label()
-        Me.lblHomePath = New System.Windows.Forms.Label()
         Me.Menubar.SuspendLayout()
         Me.pnlFileSystemPanel.SuspendLayout()
         CType(Me.imgHarddrive, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -104,45 +103,40 @@ Partial Class Dashy
         '
         'tsmiDashy
         '
-        Me.tsmiDashy.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.tsmiSeperator1, Me.tsmiMinimizeToTray, Me.tsmiQuit})
+        Me.tsmiDashy.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.tsmiMinimizeToTray, Me.tsmiQuit})
         Me.tsmiDashy.Name = "tsmiDashy"
-        Me.tsmiDashy.Size = New System.Drawing.Size(51, 20)
+        Me.tsmiDashy.Size = New System.Drawing.Size(55, 20)
         Me.tsmiDashy.Text = "&Dashy"
-        '
-        'tsmiSeperator1
-        '
-        Me.tsmiSeperator1.Name = "tsmiSeperator1"
-        Me.tsmiSeperator1.Size = New System.Drawing.Size(157, 6)
         '
         'tsmiMinimizeToTray
         '
         Me.tsmiMinimizeToTray.Name = "tsmiMinimizeToTray"
-        Me.tsmiMinimizeToTray.Size = New System.Drawing.Size(160, 22)
+        Me.tsmiMinimizeToTray.Size = New System.Drawing.Size(165, 22)
         Me.tsmiMinimizeToTray.Text = "&Minimize to tray"
         '
         'tsmiQuit
         '
         Me.tsmiQuit.Name = "tsmiQuit"
-        Me.tsmiQuit.Size = New System.Drawing.Size(160, 22)
+        Me.tsmiQuit.Size = New System.Drawing.Size(165, 22)
         Me.tsmiQuit.Text = "&Quit Dashy"
         '
         'tsmiEdit
         '
         Me.tsmiEdit.Name = "tsmiEdit"
-        Me.tsmiEdit.Size = New System.Drawing.Size(39, 20)
+        Me.tsmiEdit.Size = New System.Drawing.Size(40, 20)
         Me.tsmiEdit.Text = "&Edit"
         '
         'tsmiTools
         '
         Me.tsmiTools.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.tsmiPreferences})
         Me.tsmiTools.Name = "tsmiTools"
-        Me.tsmiTools.Size = New System.Drawing.Size(48, 20)
+        Me.tsmiTools.Size = New System.Drawing.Size(49, 20)
         Me.tsmiTools.Text = "&Tools"
         '
         'tsmiPreferences
         '
         Me.tsmiPreferences.Name = "tsmiPreferences"
-        Me.tsmiPreferences.Size = New System.Drawing.Size(135, 22)
+        Me.tsmiPreferences.Size = New System.Drawing.Size(142, 22)
         Me.tsmiPreferences.Text = "&Preferences"
         '
         'tsmiHelp
@@ -155,19 +149,19 @@ Partial Class Dashy
         'tsmiDocumentation
         '
         Me.tsmiDocumentation.Name = "tsmiDocumentation"
-        Me.tsmiDocumentation.Size = New System.Drawing.Size(170, 22)
+        Me.tsmiDocumentation.Size = New System.Drawing.Size(179, 22)
         Me.tsmiDocumentation.Text = "&Documentation"
         '
         'tsmiCheckForUpdates
         '
         Me.tsmiCheckForUpdates.Name = "tsmiCheckForUpdates"
-        Me.tsmiCheckForUpdates.Size = New System.Drawing.Size(170, 22)
+        Me.tsmiCheckForUpdates.Size = New System.Drawing.Size(179, 22)
         Me.tsmiCheckForUpdates.Text = "&Check for updates"
         '
         'tsmiAboutDashy
         '
         Me.tsmiAboutDashy.Name = "tsmiAboutDashy"
-        Me.tsmiAboutDashy.Size = New System.Drawing.Size(170, 22)
+        Me.tsmiAboutDashy.Size = New System.Drawing.Size(179, 22)
         Me.tsmiAboutDashy.Text = "&About Dashy"
         '
         'Statusbar
@@ -206,6 +200,26 @@ Partial Class Dashy
         Me.pnlFileSystemPanel.Size = New System.Drawing.Size(252, 293)
         Me.pnlFileSystemPanel.TabIndex = 4
         '
+        'lblHomePathValue
+        '
+        Me.lblHomePathValue.AutoSize = True
+        Me.lblHomePathValue.Font = New System.Drawing.Font("Trebuchet MS", 9.75!, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblHomePathValue.Location = New System.Drawing.Point(5, 183)
+        Me.lblHomePathValue.Name = "lblHomePathValue"
+        Me.lblHomePathValue.Size = New System.Drawing.Size(31, 18)
+        Me.lblHomePathValue.TabIndex = 14
+        Me.lblHomePathValue.Text = "N/A"
+        '
+        'lblHomePath
+        '
+        Me.lblHomePath.AutoSize = True
+        Me.lblHomePath.Font = New System.Drawing.Font("Trebuchet MS", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblHomePath.Location = New System.Drawing.Point(5, 165)
+        Me.lblHomePath.Name = "lblHomePath"
+        Me.lblHomePath.Size = New System.Drawing.Size(77, 18)
+        Me.lblHomePath.TabIndex = 13
+        Me.lblHomePath.Text = "Home path:"
+        '
         'lblProgramFilesDirectoryValue
         '
         Me.lblProgramFilesDirectoryValue.AutoSize = True
@@ -222,7 +236,7 @@ Partial Class Dashy
         Me.lblProgramFilesDirectory.Font = New System.Drawing.Font("Trebuchet MS", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.lblProgramFilesDirectory.Location = New System.Drawing.Point(5, 129)
         Me.lblProgramFilesDirectory.Name = "lblProgramFilesDirectory"
-        Me.lblProgramFilesDirectory.Size = New System.Drawing.Size(148, 18)
+        Me.lblProgramFilesDirectory.Size = New System.Drawing.Size(149, 18)
         Me.lblProgramFilesDirectory.TabIndex = 11
         Me.lblProgramFilesDirectory.Text = "Program Files directory:"
         '
@@ -238,6 +252,7 @@ Partial Class Dashy
         '
         'cbListofDrivesValue
         '
+        Me.cbListofDrivesValue.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
         Me.cbListofDrivesValue.FormattingEnabled = True
         Me.cbListofDrivesValue.Location = New System.Drawing.Point(100, 79)
         Me.cbListofDrivesValue.Name = "cbListofDrivesValue"
@@ -295,7 +310,7 @@ Partial Class Dashy
         Me.lbltotalphysicalmem.Font = New System.Drawing.Font("Trebuchet MS", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.lbltotalphysicalmem.Location = New System.Drawing.Point(3, 127)
         Me.lbltotalphysicalmem.Name = "lbltotalphysicalmem"
-        Me.lbltotalphysicalmem.Size = New System.Drawing.Size(142, 18)
+        Me.lbltotalphysicalmem.Size = New System.Drawing.Size(144, 18)
         Me.lbltotalphysicalmem.TabIndex = 7
         Me.lbltotalphysicalmem.Text = "Total physical memory:"
         '
@@ -305,7 +320,7 @@ Partial Class Dashy
         Me.lbltotalvirtualmem.Font = New System.Drawing.Font("Trebuchet MS", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.lbltotalvirtualmem.Location = New System.Drawing.Point(3, 111)
         Me.lbltotalvirtualmem.Name = "lbltotalvirtualmem"
-        Me.lbltotalvirtualmem.Size = New System.Drawing.Size(134, 18)
+        Me.lbltotalvirtualmem.Size = New System.Drawing.Size(136, 18)
         Me.lbltotalvirtualmem.TabIndex = 6
         Me.lbltotalvirtualmem.Text = "Total virtual memory:"
         '
@@ -315,7 +330,7 @@ Partial Class Dashy
         Me.lblavailphysicalmem.Font = New System.Drawing.Font("Trebuchet MS", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.lblavailphysicalmem.Location = New System.Drawing.Point(3, 95)
         Me.lblavailphysicalmem.Name = "lblavailphysicalmem"
-        Me.lblavailphysicalmem.Size = New System.Drawing.Size(166, 18)
+        Me.lblavailphysicalmem.Size = New System.Drawing.Size(167, 18)
         Me.lblavailphysicalmem.TabIndex = 5
         Me.lblavailphysicalmem.Text = "Available physical memory:"
         '
@@ -325,7 +340,7 @@ Partial Class Dashy
         Me.lblavailvirtualmem.Font = New System.Drawing.Font("Trebuchet MS", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.lblavailvirtualmem.Location = New System.Drawing.Point(3, 79)
         Me.lblavailvirtualmem.Name = "lblavailvirtualmem"
-        Me.lblavailvirtualmem.Size = New System.Drawing.Size(158, 18)
+        Me.lblavailvirtualmem.Size = New System.Drawing.Size(159, 18)
         Me.lblavailvirtualmem.TabIndex = 4
         Me.lblavailvirtualmem.Text = "Available virtual memory:"
         '
@@ -345,7 +360,7 @@ Partial Class Dashy
         Me.lblPerformance.Font = New System.Drawing.Font("Trebuchet MS", 15.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.lblPerformance.Location = New System.Drawing.Point(70, 18)
         Me.lblPerformance.Name = "lblPerformance"
-        Me.lblPerformance.Size = New System.Drawing.Size(130, 27)
+        Me.lblPerformance.Size = New System.Drawing.Size(131, 27)
         Me.lblPerformance.TabIndex = 3
         Me.lblPerformance.Text = "Performance"
         '
@@ -359,19 +374,19 @@ Partial Class Dashy
         'DocumentationToolStripMenuItem
         '
         Me.DocumentationToolStripMenuItem.Name = "DocumentationToolStripMenuItem"
-        Me.DocumentationToolStripMenuItem.Size = New System.Drawing.Size(170, 22)
+        Me.DocumentationToolStripMenuItem.Size = New System.Drawing.Size(179, 22)
         Me.DocumentationToolStripMenuItem.Text = "&Documentation"
         '
         'CheckForUpdatesToolStripMenuItem
         '
         Me.CheckForUpdatesToolStripMenuItem.Name = "CheckForUpdatesToolStripMenuItem"
-        Me.CheckForUpdatesToolStripMenuItem.Size = New System.Drawing.Size(170, 22)
+        Me.CheckForUpdatesToolStripMenuItem.Size = New System.Drawing.Size(179, 22)
         Me.CheckForUpdatesToolStripMenuItem.Text = "&Check for updates"
         '
         'AboutDashyToolStripMenuItem
         '
         Me.AboutDashyToolStripMenuItem.Name = "AboutDashyToolStripMenuItem"
-        Me.AboutDashyToolStripMenuItem.Size = New System.Drawing.Size(170, 22)
+        Me.AboutDashyToolStripMenuItem.Size = New System.Drawing.Size(179, 22)
         Me.AboutDashyToolStripMenuItem.Text = "&About Dashy"
         '
         'pnlHardwarePanel
@@ -393,7 +408,7 @@ Partial Class Dashy
         Me.lblProcessors.Font = New System.Drawing.Font("Trebuchet MS", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.lblProcessors.Location = New System.Drawing.Point(3, 97)
         Me.lblProcessors.Name = "lblProcessors"
-        Me.lblProcessors.Size = New System.Drawing.Size(74, 18)
+        Me.lblProcessors.Size = New System.Drawing.Size(75, 18)
         Me.lblProcessors.TabIndex = 5
         Me.lblProcessors.Text = "Processors:"
         '
@@ -439,9 +454,11 @@ Partial Class Dashy
         '
         'Monitor_Performance
         '
+        Me.Monitor_Performance.Interval = 1000
         '
         'Monitor_FileSystem
         '
+        Me.Monitor_FileSystem.Interval = 1000
         '
         'pnlSystemPanel
         '
@@ -473,7 +490,7 @@ Partial Class Dashy
         Me.lblOSVersion.Font = New System.Drawing.Font("Trebuchet MS", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.lblOSVersion.Location = New System.Drawing.Point(3, 97)
         Me.lblOSVersion.Name = "lblOSVersion"
-        Me.lblOSVersion.Size = New System.Drawing.Size(75, 18)
+        Me.lblOSVersion.Size = New System.Drawing.Size(76, 18)
         Me.lblOSVersion.TabIndex = 5
         Me.lblOSVersion.Text = "OS Version:"
         '
@@ -562,36 +579,17 @@ Partial Class Dashy
         '
         'Monitor_Network
         '
+        Me.Monitor_Network.Interval = 1000
         '
         'KeyChecker
         '
-        '
-        'lblHomePathValue
-        '
-        Me.lblHomePathValue.AutoSize = True
-        Me.lblHomePathValue.Font = New System.Drawing.Font("Trebuchet MS", 9.75!, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lblHomePathValue.Location = New System.Drawing.Point(5, 183)
-        Me.lblHomePathValue.Name = "lblHomePathValue"
-        Me.lblHomePathValue.Size = New System.Drawing.Size(31, 18)
-        Me.lblHomePathValue.TabIndex = 14
-        Me.lblHomePathValue.Text = "N/A"
-        '
-        'lblHomePath
-        '
-        Me.lblHomePath.AutoSize = True
-        Me.lblHomePath.Font = New System.Drawing.Font("Trebuchet MS", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lblHomePath.Location = New System.Drawing.Point(5, 165)
-        Me.lblHomePath.Name = "lblHomePath"
-        Me.lblHomePath.Size = New System.Drawing.Size(77, 18)
-        Me.lblHomePath.TabIndex = 13
-        Me.lblHomePath.Text = "Home path:"
+        Me.KeyChecker.Interval = 1000
         '
         'Dashy
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(1348, 414)
-        Me.ControlBox = False
         Me.Controls.Add(Me.pnlNetworkPanel)
         Me.Controls.Add(Me.pnlSystemPanel)
         Me.Controls.Add(Me.lblDescription)
@@ -601,16 +599,11 @@ Partial Class Dashy
         Me.Controls.Add(Me.lblDashy)
         Me.Controls.Add(Me.Statusbar)
         Me.Controls.Add(Me.Menubar)
-        Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None
+        Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle
         Me.MainMenuStrip = Me.Menubar
-        Me.MaximizeBox = False
-        Me.MinimizeBox = False
         Me.Name = "Dashy"
-        Me.ShowIcon = False
-        Me.ShowInTaskbar = False
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "Dashy"
-        Me.WindowState = System.Windows.Forms.FormWindowState.Maximized
         Me.Menubar.ResumeLayout(False)
         Me.Menubar.PerformLayout()
         Me.pnlFileSystemPanel.ResumeLayout(False)
@@ -685,7 +678,6 @@ Partial Class Dashy
     Friend WithEvents tsmiEdit As System.Windows.Forms.ToolStripMenuItem
     Friend WithEvents tsmiTools As System.Windows.Forms.ToolStripMenuItem
     Friend WithEvents tsmiPreferences As System.Windows.Forms.ToolStripMenuItem
-    Friend WithEvents tsmiSeperator1 As System.Windows.Forms.ToolStripSeparator
     Friend WithEvents lblHomePathValue As System.Windows.Forms.Label
     Friend WithEvents lblHomePath As System.Windows.Forms.Label
 

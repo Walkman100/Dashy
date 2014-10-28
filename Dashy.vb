@@ -1,6 +1,4 @@
-﻿'He also taught me the For and For Each statments used in the project
-'Thanks to @Walkman100 for the Environment Variables AND ALSO THE ENVIRONMENT RELATED STUFFS code
-Public Class Dashy
+﻿Public Class Dashy
 
     Private Sub QuitDashyToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles tsmiQuit.Click
         Application.Exit()
@@ -26,11 +24,9 @@ Public Class Dashy
 
     Sub GetStaticData()
         'FileSystem
-        'He also taught me the For and For Each statments used in the project
         For Each drive In My.Computer.FileSystem.Drives
             cbListofDrivesValue.Items.Add(drive)
         Next
-        'Thanks to @Walkman100 for the Environment Variables AND ALSO THE ENVIRONMENT RELATED STUFFS code below (The next two lines of code):
         lblProgramFilesDirectoryValue.Text = Environment.GetEnvironmentVariable("PROGRAMFILES")
         lblHomePathValue.Text = Environment.GetEnvironmentVariable("HOMEPATH")
         'Performance
