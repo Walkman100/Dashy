@@ -54,14 +54,14 @@ Namespace My
             End Get
         End Property
         
-        <Global.System.Configuration.UserScopedSettingAttribute(),  _
-         Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.Configuration.DefaultSettingValueAttribute("")>  _
+        <Global.System.Configuration.UserScopedSettingAttribute(), _
+         Global.System.Diagnostics.DebuggerNonUserCodeAttribute(), _
+         Global.System.Configuration.DefaultSettingValueAttribute("173.194.112.16")> _
         Public Property SiteToPing() As String
             Get
-                Return CType(Me("SiteToPing"),String)
+                Return CType(Me("SiteToPing"), String)
             End Get
-            Set
+            Set(value As String)
                 Me("SiteToPing") = value
             End Set
         End Property

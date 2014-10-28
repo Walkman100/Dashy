@@ -3,7 +3,7 @@
   <Profiles />
   <Settings>
     <Setting Name="SiteToPing" Type="System.String" Scope="User">
-      <Value Profile="(Default)" />
+      <Value Profile="(Default)">173.194.112.16</Value>
     </Setting>
   </Settings>
 </SettingsFile>
