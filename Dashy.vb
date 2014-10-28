@@ -1,29 +1,18 @@
 ﻿Public Class Dashy
 
     Private Sub Dashy_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-        ListOfAppliedVars()
-
         TimerMonitorFast.Start()
         TimerMonitorSlow_Tick(Nothing, Nothing)
         TimerMonitorSlow.Start()
     End Sub
 
     Private Sub TimerMonitorSlow_Tick(sender As Object, e As EventArgs) Handles TimerMonitorSlow.Tick
-
-    End Sub
-
-    Private Sub TimerMonitorFast_Tick(sender As Object, e As EventArgs) Handles TimerMonitorFast.Tick
-
-    End Sub
-
-    Sub ListOfAppliedVars()
         'FileSystem:
         FileSystemProgramFilesDirectory.Text = Environment.GetEnvironmentVariable("PROGRAMFILES")
         FileSystemHomePath.Text = Environment.GetEnvironmentVariable("HOMEPATH")
         FileSystemEnCurrentDir.Text = Environment.CurrentDirectory
         FileSystemFsCurrentDir.Text = My.Computer.FileSystem.CurrentDirectory
         FileSystemSysDir.Text = Environment.SystemDirectory
-        FileSystemNumberOfDrives.Text = "No. of drives: " & My.Computer.FileSystem.Drives.Count
         FileSystemDriveListFS.Items.Clear()
         For Each drive In My.Computer.FileSystem.Drives
             FileSystemDriveListFS.Items.Add(drive)
@@ -35,37 +24,7 @@
 
         'Performance:
         PerformanceTotalVirtualMem.Text = "Total virtual memory: " & (My.Computer.Info.TotalVirtualMemory * 1000 \ 1048576) / 1000 & " MB" 'My.Computer.Info.TotalVirtualMemory & " bytes"
-        PerformanceAvailPhysicalMem.Text = "Available physical memory: " & (My.Computer.Info.AvailablePhysicalMemory * 1000 \ 1048576) / 1000 & " MB" 'My.Computer.Info.AvailablePhysicalMemory & " bytes"
-        PerformanceAvailVirtualMem.Text = "Available virtual memory: " & (My.Computer.Info.AvailableVirtualMemory * 1000 \ 1048576) / 1000 & " MB" 'My.Computer.Info.AvailableVirtualMemory & " bytes"
         PerformancePagefile.Text = "Pagefile Size: " & Environment.SystemPageSize
-        PerformanceUptime.Text = "Up-time: " & Environment.TickCount 'Milliseconds since startup
-        PerformanceMemoryUsedByDashy.Text = "Physical memory used by Dashy: " & (Environment.WorkingSet * 10 \ 1048576) / 10 & " MB" 'Environment.WorkingSet & " bytes"
-        ' Clock
-        PerformanceClockGMT.Text = My.Computer.Clock.GmtTime
-        PerformanceClockLocal.Text = My.Computer.Clock.LocalTime
-        PerformanceClockTick.Text = "Millisecond count: " & My.Computer.Clock.TickCount
-        ' Clipboard
-        PerformanceClipboard.Text = "Clipboard Contents:"
-        If My.Computer.Clipboard.ContainsAudio Then
-            PerformanceClipboard.Text = PerformanceClipboard.Text & vbNewLine & " Audio: Yes"
-        Else
-            PerformanceClipboard.Text = PerformanceClipboard.Text & vbNewLine & " Audio: No"
-        End If
-        If My.Computer.Clipboard.ContainsFileDropList Then
-            PerformanceClipboard.Text = PerformanceClipboard.Text & vbNewLine & " File Drop List: Yes"
-        Else
-            PerformanceClipboard.Text = PerformanceClipboard.Text & vbNewLine & " File Drop List: No"
-        End If
-        If My.Computer.Clipboard.ContainsImage Then
-            PerformanceClipboard.Text = PerformanceClipboard.Text & vbNewLine & " Image: Yes"
-        Else
-            PerformanceClipboard.Text = PerformanceClipboard.Text & vbNewLine & " Image: No"
-        End If
-        If My.Computer.Clipboard.ContainsText Then
-            PerformanceClipboard.Text = PerformanceClipboard.Text & vbNewLine & " Text: Yes"
-        Else
-            PerformanceClipboard.Text = PerformanceClipboard.Text & vbNewLine & " Text: No"
-        End If
 
         'Hardware:
         HardwareProcessorCount.Text = "Processors: " & Environment.ProcessorCount
@@ -117,9 +76,52 @@
             NetworkIsConnected.Text = "Connected to network: No"
             NetworkInternetConnection.Text = "Internet connection: N/A"
         End If
+        NetworkSerialPortNames.Items.Clear()
         For Each PortName In My.Computer.Ports.SerialPortNames
             NetworkSerialPortNames.Items.Add(PortName)
         Next
+    End Sub
+
+    Private Sub TimerMonitorFast_Tick(sender As Object, e As EventArgs) Handles TimerMonitorFast.Tick
+        'FileSystem
+        FileSystemNumberOfDrives.Text = "No. of drives: " & My.Computer.FileSystem.Drives.Count
+
+        'Performance:
+        PerformanceAvailPhysicalMem.Text = "Available physical memory: " & (My.Computer.Info.AvailablePhysicalMemory * 1000 \ 1048576) / 1000 & " MB" 'My.Computer.Info.AvailablePhysicalMemory & " bytes"
+        PerformanceAvailVirtualMem.Text = "Available virtual memory: " & (My.Computer.Info.AvailableVirtualMemory * 1000 \ 1048576) / 1000 & " MB" 'My.Computer.Info.AvailableVirtualMemory & " bytes"
+        PerformanceUptime.Text = "Up-time: " & Environment.TickCount 'Milliseconds since startup
+        PerformanceMemoryUsedByDashy.Text = "Physical memory used by Dashy: " & (Environment.WorkingSet * 10 \ 1048576) / 10 & " MB" 'Environment.WorkingSet & " bytes"
+
+        ' Clock
+        PerformanceClockGMT.Text = My.Computer.Clock.GmtTime
+        PerformanceClockLocal.Text = My.Computer.Clock.LocalTime
+        PerformanceClockTick.Text = "Millisecond count: " & My.Computer.Clock.TickCount
+
+        ' Clipboard
+        PerformanceClipboard.Text = "Clipboard Contents:"
+        If My.Computer.Clipboard.ContainsAudio Then
+            PerformanceClipboard.Text = PerformanceClipboard.Text & vbNewLine & " Audio"
+        End If
+        If My.Computer.Clipboard.ContainsFileDropList Then
+            PerformanceClipboard.Text = PerformanceClipboard.Text & vbNewLine & " File Drop List"
+        End If
+        If My.Computer.Clipboard.ContainsImage Then
+            PerformanceClipboard.Text = PerformanceClipboard.Text & vbNewLine & " Image"
+        End If
+        If My.Computer.Clipboard.ContainsText Then
+            PerformanceClipboard.Text = PerformanceClipboard.Text & vbNewLine & " Text"
+        End If
+
+        'Network:
+        If My.Computer.Network.IsAvailable = True Then
+            If NetworkIsConnected.Text = "Connected to network: No" Then
+                NetworkInternetConnection.Text = "Internet connection: Waiting for SlowTimer..."
+            End If
+            NetworkIsConnected.Text = "Connected to network: Yes"
+        Else
+            NetworkIsConnected.Text = "Connected to network: No"
+            NetworkInternetConnection.Text = "Internet connection: N/A"
+        End If
     End Sub
 
     Private Sub Dashy_SizeChanged(sender As Object, e As EventArgs) Handles MyBase.SizeChanged

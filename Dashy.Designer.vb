@@ -532,7 +532,7 @@ Partial Class Dashy
         '
         'TimerMonitorSlow
         '
-        Me.TimerMonitorSlow.Interval = 60000
+        Me.TimerMonitorSlow.Interval = 30000
         '
         'FileSystemDriveListFS
         '
