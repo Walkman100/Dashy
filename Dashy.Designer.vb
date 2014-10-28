@@ -30,8 +30,7 @@ Partial Class Dashy
         Me.FileSystemProgramFilesDirectory = New System.Windows.Forms.Label()
         Me.FileSystemProgramFilesDirectoryLBL = New System.Windows.Forms.Label()
         Me.FileSystemNumberOfDrives = New System.Windows.Forms.Label()
-        Me.FileSystemDriveListCbx = New System.Windows.Forms.ComboBox()
-        Me.FileSystemDriveListLbl = New System.Windows.Forms.Label()
+        Me.FileSystemDriveListLBL = New System.Windows.Forms.Label()
         Me.FileSystemLbl = New System.Windows.Forms.Label()
         Me.FileSystemImg = New System.Windows.Forms.PictureBox()
         Me.PerformancePanel = New System.Windows.Forms.Panel()
@@ -64,6 +63,7 @@ Partial Class Dashy
         Me.KeyChecker = New System.Windows.Forms.Timer(Me.components)
         Me.TimerMonitorFast = New System.Windows.Forms.Timer(Me.components)
         Me.TimerMonitorSlow = New System.Windows.Forms.Timer(Me.components)
+        Me.FileSystemDriveList = New System.Windows.Forms.ListBox()
         Me.FileSystemPanel.SuspendLayout()
         CType(Me.FileSystemImg, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.PerformancePanel.SuspendLayout()
@@ -78,15 +78,16 @@ Partial Class Dashy
         '
         'FileSystemPanel
         '
+        Me.FileSystemPanel.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom), System.Windows.Forms.AnchorStyles)
         Me.FileSystemPanel.BackColor = System.Drawing.SystemColors.ControlLight
         Me.FileSystemPanel.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.FileSystemPanel.Controls.Add(Me.FileSystemDriveList)
         Me.FileSystemPanel.Controls.Add(Me.FileSystemHomePath)
         Me.FileSystemPanel.Controls.Add(Me.FileSystemHomePathLBL)
         Me.FileSystemPanel.Controls.Add(Me.FileSystemProgramFilesDirectory)
         Me.FileSystemPanel.Controls.Add(Me.FileSystemProgramFilesDirectoryLBL)
         Me.FileSystemPanel.Controls.Add(Me.FileSystemNumberOfDrives)
-        Me.FileSystemPanel.Controls.Add(Me.FileSystemDriveListCbx)
-        Me.FileSystemPanel.Controls.Add(Me.FileSystemDriveListLbl)
+        Me.FileSystemPanel.Controls.Add(Me.FileSystemDriveListLBL)
         Me.FileSystemPanel.Controls.Add(Me.FileSystemLbl)
         Me.FileSystemPanel.Controls.Add(Me.FileSystemImg)
         Me.FileSystemPanel.Location = New System.Drawing.Point(12, 12)
@@ -98,7 +99,7 @@ Partial Class Dashy
         '
         Me.FileSystemHomePath.AutoSize = True
         Me.FileSystemHomePath.Font = New System.Drawing.Font("Trebuchet MS", 9.75!, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.FileSystemHomePath.Location = New System.Drawing.Point(5, 183)
+        Me.FileSystemHomePath.Location = New System.Drawing.Point(3, 142)
         Me.FileSystemHomePath.Name = "FileSystemHomePath"
         Me.FileSystemHomePath.Size = New System.Drawing.Size(76, 18)
         Me.FileSystemHomePath.TabIndex = 14
@@ -108,7 +109,7 @@ Partial Class Dashy
         '
         Me.FileSystemHomePathLBL.AutoSize = True
         Me.FileSystemHomePathLBL.Font = New System.Drawing.Font("Trebuchet MS", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.FileSystemHomePathLBL.Location = New System.Drawing.Point(5, 165)
+        Me.FileSystemHomePathLBL.Location = New System.Drawing.Point(3, 124)
         Me.FileSystemHomePathLBL.Name = "FileSystemHomePathLBL"
         Me.FileSystemHomePathLBL.Size = New System.Drawing.Size(77, 18)
         Me.FileSystemHomePathLBL.TabIndex = 13
@@ -118,7 +119,7 @@ Partial Class Dashy
         '
         Me.FileSystemProgramFilesDirectory.AutoSize = True
         Me.FileSystemProgramFilesDirectory.Font = New System.Drawing.Font("Trebuchet MS", 9.75!, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.FileSystemProgramFilesDirectory.Location = New System.Drawing.Point(5, 147)
+        Me.FileSystemProgramFilesDirectory.Location = New System.Drawing.Point(3, 106)
         Me.FileSystemProgramFilesDirectory.Name = "FileSystemProgramFilesDirectory"
         Me.FileSystemProgramFilesDirectory.Size = New System.Drawing.Size(76, 18)
         Me.FileSystemProgramFilesDirectory.TabIndex = 12
@@ -128,7 +129,7 @@ Partial Class Dashy
         '
         Me.FileSystemProgramFilesDirectoryLBL.AutoSize = True
         Me.FileSystemProgramFilesDirectoryLBL.Font = New System.Drawing.Font("Trebuchet MS", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.FileSystemProgramFilesDirectoryLBL.Location = New System.Drawing.Point(5, 129)
+        Me.FileSystemProgramFilesDirectoryLBL.Location = New System.Drawing.Point(3, 88)
         Me.FileSystemProgramFilesDirectoryLBL.Name = "FileSystemProgramFilesDirectoryLBL"
         Me.FileSystemProgramFilesDirectoryLBL.Size = New System.Drawing.Size(149, 18)
         Me.FileSystemProgramFilesDirectoryLBL.TabIndex = 11
@@ -138,31 +139,21 @@ Partial Class Dashy
         '
         Me.FileSystemNumberOfDrives.AutoSize = True
         Me.FileSystemNumberOfDrives.Font = New System.Drawing.Font("Trebuchet MS", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.FileSystemNumberOfDrives.Location = New System.Drawing.Point(4, 111)
+        Me.FileSystemNumberOfDrives.Location = New System.Drawing.Point(3, 70)
         Me.FileSystemNumberOfDrives.Name = "FileSystemNumberOfDrives"
         Me.FileSystemNumberOfDrives.Size = New System.Drawing.Size(161, 18)
         Me.FileSystemNumberOfDrives.TabIndex = 10
         Me.FileSystemNumberOfDrives.Text = "No. of drives: Checking..."
         '
-        'FileSystemDriveListCbx
+        'FileSystemDriveListLBL
         '
-        Me.FileSystemDriveListCbx.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
-        Me.FileSystemDriveListCbx.FormattingEnabled = True
-        Me.FileSystemDriveListCbx.Items.AddRange(New Object() {"Checking..."})
-        Me.FileSystemDriveListCbx.Location = New System.Drawing.Point(100, 79)
-        Me.FileSystemDriveListCbx.Name = "FileSystemDriveListCbx"
-        Me.FileSystemDriveListCbx.Size = New System.Drawing.Size(147, 21)
-        Me.FileSystemDriveListCbx.TabIndex = 9
-        '
-        'FileSystemDriveListLbl
-        '
-        Me.FileSystemDriveListLbl.AutoSize = True
-        Me.FileSystemDriveListLbl.Font = New System.Drawing.Font("Trebuchet MS", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.FileSystemDriveListLbl.Location = New System.Drawing.Point(3, 79)
-        Me.FileSystemDriveListLbl.Name = "FileSystemDriveListLbl"
-        Me.FileSystemDriveListLbl.Size = New System.Drawing.Size(91, 18)
-        Me.FileSystemDriveListLbl.TabIndex = 8
-        Me.FileSystemDriveListLbl.Text = "List of drives:"
+        Me.FileSystemDriveListLBL.AutoSize = True
+        Me.FileSystemDriveListLBL.Font = New System.Drawing.Font("Trebuchet MS", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.FileSystemDriveListLBL.Location = New System.Drawing.Point(3, 160)
+        Me.FileSystemDriveListLBL.Name = "FileSystemDriveListLBL"
+        Me.FileSystemDriveListLBL.Size = New System.Drawing.Size(91, 18)
+        Me.FileSystemDriveListLBL.TabIndex = 8
+        Me.FileSystemDriveListLBL.Text = "List of drives:"
         '
         'FileSystemLbl
         '
@@ -186,6 +177,7 @@ Partial Class Dashy
         '
         'PerformancePanel
         '
+        Me.PerformancePanel.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom), System.Windows.Forms.AnchorStyles)
         Me.PerformancePanel.BackColor = System.Drawing.SystemColors.ControlLight
         Me.PerformancePanel.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
         Me.PerformancePanel.Controls.Add(Me.PerformanceTotalPhysicalMem)
@@ -286,6 +278,7 @@ Partial Class Dashy
         '
         'HardwarePanel
         '
+        Me.HardwarePanel.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom), System.Windows.Forms.AnchorStyles)
         Me.HardwarePanel.BackColor = System.Drawing.SystemColors.ControlLight
         Me.HardwarePanel.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
         Me.HardwarePanel.Controls.Add(Me.HardwareProcessors)
@@ -339,6 +332,7 @@ Partial Class Dashy
         '
         'SystemPanel
         '
+        Me.SystemPanel.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom), System.Windows.Forms.AnchorStyles)
         Me.SystemPanel.BackColor = System.Drawing.SystemColors.ControlLight
         Me.SystemPanel.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
         Me.SystemPanel.Controls.Add(Me.SystemLoggedInUser)
@@ -403,6 +397,7 @@ Partial Class Dashy
         '
         'NetworkPanel
         '
+        Me.NetworkPanel.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom), System.Windows.Forms.AnchorStyles)
         Me.NetworkPanel.BackColor = System.Drawing.SystemColors.ControlLight
         Me.NetworkPanel.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
         Me.NetworkPanel.Controls.Add(Me.NetworkInternetConnection)
@@ -466,6 +461,21 @@ Partial Class Dashy
         '
         Me.TimerMonitorSlow.Interval = 60000
         '
+        'FileSystemDriveList
+        '
+        Me.FileSystemDriveList.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
+            Or System.Windows.Forms.AnchorStyles.Left), System.Windows.Forms.AnchorStyles)
+        Me.FileSystemDriveList.Font = New System.Drawing.Font("Trebuchet MS", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.FileSystemDriveList.FormattingEnabled = True
+        Me.FileSystemDriveList.IntegralHeight = False
+        Me.FileSystemDriveList.ItemHeight = 16
+        Me.FileSystemDriveList.Location = New System.Drawing.Point(3, 181)
+        Me.FileSystemDriveList.MultiColumn = True
+        Me.FileSystemDriveList.Name = "FileSystemDriveList"
+        Me.FileSystemDriveList.SelectionMode = System.Windows.Forms.SelectionMode.None
+        Me.FileSystemDriveList.Size = New System.Drawing.Size(244, 107)
+        Me.FileSystemDriveList.TabIndex = 15
+        '
         'Dashy
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -476,10 +486,9 @@ Partial Class Dashy
         Me.Controls.Add(Me.HardwarePanel)
         Me.Controls.Add(Me.PerformancePanel)
         Me.Controls.Add(Me.FileSystemPanel)
-        Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle
         Me.Name = "Dashy"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
-        Me.Text = "Dashy"
+        Me.Text = "Dashy (GUI Revamped)"
         Me.FileSystemPanel.ResumeLayout(False)
         Me.FileSystemPanel.PerformLayout()
         CType(Me.FileSystemImg, System.ComponentModel.ISupportInitialize).EndInit()
@@ -516,9 +525,8 @@ Partial Class Dashy
     Friend WithEvents HardwareImg As System.Windows.Forms.PictureBox
     Friend WithEvents HardwareLbl As System.Windows.Forms.Label
     Friend WithEvents FileSystemLbl As System.Windows.Forms.Label
-    Friend WithEvents FileSystemDriveListLbl As System.Windows.Forms.Label
+    Friend WithEvents FileSystemDriveListLBL As System.Windows.Forms.Label
     Friend WithEvents FileSystemNumberOfDrives As System.Windows.Forms.Label
-    Friend WithEvents FileSystemDriveListCbx As System.Windows.Forms.ComboBox
     Friend WithEvents SystemPanel As System.Windows.Forms.Panel
     Friend WithEvents SystemOS As System.Windows.Forms.Label
     Friend WithEvents SystemImg As System.Windows.Forms.PictureBox
@@ -538,5 +546,6 @@ Partial Class Dashy
     Friend WithEvents FileSystemHomePathLBL As System.Windows.Forms.Label
     Friend WithEvents TimerMonitorFast As System.Windows.Forms.Timer
     Friend WithEvents TimerMonitorSlow As System.Windows.Forms.Timer
+    Friend WithEvents FileSystemDriveList As System.Windows.Forms.ListBox
 
 End Class
