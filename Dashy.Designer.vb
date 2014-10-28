@@ -50,8 +50,6 @@ Partial Class Dashy
         Me.HardwareArch = New System.Windows.Forms.Label()
         Me.HardwareImg = New System.Windows.Forms.PictureBox()
         Me.HardwareLbl = New System.Windows.Forms.Label()
-        Me.Monitor_Performance = New System.Windows.Forms.Timer(Me.components)
-        Me.Monitor_FileSystem = New System.Windows.Forms.Timer(Me.components)
         Me.SystemPanel = New System.Windows.Forms.Panel()
         Me.SystemLoggedInUser = New System.Windows.Forms.Label()
         Me.SystemOSVersion = New System.Windows.Forms.Label()
@@ -63,8 +61,9 @@ Partial Class Dashy
         Me.NetworkIsConnected = New System.Windows.Forms.Label()
         Me.NetworkImg = New System.Windows.Forms.PictureBox()
         Me.NetworkLbl = New System.Windows.Forms.Label()
-        Me.Monitor_Network = New System.Windows.Forms.Timer(Me.components)
         Me.KeyChecker = New System.Windows.Forms.Timer(Me.components)
+        Me.TimerMonitorFast = New System.Windows.Forms.Timer(Me.components)
+        Me.TimerMonitorSlow = New System.Windows.Forms.Timer(Me.components)
         Me.FileSystemPanel.SuspendLayout()
         CType(Me.FileSystemImg, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.PerformancePanel.SuspendLayout()
@@ -152,7 +151,7 @@ Partial Class Dashy
         Me.FileSystemDriveListCbx.Items.AddRange(New Object() {"Checking..."})
         Me.FileSystemDriveListCbx.Location = New System.Drawing.Point(100, 79)
         Me.FileSystemDriveListCbx.Name = "FileSystemDriveListCbx"
-        Me.FileSystemDriveListCbx.Size = New System.Drawing.Size(149, 21)
+        Me.FileSystemDriveListCbx.Size = New System.Drawing.Size(147, 21)
         Me.FileSystemDriveListCbx.TabIndex = 9
         '
         'FileSystemDriveListLbl
@@ -338,14 +337,6 @@ Partial Class Dashy
         Me.HardwareLbl.TabIndex = 3
         Me.HardwareLbl.Text = "Hardware"
         '
-        'Monitor_Performance
-        '
-        Me.Monitor_Performance.Interval = 1000
-        '
-        'Monitor_FileSystem
-        '
-        Me.Monitor_FileSystem.Interval = 1000
-        '
         'SystemPanel
         '
         Me.SystemPanel.BackColor = System.Drawing.SystemColors.ControlLight
@@ -463,13 +454,17 @@ Partial Class Dashy
         Me.NetworkLbl.TabIndex = 3
         Me.NetworkLbl.Text = "Network"
         '
-        'Monitor_Network
-        '
-        Me.Monitor_Network.Interval = 1000
-        '
         'KeyChecker
         '
         Me.KeyChecker.Interval = 1000
+        '
+        'TimerMonitorFast
+        '
+        Me.TimerMonitorFast.Interval = 1000
+        '
+        'TimerMonitorSlow
+        '
+        Me.TimerMonitorSlow.Interval = 60000
         '
         'Dashy
         '
@@ -520,10 +515,8 @@ Partial Class Dashy
     Friend WithEvents HardwareArch As System.Windows.Forms.Label
     Friend WithEvents HardwareImg As System.Windows.Forms.PictureBox
     Friend WithEvents HardwareLbl As System.Windows.Forms.Label
-    Friend WithEvents Monitor_Performance As System.Windows.Forms.Timer
     Friend WithEvents FileSystemLbl As System.Windows.Forms.Label
     Friend WithEvents FileSystemDriveListLbl As System.Windows.Forms.Label
-    Friend WithEvents Monitor_FileSystem As System.Windows.Forms.Timer
     Friend WithEvents FileSystemNumberOfDrives As System.Windows.Forms.Label
     Friend WithEvents FileSystemDriveListCbx As System.Windows.Forms.ComboBox
     Friend WithEvents SystemPanel As System.Windows.Forms.Panel
@@ -540,9 +533,10 @@ Partial Class Dashy
     Friend WithEvents NetworkIsConnected As System.Windows.Forms.Label
     Friend WithEvents NetworkImg As System.Windows.Forms.PictureBox
     Friend WithEvents NetworkLbl As System.Windows.Forms.Label
-    Friend WithEvents Monitor_Network As System.Windows.Forms.Timer
     Friend WithEvents KeyChecker As System.Windows.Forms.Timer
     Friend WithEvents FileSystemHomePath As System.Windows.Forms.Label
     Friend WithEvents FileSystemHomePathLBL As System.Windows.Forms.Label
+    Friend WithEvents TimerMonitorFast As System.Windows.Forms.Timer
+    Friend WithEvents TimerMonitorSlow As System.Windows.Forms.Timer
 
 End Class

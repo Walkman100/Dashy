@@ -423,16 +423,16 @@
         XJSxbYiaFkNUg6ZixPZGUibyp5taTsaiGvzfAfR/Q8TrSwU/q7IAAAAASUVORK5CYII=
 </value>
   </data>
-  <metadata name="Monitor_Performance.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>4, 3</value>
-  </metadata>
-  <metadata name="Monitor_FileSystem.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>160, 3</value>
-  </metadata>
-  <metadata name="Monitor_Network.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>307, 4</value>
-  </metadata>
   <metadata name="KeyChecker.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>439, 5</value>
+    <value>4, 5</value>
+  </metadata>
+  <metadata name="TimerMonitorFast.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>122, 5</value>
+  </metadata>
+  <metadata name="TimerMonitorSlow.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>272, 5</value>
+  </metadata>
+  <metadata name="$this.TrayHeight" type="System.Int32, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>32</value>
   </metadata>
 </root>
