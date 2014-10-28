@@ -20,9 +20,9 @@
         'FileSystem:
         FileSystemProgramFilesDirectory.Text = Environment.GetEnvironmentVariable("PROGRAMFILES")
         FileSystemHomePath.Text = Environment.GetEnvironmentVariable("HOMEPATH")
-        Me.Text = Environment.CurrentDirectory
-        Me.Text = My.Computer.FileSystem.CurrentDirectory
-        Me.Text = Environment.SystemDirectory
+        FileSystemEnCurrentDir.Text = Environment.CurrentDirectory
+        FileSystemFsCurrentDir.Text = My.Computer.FileSystem.CurrentDirectory
+        FileSystemSysDir.Text = Environment.SystemDirectory
         FileSystemNumberOfDrives.Text = "No. of drives: " & My.Computer.FileSystem.Drives.Count
         FileSystemDriveListFS.Items.Clear()
         For Each drive In My.Computer.FileSystem.Drives
@@ -37,44 +37,64 @@
         PerformanceAvailVirtualMem.Text = "Available virtual memory: " & My.Computer.Info.AvailableVirtualMemory
         PerformanceAvailPhysicalMem.Text = "Available physical memory: " & My.Computer.Info.AvailablePhysicalMemory
         PerformanceTotalVirtualMem.Text = "Total virtual memory: " & My.Computer.Info.TotalVirtualMemory
-        Me.Text = Environment.SystemPageSize
-        Me.Text = Environment.TickCount / 1000 'Seconds since startup
-        Me.Text = Environment.WorkingSet
+        PerformancePagefile.Text = Environment.SystemPageSize
+        PerformanceUptime.Text = Environment.TickCount / 1000 'Seconds since startup
+        PerformanceMemoryUsedByDashy.Text = Environment.WorkingSet
         ' Clock
-        Me.Text = My.Computer.Clock.GmtTime
-        Me.Text = My.Computer.Clock.LocalTime
-        Me.Text = My.Computer.Clock.TickCount
+        PerformanceClockGMT.Text = My.Computer.Clock.GmtTime
+        PerformanceClockLocal.Text = My.Computer.Clock.LocalTime
+        PerformanceClockTick.Text = My.Computer.Clock.TickCount
         ' Clipboard
-        'Me.Text = My.Computer.Clipboard.ContainsWhateverTheHellItDoes
-        
+        PerformanceClipboard.Text = "Clipboard Contents:"
+        If My.Computer.Clipboard.ContainsAudio Then
+            PerformanceClipboard.Text = PerformanceClipboard.Text & vbNewLine & " Audio: Yes"
+        Else
+            PerformanceClipboard.Text = PerformanceClipboard.Text & vbNewLine & " Audio: No"
+        End If
+        If My.Computer.Clipboard.ContainsFileDropList Then
+            PerformanceClipboard.Text = PerformanceClipboard.Text & vbNewLine & " File Drop List: Yes"
+        Else
+            PerformanceClipboard.Text = PerformanceClipboard.Text & vbNewLine & " File Drop List: No"
+        End If
+        If My.Computer.Clipboard.ContainsImage Then
+            PerformanceClipboard.Text = PerformanceClipboard.Text & vbNewLine & " Image: Yes"
+        Else
+            PerformanceClipboard.Text = PerformanceClipboard.Text & vbNewLine & " Image: No"
+        End If
+        If My.Computer.Clipboard.ContainsText Then
+            PerformanceClipboard.Text = PerformanceClipboard.Text & vbNewLine & " Text: Yes"
+        Else
+            PerformanceClipboard.Text = PerformanceClipboard.Text & vbNewLine & " Text: No"
+        End If
+
         'Hardware:
         HardwareProcessorCount.Text = "Processors: " & Environment.ProcessorCount
         HardwareTotalPhysicalMem.Text = "Total physical memory: " & My.Computer.Info.TotalPhysicalMemory
-        Me.Text = My.Computer.Mouse.WheelExists
-        Me.Text = My.Computer.Screen.Bounds.ToString
-        Me.Text = My.Computer.Screen.DeviceName
-        Me.Text = My.Computer.Screen.Primary
+        HardwareMouseWheel.Text = My.Computer.Mouse.WheelExists
+        HardwareScreenBounds.Text = My.Computer.Screen.Bounds.ToString
+        HardwareScreenName.Text = My.Computer.Screen.DeviceName
+        HardwareScreenPrimary.Text = My.Computer.Screen.Primary
 
         'System:
         SystemOS.Text = "OS: " & My.Computer.Info.OSFullName
         SystemOSInfoVersion.Text = "OS Version: " & My.Computer.Info.OSVersion
-        Me.Text = Environment.OSVersion.ToString
-        Me.Text = My.Computer.Info.OSPlatform
+        SystemOSEnvironVersion.Text = Environment.OSVersion.ToString
+        SystemOSPlatform.Text = My.Computer.Info.OSPlatform
         If Environment.Is64BitOperatingSystem = True Then
-            SystemOSArch.Text = "Architecture: 64-Bit"
+            SystemOSArch.Text = "OS Arch: 64-Bit"
         Else
-            SystemOSArch.Text = "Architecture: 32-Bit"
+            SystemOSArch.Text = "OS Arch: 32-Bit"
         End If
-        Me.Text = Environment.MachineName
-        Me.Text = My.Computer.Name
-        Me.Text = Environment.UserDomainName
+        SystemNameEN.Text = Environment.MachineName
+        SystemNameComputer.Text = My.Computer.Name
+        SystemDomain.Text = Environment.UserDomainName
         SystemLoggedInUser.Text = "Logged in user: " & Environment.UserName
-        Me.Text = Environment.UserInteractive
-        Me.Text = Environment.HasShutdownStarted
-        Me.Text = Environment.Is64BitProcess
-        Me.Text = My.Computer.Mouse.WheelScrollLines
-        Me.Text = My.Computer.Screen.BitsPerPixel
-        Me.Text = My.Computer.Screen.WorkingArea.ToString
+        SystemInteractiveMode.Text = Environment.UserInteractive
+        SystemShutdownStarted.Text = Environment.HasShutdownStarted
+        SystemDashyArch.Text = Environment.Is64BitProcess
+        SystemScrollLines.Text = My.Computer.Mouse.WheelScrollLines
+        SystemScreenBitsPerPixel.Text = My.Computer.Screen.BitsPerPixel
+        SystemWorkingArea.Text = My.Computer.Screen.WorkingArea.ToString
 
         'Network:
         If My.Computer.Network.IsAvailable = True Then
@@ -96,5 +116,10 @@
         For Each PortName In My.Computer.Ports.SerialPortNames
             NetworkSerialPortNames.Items.Add(PortName)
         Next
+    End Sub
+
+    Private Sub Dashy_SizeChanged(sender As Object, e As EventArgs) Handles MyBase.SizeChanged
+        FileSystemPanel.Size = New Size(PerformancePanel.Location.X - 18, FileSystemPanel.Height)
+        SystemPanel.Size = New Size(NetworkPanel.Location.X - SystemPanel.Location.X - 6, SystemPanel.Height)
     End Sub
 End Class

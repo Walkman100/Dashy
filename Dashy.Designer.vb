@@ -120,7 +120,8 @@ Partial Class Dashy
         '
         'FileSystemPanel
         '
-        Me.FileSystemPanel.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom), System.Windows.Forms.AnchorStyles)
+        Me.FileSystemPanel.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
+            Or System.Windows.Forms.AnchorStyles.Left), System.Windows.Forms.AnchorStyles)
         Me.FileSystemPanel.BackColor = System.Drawing.SystemColors.ControlLight
         Me.FileSystemPanel.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
         Me.FileSystemPanel.Controls.Add(Me.FileSystemDrivesTabControl)
@@ -467,7 +468,8 @@ Partial Class Dashy
         '
         'NetworkPanel
         '
-        Me.NetworkPanel.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom), System.Windows.Forms.AnchorStyles)
+        Me.NetworkPanel.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
+            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.NetworkPanel.BackColor = System.Drawing.SystemColors.ControlLight
         Me.NetworkPanel.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
         Me.NetworkPanel.Controls.Add(Me.NetworkSplitContainer)
