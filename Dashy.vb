@@ -34,12 +34,12 @@
         Next
 
         'Performance:
-        PerformanceTotalVirtualMem.Text = "Total virtual memory: " & My.Computer.Info.TotalVirtualMemory & " bytes"
-        PerformanceAvailPhysicalMem.Text = "Available physical memory: " & My.Computer.Info.AvailablePhysicalMemory & " bytes"
-        PerformanceAvailVirtualMem.Text = "Available virtual memory: " & My.Computer.Info.AvailableVirtualMemory & " bytes"
+        PerformanceTotalVirtualMem.Text = "Total virtual memory: " & (My.Computer.Info.TotalVirtualMemory * 1000 \ 1048576) / 1000 & " MB" 'My.Computer.Info.TotalVirtualMemory & " bytes"
+        PerformanceAvailPhysicalMem.Text = "Available physical memory: " & (My.Computer.Info.AvailablePhysicalMemory * 1000 \ 1048576) / 1000 & " MB" 'My.Computer.Info.AvailablePhysicalMemory & " bytes"
+        PerformanceAvailVirtualMem.Text = "Available virtual memory: " & (My.Computer.Info.AvailableVirtualMemory * 1000 \ 1048576) / 1000 & " MB" 'My.Computer.Info.AvailableVirtualMemory & " bytes"
         PerformancePagefile.Text = "Pagefile Size: " & Environment.SystemPageSize
-        PerformanceUptime.Text = "Up-time: " & Environment.TickCount / 1000 'Seconds since startup
-        PerformanceMemoryUsedByDashy.Text = "Physical memory used by Dashy: " & Environment.WorkingSet & " bytes"
+        PerformanceUptime.Text = "Up-time: " & Environment.TickCount 'Milliseconds since startup
+        PerformanceMemoryUsedByDashy.Text = "Physical memory used by Dashy: " & (Environment.WorkingSet * 10 \ 1048576) / 10 & " MB" 'Environment.WorkingSet & " bytes"
         ' Clock
         PerformanceClockGMT.Text = My.Computer.Clock.GmtTime
         PerformanceClockLocal.Text = My.Computer.Clock.LocalTime
@@ -69,7 +69,7 @@
 
         'Hardware:
         HardwareProcessorCount.Text = "Processors: " & Environment.ProcessorCount
-        HardwareTotalPhysicalMem.Text = "Total physical memory: " & My.Computer.Info.TotalPhysicalMemory & " bytes"
+        HardwareTotalPhysicalMem.Text = "Total physical memory: " & (My.Computer.Info.TotalPhysicalMemory * 1000 \ 1048576) / 1000 & " MB" 'My.Computer.Info.TotalPhysicalMemory & " bytes"
         If My.Computer.Mouse.WheelExists Then
             HardwareMouseWheel.Text = "Mouse Wheel: Exists"
         Else
