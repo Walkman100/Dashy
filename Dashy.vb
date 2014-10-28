@@ -1,13 +1,5 @@
 ﻿Public Class Dashy
 
-    Private Sub QuitDashyToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles tsmiQuit.Click
-        Application.Exit()
-    End Sub
-
-    Private Sub MinimizeToTrayToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles tsmiMinimizeToTray.Click
-        Me.Hide()
-    End Sub
-
     Private Sub Monitor_Performance_Tick(sender As Object, e As EventArgs) Handles Monitor_Performance.Tick
         lblavailvirtualmem.Text = "Available virtual memory: " & My.Computer.Info.AvailableVirtualMemory
         lblavailphysicalmem.Text = "Available physical memory: " & My.Computer.Info.AvailablePhysicalMemory
@@ -19,7 +11,6 @@
         Monitor_FileSystem.Start()
         Monitor_Performance.Start()
         Monitor_Network.Start()
-        KeyChecker.Start()
     End Sub
 
     Sub GetStaticData()
@@ -61,23 +52,5 @@
         Catch ex As Exception
             lblInternetConnection.Text = "Internet connection: No"
         End Try
-    End Sub
-
-    Private Sub KeyChecker_Tick(sender As Object, e As EventArgs) Handles KeyChecker.Tick
-        If My.Computer.Keyboard.CtrlKeyDown And My.Computer.Keyboard.ShiftKeyDown Then
-            If Me.Visible = True Then
-                Me.Visible = False
-            Else
-                Me.Visible = True
-            End If
-        End If
-    End Sub
-
-    Private Sub tsmiAboutDashy_Click(sender As Object, e As EventArgs) Handles tsmiAboutDashy.Click
-        About.ShowDialog()
-    End Sub
-
-    Private Sub tsmiCheckForUpdates_Click(sender As Object, e As EventArgs) Handles tsmiCheckForUpdates.Click
-        Updates.ShowDialog()
     End Sub
 End Class

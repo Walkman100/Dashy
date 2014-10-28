@@ -70,12 +70,6 @@
     <Import Include="System.Threading.Tasks" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="About.Designer.vb">
-      <DependentUpon>About.vb</DependentUpon>
-    </Compile>
-    <Compile Include="About.vb">
-      <SubType>Form</SubType>
-    </Compile>
     <Compile Include="Dashy.vb">
       <SubType>Form</SubType>
     </Compile>
@@ -98,23 +92,8 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
-    <Compile Include="Preferences.Designer.vb">
-      <DependentUpon>Preferences.vb</DependentUpon>
-    </Compile>
-    <Compile Include="Preferences.vb">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Updates.Designer.vb">
-      <DependentUpon>Updates.vb</DependentUpon>
-    </Compile>
-    <Compile Include="Updates.vb">
-      <SubType>Form</SubType>
-    </Compile>
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="About.resx">
-      <DependentUpon>About.vb</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="Dashy.resx">
       <DependentUpon>Dashy.vb</DependentUpon>
     </EmbeddedResource>
@@ -123,12 +102,6 @@
       <LastGenOutput>Resources.Designer.vb</LastGenOutput>
       <CustomToolNamespace>My.Resources</CustomToolNamespace>
       <SubType>Designer</SubType>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Preferences.resx">
-      <DependentUpon>Preferences.vb</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Updates.resx">
-      <DependentUpon>Updates.vb</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>

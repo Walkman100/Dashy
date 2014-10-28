@@ -24,19 +24,6 @@ Partial Class Dashy
     Private Sub InitializeComponent()
         Me.components = New System.ComponentModel.Container()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(Dashy))
-        Me.Menubar = New System.Windows.Forms.MenuStrip()
-        Me.tsmiDashy = New System.Windows.Forms.ToolStripMenuItem()
-        Me.tsmiMinimizeToTray = New System.Windows.Forms.ToolStripMenuItem()
-        Me.tsmiQuit = New System.Windows.Forms.ToolStripMenuItem()
-        Me.tsmiEdit = New System.Windows.Forms.ToolStripMenuItem()
-        Me.tsmiTools = New System.Windows.Forms.ToolStripMenuItem()
-        Me.tsmiPreferences = New System.Windows.Forms.ToolStripMenuItem()
-        Me.tsmiHelp = New System.Windows.Forms.ToolStripMenuItem()
-        Me.tsmiDocumentation = New System.Windows.Forms.ToolStripMenuItem()
-        Me.tsmiCheckForUpdates = New System.Windows.Forms.ToolStripMenuItem()
-        Me.tsmiAboutDashy = New System.Windows.Forms.ToolStripMenuItem()
-        Me.Statusbar = New System.Windows.Forms.StatusStrip()
-        Me.lblDashy = New System.Windows.Forms.Label()
         Me.pnlFileSystemPanel = New System.Windows.Forms.Panel()
         Me.lblHomePathValue = New System.Windows.Forms.Label()
         Me.lblHomePath = New System.Windows.Forms.Label()
@@ -63,7 +50,6 @@ Partial Class Dashy
         Me.lblArch = New System.Windows.Forms.Label()
         Me.imgHardware = New System.Windows.Forms.PictureBox()
         Me.lblHardware = New System.Windows.Forms.Label()
-        Me.lblDescription = New System.Windows.Forms.Label()
         Me.Monitor_Performance = New System.Windows.Forms.Timer(Me.components)
         Me.Monitor_FileSystem = New System.Windows.Forms.Timer(Me.components)
         Me.pnlSystemPanel = New System.Windows.Forms.Panel()
@@ -79,7 +65,6 @@ Partial Class Dashy
         Me.lblNetwork = New System.Windows.Forms.Label()
         Me.Monitor_Network = New System.Windows.Forms.Timer(Me.components)
         Me.KeyChecker = New System.Windows.Forms.Timer(Me.components)
-        Me.Menubar.SuspendLayout()
         Me.pnlFileSystemPanel.SuspendLayout()
         CType(Me.imgHarddrive, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.pnlPerformancePanel.SuspendLayout()
@@ -91,96 +76,6 @@ Partial Class Dashy
         Me.pnlNetworkPanel.SuspendLayout()
         CType(Me.imgNetwork, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
-        '
-        'Menubar
-        '
-        Me.Menubar.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.tsmiDashy, Me.tsmiEdit, Me.tsmiTools, Me.tsmiHelp})
-        Me.Menubar.Location = New System.Drawing.Point(0, 0)
-        Me.Menubar.Name = "Menubar"
-        Me.Menubar.Size = New System.Drawing.Size(1348, 24)
-        Me.Menubar.TabIndex = 0
-        Me.Menubar.Text = "MenuStrip1"
-        '
-        'tsmiDashy
-        '
-        Me.tsmiDashy.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.tsmiMinimizeToTray, Me.tsmiQuit})
-        Me.tsmiDashy.Name = "tsmiDashy"
-        Me.tsmiDashy.Size = New System.Drawing.Size(55, 20)
-        Me.tsmiDashy.Text = "&Dashy"
-        '
-        'tsmiMinimizeToTray
-        '
-        Me.tsmiMinimizeToTray.Name = "tsmiMinimizeToTray"
-        Me.tsmiMinimizeToTray.Size = New System.Drawing.Size(165, 22)
-        Me.tsmiMinimizeToTray.Text = "&Minimize to tray"
-        '
-        'tsmiQuit
-        '
-        Me.tsmiQuit.Name = "tsmiQuit"
-        Me.tsmiQuit.Size = New System.Drawing.Size(165, 22)
-        Me.tsmiQuit.Text = "&Quit Dashy"
-        '
-        'tsmiEdit
-        '
-        Me.tsmiEdit.Name = "tsmiEdit"
-        Me.tsmiEdit.Size = New System.Drawing.Size(40, 20)
-        Me.tsmiEdit.Text = "&Edit"
-        '
-        'tsmiTools
-        '
-        Me.tsmiTools.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.tsmiPreferences})
-        Me.tsmiTools.Name = "tsmiTools"
-        Me.tsmiTools.Size = New System.Drawing.Size(49, 20)
-        Me.tsmiTools.Text = "&Tools"
-        '
-        'tsmiPreferences
-        '
-        Me.tsmiPreferences.Name = "tsmiPreferences"
-        Me.tsmiPreferences.Size = New System.Drawing.Size(142, 22)
-        Me.tsmiPreferences.Text = "&Preferences"
-        '
-        'tsmiHelp
-        '
-        Me.tsmiHelp.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.tsmiDocumentation, Me.tsmiCheckForUpdates, Me.tsmiAboutDashy})
-        Me.tsmiHelp.Name = "tsmiHelp"
-        Me.tsmiHelp.Size = New System.Drawing.Size(44, 20)
-        Me.tsmiHelp.Text = "&Help"
-        '
-        'tsmiDocumentation
-        '
-        Me.tsmiDocumentation.Name = "tsmiDocumentation"
-        Me.tsmiDocumentation.Size = New System.Drawing.Size(179, 22)
-        Me.tsmiDocumentation.Text = "&Documentation"
-        '
-        'tsmiCheckForUpdates
-        '
-        Me.tsmiCheckForUpdates.Name = "tsmiCheckForUpdates"
-        Me.tsmiCheckForUpdates.Size = New System.Drawing.Size(179, 22)
-        Me.tsmiCheckForUpdates.Text = "&Check for updates"
-        '
-        'tsmiAboutDashy
-        '
-        Me.tsmiAboutDashy.Name = "tsmiAboutDashy"
-        Me.tsmiAboutDashy.Size = New System.Drawing.Size(179, 22)
-        Me.tsmiAboutDashy.Text = "&About Dashy"
-        '
-        'Statusbar
-        '
-        Me.Statusbar.Location = New System.Drawing.Point(0, 392)
-        Me.Statusbar.Name = "Statusbar"
-        Me.Statusbar.Size = New System.Drawing.Size(1348, 22)
-        Me.Statusbar.TabIndex = 1
-        Me.Statusbar.Text = "StatusStrip1"
-        '
-        'lblDashy
-        '
-        Me.lblDashy.AutoSize = True
-        Me.lblDashy.Font = New System.Drawing.Font("Trebuchet MS", 27.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lblDashy.Location = New System.Drawing.Point(12, 24)
-        Me.lblDashy.Name = "lblDashy"
-        Me.lblDashy.Size = New System.Drawing.Size(115, 46)
-        Me.lblDashy.TabIndex = 0
-        Me.lblDashy.Text = "Dashy"
         '
         'pnlFileSystemPanel
         '
@@ -442,16 +337,6 @@ Partial Class Dashy
         Me.lblHardware.TabIndex = 3
         Me.lblHardware.Text = "Hardware"
         '
-        'lblDescription
-        '
-        Me.lblDescription.AutoSize = True
-        Me.lblDescription.Font = New System.Drawing.Font("Trebuchet MS", 11.25!, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lblDescription.Location = New System.Drawing.Point(15, 66)
-        Me.lblDescription.Name = "lblDescription"
-        Me.lblDescription.Size = New System.Drawing.Size(162, 20)
-        Me.lblDescription.TabIndex = 7
-        Me.lblDescription.Text = "Monitoring everything"
-        '
         'Monitor_Performance
         '
         Me.Monitor_Performance.Interval = 1000
@@ -592,20 +477,13 @@ Partial Class Dashy
         Me.ClientSize = New System.Drawing.Size(1348, 414)
         Me.Controls.Add(Me.pnlNetworkPanel)
         Me.Controls.Add(Me.pnlSystemPanel)
-        Me.Controls.Add(Me.lblDescription)
         Me.Controls.Add(Me.pnlHardwarePanel)
         Me.Controls.Add(Me.pnlPerformancePanel)
         Me.Controls.Add(Me.pnlFileSystemPanel)
-        Me.Controls.Add(Me.lblDashy)
-        Me.Controls.Add(Me.Statusbar)
-        Me.Controls.Add(Me.Menubar)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle
-        Me.MainMenuStrip = Me.Menubar
         Me.Name = "Dashy"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "Dashy"
-        Me.Menubar.ResumeLayout(False)
-        Me.Menubar.PerformLayout()
         Me.pnlFileSystemPanel.ResumeLayout(False)
         Me.pnlFileSystemPanel.PerformLayout()
         CType(Me.imgHarddrive, System.ComponentModel.ISupportInitialize).EndInit()
@@ -622,15 +500,8 @@ Partial Class Dashy
         Me.pnlNetworkPanel.PerformLayout()
         CType(Me.imgNetwork, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
-        Me.PerformLayout()
 
     End Sub
-    Friend WithEvents Menubar As System.Windows.Forms.MenuStrip
-    Friend WithEvents Statusbar As System.Windows.Forms.StatusStrip
-    Friend WithEvents tsmiDashy As System.Windows.Forms.ToolStripMenuItem
-    Friend WithEvents tsmiMinimizeToTray As System.Windows.Forms.ToolStripMenuItem
-    Friend WithEvents tsmiQuit As System.Windows.Forms.ToolStripMenuItem
-    Friend WithEvents lblDashy As System.Windows.Forms.Label
     Friend WithEvents imgHarddrive As System.Windows.Forms.PictureBox
     Friend WithEvents pnlFileSystemPanel As System.Windows.Forms.Panel
     Friend WithEvents pnlPerformancePanel As System.Windows.Forms.Panel
@@ -648,7 +519,6 @@ Partial Class Dashy
     Friend WithEvents lblArch As System.Windows.Forms.Label
     Friend WithEvents imgHardware As System.Windows.Forms.PictureBox
     Friend WithEvents lblHardware As System.Windows.Forms.Label
-    Friend WithEvents lblDescription As System.Windows.Forms.Label
     Friend WithEvents Monitor_Performance As System.Windows.Forms.Timer
     Friend WithEvents lblFileSystem As System.Windows.Forms.Label
     Friend WithEvents lblListofDrives As System.Windows.Forms.Label
@@ -664,10 +534,6 @@ Partial Class Dashy
     Friend WithEvents lblProgramFilesDirectory As System.Windows.Forms.Label
     Friend WithEvents lblProcessors As System.Windows.Forms.Label
     Friend WithEvents lblLoggedInUser As System.Windows.Forms.Label
-    Friend WithEvents tsmiHelp As System.Windows.Forms.ToolStripMenuItem
-    Friend WithEvents tsmiDocumentation As System.Windows.Forms.ToolStripMenuItem
-    Friend WithEvents tsmiCheckForUpdates As System.Windows.Forms.ToolStripMenuItem
-    Friend WithEvents tsmiAboutDashy As System.Windows.Forms.ToolStripMenuItem
     Friend WithEvents pnlNetworkPanel As System.Windows.Forms.Panel
     Friend WithEvents lblInternetConnection As System.Windows.Forms.Label
     Friend WithEvents lblNetworkConnected As System.Windows.Forms.Label
@@ -675,9 +541,6 @@ Partial Class Dashy
     Friend WithEvents lblNetwork As System.Windows.Forms.Label
     Friend WithEvents Monitor_Network As System.Windows.Forms.Timer
     Friend WithEvents KeyChecker As System.Windows.Forms.Timer
-    Friend WithEvents tsmiEdit As System.Windows.Forms.ToolStripMenuItem
-    Friend WithEvents tsmiTools As System.Windows.Forms.ToolStripMenuItem
-    Friend WithEvents tsmiPreferences As System.Windows.Forms.ToolStripMenuItem
     Friend WithEvents lblHomePathValue As System.Windows.Forms.Label
     Friend WithEvents lblHomePath As System.Windows.Forms.Label
 
