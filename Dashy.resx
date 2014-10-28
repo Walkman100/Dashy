@@ -118,7 +118,7 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
-  <data name="imgHarddrive.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+  <data name="FileSystemImg.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAAEAAAABACAYAAACqaXHeAAAABGdBTUEAALGPC/xhBQAAGpZJREFUeF7l
         m3l4Tdf6x5W2yjWreUhMCUVVqKqppMScGJIYQiQRU5AgUY22uKo1VM0SVaGmlBhCzYkQUwhiTAQlk3lq
@@ -237,7 +237,7 @@
         22T7RO+P3r/XCtcxLfzfQQr8HzKYW7I2NLIpAAAAAElFTkSuQmCC
 </value>
   </data>
-  <data name="imgPerformance.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+  <data name="PerformanceImg.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAAEAAAABACAYAAACqaXHeAAAABGdBTUEAALGPC/xhBQAAEnRJREFUeF7l
         WgtsnNWVvil+1I41drAdy4+1xxrbssejeWg81szYGtuaseXxeP2QPZZfsmMlsfJASSwTZIgIoCZdNlZ5
@@ -321,7 +321,7 @@
         /y6FHiZ/aDOCcza44sWo9RSLDztCLfpvDOeZ/LIBJk7pAep/AcUIgoByFQMcAAAAAElFTkSuQmCC
 </value>
   </data>
-  <data name="imgHardware.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+  <data name="HardwareImg.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAAEAAAABACAYAAACqaXHeAAAABGdBTUEAALGPC/xhBQAAFqVJREFUeF7l
         mgdUFdf2xvelX5BeVbBipIhYQAUUEbGjiCX2GjuoGLvYG0ajIlYUsWM3kphYEUt8lqex+4wtlhhNbDHR

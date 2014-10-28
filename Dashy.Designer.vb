@@ -24,240 +24,241 @@ Partial Class Dashy
     Private Sub InitializeComponent()
         Me.components = New System.ComponentModel.Container()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(Dashy))
-        Me.pnlFileSystemPanel = New System.Windows.Forms.Panel()
-        Me.lblHomePathValue = New System.Windows.Forms.Label()
-        Me.lblHomePath = New System.Windows.Forms.Label()
-        Me.lblProgramFilesDirectoryValue = New System.Windows.Forms.Label()
-        Me.lblProgramFilesDirectory = New System.Windows.Forms.Label()
-        Me.lblNumberofDrives = New System.Windows.Forms.Label()
-        Me.cbListofDrivesValue = New System.Windows.Forms.ComboBox()
-        Me.lblListofDrives = New System.Windows.Forms.Label()
-        Me.lblFileSystem = New System.Windows.Forms.Label()
-        Me.imgHarddrive = New System.Windows.Forms.PictureBox()
-        Me.pnlPerformancePanel = New System.Windows.Forms.Panel()
-        Me.lbltotalphysicalmem = New System.Windows.Forms.Label()
-        Me.lbltotalvirtualmem = New System.Windows.Forms.Label()
-        Me.lblavailphysicalmem = New System.Windows.Forms.Label()
-        Me.lblavailvirtualmem = New System.Windows.Forms.Label()
-        Me.imgPerformance = New System.Windows.Forms.PictureBox()
-        Me.lblPerformance = New System.Windows.Forms.Label()
+        Me.FileSystemPanel = New System.Windows.Forms.Panel()
+        Me.FileSystemHomePath = New System.Windows.Forms.Label()
+        Me.FileSystemHomePathLBL = New System.Windows.Forms.Label()
+        Me.FileSystemProgramFilesDirectory = New System.Windows.Forms.Label()
+        Me.FileSystemProgramFilesDirectoryLBL = New System.Windows.Forms.Label()
+        Me.FileSystemNumberOfDrives = New System.Windows.Forms.Label()
+        Me.FileSystemDriveListCbx = New System.Windows.Forms.ComboBox()
+        Me.FileSystemDriveListLbl = New System.Windows.Forms.Label()
+        Me.FileSystemLbl = New System.Windows.Forms.Label()
+        Me.FileSystemImg = New System.Windows.Forms.PictureBox()
+        Me.PerformancePanel = New System.Windows.Forms.Panel()
+        Me.PerformanceTotalPhysicalMem = New System.Windows.Forms.Label()
+        Me.PerformanceTotalVirtualMem = New System.Windows.Forms.Label()
+        Me.PerformanceAvailPhysicalMem = New System.Windows.Forms.Label()
+        Me.PerformanceAvailVirtualMem = New System.Windows.Forms.Label()
+        Me.PerformanceImg = New System.Windows.Forms.PictureBox()
+        Me.PerformanceLbl = New System.Windows.Forms.Label()
         Me.HelpToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.DocumentationToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.CheckForUpdatesToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.AboutDashyToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.pnlHardwarePanel = New System.Windows.Forms.Panel()
-        Me.lblProcessors = New System.Windows.Forms.Label()
-        Me.lblArch = New System.Windows.Forms.Label()
-        Me.imgHardware = New System.Windows.Forms.PictureBox()
-        Me.lblHardware = New System.Windows.Forms.Label()
+        Me.HardwarePanel = New System.Windows.Forms.Panel()
+        Me.HardwareProcessors = New System.Windows.Forms.Label()
+        Me.HardwareArch = New System.Windows.Forms.Label()
+        Me.HardwareImg = New System.Windows.Forms.PictureBox()
+        Me.HardwareLbl = New System.Windows.Forms.Label()
         Me.Monitor_Performance = New System.Windows.Forms.Timer(Me.components)
         Me.Monitor_FileSystem = New System.Windows.Forms.Timer(Me.components)
-        Me.pnlSystemPanel = New System.Windows.Forms.Panel()
-        Me.lblLoggedInUser = New System.Windows.Forms.Label()
-        Me.lblOSVersion = New System.Windows.Forms.Label()
-        Me.lblOperatingSystem = New System.Windows.Forms.Label()
-        Me.imgSystem = New System.Windows.Forms.PictureBox()
-        Me.lblSystem = New System.Windows.Forms.Label()
-        Me.pnlNetworkPanel = New System.Windows.Forms.Panel()
-        Me.lblInternetConnection = New System.Windows.Forms.Label()
-        Me.lblNetworkConnected = New System.Windows.Forms.Label()
-        Me.imgNetwork = New System.Windows.Forms.PictureBox()
-        Me.lblNetwork = New System.Windows.Forms.Label()
+        Me.SystemPanel = New System.Windows.Forms.Panel()
+        Me.SystemLoggedInUser = New System.Windows.Forms.Label()
+        Me.SystemOSVersion = New System.Windows.Forms.Label()
+        Me.SystemOS = New System.Windows.Forms.Label()
+        Me.SystemImg = New System.Windows.Forms.PictureBox()
+        Me.SystemLbl = New System.Windows.Forms.Label()
+        Me.NetworkPanel = New System.Windows.Forms.Panel()
+        Me.NetworkInternetConnection = New System.Windows.Forms.Label()
+        Me.NetworkIsConnected = New System.Windows.Forms.Label()
+        Me.NetworkImg = New System.Windows.Forms.PictureBox()
+        Me.NetworkLbl = New System.Windows.Forms.Label()
         Me.Monitor_Network = New System.Windows.Forms.Timer(Me.components)
         Me.KeyChecker = New System.Windows.Forms.Timer(Me.components)
-        Me.pnlFileSystemPanel.SuspendLayout()
-        CType(Me.imgHarddrive, System.ComponentModel.ISupportInitialize).BeginInit()
-        Me.pnlPerformancePanel.SuspendLayout()
-        CType(Me.imgPerformance, System.ComponentModel.ISupportInitialize).BeginInit()
-        Me.pnlHardwarePanel.SuspendLayout()
-        CType(Me.imgHardware, System.ComponentModel.ISupportInitialize).BeginInit()
-        Me.pnlSystemPanel.SuspendLayout()
-        CType(Me.imgSystem, System.ComponentModel.ISupportInitialize).BeginInit()
-        Me.pnlNetworkPanel.SuspendLayout()
-        CType(Me.imgNetwork, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.FileSystemPanel.SuspendLayout()
+        CType(Me.FileSystemImg, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.PerformancePanel.SuspendLayout()
+        CType(Me.PerformanceImg, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.HardwarePanel.SuspendLayout()
+        CType(Me.HardwareImg, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.SystemPanel.SuspendLayout()
+        CType(Me.SystemImg, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.NetworkPanel.SuspendLayout()
+        CType(Me.NetworkImg, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
-        'pnlFileSystemPanel
+        'FileSystemPanel
         '
-        Me.pnlFileSystemPanel.BackColor = System.Drawing.SystemColors.ControlLight
-        Me.pnlFileSystemPanel.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.pnlFileSystemPanel.Controls.Add(Me.lblHomePathValue)
-        Me.pnlFileSystemPanel.Controls.Add(Me.lblHomePath)
-        Me.pnlFileSystemPanel.Controls.Add(Me.lblProgramFilesDirectoryValue)
-        Me.pnlFileSystemPanel.Controls.Add(Me.lblProgramFilesDirectory)
-        Me.pnlFileSystemPanel.Controls.Add(Me.lblNumberofDrives)
-        Me.pnlFileSystemPanel.Controls.Add(Me.cbListofDrivesValue)
-        Me.pnlFileSystemPanel.Controls.Add(Me.lblListofDrives)
-        Me.pnlFileSystemPanel.Controls.Add(Me.lblFileSystem)
-        Me.pnlFileSystemPanel.Controls.Add(Me.imgHarddrive)
-        Me.pnlFileSystemPanel.Location = New System.Drawing.Point(12, 92)
-        Me.pnlFileSystemPanel.Name = "pnlFileSystemPanel"
-        Me.pnlFileSystemPanel.Size = New System.Drawing.Size(252, 293)
-        Me.pnlFileSystemPanel.TabIndex = 4
+        Me.FileSystemPanel.BackColor = System.Drawing.SystemColors.ControlLight
+        Me.FileSystemPanel.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.FileSystemPanel.Controls.Add(Me.FileSystemHomePath)
+        Me.FileSystemPanel.Controls.Add(Me.FileSystemHomePathLBL)
+        Me.FileSystemPanel.Controls.Add(Me.FileSystemProgramFilesDirectory)
+        Me.FileSystemPanel.Controls.Add(Me.FileSystemProgramFilesDirectoryLBL)
+        Me.FileSystemPanel.Controls.Add(Me.FileSystemNumberOfDrives)
+        Me.FileSystemPanel.Controls.Add(Me.FileSystemDriveListCbx)
+        Me.FileSystemPanel.Controls.Add(Me.FileSystemDriveListLbl)
+        Me.FileSystemPanel.Controls.Add(Me.FileSystemLbl)
+        Me.FileSystemPanel.Controls.Add(Me.FileSystemImg)
+        Me.FileSystemPanel.Location = New System.Drawing.Point(12, 12)
+        Me.FileSystemPanel.Name = "FileSystemPanel"
+        Me.FileSystemPanel.Size = New System.Drawing.Size(252, 293)
+        Me.FileSystemPanel.TabIndex = 4
         '
-        'lblHomePathValue
+        'FileSystemHomePath
         '
-        Me.lblHomePathValue.AutoSize = True
-        Me.lblHomePathValue.Font = New System.Drawing.Font("Trebuchet MS", 9.75!, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lblHomePathValue.Location = New System.Drawing.Point(5, 183)
-        Me.lblHomePathValue.Name = "lblHomePathValue"
-        Me.lblHomePathValue.Size = New System.Drawing.Size(31, 18)
-        Me.lblHomePathValue.TabIndex = 14
-        Me.lblHomePathValue.Text = "N/A"
+        Me.FileSystemHomePath.AutoSize = True
+        Me.FileSystemHomePath.Font = New System.Drawing.Font("Trebuchet MS", 9.75!, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.FileSystemHomePath.Location = New System.Drawing.Point(5, 183)
+        Me.FileSystemHomePath.Name = "FileSystemHomePath"
+        Me.FileSystemHomePath.Size = New System.Drawing.Size(76, 18)
+        Me.FileSystemHomePath.TabIndex = 14
+        Me.FileSystemHomePath.Text = "Checking..."
         '
-        'lblHomePath
+        'FileSystemHomePathLBL
         '
-        Me.lblHomePath.AutoSize = True
-        Me.lblHomePath.Font = New System.Drawing.Font("Trebuchet MS", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lblHomePath.Location = New System.Drawing.Point(5, 165)
-        Me.lblHomePath.Name = "lblHomePath"
-        Me.lblHomePath.Size = New System.Drawing.Size(77, 18)
-        Me.lblHomePath.TabIndex = 13
-        Me.lblHomePath.Text = "Home path:"
+        Me.FileSystemHomePathLBL.AutoSize = True
+        Me.FileSystemHomePathLBL.Font = New System.Drawing.Font("Trebuchet MS", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.FileSystemHomePathLBL.Location = New System.Drawing.Point(5, 165)
+        Me.FileSystemHomePathLBL.Name = "FileSystemHomePathLBL"
+        Me.FileSystemHomePathLBL.Size = New System.Drawing.Size(77, 18)
+        Me.FileSystemHomePathLBL.TabIndex = 13
+        Me.FileSystemHomePathLBL.Text = "Home path:"
         '
-        'lblProgramFilesDirectoryValue
+        'FileSystemProgramFilesDirectory
         '
-        Me.lblProgramFilesDirectoryValue.AutoSize = True
-        Me.lblProgramFilesDirectoryValue.Font = New System.Drawing.Font("Trebuchet MS", 9.75!, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lblProgramFilesDirectoryValue.Location = New System.Drawing.Point(5, 147)
-        Me.lblProgramFilesDirectoryValue.Name = "lblProgramFilesDirectoryValue"
-        Me.lblProgramFilesDirectoryValue.Size = New System.Drawing.Size(31, 18)
-        Me.lblProgramFilesDirectoryValue.TabIndex = 12
-        Me.lblProgramFilesDirectoryValue.Text = "N/A"
+        Me.FileSystemProgramFilesDirectory.AutoSize = True
+        Me.FileSystemProgramFilesDirectory.Font = New System.Drawing.Font("Trebuchet MS", 9.75!, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.FileSystemProgramFilesDirectory.Location = New System.Drawing.Point(5, 147)
+        Me.FileSystemProgramFilesDirectory.Name = "FileSystemProgramFilesDirectory"
+        Me.FileSystemProgramFilesDirectory.Size = New System.Drawing.Size(76, 18)
+        Me.FileSystemProgramFilesDirectory.TabIndex = 12
+        Me.FileSystemProgramFilesDirectory.Text = "Checking..."
         '
-        'lblProgramFilesDirectory
+        'FileSystemProgramFilesDirectoryLBL
         '
-        Me.lblProgramFilesDirectory.AutoSize = True
-        Me.lblProgramFilesDirectory.Font = New System.Drawing.Font("Trebuchet MS", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lblProgramFilesDirectory.Location = New System.Drawing.Point(5, 129)
-        Me.lblProgramFilesDirectory.Name = "lblProgramFilesDirectory"
-        Me.lblProgramFilesDirectory.Size = New System.Drawing.Size(149, 18)
-        Me.lblProgramFilesDirectory.TabIndex = 11
-        Me.lblProgramFilesDirectory.Text = "Program Files directory:"
+        Me.FileSystemProgramFilesDirectoryLBL.AutoSize = True
+        Me.FileSystemProgramFilesDirectoryLBL.Font = New System.Drawing.Font("Trebuchet MS", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.FileSystemProgramFilesDirectoryLBL.Location = New System.Drawing.Point(5, 129)
+        Me.FileSystemProgramFilesDirectoryLBL.Name = "FileSystemProgramFilesDirectoryLBL"
+        Me.FileSystemProgramFilesDirectoryLBL.Size = New System.Drawing.Size(149, 18)
+        Me.FileSystemProgramFilesDirectoryLBL.TabIndex = 11
+        Me.FileSystemProgramFilesDirectoryLBL.Text = "Program Files directory:"
         '
-        'lblNumberofDrives
+        'FileSystemNumberOfDrives
         '
-        Me.lblNumberofDrives.AutoSize = True
-        Me.lblNumberofDrives.Font = New System.Drawing.Font("Trebuchet MS", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lblNumberofDrives.Location = New System.Drawing.Point(4, 111)
-        Me.lblNumberofDrives.Name = "lblNumberofDrives"
-        Me.lblNumberofDrives.Size = New System.Drawing.Size(89, 18)
-        Me.lblNumberofDrives.TabIndex = 10
-        Me.lblNumberofDrives.Text = "No. of drives:"
+        Me.FileSystemNumberOfDrives.AutoSize = True
+        Me.FileSystemNumberOfDrives.Font = New System.Drawing.Font("Trebuchet MS", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.FileSystemNumberOfDrives.Location = New System.Drawing.Point(4, 111)
+        Me.FileSystemNumberOfDrives.Name = "FileSystemNumberOfDrives"
+        Me.FileSystemNumberOfDrives.Size = New System.Drawing.Size(161, 18)
+        Me.FileSystemNumberOfDrives.TabIndex = 10
+        Me.FileSystemNumberOfDrives.Text = "No. of drives: Checking..."
         '
-        'cbListofDrivesValue
+        'FileSystemDriveListCbx
         '
-        Me.cbListofDrivesValue.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
-        Me.cbListofDrivesValue.FormattingEnabled = True
-        Me.cbListofDrivesValue.Location = New System.Drawing.Point(100, 79)
-        Me.cbListofDrivesValue.Name = "cbListofDrivesValue"
-        Me.cbListofDrivesValue.Size = New System.Drawing.Size(149, 21)
-        Me.cbListofDrivesValue.TabIndex = 9
+        Me.FileSystemDriveListCbx.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
+        Me.FileSystemDriveListCbx.FormattingEnabled = True
+        Me.FileSystemDriveListCbx.Items.AddRange(New Object() {"Checking..."})
+        Me.FileSystemDriveListCbx.Location = New System.Drawing.Point(100, 79)
+        Me.FileSystemDriveListCbx.Name = "FileSystemDriveListCbx"
+        Me.FileSystemDriveListCbx.Size = New System.Drawing.Size(149, 21)
+        Me.FileSystemDriveListCbx.TabIndex = 9
         '
-        'lblListofDrives
+        'FileSystemDriveListLbl
         '
-        Me.lblListofDrives.AutoSize = True
-        Me.lblListofDrives.Font = New System.Drawing.Font("Trebuchet MS", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lblListofDrives.Location = New System.Drawing.Point(3, 79)
-        Me.lblListofDrives.Name = "lblListofDrives"
-        Me.lblListofDrives.Size = New System.Drawing.Size(91, 18)
-        Me.lblListofDrives.TabIndex = 8
-        Me.lblListofDrives.Text = "List of drives:"
+        Me.FileSystemDriveListLbl.AutoSize = True
+        Me.FileSystemDriveListLbl.Font = New System.Drawing.Font("Trebuchet MS", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.FileSystemDriveListLbl.Location = New System.Drawing.Point(3, 79)
+        Me.FileSystemDriveListLbl.Name = "FileSystemDriveListLbl"
+        Me.FileSystemDriveListLbl.Size = New System.Drawing.Size(91, 18)
+        Me.FileSystemDriveListLbl.TabIndex = 8
+        Me.FileSystemDriveListLbl.Text = "List of drives:"
         '
-        'lblFileSystem
+        'FileSystemLbl
         '
-        Me.lblFileSystem.AutoSize = True
-        Me.lblFileSystem.Font = New System.Drawing.Font("Trebuchet MS", 15.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lblFileSystem.Location = New System.Drawing.Point(70, 18)
-        Me.lblFileSystem.Name = "lblFileSystem"
-        Me.lblFileSystem.Size = New System.Drawing.Size(110, 27)
-        Me.lblFileSystem.TabIndex = 8
-        Me.lblFileSystem.Text = "FileSystem"
+        Me.FileSystemLbl.AutoSize = True
+        Me.FileSystemLbl.Font = New System.Drawing.Font("Trebuchet MS", 15.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.FileSystemLbl.Location = New System.Drawing.Point(70, 18)
+        Me.FileSystemLbl.Name = "FileSystemLbl"
+        Me.FileSystemLbl.Size = New System.Drawing.Size(110, 27)
+        Me.FileSystemLbl.TabIndex = 8
+        Me.FileSystemLbl.Text = "FileSystem"
         '
-        'imgHarddrive
+        'FileSystemImg
         '
-        Me.imgHarddrive.Image = CType(resources.GetObject("imgHarddrive.Image"), System.Drawing.Image)
-        Me.imgHarddrive.Location = New System.Drawing.Point(3, 3)
-        Me.imgHarddrive.Name = "imgHarddrive"
-        Me.imgHarddrive.Size = New System.Drawing.Size(64, 64)
-        Me.imgHarddrive.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
-        Me.imgHarddrive.TabIndex = 2
-        Me.imgHarddrive.TabStop = False
+        Me.FileSystemImg.Image = CType(resources.GetObject("FileSystemImg.Image"), System.Drawing.Image)
+        Me.FileSystemImg.Location = New System.Drawing.Point(3, 3)
+        Me.FileSystemImg.Name = "FileSystemImg"
+        Me.FileSystemImg.Size = New System.Drawing.Size(64, 64)
+        Me.FileSystemImg.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
+        Me.FileSystemImg.TabIndex = 2
+        Me.FileSystemImg.TabStop = False
         '
-        'pnlPerformancePanel
+        'PerformancePanel
         '
-        Me.pnlPerformancePanel.BackColor = System.Drawing.SystemColors.ControlLight
-        Me.pnlPerformancePanel.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.pnlPerformancePanel.Controls.Add(Me.lbltotalphysicalmem)
-        Me.pnlPerformancePanel.Controls.Add(Me.lbltotalvirtualmem)
-        Me.pnlPerformancePanel.Controls.Add(Me.lblavailphysicalmem)
-        Me.pnlPerformancePanel.Controls.Add(Me.lblavailvirtualmem)
-        Me.pnlPerformancePanel.Controls.Add(Me.imgPerformance)
-        Me.pnlPerformancePanel.Controls.Add(Me.lblPerformance)
-        Me.pnlPerformancePanel.Location = New System.Drawing.Point(270, 92)
-        Me.pnlPerformancePanel.Name = "pnlPerformancePanel"
-        Me.pnlPerformancePanel.Size = New System.Drawing.Size(252, 293)
-        Me.pnlPerformancePanel.TabIndex = 5
+        Me.PerformancePanel.BackColor = System.Drawing.SystemColors.ControlLight
+        Me.PerformancePanel.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.PerformancePanel.Controls.Add(Me.PerformanceTotalPhysicalMem)
+        Me.PerformancePanel.Controls.Add(Me.PerformanceTotalVirtualMem)
+        Me.PerformancePanel.Controls.Add(Me.PerformanceAvailPhysicalMem)
+        Me.PerformancePanel.Controls.Add(Me.PerformanceAvailVirtualMem)
+        Me.PerformancePanel.Controls.Add(Me.PerformanceImg)
+        Me.PerformancePanel.Controls.Add(Me.PerformanceLbl)
+        Me.PerformancePanel.Location = New System.Drawing.Point(270, 12)
+        Me.PerformancePanel.Name = "PerformancePanel"
+        Me.PerformancePanel.Size = New System.Drawing.Size(252, 293)
+        Me.PerformancePanel.TabIndex = 5
         '
-        'lbltotalphysicalmem
+        'PerformanceTotalPhysicalMem
         '
-        Me.lbltotalphysicalmem.AutoSize = True
-        Me.lbltotalphysicalmem.Font = New System.Drawing.Font("Trebuchet MS", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lbltotalphysicalmem.Location = New System.Drawing.Point(3, 127)
-        Me.lbltotalphysicalmem.Name = "lbltotalphysicalmem"
-        Me.lbltotalphysicalmem.Size = New System.Drawing.Size(144, 18)
-        Me.lbltotalphysicalmem.TabIndex = 7
-        Me.lbltotalphysicalmem.Text = "Total physical memory:"
+        Me.PerformanceTotalPhysicalMem.AutoSize = True
+        Me.PerformanceTotalPhysicalMem.Font = New System.Drawing.Font("Trebuchet MS", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.PerformanceTotalPhysicalMem.Location = New System.Drawing.Point(3, 127)
+        Me.PerformanceTotalPhysicalMem.Name = "PerformanceTotalPhysicalMem"
+        Me.PerformanceTotalPhysicalMem.Size = New System.Drawing.Size(216, 18)
+        Me.PerformanceTotalPhysicalMem.TabIndex = 7
+        Me.PerformanceTotalPhysicalMem.Text = "Total physical memory: Checking..."
         '
-        'lbltotalvirtualmem
+        'PerformanceTotalVirtualMem
         '
-        Me.lbltotalvirtualmem.AutoSize = True
-        Me.lbltotalvirtualmem.Font = New System.Drawing.Font("Trebuchet MS", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lbltotalvirtualmem.Location = New System.Drawing.Point(3, 111)
-        Me.lbltotalvirtualmem.Name = "lbltotalvirtualmem"
-        Me.lbltotalvirtualmem.Size = New System.Drawing.Size(136, 18)
-        Me.lbltotalvirtualmem.TabIndex = 6
-        Me.lbltotalvirtualmem.Text = "Total virtual memory:"
+        Me.PerformanceTotalVirtualMem.AutoSize = True
+        Me.PerformanceTotalVirtualMem.Font = New System.Drawing.Font("Trebuchet MS", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.PerformanceTotalVirtualMem.Location = New System.Drawing.Point(3, 111)
+        Me.PerformanceTotalVirtualMem.Name = "PerformanceTotalVirtualMem"
+        Me.PerformanceTotalVirtualMem.Size = New System.Drawing.Size(208, 18)
+        Me.PerformanceTotalVirtualMem.TabIndex = 6
+        Me.PerformanceTotalVirtualMem.Text = "Total virtual memory: Checking..."
         '
-        'lblavailphysicalmem
+        'PerformanceAvailPhysicalMem
         '
-        Me.lblavailphysicalmem.AutoSize = True
-        Me.lblavailphysicalmem.Font = New System.Drawing.Font("Trebuchet MS", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lblavailphysicalmem.Location = New System.Drawing.Point(3, 95)
-        Me.lblavailphysicalmem.Name = "lblavailphysicalmem"
-        Me.lblavailphysicalmem.Size = New System.Drawing.Size(167, 18)
-        Me.lblavailphysicalmem.TabIndex = 5
-        Me.lblavailphysicalmem.Text = "Available physical memory:"
+        Me.PerformanceAvailPhysicalMem.AutoSize = True
+        Me.PerformanceAvailPhysicalMem.Font = New System.Drawing.Font("Trebuchet MS", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.PerformanceAvailPhysicalMem.Location = New System.Drawing.Point(3, 95)
+        Me.PerformanceAvailPhysicalMem.Name = "PerformanceAvailPhysicalMem"
+        Me.PerformanceAvailPhysicalMem.Size = New System.Drawing.Size(239, 18)
+        Me.PerformanceAvailPhysicalMem.TabIndex = 5
+        Me.PerformanceAvailPhysicalMem.Text = "Available physical memory: Checking..."
         '
-        'lblavailvirtualmem
+        'PerformanceAvailVirtualMem
         '
-        Me.lblavailvirtualmem.AutoSize = True
-        Me.lblavailvirtualmem.Font = New System.Drawing.Font("Trebuchet MS", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lblavailvirtualmem.Location = New System.Drawing.Point(3, 79)
-        Me.lblavailvirtualmem.Name = "lblavailvirtualmem"
-        Me.lblavailvirtualmem.Size = New System.Drawing.Size(159, 18)
-        Me.lblavailvirtualmem.TabIndex = 4
-        Me.lblavailvirtualmem.Text = "Available virtual memory:"
+        Me.PerformanceAvailVirtualMem.AutoSize = True
+        Me.PerformanceAvailVirtualMem.Font = New System.Drawing.Font("Trebuchet MS", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.PerformanceAvailVirtualMem.Location = New System.Drawing.Point(3, 79)
+        Me.PerformanceAvailVirtualMem.Name = "PerformanceAvailVirtualMem"
+        Me.PerformanceAvailVirtualMem.Size = New System.Drawing.Size(231, 18)
+        Me.PerformanceAvailVirtualMem.TabIndex = 4
+        Me.PerformanceAvailVirtualMem.Text = "Available virtual memory: Checking..."
         '
-        'imgPerformance
+        'PerformanceImg
         '
-        Me.imgPerformance.Image = CType(resources.GetObject("imgPerformance.Image"), System.Drawing.Image)
-        Me.imgPerformance.Location = New System.Drawing.Point(3, 3)
-        Me.imgPerformance.Name = "imgPerformance"
-        Me.imgPerformance.Size = New System.Drawing.Size(64, 64)
-        Me.imgPerformance.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
-        Me.imgPerformance.TabIndex = 2
-        Me.imgPerformance.TabStop = False
+        Me.PerformanceImg.Image = CType(resources.GetObject("PerformanceImg.Image"), System.Drawing.Image)
+        Me.PerformanceImg.Location = New System.Drawing.Point(3, 3)
+        Me.PerformanceImg.Name = "PerformanceImg"
+        Me.PerformanceImg.Size = New System.Drawing.Size(64, 64)
+        Me.PerformanceImg.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
+        Me.PerformanceImg.TabIndex = 2
+        Me.PerformanceImg.TabStop = False
         '
-        'lblPerformance
+        'PerformanceLbl
         '
-        Me.lblPerformance.AutoSize = True
-        Me.lblPerformance.Font = New System.Drawing.Font("Trebuchet MS", 15.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lblPerformance.Location = New System.Drawing.Point(70, 18)
-        Me.lblPerformance.Name = "lblPerformance"
-        Me.lblPerformance.Size = New System.Drawing.Size(131, 27)
-        Me.lblPerformance.TabIndex = 3
-        Me.lblPerformance.Text = "Performance"
+        Me.PerformanceLbl.AutoSize = True
+        Me.PerformanceLbl.Font = New System.Drawing.Font("Trebuchet MS", 15.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.PerformanceLbl.Location = New System.Drawing.Point(70, 18)
+        Me.PerformanceLbl.Name = "PerformanceLbl"
+        Me.PerformanceLbl.Size = New System.Drawing.Size(131, 27)
+        Me.PerformanceLbl.TabIndex = 3
+        Me.PerformanceLbl.Text = "Performance"
         '
         'HelpToolStripMenuItem
         '
@@ -284,58 +285,58 @@ Partial Class Dashy
         Me.AboutDashyToolStripMenuItem.Size = New System.Drawing.Size(179, 22)
         Me.AboutDashyToolStripMenuItem.Text = "&About Dashy"
         '
-        'pnlHardwarePanel
+        'HardwarePanel
         '
-        Me.pnlHardwarePanel.BackColor = System.Drawing.SystemColors.ControlLight
-        Me.pnlHardwarePanel.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.pnlHardwarePanel.Controls.Add(Me.lblProcessors)
-        Me.pnlHardwarePanel.Controls.Add(Me.lblArch)
-        Me.pnlHardwarePanel.Controls.Add(Me.imgHardware)
-        Me.pnlHardwarePanel.Controls.Add(Me.lblHardware)
-        Me.pnlHardwarePanel.Location = New System.Drawing.Point(528, 92)
-        Me.pnlHardwarePanel.Name = "pnlHardwarePanel"
-        Me.pnlHardwarePanel.Size = New System.Drawing.Size(252, 293)
-        Me.pnlHardwarePanel.TabIndex = 6
+        Me.HardwarePanel.BackColor = System.Drawing.SystemColors.ControlLight
+        Me.HardwarePanel.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.HardwarePanel.Controls.Add(Me.HardwareProcessors)
+        Me.HardwarePanel.Controls.Add(Me.HardwareArch)
+        Me.HardwarePanel.Controls.Add(Me.HardwareImg)
+        Me.HardwarePanel.Controls.Add(Me.HardwareLbl)
+        Me.HardwarePanel.Location = New System.Drawing.Point(528, 12)
+        Me.HardwarePanel.Name = "HardwarePanel"
+        Me.HardwarePanel.Size = New System.Drawing.Size(252, 293)
+        Me.HardwarePanel.TabIndex = 6
         '
-        'lblProcessors
+        'HardwareProcessors
         '
-        Me.lblProcessors.AutoSize = True
-        Me.lblProcessors.Font = New System.Drawing.Font("Trebuchet MS", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lblProcessors.Location = New System.Drawing.Point(3, 97)
-        Me.lblProcessors.Name = "lblProcessors"
-        Me.lblProcessors.Size = New System.Drawing.Size(75, 18)
-        Me.lblProcessors.TabIndex = 5
-        Me.lblProcessors.Text = "Processors:"
+        Me.HardwareProcessors.AutoSize = True
+        Me.HardwareProcessors.Font = New System.Drawing.Font("Trebuchet MS", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.HardwareProcessors.Location = New System.Drawing.Point(3, 97)
+        Me.HardwareProcessors.Name = "HardwareProcessors"
+        Me.HardwareProcessors.Size = New System.Drawing.Size(147, 18)
+        Me.HardwareProcessors.TabIndex = 5
+        Me.HardwareProcessors.Text = "Processors: Checking..."
         '
-        'lblArch
+        'HardwareArch
         '
-        Me.lblArch.AutoSize = True
-        Me.lblArch.Font = New System.Drawing.Font("Trebuchet MS", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lblArch.Location = New System.Drawing.Point(3, 79)
-        Me.lblArch.Name = "lblArch"
-        Me.lblArch.Size = New System.Drawing.Size(85, 18)
-        Me.lblArch.TabIndex = 4
-        Me.lblArch.Text = "Architecture:"
+        Me.HardwareArch.AutoSize = True
+        Me.HardwareArch.Font = New System.Drawing.Font("Trebuchet MS", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.HardwareArch.Location = New System.Drawing.Point(3, 79)
+        Me.HardwareArch.Name = "HardwareArch"
+        Me.HardwareArch.Size = New System.Drawing.Size(157, 18)
+        Me.HardwareArch.TabIndex = 4
+        Me.HardwareArch.Text = "Architecture: Checking..."
         '
-        'imgHardware
+        'HardwareImg
         '
-        Me.imgHardware.Image = CType(resources.GetObject("imgHardware.Image"), System.Drawing.Image)
-        Me.imgHardware.Location = New System.Drawing.Point(3, 3)
-        Me.imgHardware.Name = "imgHardware"
-        Me.imgHardware.Size = New System.Drawing.Size(64, 64)
-        Me.imgHardware.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
-        Me.imgHardware.TabIndex = 2
-        Me.imgHardware.TabStop = False
+        Me.HardwareImg.Image = CType(resources.GetObject("HardwareImg.Image"), System.Drawing.Image)
+        Me.HardwareImg.Location = New System.Drawing.Point(3, 3)
+        Me.HardwareImg.Name = "HardwareImg"
+        Me.HardwareImg.Size = New System.Drawing.Size(64, 64)
+        Me.HardwareImg.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
+        Me.HardwareImg.TabIndex = 2
+        Me.HardwareImg.TabStop = False
         '
-        'lblHardware
+        'HardwareLbl
         '
-        Me.lblHardware.AutoSize = True
-        Me.lblHardware.Font = New System.Drawing.Font("Trebuchet MS", 15.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lblHardware.Location = New System.Drawing.Point(70, 18)
-        Me.lblHardware.Name = "lblHardware"
-        Me.lblHardware.Size = New System.Drawing.Size(105, 27)
-        Me.lblHardware.TabIndex = 3
-        Me.lblHardware.Text = "Hardware"
+        Me.HardwareLbl.AutoSize = True
+        Me.HardwareLbl.Font = New System.Drawing.Font("Trebuchet MS", 15.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.HardwareLbl.Location = New System.Drawing.Point(70, 18)
+        Me.HardwareLbl.Name = "HardwareLbl"
+        Me.HardwareLbl.Size = New System.Drawing.Size(105, 27)
+        Me.HardwareLbl.TabIndex = 3
+        Me.HardwareLbl.Text = "Hardware"
         '
         'Monitor_Performance
         '
@@ -345,122 +346,122 @@ Partial Class Dashy
         '
         Me.Monitor_FileSystem.Interval = 1000
         '
-        'pnlSystemPanel
+        'SystemPanel
         '
-        Me.pnlSystemPanel.BackColor = System.Drawing.SystemColors.ControlLight
-        Me.pnlSystemPanel.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.pnlSystemPanel.Controls.Add(Me.lblLoggedInUser)
-        Me.pnlSystemPanel.Controls.Add(Me.lblOSVersion)
-        Me.pnlSystemPanel.Controls.Add(Me.lblOperatingSystem)
-        Me.pnlSystemPanel.Controls.Add(Me.imgSystem)
-        Me.pnlSystemPanel.Controls.Add(Me.lblSystem)
-        Me.pnlSystemPanel.Location = New System.Drawing.Point(786, 92)
-        Me.pnlSystemPanel.Name = "pnlSystemPanel"
-        Me.pnlSystemPanel.Size = New System.Drawing.Size(252, 293)
-        Me.pnlSystemPanel.TabIndex = 7
+        Me.SystemPanel.BackColor = System.Drawing.SystemColors.ControlLight
+        Me.SystemPanel.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.SystemPanel.Controls.Add(Me.SystemLoggedInUser)
+        Me.SystemPanel.Controls.Add(Me.SystemOSVersion)
+        Me.SystemPanel.Controls.Add(Me.SystemOS)
+        Me.SystemPanel.Controls.Add(Me.SystemImg)
+        Me.SystemPanel.Controls.Add(Me.SystemLbl)
+        Me.SystemPanel.Location = New System.Drawing.Point(786, 12)
+        Me.SystemPanel.Name = "SystemPanel"
+        Me.SystemPanel.Size = New System.Drawing.Size(252, 293)
+        Me.SystemPanel.TabIndex = 7
         '
-        'lblLoggedInUser
+        'SystemLoggedInUser
         '
-        Me.lblLoggedInUser.AutoSize = True
-        Me.lblLoggedInUser.Font = New System.Drawing.Font("Trebuchet MS", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lblLoggedInUser.Location = New System.Drawing.Point(3, 115)
-        Me.lblLoggedInUser.Name = "lblLoggedInUser"
-        Me.lblLoggedInUser.Size = New System.Drawing.Size(99, 18)
-        Me.lblLoggedInUser.TabIndex = 6
-        Me.lblLoggedInUser.Text = "Logged in user:"
+        Me.SystemLoggedInUser.AutoSize = True
+        Me.SystemLoggedInUser.Font = New System.Drawing.Font("Trebuchet MS", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.SystemLoggedInUser.Location = New System.Drawing.Point(3, 115)
+        Me.SystemLoggedInUser.Name = "SystemLoggedInUser"
+        Me.SystemLoggedInUser.Size = New System.Drawing.Size(171, 18)
+        Me.SystemLoggedInUser.TabIndex = 6
+        Me.SystemLoggedInUser.Text = "Logged in user: Checking..."
         '
-        'lblOSVersion
+        'SystemOSVersion
         '
-        Me.lblOSVersion.AutoSize = True
-        Me.lblOSVersion.Font = New System.Drawing.Font("Trebuchet MS", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lblOSVersion.Location = New System.Drawing.Point(3, 97)
-        Me.lblOSVersion.Name = "lblOSVersion"
-        Me.lblOSVersion.Size = New System.Drawing.Size(76, 18)
-        Me.lblOSVersion.TabIndex = 5
-        Me.lblOSVersion.Text = "OS Version:"
+        Me.SystemOSVersion.AutoSize = True
+        Me.SystemOSVersion.Font = New System.Drawing.Font("Trebuchet MS", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.SystemOSVersion.Location = New System.Drawing.Point(3, 97)
+        Me.SystemOSVersion.Name = "SystemOSVersion"
+        Me.SystemOSVersion.Size = New System.Drawing.Size(148, 18)
+        Me.SystemOSVersion.TabIndex = 5
+        Me.SystemOSVersion.Text = "OS Version: Checking..."
         '
-        'lblOperatingSystem
+        'SystemOS
         '
-        Me.lblOperatingSystem.AutoSize = True
-        Me.lblOperatingSystem.Font = New System.Drawing.Font("Trebuchet MS", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lblOperatingSystem.Location = New System.Drawing.Point(3, 79)
-        Me.lblOperatingSystem.Name = "lblOperatingSystem"
-        Me.lblOperatingSystem.Size = New System.Drawing.Size(29, 18)
-        Me.lblOperatingSystem.TabIndex = 4
-        Me.lblOperatingSystem.Text = "OS:"
+        Me.SystemOS.AutoSize = True
+        Me.SystemOS.Font = New System.Drawing.Font("Trebuchet MS", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.SystemOS.Location = New System.Drawing.Point(3, 79)
+        Me.SystemOS.Name = "SystemOS"
+        Me.SystemOS.Size = New System.Drawing.Size(101, 18)
+        Me.SystemOS.TabIndex = 4
+        Me.SystemOS.Text = "OS: Checking..."
         '
-        'imgSystem
+        'SystemImg
         '
-        Me.imgSystem.Image = Global.Dashy.My.Resources.Resources._1404236744_kservices
-        Me.imgSystem.Location = New System.Drawing.Point(3, 3)
-        Me.imgSystem.Name = "imgSystem"
-        Me.imgSystem.Size = New System.Drawing.Size(64, 64)
-        Me.imgSystem.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
-        Me.imgSystem.TabIndex = 2
-        Me.imgSystem.TabStop = False
+        Me.SystemImg.Image = Global.Dashy.My.Resources.Resources._1404236744_kservices
+        Me.SystemImg.Location = New System.Drawing.Point(3, 3)
+        Me.SystemImg.Name = "SystemImg"
+        Me.SystemImg.Size = New System.Drawing.Size(64, 64)
+        Me.SystemImg.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
+        Me.SystemImg.TabIndex = 2
+        Me.SystemImg.TabStop = False
         '
-        'lblSystem
+        'SystemLbl
         '
-        Me.lblSystem.AutoSize = True
-        Me.lblSystem.Font = New System.Drawing.Font("Trebuchet MS", 15.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lblSystem.Location = New System.Drawing.Point(70, 18)
-        Me.lblSystem.Name = "lblSystem"
-        Me.lblSystem.Size = New System.Drawing.Size(76, 27)
-        Me.lblSystem.TabIndex = 3
-        Me.lblSystem.Text = "System"
+        Me.SystemLbl.AutoSize = True
+        Me.SystemLbl.Font = New System.Drawing.Font("Trebuchet MS", 15.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.SystemLbl.Location = New System.Drawing.Point(70, 18)
+        Me.SystemLbl.Name = "SystemLbl"
+        Me.SystemLbl.Size = New System.Drawing.Size(76, 27)
+        Me.SystemLbl.TabIndex = 3
+        Me.SystemLbl.Text = "System"
         '
-        'pnlNetworkPanel
+        'NetworkPanel
         '
-        Me.pnlNetworkPanel.BackColor = System.Drawing.SystemColors.ControlLight
-        Me.pnlNetworkPanel.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.pnlNetworkPanel.Controls.Add(Me.lblInternetConnection)
-        Me.pnlNetworkPanel.Controls.Add(Me.lblNetworkConnected)
-        Me.pnlNetworkPanel.Controls.Add(Me.imgNetwork)
-        Me.pnlNetworkPanel.Controls.Add(Me.lblNetwork)
-        Me.pnlNetworkPanel.Location = New System.Drawing.Point(1044, 92)
-        Me.pnlNetworkPanel.Name = "pnlNetworkPanel"
-        Me.pnlNetworkPanel.Size = New System.Drawing.Size(252, 293)
-        Me.pnlNetworkPanel.TabIndex = 8
+        Me.NetworkPanel.BackColor = System.Drawing.SystemColors.ControlLight
+        Me.NetworkPanel.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.NetworkPanel.Controls.Add(Me.NetworkInternetConnection)
+        Me.NetworkPanel.Controls.Add(Me.NetworkIsConnected)
+        Me.NetworkPanel.Controls.Add(Me.NetworkImg)
+        Me.NetworkPanel.Controls.Add(Me.NetworkLbl)
+        Me.NetworkPanel.Location = New System.Drawing.Point(1044, 12)
+        Me.NetworkPanel.Name = "NetworkPanel"
+        Me.NetworkPanel.Size = New System.Drawing.Size(252, 293)
+        Me.NetworkPanel.TabIndex = 8
         '
-        'lblInternetConnection
+        'NetworkInternetConnection
         '
-        Me.lblInternetConnection.AutoSize = True
-        Me.lblInternetConnection.Font = New System.Drawing.Font("Trebuchet MS", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lblInternetConnection.Location = New System.Drawing.Point(3, 97)
-        Me.lblInternetConnection.Name = "lblInternetConnection"
-        Me.lblInternetConnection.Size = New System.Drawing.Size(154, 18)
-        Me.lblInternetConnection.TabIndex = 5
-        Me.lblInternetConnection.Text = "Internet connection: N/A"
+        Me.NetworkInternetConnection.AutoSize = True
+        Me.NetworkInternetConnection.Font = New System.Drawing.Font("Trebuchet MS", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.NetworkInternetConnection.Location = New System.Drawing.Point(3, 97)
+        Me.NetworkInternetConnection.Name = "NetworkInternetConnection"
+        Me.NetworkInternetConnection.Size = New System.Drawing.Size(154, 18)
+        Me.NetworkInternetConnection.TabIndex = 5
+        Me.NetworkInternetConnection.Text = "Internet connection: N/A"
         '
-        'lblNetworkConnected
+        'NetworkIsConnected
         '
-        Me.lblNetworkConnected.AutoSize = True
-        Me.lblNetworkConnected.Font = New System.Drawing.Font("Trebuchet MS", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lblNetworkConnected.Location = New System.Drawing.Point(3, 79)
-        Me.lblNetworkConnected.Name = "lblNetworkConnected"
-        Me.lblNetworkConnected.Size = New System.Drawing.Size(168, 18)
-        Me.lblNetworkConnected.TabIndex = 4
-        Me.lblNetworkConnected.Text = "Connected to network: N/A"
+        Me.NetworkIsConnected.AutoSize = True
+        Me.NetworkIsConnected.Font = New System.Drawing.Font("Trebuchet MS", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.NetworkIsConnected.Location = New System.Drawing.Point(3, 79)
+        Me.NetworkIsConnected.Name = "NetworkIsConnected"
+        Me.NetworkIsConnected.Size = New System.Drawing.Size(213, 18)
+        Me.NetworkIsConnected.TabIndex = 4
+        Me.NetworkIsConnected.Text = "Connected to network: Checking..."
         '
-        'imgNetwork
+        'NetworkImg
         '
-        Me.imgNetwork.Image = Global.Dashy.My.Resources.Resources._1404314626_Globe
-        Me.imgNetwork.Location = New System.Drawing.Point(3, 3)
-        Me.imgNetwork.Name = "imgNetwork"
-        Me.imgNetwork.Size = New System.Drawing.Size(64, 64)
-        Me.imgNetwork.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
-        Me.imgNetwork.TabIndex = 2
-        Me.imgNetwork.TabStop = False
+        Me.NetworkImg.Image = Global.Dashy.My.Resources.Resources._1404314626_Globe
+        Me.NetworkImg.Location = New System.Drawing.Point(3, 3)
+        Me.NetworkImg.Name = "NetworkImg"
+        Me.NetworkImg.Size = New System.Drawing.Size(64, 64)
+        Me.NetworkImg.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
+        Me.NetworkImg.TabIndex = 2
+        Me.NetworkImg.TabStop = False
         '
-        'lblNetwork
+        'NetworkLbl
         '
-        Me.lblNetwork.AutoSize = True
-        Me.lblNetwork.Font = New System.Drawing.Font("Trebuchet MS", 15.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lblNetwork.Location = New System.Drawing.Point(70, 18)
-        Me.lblNetwork.Name = "lblNetwork"
-        Me.lblNetwork.Size = New System.Drawing.Size(91, 27)
-        Me.lblNetwork.TabIndex = 3
-        Me.lblNetwork.Text = "Network"
+        Me.NetworkLbl.AutoSize = True
+        Me.NetworkLbl.Font = New System.Drawing.Font("Trebuchet MS", 15.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.NetworkLbl.Location = New System.Drawing.Point(70, 18)
+        Me.NetworkLbl.Name = "NetworkLbl"
+        Me.NetworkLbl.Size = New System.Drawing.Size(91, 27)
+        Me.NetworkLbl.TabIndex = 3
+        Me.NetworkLbl.Text = "Network"
         '
         'Monitor_Network
         '
@@ -474,74 +475,74 @@ Partial Class Dashy
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(1348, 414)
-        Me.Controls.Add(Me.pnlNetworkPanel)
-        Me.Controls.Add(Me.pnlSystemPanel)
-        Me.Controls.Add(Me.pnlHardwarePanel)
-        Me.Controls.Add(Me.pnlPerformancePanel)
-        Me.Controls.Add(Me.pnlFileSystemPanel)
+        Me.ClientSize = New System.Drawing.Size(1310, 312)
+        Me.Controls.Add(Me.NetworkPanel)
+        Me.Controls.Add(Me.SystemPanel)
+        Me.Controls.Add(Me.HardwarePanel)
+        Me.Controls.Add(Me.PerformancePanel)
+        Me.Controls.Add(Me.FileSystemPanel)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle
         Me.Name = "Dashy"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "Dashy"
-        Me.pnlFileSystemPanel.ResumeLayout(False)
-        Me.pnlFileSystemPanel.PerformLayout()
-        CType(Me.imgHarddrive, System.ComponentModel.ISupportInitialize).EndInit()
-        Me.pnlPerformancePanel.ResumeLayout(False)
-        Me.pnlPerformancePanel.PerformLayout()
-        CType(Me.imgPerformance, System.ComponentModel.ISupportInitialize).EndInit()
-        Me.pnlHardwarePanel.ResumeLayout(False)
-        Me.pnlHardwarePanel.PerformLayout()
-        CType(Me.imgHardware, System.ComponentModel.ISupportInitialize).EndInit()
-        Me.pnlSystemPanel.ResumeLayout(False)
-        Me.pnlSystemPanel.PerformLayout()
-        CType(Me.imgSystem, System.ComponentModel.ISupportInitialize).EndInit()
-        Me.pnlNetworkPanel.ResumeLayout(False)
-        Me.pnlNetworkPanel.PerformLayout()
-        CType(Me.imgNetwork, System.ComponentModel.ISupportInitialize).EndInit()
+        Me.FileSystemPanel.ResumeLayout(False)
+        Me.FileSystemPanel.PerformLayout()
+        CType(Me.FileSystemImg, System.ComponentModel.ISupportInitialize).EndInit()
+        Me.PerformancePanel.ResumeLayout(False)
+        Me.PerformancePanel.PerformLayout()
+        CType(Me.PerformanceImg, System.ComponentModel.ISupportInitialize).EndInit()
+        Me.HardwarePanel.ResumeLayout(False)
+        Me.HardwarePanel.PerformLayout()
+        CType(Me.HardwareImg, System.ComponentModel.ISupportInitialize).EndInit()
+        Me.SystemPanel.ResumeLayout(False)
+        Me.SystemPanel.PerformLayout()
+        CType(Me.SystemImg, System.ComponentModel.ISupportInitialize).EndInit()
+        Me.NetworkPanel.ResumeLayout(False)
+        Me.NetworkPanel.PerformLayout()
+        CType(Me.NetworkImg, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
 
     End Sub
-    Friend WithEvents imgHarddrive As System.Windows.Forms.PictureBox
-    Friend WithEvents pnlFileSystemPanel As System.Windows.Forms.Panel
-    Friend WithEvents pnlPerformancePanel As System.Windows.Forms.Panel
-    Friend WithEvents lbltotalphysicalmem As System.Windows.Forms.Label
-    Friend WithEvents lbltotalvirtualmem As System.Windows.Forms.Label
-    Friend WithEvents lblavailphysicalmem As System.Windows.Forms.Label
-    Friend WithEvents lblavailvirtualmem As System.Windows.Forms.Label
-    Friend WithEvents imgPerformance As System.Windows.Forms.PictureBox
-    Friend WithEvents lblPerformance As System.Windows.Forms.Label
+    Friend WithEvents FileSystemImg As System.Windows.Forms.PictureBox
+    Friend WithEvents FileSystemPanel As System.Windows.Forms.Panel
+    Friend WithEvents PerformancePanel As System.Windows.Forms.Panel
+    Friend WithEvents PerformanceTotalPhysicalMem As System.Windows.Forms.Label
+    Friend WithEvents PerformanceTotalVirtualMem As System.Windows.Forms.Label
+    Friend WithEvents PerformanceAvailPhysicalMem As System.Windows.Forms.Label
+    Friend WithEvents PerformanceAvailVirtualMem As System.Windows.Forms.Label
+    Friend WithEvents PerformanceImg As System.Windows.Forms.PictureBox
+    Friend WithEvents PerformanceLbl As System.Windows.Forms.Label
     Friend WithEvents HelpToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
     Friend WithEvents DocumentationToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
     Friend WithEvents CheckForUpdatesToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
     Friend WithEvents AboutDashyToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
-    Friend WithEvents pnlHardwarePanel As System.Windows.Forms.Panel
-    Friend WithEvents lblArch As System.Windows.Forms.Label
-    Friend WithEvents imgHardware As System.Windows.Forms.PictureBox
-    Friend WithEvents lblHardware As System.Windows.Forms.Label
+    Friend WithEvents HardwarePanel As System.Windows.Forms.Panel
+    Friend WithEvents HardwareArch As System.Windows.Forms.Label
+    Friend WithEvents HardwareImg As System.Windows.Forms.PictureBox
+    Friend WithEvents HardwareLbl As System.Windows.Forms.Label
     Friend WithEvents Monitor_Performance As System.Windows.Forms.Timer
-    Friend WithEvents lblFileSystem As System.Windows.Forms.Label
-    Friend WithEvents lblListofDrives As System.Windows.Forms.Label
+    Friend WithEvents FileSystemLbl As System.Windows.Forms.Label
+    Friend WithEvents FileSystemDriveListLbl As System.Windows.Forms.Label
     Friend WithEvents Monitor_FileSystem As System.Windows.Forms.Timer
-    Friend WithEvents lblNumberofDrives As System.Windows.Forms.Label
-    Friend WithEvents cbListofDrivesValue As System.Windows.Forms.ComboBox
-    Friend WithEvents pnlSystemPanel As System.Windows.Forms.Panel
-    Friend WithEvents lblOperatingSystem As System.Windows.Forms.Label
-    Friend WithEvents imgSystem As System.Windows.Forms.PictureBox
-    Friend WithEvents lblSystem As System.Windows.Forms.Label
-    Friend WithEvents lblOSVersion As System.Windows.Forms.Label
-    Friend WithEvents lblProgramFilesDirectoryValue As System.Windows.Forms.Label
-    Friend WithEvents lblProgramFilesDirectory As System.Windows.Forms.Label
-    Friend WithEvents lblProcessors As System.Windows.Forms.Label
-    Friend WithEvents lblLoggedInUser As System.Windows.Forms.Label
-    Friend WithEvents pnlNetworkPanel As System.Windows.Forms.Panel
-    Friend WithEvents lblInternetConnection As System.Windows.Forms.Label
-    Friend WithEvents lblNetworkConnected As System.Windows.Forms.Label
-    Friend WithEvents imgNetwork As System.Windows.Forms.PictureBox
-    Friend WithEvents lblNetwork As System.Windows.Forms.Label
+    Friend WithEvents FileSystemNumberOfDrives As System.Windows.Forms.Label
+    Friend WithEvents FileSystemDriveListCbx As System.Windows.Forms.ComboBox
+    Friend WithEvents SystemPanel As System.Windows.Forms.Panel
+    Friend WithEvents SystemOS As System.Windows.Forms.Label
+    Friend WithEvents SystemImg As System.Windows.Forms.PictureBox
+    Friend WithEvents SystemLbl As System.Windows.Forms.Label
+    Friend WithEvents SystemOSVersion As System.Windows.Forms.Label
+    Friend WithEvents FileSystemProgramFilesDirectory As System.Windows.Forms.Label
+    Friend WithEvents FileSystemProgramFilesDirectoryLBL As System.Windows.Forms.Label
+    Friend WithEvents HardwareProcessors As System.Windows.Forms.Label
+    Friend WithEvents SystemLoggedInUser As System.Windows.Forms.Label
+    Friend WithEvents NetworkPanel As System.Windows.Forms.Panel
+    Friend WithEvents NetworkInternetConnection As System.Windows.Forms.Label
+    Friend WithEvents NetworkIsConnected As System.Windows.Forms.Label
+    Friend WithEvents NetworkImg As System.Windows.Forms.PictureBox
+    Friend WithEvents NetworkLbl As System.Windows.Forms.Label
     Friend WithEvents Monitor_Network As System.Windows.Forms.Timer
     Friend WithEvents KeyChecker As System.Windows.Forms.Timer
-    Friend WithEvents lblHomePathValue As System.Windows.Forms.Label
-    Friend WithEvents lblHomePath As System.Windows.Forms.Label
+    Friend WithEvents FileSystemHomePath As System.Windows.Forms.Label
+    Friend WithEvents FileSystemHomePathLBL As System.Windows.Forms.Label
 
 End Class
