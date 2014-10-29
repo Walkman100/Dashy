@@ -4,12 +4,15 @@
         TimerMonitorFast.Start()
         TimerMonitorSlow_Tick(Nothing, Nothing)
         TimerMonitorSlow.Start()
+
+        FastTimerRefreshUnit.SelectedIndex = 2
+        SlowTimerRefreshUnit.SelectedIndex = 2
     End Sub
 
-    Private Sub TimerMonitorSlow_Tick(sender As Object, e As EventArgs) Handles TimerMonitorSlow.Tick
+    Private Sub TimerMonitorSlow_Tick(sender As Object, e As EventArgs) Handles TimerMonitorSlow.Tick, btnRefresh.Click
         'FileSystem:
         FileSystemProgramFilesDirectory.Text = Environment.GetEnvironmentVariable("PROGRAMFILES")
-        FileSystemHomePath.Text = Environment.GetEnvironmentVariable("HOMEPATH")
+        FileSystemHomePath.Text = Environment.GetEnvironmentVariable("USERPROFILE")
         FileSystemEnCurrentDir.Text = Environment.CurrentDirectory
         FileSystemFsCurrentDir.Text = My.Computer.FileSystem.CurrentDirectory
         FileSystemSysDir.Text = Environment.SystemDirectory
@@ -127,5 +130,39 @@
     Private Sub Dashy_SizeChanged(sender As Object, e As EventArgs) Handles MyBase.SizeChanged
         FileSystemPanel.Size = New Size(PerformancePanel.Location.X - 18, FileSystemPanel.Height)
         SystemPanel.Size = New Size(NetworkPanel.Location.X - SystemPanel.Location.X - 6, SystemPanel.Height)
+    End Sub
+
+    Private Sub FastTimer_SetTick(sender As Object, e As EventArgs) Handles FastTimerRefreshValue.TextChanged, FastTimerRefreshUnit.TextChanged
+        Select Case FastTimerRefreshUnit.SelectedIndex
+            Case 0 'Milliseconds
+                TimerMonitorFast.Interval = FastTimerRefreshValue.Text
+            Case 1 'Centiseconds
+                TimerMonitorFast.Interval = FastTimerRefreshValue.Text * 10
+            Case 2 'Seconds
+                TimerMonitorFast.Interval = FastTimerRefreshValue.Text * 1000
+            Case 3 'Minutes
+                TimerMonitorFast.Interval = FastTimerRefreshValue.Text * 60000
+            Case 4 'Hours
+                TimerMonitorFast.Interval = FastTimerRefreshValue.Text * 3600000
+        End Select
+    End Sub
+
+    Private Sub SlowTimer_SetTick(sender As Object, e As EventArgs) Handles SlowTimerRefreshValue.TextChanged, SlowTimerRefreshUnit.TextChanged
+        Select Case SlowTimerRefreshUnit.SelectedIndex
+            Case 0 'Milliseconds
+                TimerMonitorSlow.Interval = SlowTimerRefreshValue.Text
+            Case 1 'Centiseconds
+                TimerMonitorSlow.Interval = SlowTimerRefreshValue.Text * 10
+            Case 2 'Seconds
+                TimerMonitorSlow.Interval = SlowTimerRefreshValue.Text * 1000
+            Case 3 'Minutes
+                TimerMonitorSlow.Interval = SlowTimerRefreshValue.Text * 60000
+            Case 4 'Hours
+                TimerMonitorSlow.Interval = SlowTimerRefreshValue.Text * 3600000
+        End Select
+    End Sub
+
+    Private Sub btnExit_Click(sender As Object, e As EventArgs) Handles btnExit.Click
+        Application.Exit()
     End Sub
 End Class
