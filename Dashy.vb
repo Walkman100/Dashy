@@ -58,9 +58,9 @@
         SystemInteractiveMode.Text = "Running in interactive mode: " & Environment.UserInteractive
         SystemShutdownStarted.Text = "Shutdown started: " & Environment.HasShutdownStarted
         If Environment.Is64BitProcess Then
-            SystemDashyArch.Text = "Process Arch: 64-Bit"
+            SystemDashyArch.Text = "Dashy Process Arch: 64-Bit"
         Else
-            SystemDashyArch.Text = "Process Arch: 32-Bit"
+            SystemDashyArch.Text = "Dashy Process Arch: 32-Bit"
         End If
         SystemScrollLines.Text = "Lines to scroll with scroll wheel: " & My.Computer.Mouse.WheelScrollLines
         SystemScreenBitsPerPixel.Text = "Screen Bits per pixel: " & My.Computer.Screen.BitsPerPixel
