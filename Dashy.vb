@@ -92,13 +92,13 @@
         'Performance:
         PerformanceAvailPhysicalMem.Text = "Available physical memory: " & (My.Computer.Info.AvailablePhysicalMemory * 1000 \ 1048576) / 1000 & " MB" 'My.Computer.Info.AvailablePhysicalMemory & " bytes"
         PerformanceAvailVirtualMem.Text = "Available virtual memory: " & (My.Computer.Info.AvailableVirtualMemory * 1000 \ 1048576) / 1000 & " MB" 'My.Computer.Info.AvailableVirtualMemory & " bytes"
-        PerformanceUptime.Text = "Up-time: " & Environment.TickCount 'Milliseconds since startup
+        PerformanceUptime.Text = "Up-time: " & Environment.TickCount \ 1000 & " Seconds" 'Milliseconds (converted to seconds) since startup
         PerformanceMemoryUsedByDashy.Text = "Physical memory used by Dashy: " & (Environment.WorkingSet * 10 \ 1048576) / 10 & " MB" 'Environment.WorkingSet & " bytes"
 
         ' Clock
         PerformanceClockGMT.Text = My.Computer.Clock.GmtTime
         PerformanceClockLocal.Text = My.Computer.Clock.LocalTime
-        PerformanceClockTick.Text = "Millisecond count: " & My.Computer.Clock.TickCount
+        PerformanceClockTick.Text = "Millisecond count: " & My.Computer.Clock.TickCount / 1000 & " (Seconds)"
 
         ' Clipboard
         PerformanceClipboard.Text = "Clipboard Contents:"
