@@ -7,6 +7,8 @@
 
         FastTimerRefreshUnit.SelectedIndex = 2
         SlowTimerRefreshUnit.SelectedIndex = 2
+        Me.Width = My.Computer.Screen.WorkingArea.Width
+        Me.Location = New Size(0, Me.Location.Y)
     End Sub
 
     Private Sub TimerMonitorSlow_Tick(sender As Object, e As EventArgs) Handles TimerMonitorSlow.Tick, btnRefresh.Click
