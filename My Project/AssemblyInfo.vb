@@ -9,11 +9,11 @@ Imports System.Runtime.InteropServices
 ' Review the values of the assembly attributes
 
 <Assembly: AssemblyTitle("Dashy")> 
-<Assembly: AssemblyDescription("One dashboard for all your system info.")> 
+<Assembly: AssemblyDescription("One dashboard for all your system info")> 
 <Assembly: AssemblyCompany("DeavmiOSS")> 
 <Assembly: AssemblyProduct("Dashy")> 
-<Assembly: AssemblyCopyright("")> 
-<Assembly: AssemblyTrademark("Monitoring everything.")> 
+<Assembly: AssemblyCopyright("FOSS from Walkman 2014")> 
+<Assembly: AssemblyTrademark("")> 
 
 <Assembly: ComVisible(False)>
 
