@@ -108,6 +108,8 @@ Partial Class Dashy
         Me.FastTimerRefreshLabel = New System.Windows.Forms.Label()
         Me.FastTimerRefreshValue = New System.Windows.Forms.NumericUpDown()
         Me.SlowTimerRefreshValue = New System.Windows.Forms.NumericUpDown()
+        Me.FileSystemEnvVarsLBL = New System.Windows.Forms.Label()
+        Me.FileSystemEnvVars = New System.Windows.Forms.Label()
         Me.FileSystemPanel.SuspendLayout()
         Me.FileSystemDrivesTabControl.SuspendLayout()
         Me.FileSystemDrivesTabFS.SuspendLayout()
@@ -135,6 +137,8 @@ Partial Class Dashy
             Or System.Windows.Forms.AnchorStyles.Left), System.Windows.Forms.AnchorStyles)
         Me.FileSystemPanel.BackColor = System.Drawing.SystemColors.ControlLight
         Me.FileSystemPanel.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.FileSystemPanel.Controls.Add(Me.FileSystemEnvVars)
+        Me.FileSystemPanel.Controls.Add(Me.FileSystemEnvVarsLBL)
         Me.FileSystemPanel.Controls.Add(Me.FileSystemDrivesTabControl)
         Me.FileSystemPanel.Controls.Add(Me.FileSystemFsCurrentDir)
         Me.FileSystemPanel.Controls.Add(Me.FileSystemFsCurrentDirLBL)
@@ -281,9 +285,9 @@ Partial Class Dashy
         Me.FileSystemEnCurrentDirLBL.Font = New System.Drawing.Font("Trebuchet MS", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.FileSystemEnCurrentDirLBL.Location = New System.Drawing.Point(3, 142)
         Me.FileSystemEnCurrentDirLBL.Name = "FileSystemEnCurrentDirLBL"
-        Me.FileSystemEnCurrentDirLBL.Size = New System.Drawing.Size(134, 18)
+        Me.FileSystemEnCurrentDirLBL.Size = New System.Drawing.Size(141, 18)
         Me.FileSystemEnCurrentDirLBL.TabIndex = 16
-        Me.FileSystemEnCurrentDirLBL.Text = "EN.Current Directory:"
+        Me.FileSystemEnCurrentDirLBL.Text = "ENV.Current Directory:"
         '
         'FileSystemHomePath
         '
@@ -775,9 +779,9 @@ Partial Class Dashy
         Me.SystemNameEN.Font = New System.Drawing.Font("Trebuchet MS", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.SystemNameEN.Location = New System.Drawing.Point(3, 178)
         Me.SystemNameEN.Name = "SystemNameEN"
-        Me.SystemNameEN.Size = New System.Drawing.Size(186, 18)
+        Me.SystemNameEN.Size = New System.Drawing.Size(193, 18)
         Me.SystemNameEN.TabIndex = 9
-        Me.SystemNameEN.Text = "EN.MachineName: Checking..."
+        Me.SystemNameEN.Text = "ENV.MachineName: Checking..."
         '
         'SystemOSPlatform
         '
@@ -1047,6 +1051,26 @@ Partial Class Dashy
         Me.SlowTimerRefreshValue.TextAlign = System.Windows.Forms.HorizontalAlignment.Right
         Me.SlowTimerRefreshValue.Value = New Decimal(New Integer() {30, 0, 0, 0})
         '
+        'FileSystemEnvVarsLBL
+        '
+        Me.FileSystemEnvVarsLBL.AutoSize = True
+        Me.FileSystemEnvVarsLBL.Font = New System.Drawing.Font("Trebuchet MS", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.FileSystemEnvVarsLBL.Location = New System.Drawing.Point(186, 4)
+        Me.FileSystemEnvVarsLBL.Name = "FileSystemEnvVarsLBL"
+        Me.FileSystemEnvVarsLBL.Size = New System.Drawing.Size(144, 18)
+        Me.FileSystemEnvVarsLBL.TabIndex = 23
+        Me.FileSystemEnvVarsLBL.Text = "Environment Variables:"
+        '
+        'FileSystemEnvVars
+        '
+        Me.FileSystemEnvVars.AutoSize = True
+        Me.FileSystemEnvVars.Font = New System.Drawing.Font("Trebuchet MS", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.FileSystemEnvVars.Location = New System.Drawing.Point(186, 22)
+        Me.FileSystemEnvVars.Name = "FileSystemEnvVars"
+        Me.FileSystemEnvVars.Size = New System.Drawing.Size(76, 18)
+        Me.FileSystemEnvVars.TabIndex = 24
+        Me.FileSystemEnvVars.Text = "Checking..."
+        '
         'Dashy
         '
         Me.AcceptButton = Me.btnRefresh
@@ -1183,5 +1207,7 @@ Partial Class Dashy
     Friend WithEvents FastTimerRefreshLabel As System.Windows.Forms.Label
     Friend WithEvents FastTimerRefreshValue As System.Windows.Forms.NumericUpDown
     Friend WithEvents SlowTimerRefreshValue As System.Windows.Forms.NumericUpDown
+    Friend WithEvents FileSystemEnvVars As System.Windows.Forms.Label
+    Friend WithEvents FileSystemEnvVarsLBL As System.Windows.Forms.Label
 
 End Class

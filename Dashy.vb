@@ -2,7 +2,6 @@
 
     Private Sub Dashy_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         TimerMonitorFast.Start()
-        TimerMonitorSlow_Tick(Nothing, Nothing)
         TimerMonitorSlow.Start()
 
         FastTimerRefreshUnit.SelectedIndex = 2
@@ -26,6 +25,31 @@
         For Each drive In Environment.GetLogicalDrives
             FileSystemDriveListEN.Items.Add(drive)
         Next
+        FileSystemEnvVars.Text = "HOMEDRIVE: " & Environment.GetEnvironmentVariable("HOMEDRIVE") & vbNewLine & _
+            "SystemDrive: " & Environment.GetEnvironmentVariable("SystemDrive") & vbNewLine & _
+            "ProgramFiles: " & Environment.GetEnvironmentVariable("ProgramFiles") & vbNewLine & _
+            "ProgramFiles(x86): " & Environment.GetEnvironmentVariable("ProgramFiles(x86)") & vbNewLine & _
+            "ProgramW6432: " & Environment.GetEnvironmentVariable("ProgramW6432") & vbNewLine & _
+            "ProgramData: " & Environment.GetEnvironmentVariable("ProgramData") & vbNewLine & _
+            "ALLUSERSPROFILE: " & Environment.GetEnvironmentVariable("ALLUSERSPROFILE") & vbNewLine & _
+            "CommonProgramFiles: " & Environment.GetEnvironmentVariable("CommonProgramFiles") & vbNewLine & _
+            "CommonProgramFiles(x86): " & Environment.GetEnvironmentVariable("CommonProgramFiles(x86)") & vbNewLine & _
+            "CommonProgramW6432: " & Environment.GetEnvironmentVariable("CommonProgramW6432") & vbNewLine & _
+            "SystemRoot: " & Environment.GetEnvironmentVariable("SystemRoot") & vbNewLine & _
+            "windir: " & Environment.GetEnvironmentVariable("windir") & vbNewLine & _
+            "ComSpec: " & Environment.GetEnvironmentVariable("ComSpec") & vbNewLine & _
+            "PSModulePath: " & Environment.GetEnvironmentVariable("PSModulePath") & vbNewLine & _
+            "PUBLIC: " & Environment.GetEnvironmentVariable("PUBLIC") & vbNewLine & _
+            "HOMEPATH: " & Environment.GetEnvironmentVariable("HOMEPATH") & vbNewLine & _
+            "USERPROFILE: " & Environment.GetEnvironmentVariable("USERPROFILE") & vbNewLine & _
+            "APPDATA: " & Environment.GetEnvironmentVariable("APPDATA") & vbNewLine & _
+            "LOCALAPPDATA: " & Environment.GetEnvironmentVariable("LOCALAPPDATA") & vbNewLine & _
+            "TEMP: " & Environment.GetEnvironmentVariable("TEMP") & vbNewLine & _
+            "TMP: " & Environment.GetEnvironmentVariable("TMP") & vbNewLine & _
+            "USERDOMAIN: " & Environment.GetEnvironmentVariable("USERDOMAIN") & vbNewLine & _
+            "COMPUTERNAME: " & Environment.GetEnvironmentVariable("COMPUTERNAME") & vbNewLine & _
+            "LOGONSERVER: " & Environment.GetEnvironmentVariable("LOGONSERVER") & vbNewLine & _
+            "USERNAME: " & Environment.GetEnvironmentVariable("USERNAME")
 
         'Performance:
         PerformanceTotalVirtualMem.Text = "Total virtual memory: " & (My.Computer.Info.TotalVirtualMemory * 1000 \ 1048576) / 1000 & " MB" 'My.Computer.Info.TotalVirtualMemory & " bytes"
@@ -53,7 +77,7 @@
         Else
             SystemOSArch.Text = "OS Arch: 32-Bit"
         End If
-        SystemNameEN.Text = "EN.MachineName: " & Environment.MachineName
+        SystemNameEN.Text = "ENV.MachineName: " & Environment.MachineName
         SystemNameComputer.Text = "Computer.Name: " & My.Computer.Name
         SystemDomain.Text = "Domain: " & Environment.UserDomainName
         SystemLoggedInUser.Text = "Logged in user: " & Environment.UserName & My.User.Name
