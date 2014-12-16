@@ -108,8 +108,9 @@ Partial Class Dashy
         Me.FastTimerRefreshLabel = New System.Windows.Forms.Label()
         Me.FastTimerRefreshValue = New System.Windows.Forms.NumericUpDown()
         Me.SlowTimerRefreshValue = New System.Windows.Forms.NumericUpDown()
-        Me.FileSystemEnvVarsLBL = New System.Windows.Forms.Label()
-        Me.FileSystemEnvVars = New System.Windows.Forms.Label()
+        Me.EnvVarsLBL = New System.Windows.Forms.Label()
+        Me.EnvVars = New System.Windows.Forms.Label()
+        Me.btnExpand = New System.Windows.Forms.Button()
         Me.FileSystemPanel.SuspendLayout()
         Me.FileSystemDrivesTabControl.SuspendLayout()
         Me.FileSystemDrivesTabFS.SuspendLayout()
@@ -133,12 +134,8 @@ Partial Class Dashy
         '
         'FileSystemPanel
         '
-        Me.FileSystemPanel.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
-            Or System.Windows.Forms.AnchorStyles.Left), System.Windows.Forms.AnchorStyles)
         Me.FileSystemPanel.BackColor = System.Drawing.SystemColors.ControlLight
         Me.FileSystemPanel.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.FileSystemPanel.Controls.Add(Me.FileSystemEnvVars)
-        Me.FileSystemPanel.Controls.Add(Me.FileSystemEnvVarsLBL)
         Me.FileSystemPanel.Controls.Add(Me.FileSystemDrivesTabControl)
         Me.FileSystemPanel.Controls.Add(Me.FileSystemFsCurrentDir)
         Me.FileSystemPanel.Controls.Add(Me.FileSystemFsCurrentDirLBL)
@@ -371,7 +368,7 @@ Partial Class Dashy
         '
         'PerformancePanel
         '
-        Me.PerformancePanel.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom), System.Windows.Forms.AnchorStyles)
+        Me.PerformancePanel.Anchor = System.Windows.Forms.AnchorStyles.Top
         Me.PerformancePanel.BackColor = System.Drawing.SystemColors.ControlLight
         Me.PerformancePanel.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
         Me.PerformancePanel.Controls.Add(Me.PerformanceClockLocal)
@@ -570,7 +567,7 @@ Partial Class Dashy
         '
         'HardwarePanel
         '
-        Me.HardwarePanel.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom), System.Windows.Forms.AnchorStyles)
+        Me.HardwarePanel.Anchor = System.Windows.Forms.AnchorStyles.Top
         Me.HardwarePanel.BackColor = System.Drawing.SystemColors.ControlLight
         Me.HardwarePanel.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
         Me.HardwarePanel.Controls.Add(Me.HardwareScreenPrimary)
@@ -668,7 +665,7 @@ Partial Class Dashy
         '
         'SystemPanel
         '
-        Me.SystemPanel.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom), System.Windows.Forms.AnchorStyles)
+        Me.SystemPanel.Anchor = System.Windows.Forms.AnchorStyles.Top
         Me.SystemPanel.BackColor = System.Drawing.SystemColors.ControlLight
         Me.SystemPanel.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
         Me.SystemPanel.Controls.Add(Me.SystemWorkingArea)
@@ -855,8 +852,7 @@ Partial Class Dashy
         '
         'NetworkPanel
         '
-        Me.NetworkPanel.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
-            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.NetworkPanel.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.NetworkPanel.BackColor = System.Drawing.SystemColors.ControlLight
         Me.NetworkPanel.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
         Me.NetworkPanel.Controls.Add(Me.NetworkSplitContainer)
@@ -951,6 +947,7 @@ Partial Class Dashy
         Me.NetworkSerialPortNames.FormattingEnabled = True
         Me.NetworkSerialPortNames.IntegralHeight = False
         Me.NetworkSerialPortNames.ItemHeight = 16
+        Me.NetworkSerialPortNames.Items.AddRange(New Object() {"Checking..."})
         Me.NetworkSerialPortNames.Location = New System.Drawing.Point(3, 24)
         Me.NetworkSerialPortNames.Name = "NetworkSerialPortNames"
         Me.NetworkSerialPortNames.SelectionMode = System.Windows.Forms.SelectionMode.None
@@ -967,7 +964,7 @@ Partial Class Dashy
         '
         'btnRefresh
         '
-        Me.btnRefresh.Anchor = System.Windows.Forms.AnchorStyles.Bottom
+        Me.btnRefresh.Anchor = System.Windows.Forms.AnchorStyles.Top
         Me.btnRefresh.AutoSize = True
         Me.btnRefresh.Location = New System.Drawing.Point(528, 386)
         Me.btnRefresh.Name = "btnRefresh"
@@ -978,7 +975,7 @@ Partial Class Dashy
         '
         'btnExit
         '
-        Me.btnExit.Anchor = System.Windows.Forms.AnchorStyles.Bottom
+        Me.btnExit.Anchor = System.Windows.Forms.AnchorStyles.Top
         Me.btnExit.DialogResult = System.Windows.Forms.DialogResult.Cancel
         Me.btnExit.Location = New System.Drawing.Point(693, 386)
         Me.btnExit.Name = "btnExit"
@@ -989,7 +986,7 @@ Partial Class Dashy
         '
         'SlowTimerRefreshLabel
         '
-        Me.SlowTimerRefreshLabel.Anchor = System.Windows.Forms.AnchorStyles.Bottom
+        Me.SlowTimerRefreshLabel.Anchor = System.Windows.Forms.AnchorStyles.Top
         Me.SlowTimerRefreshLabel.AutoSize = True
         Me.SlowTimerRefreshLabel.Location = New System.Drawing.Point(528, 344)
         Me.SlowTimerRefreshLabel.Name = "SlowTimerRefreshLabel"
@@ -999,7 +996,7 @@ Partial Class Dashy
         '
         'SlowTimerRefreshUnit
         '
-        Me.SlowTimerRefreshUnit.Anchor = System.Windows.Forms.AnchorStyles.Bottom
+        Me.SlowTimerRefreshUnit.Anchor = System.Windows.Forms.AnchorStyles.Top
         Me.SlowTimerRefreshUnit.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
         Me.SlowTimerRefreshUnit.FormattingEnabled = True
         Me.SlowTimerRefreshUnit.Items.AddRange(New Object() {"Millisecond(s)", "Centisecond(s)", "Second(s)", "Minute(s)", "Hour(s)"})
@@ -1010,7 +1007,7 @@ Partial Class Dashy
         '
         'FastTimerRefreshUnit
         '
-        Me.FastTimerRefreshUnit.Anchor = System.Windows.Forms.AnchorStyles.Bottom
+        Me.FastTimerRefreshUnit.Anchor = System.Windows.Forms.AnchorStyles.Top
         Me.FastTimerRefreshUnit.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
         Me.FastTimerRefreshUnit.FormattingEnabled = True
         Me.FastTimerRefreshUnit.Items.AddRange(New Object() {"Millisecond(s)", "Centisecond(s)", "Second(s)", "Minute(s)", "Hour(s)"})
@@ -1021,7 +1018,7 @@ Partial Class Dashy
         '
         'FastTimerRefreshLabel
         '
-        Me.FastTimerRefreshLabel.Anchor = System.Windows.Forms.AnchorStyles.Bottom
+        Me.FastTimerRefreshLabel.Anchor = System.Windows.Forms.AnchorStyles.Top
         Me.FastTimerRefreshLabel.AutoSize = True
         Me.FastTimerRefreshLabel.Location = New System.Drawing.Point(528, 305)
         Me.FastTimerRefreshLabel.Name = "FastTimerRefreshLabel"
@@ -1031,7 +1028,7 @@ Partial Class Dashy
         '
         'FastTimerRefreshValue
         '
-        Me.FastTimerRefreshValue.Anchor = System.Windows.Forms.AnchorStyles.Bottom
+        Me.FastTimerRefreshValue.Anchor = System.Windows.Forms.AnchorStyles.Top
         Me.FastTimerRefreshValue.Location = New System.Drawing.Point(641, 321)
         Me.FastTimerRefreshValue.Maximum = New Decimal(New Integer() {999, 0, 0, 0})
         Me.FastTimerRefreshValue.Name = "FastTimerRefreshValue"
@@ -1042,7 +1039,7 @@ Partial Class Dashy
         '
         'SlowTimerRefreshValue
         '
-        Me.SlowTimerRefreshValue.Anchor = System.Windows.Forms.AnchorStyles.Bottom
+        Me.SlowTimerRefreshValue.Anchor = System.Windows.Forms.AnchorStyles.Top
         Me.SlowTimerRefreshValue.Location = New System.Drawing.Point(641, 360)
         Me.SlowTimerRefreshValue.Maximum = New Decimal(New Integer() {999, 0, 0, 0})
         Me.SlowTimerRefreshValue.Name = "SlowTimerRefreshValue"
@@ -1051,25 +1048,34 @@ Partial Class Dashy
         Me.SlowTimerRefreshValue.TextAlign = System.Windows.Forms.HorizontalAlignment.Right
         Me.SlowTimerRefreshValue.Value = New Decimal(New Integer() {30, 0, 0, 0})
         '
-        'FileSystemEnvVarsLBL
+        'EnvVarsLBL
         '
-        Me.FileSystemEnvVarsLBL.AutoSize = True
-        Me.FileSystemEnvVarsLBL.Font = New System.Drawing.Font("Trebuchet MS", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.FileSystemEnvVarsLBL.Location = New System.Drawing.Point(186, 4)
-        Me.FileSystemEnvVarsLBL.Name = "FileSystemEnvVarsLBL"
-        Me.FileSystemEnvVarsLBL.Size = New System.Drawing.Size(144, 18)
-        Me.FileSystemEnvVarsLBL.TabIndex = 23
-        Me.FileSystemEnvVarsLBL.Text = "Environment Variables:"
+        Me.EnvVarsLBL.AutoSize = True
+        Me.EnvVarsLBL.Font = New System.Drawing.Font("Trebuchet MS", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.EnvVarsLBL.Location = New System.Drawing.Point(12, 407)
+        Me.EnvVarsLBL.Name = "EnvVarsLBL"
+        Me.EnvVarsLBL.Size = New System.Drawing.Size(144, 18)
+        Me.EnvVarsLBL.TabIndex = 23
+        Me.EnvVarsLBL.Text = "Environment Variables:"
         '
-        'FileSystemEnvVars
+        'EnvVars
         '
-        Me.FileSystemEnvVars.AutoSize = True
-        Me.FileSystemEnvVars.Font = New System.Drawing.Font("Trebuchet MS", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.FileSystemEnvVars.Location = New System.Drawing.Point(186, 22)
-        Me.FileSystemEnvVars.Name = "FileSystemEnvVars"
-        Me.FileSystemEnvVars.Size = New System.Drawing.Size(76, 18)
-        Me.FileSystemEnvVars.TabIndex = 24
-        Me.FileSystemEnvVars.Text = "Checking..."
+        Me.EnvVars.AutoSize = True
+        Me.EnvVars.Font = New System.Drawing.Font("Trebuchet MS", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.EnvVars.Location = New System.Drawing.Point(12, 425)
+        Me.EnvVars.Name = "EnvVars"
+        Me.EnvVars.Size = New System.Drawing.Size(76, 18)
+        Me.EnvVars.TabIndex = 24
+        Me.EnvVars.Text = "Checking..."
+        '
+        'btnExpand
+        '
+        Me.btnExpand.Location = New System.Drawing.Point(158, 404)
+        Me.btnExpand.Name = "btnExpand"
+        Me.btnExpand.Size = New System.Drawing.Size(75, 23)
+        Me.btnExpand.TabIndex = 25
+        Me.btnExpand.Text = "Expand"
+        Me.btnExpand.UseVisualStyleBackColor = True
         '
         'Dashy
         '
@@ -1091,6 +1097,9 @@ Partial Class Dashy
         Me.Controls.Add(Me.HardwarePanel)
         Me.Controls.Add(Me.PerformancePanel)
         Me.Controls.Add(Me.FileSystemPanel)
+        Me.Controls.Add(Me.EnvVars)
+        Me.Controls.Add(Me.EnvVarsLBL)
+        Me.Controls.Add(Me.btnExpand)
         Me.Name = "Dashy"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "Dashy (GUI Revamped)"
@@ -1207,7 +1216,8 @@ Partial Class Dashy
     Friend WithEvents FastTimerRefreshLabel As System.Windows.Forms.Label
     Friend WithEvents FastTimerRefreshValue As System.Windows.Forms.NumericUpDown
     Friend WithEvents SlowTimerRefreshValue As System.Windows.Forms.NumericUpDown
-    Friend WithEvents FileSystemEnvVars As System.Windows.Forms.Label
-    Friend WithEvents FileSystemEnvVarsLBL As System.Windows.Forms.Label
+    Friend WithEvents EnvVars As System.Windows.Forms.Label
+    Friend WithEvents EnvVarsLBL As System.Windows.Forms.Label
+    Friend WithEvents btnExpand As System.Windows.Forms.Button
 
 End Class

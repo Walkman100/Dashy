@@ -6,11 +6,14 @@
 
         FastTimerRefreshUnit.SelectedIndex = 2
         SlowTimerRefreshUnit.SelectedIndex = 2
+
+        TimerMonitorSlow.Interval = 5
         Me.Width = My.Computer.Screen.WorkingArea.Width
         Me.Location = New Size(0, Me.Location.Y)
     End Sub
 
     Private Sub TimerMonitorSlow_Tick(sender As Object, e As EventArgs) Handles TimerMonitorSlow.Tick, btnRefresh.Click
+        SlowTimer_SetTick()
         'FileSystem:
         FileSystemProgramFilesDirectory.Text = Environment.GetEnvironmentVariable("PROGRAMFILES")
         FileSystemHomePath.Text = Environment.GetEnvironmentVariable("USERPROFILE")
@@ -25,7 +28,7 @@
         For Each drive In Environment.GetLogicalDrives
             FileSystemDriveListEN.Items.Add(drive)
         Next
-        FileSystemEnvVars.Text = "HOMEDRIVE: " & Environment.GetEnvironmentVariable("HOMEDRIVE") & vbNewLine & _
+        EnvVars.Text = "HOMEDRIVE: " & Environment.GetEnvironmentVariable("HOMEDRIVE") & vbNewLine & _
             "SystemDrive: " & Environment.GetEnvironmentVariable("SystemDrive") & vbNewLine & _
             "ProgramFiles: " & Environment.GetEnvironmentVariable("ProgramFiles") & vbNewLine & _
             "ProgramFiles(x86): " & Environment.GetEnvironmentVariable("ProgramFiles(x86)") & vbNewLine & _
@@ -80,7 +83,7 @@
         SystemNameEN.Text = "ENV.MachineName: " & Environment.MachineName
         SystemNameComputer.Text = "Computer.Name: " & My.Computer.Name
         SystemDomain.Text = "Domain: " & Environment.UserDomainName
-        SystemLoggedInUser.Text = "Logged in user: " & Environment.UserName & My.User.Name
+        SystemLoggedInUser.Text = "Logged in user: " & Environment.UserName
         SystemInteractiveMode.Text = "Running in interactive mode: " & Environment.UserInteractive
         SystemShutdownStarted.Text = "Shutdown started: " & Environment.HasShutdownStarted
         If Environment.Is64BitProcess Then
@@ -158,7 +161,7 @@
         SystemPanel.Size = New Size(NetworkPanel.Location.X - SystemPanel.Location.X - 6, SystemPanel.Height)
     End Sub
 
-    Private Sub FastTimer_SetTick(sender As Object, e As EventArgs) Handles FastTimerRefreshValue.TextChanged, FastTimerRefreshUnit.TextChanged
+    Private Sub FastTimer_SetTick() Handles FastTimerRefreshValue.TextChanged, FastTimerRefreshUnit.TextChanged
         Select Case FastTimerRefreshUnit.SelectedIndex
             Case 0 'Milliseconds
                 TimerMonitorFast.Interval = FastTimerRefreshValue.Text
@@ -173,7 +176,7 @@
         End Select
     End Sub
 
-    Private Sub SlowTimer_SetTick(sender As Object, e As EventArgs) Handles SlowTimerRefreshValue.TextChanged, SlowTimerRefreshUnit.TextChanged
+    Private Sub SlowTimer_SetTick() Handles SlowTimerRefreshValue.TextChanged, SlowTimerRefreshUnit.TextChanged
         Select Case SlowTimerRefreshUnit.SelectedIndex
             Case 0 'Milliseconds
                 TimerMonitorSlow.Interval = SlowTimerRefreshValue.Text
@@ -190,5 +193,15 @@
 
     Private Sub btnExit_Click(sender As Object, e As EventArgs) Handles btnExit.Click
         Application.Exit()
+    End Sub
+
+    Private Sub btnExpand_Click(sender As Object, e As EventArgs) Handles btnExpand.Click
+        If btnExpand.Text = "Expand" Then
+            Me.Height = 925
+            btnExpand.Text = "Collapse"
+        Else
+            Me.Height = 459
+            btnExpand.Text = "Expand"
+        End If
     End Sub
 End Class
