@@ -15,8 +15,8 @@
     Private Sub TimerMonitorSlow_Tick(sender As Object, e As EventArgs) Handles TimerMonitorSlow.Tick, btnRefresh.Click
         SlowTimer_SetTick()
         'FileSystem:
-        FileSystemProgramFilesDirectory.Text = Environment.GetEnvironmentVariable("PROGRAMFILES")
-        FileSystemHomePath.Text = Environment.GetEnvironmentVariable("USERPROFILE")
+        FileSystemProgramFilesDirectory.Text = GetVar("PROGRAMFILES")
+        FileSystemHomePath.Text = GetVar("USERPROFILE")
         FileSystemEnCurrentDir.Text = Environment.CurrentDirectory
         FileSystemFsCurrentDir.Text = My.Computer.FileSystem.CurrentDirectory
         FileSystemSysDir.Text = Environment.SystemDirectory
@@ -28,31 +28,31 @@
         For Each drive In Environment.GetLogicalDrives
             FileSystemDriveListEN.Items.Add(drive)
         Next
-        EnvVars.Text = "HOMEDRIVE: " & Environment.GetEnvironmentVariable("HOMEDRIVE") & vbNewLine & _
-            "SystemDrive: " & Environment.GetEnvironmentVariable("SystemDrive") & vbNewLine & _
-            "ProgramFiles: " & Environment.GetEnvironmentVariable("ProgramFiles") & vbNewLine & _
-            "ProgramFiles(x86): " & Environment.GetEnvironmentVariable("ProgramFiles(x86)") & vbNewLine & _
-            "ProgramW6432: " & Environment.GetEnvironmentVariable("ProgramW6432") & vbNewLine & _
-            "ProgramData: " & Environment.GetEnvironmentVariable("ProgramData") & vbNewLine & _
-            "ALLUSERSPROFILE: " & Environment.GetEnvironmentVariable("ALLUSERSPROFILE") & vbNewLine & _
-            "CommonProgramFiles: " & Environment.GetEnvironmentVariable("CommonProgramFiles") & vbNewLine & _
-            "CommonProgramFiles(x86): " & Environment.GetEnvironmentVariable("CommonProgramFiles(x86)") & vbNewLine & _
-            "CommonProgramW6432: " & Environment.GetEnvironmentVariable("CommonProgramW6432") & vbNewLine & _
-            "SystemRoot: " & Environment.GetEnvironmentVariable("SystemRoot") & vbNewLine & _
-            "windir: " & Environment.GetEnvironmentVariable("windir") & vbNewLine & _
-            "ComSpec: " & Environment.GetEnvironmentVariable("ComSpec") & vbNewLine & _
-            "PSModulePath: " & Environment.GetEnvironmentVariable("PSModulePath") & vbNewLine & _
-            "PUBLIC: " & Environment.GetEnvironmentVariable("PUBLIC") & vbNewLine & _
-            "HOMEPATH: " & Environment.GetEnvironmentVariable("HOMEPATH") & vbNewLine & _
-            "USERPROFILE: " & Environment.GetEnvironmentVariable("USERPROFILE") & vbNewLine & _
-            "APPDATA: " & Environment.GetEnvironmentVariable("APPDATA") & vbNewLine & _
-            "LOCALAPPDATA: " & Environment.GetEnvironmentVariable("LOCALAPPDATA") & vbNewLine & _
-            "TEMP: " & Environment.GetEnvironmentVariable("TEMP") & vbNewLine & _
-            "TMP: " & Environment.GetEnvironmentVariable("TMP") & vbNewLine & _
-            "USERDOMAIN: " & Environment.GetEnvironmentVariable("USERDOMAIN") & vbNewLine & _
-            "COMPUTERNAME: " & Environment.GetEnvironmentVariable("COMPUTERNAME") & vbNewLine & _
-            "LOGONSERVER: " & Environment.GetEnvironmentVariable("LOGONSERVER") & vbNewLine & _
-            "USERNAME: " & Environment.GetEnvironmentVariable("USERNAME")
+        EnvVars.Text = "HOMEDRIVE: " & GetVar("HOMEDRIVE") & vbNewLine & _
+            "SystemDrive: " & GetVar("SystemDrive") & vbNewLine & _
+            "ProgramFiles: " & GetVar("ProgramFiles") & vbNewLine & _
+            "ProgramFiles(x86): " & GetVar("ProgramFiles(x86)") & vbNewLine & _
+            "ProgramW6432: " & GetVar("ProgramW6432") & vbNewLine & _
+            "ProgramData: " & GetVar("ProgramData") & vbNewLine & _
+            "ALLUSERSPROFILE: " & GetVar("ALLUSERSPROFILE") & vbNewLine & _
+            "CommonProgramFiles: " & GetVar("CommonProgramFiles") & vbNewLine & _
+            "CommonProgramFiles(x86): " & GetVar("CommonProgramFiles(x86)") & vbNewLine & _
+            "CommonProgramW6432: " & GetVar("CommonProgramW6432") & vbNewLine & _
+            "SystemRoot: " & GetVar("SystemRoot") & vbNewLine & _
+            "windir: " & GetVar("windir") & vbNewLine & _
+            "ComSpec: " & GetVar("ComSpec") & vbNewLine & _
+            "PSModulePath: " & GetVar("PSModulePath") & vbNewLine & _
+            "PUBLIC: " & GetVar("PUBLIC") & vbNewLine & _
+            "HOMEPATH: " & GetVar("HOMEPATH") & vbNewLine & _
+            "USERPROFILE: " & GetVar("USERPROFILE") & vbNewLine & _
+            "APPDATA: " & GetVar("APPDATA") & vbNewLine & _
+            "LOCALAPPDATA: " & GetVar("LOCALAPPDATA") & vbNewLine & _
+            "TEMP: " & GetVar("TEMP") & vbNewLine & _
+            "TMP: " & GetVar("TMP") & vbNewLine & _
+            "USERDOMAIN: " & GetVar("USERDOMAIN") & vbNewLine & _
+            "COMPUTERNAME: " & GetVar("COMPUTERNAME") & vbNewLine & _
+            "LOGONSERVER: " & GetVar("LOGONSERVER") & vbNewLine & _
+            "USERNAME: " & GetVar("USERNAME")
 
         'Performance:
         PerformanceTotalVirtualMem.Text = "Total virtual memory: " & (My.Computer.Info.TotalVirtualMemory * 1000 \ 1048576) / 1000 & " MB" 'My.Computer.Info.TotalVirtualMemory & " bytes"
@@ -204,4 +204,12 @@
             btnExpand.Text = "Expand"
         End If
     End Sub
+
+    Private Function GetVar(EnvVar as string)
+        Try
+            Return Environment.GetEnvironmentVariable(EnvVar)
+        Catch ex As Exception
+            Return "Error getting variable: " & ex.Message
+        End Try
+    End Function
 End Class
