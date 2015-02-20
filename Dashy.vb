@@ -205,9 +205,13 @@
         End If
     End Sub
 
-    Private Function GetVar(EnvVar as string)
+    Public Function GetVar(EnvVar as string)
         Try
-            Return Environment.GetEnvironmentVariable(EnvVar)
+            If Environment.GetEnvironmentVariable(EnvVar) <> "" Then
+                Return Environment.GetEnvironmentVariable(EnvVar)
+            Else
+                Return "Variable is empty!"
+            End If
         Catch ex As Exception
             Return "Error getting variable: " & ex.Message
         End Try
