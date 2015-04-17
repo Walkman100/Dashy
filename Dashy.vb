@@ -1,15 +1,17 @@
 ﻿Public Class Dashy
 
     Private Sub Dashy_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-        TimerMonitorFast.Start()
-        TimerMonitorSlow.Start()
-
         FastTimerRefreshUnit.SelectedIndex = 2
         SlowTimerRefreshUnit.SelectedIndex = 2
-
-        TimerMonitorSlow.Interval = 5
-        Me.Width = My.Computer.Screen.WorkingArea.Width
-        Me.Location = New Size(0, Me.Location.Y)
+        
+        If Environment.GetEnvironmentVariable("OS") = "Windows_NT" Then
+            TimerMonitorFast.Start()
+            TimerMonitorSlow.Start()
+            
+            TimerMonitorSlow.Interval = 5
+            Me.Width = My.Computer.Screen.WorkingArea.Width
+            Me.Location = New Size(0, Me.Location.Y)
+        End if
     End Sub
 
     Private Sub TimerMonitorSlow_Tick(sender As Object, e As EventArgs) Handles TimerMonitorSlow.Tick, btnRefresh.Click
@@ -206,6 +208,7 @@
     End Sub
 
     Public Function GetVar(EnvVar as string)
+        If Environment.GetEnvironmentVariable("OS") = "Windows_NT" Then
         Try
             If Environment.GetEnvironmentVariable(EnvVar) <> "" Then
                 Return Environment.GetEnvironmentVariable(EnvVar)
@@ -215,5 +218,8 @@
         Catch ex As Exception
             Return "Error getting variable: " & ex.Message
         End Try
+        else
+        return "Variables disabled"
+        End if
     End Function
 End Class

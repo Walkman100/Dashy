@@ -111,26 +111,26 @@ Partial Class Dashy
         Me.EnvVarsLBL = New System.Windows.Forms.Label()
         Me.EnvVars = New System.Windows.Forms.Label()
         Me.btnExpand = New System.Windows.Forms.Button()
-        Me.FileSystemPanel.SuspendLayout()
-        Me.FileSystemDrivesTabControl.SuspendLayout()
-        Me.FileSystemDrivesTabFS.SuspendLayout()
-        Me.FileSystemDrivesTabEN.SuspendLayout()
-        CType(Me.FileSystemImg, System.ComponentModel.ISupportInitialize).BeginInit()
-        Me.PerformancePanel.SuspendLayout()
-        CType(Me.PerformanceImg, System.ComponentModel.ISupportInitialize).BeginInit()
-        Me.HardwarePanel.SuspendLayout()
-        CType(Me.HardwareImg, System.ComponentModel.ISupportInitialize).BeginInit()
-        Me.SystemPanel.SuspendLayout()
-        CType(Me.SystemImg, System.ComponentModel.ISupportInitialize).BeginInit()
-        Me.NetworkPanel.SuspendLayout()
-        CType(Me.NetworkSplitContainer, System.ComponentModel.ISupportInitialize).BeginInit()
-        Me.NetworkSplitContainer.Panel1.SuspendLayout()
-        Me.NetworkSplitContainer.Panel2.SuspendLayout()
-        Me.NetworkSplitContainer.SuspendLayout()
-        CType(Me.NetworkImg, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.FastTimerRefreshValue, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.SlowTimerRefreshValue, System.ComponentModel.ISupportInitialize).BeginInit()
-        Me.SuspendLayout()
+        Me.FileSystemPanel.SuspendLayout
+        Me.FileSystemDrivesTabControl.SuspendLayout
+        Me.FileSystemDrivesTabFS.SuspendLayout
+        Me.FileSystemDrivesTabEN.SuspendLayout
+        CType(Me.FileSystemImg,System.ComponentModel.ISupportInitialize).BeginInit
+        Me.PerformancePanel.SuspendLayout
+        CType(Me.PerformanceImg,System.ComponentModel.ISupportInitialize).BeginInit
+        Me.HardwarePanel.SuspendLayout
+        CType(Me.HardwareImg,System.ComponentModel.ISupportInitialize).BeginInit
+        Me.SystemPanel.SuspendLayout
+        CType(Me.SystemImg,System.ComponentModel.ISupportInitialize).BeginInit
+        Me.NetworkPanel.SuspendLayout
+        CType(Me.NetworkSplitContainer,System.ComponentModel.ISupportInitialize).BeginInit
+        Me.NetworkSplitContainer.Panel1.SuspendLayout
+        Me.NetworkSplitContainer.Panel2.SuspendLayout
+        Me.NetworkSplitContainer.SuspendLayout
+        CType(Me.NetworkImg,System.ComponentModel.ISupportInitialize).BeginInit
+        CType(Me.FastTimerRefreshValue,System.ComponentModel.ISupportInitialize).BeginInit
+        CType(Me.SlowTimerRefreshValue,System.ComponentModel.ISupportInitialize).BeginInit
+        Me.SuspendLayout
         '
         'FileSystemPanel
         '
@@ -160,10 +160,10 @@ Partial Class Dashy
         '
         Me.FileSystemDrivesTabControl.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
             Or System.Windows.Forms.AnchorStyles.Left) _
-            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+            Or System.Windows.Forms.AnchorStyles.Right),System.Windows.Forms.AnchorStyles)
         Me.FileSystemDrivesTabControl.Controls.Add(Me.FileSystemDrivesTabFS)
         Me.FileSystemDrivesTabControl.Controls.Add(Me.FileSystemDrivesTabEN)
-        Me.FileSystemDrivesTabControl.Font = New System.Drawing.Font("Trebuchet MS", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.FileSystemDrivesTabControl.Font = New System.Drawing.Font("Trebuchet MS", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0,Byte))
         Me.FileSystemDrivesTabControl.Location = New System.Drawing.Point(3, 289)
         Me.FileSystemDrivesTabControl.Name = "FileSystemDrivesTabControl"
         Me.FileSystemDrivesTabControl.SelectedIndex = 0
@@ -173,26 +173,26 @@ Partial Class Dashy
         'FileSystemDrivesTabFS
         '
         Me.FileSystemDrivesTabFS.Controls.Add(Me.FileSystemDriveListFS)
-        Me.FileSystemDrivesTabFS.Font = New System.Drawing.Font("Trebuchet MS", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.FileSystemDrivesTabFS.Font = New System.Drawing.Font("Trebuchet MS", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0,Byte))
         Me.FileSystemDrivesTabFS.Location = New System.Drawing.Point(4, 25)
         Me.FileSystemDrivesTabFS.Name = "FileSystemDrivesTabFS"
         Me.FileSystemDrivesTabFS.Padding = New System.Windows.Forms.Padding(3)
         Me.FileSystemDrivesTabFS.Size = New System.Drawing.Size(236, 74)
         Me.FileSystemDrivesTabFS.TabIndex = 0
         Me.FileSystemDrivesTabFS.Text = "FileSystem.Drives"
-        Me.FileSystemDrivesTabFS.UseVisualStyleBackColor = True
+        Me.FileSystemDrivesTabFS.UseVisualStyleBackColor = true
         '
         'FileSystemDriveListFS
         '
         Me.FileSystemDriveListFS.ColumnWidth = 40
         Me.FileSystemDriveListFS.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.FileSystemDriveListFS.Font = New System.Drawing.Font("Trebuchet MS", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.FileSystemDriveListFS.FormattingEnabled = True
-        Me.FileSystemDriveListFS.IntegralHeight = False
+        Me.FileSystemDriveListFS.Font = New System.Drawing.Font("Trebuchet MS", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0,Byte))
+        Me.FileSystemDriveListFS.FormattingEnabled = true
+        Me.FileSystemDriveListFS.IntegralHeight = false
         Me.FileSystemDriveListFS.ItemHeight = 16
         Me.FileSystemDriveListFS.Items.AddRange(New Object() {"Checking..."})
         Me.FileSystemDriveListFS.Location = New System.Drawing.Point(3, 3)
-        Me.FileSystemDriveListFS.MultiColumn = True
+        Me.FileSystemDriveListFS.MultiColumn = true
         Me.FileSystemDriveListFS.Name = "FileSystemDriveListFS"
         Me.FileSystemDriveListFS.SelectionMode = System.Windows.Forms.SelectionMode.None
         Me.FileSystemDriveListFS.Size = New System.Drawing.Size(230, 68)
@@ -201,26 +201,26 @@ Partial Class Dashy
         'FileSystemDrivesTabEN
         '
         Me.FileSystemDrivesTabEN.Controls.Add(Me.FileSystemDriveListEN)
-        Me.FileSystemDrivesTabEN.Font = New System.Drawing.Font("Trebuchet MS", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.FileSystemDrivesTabEN.Font = New System.Drawing.Font("Trebuchet MS", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0,Byte))
         Me.FileSystemDrivesTabEN.Location = New System.Drawing.Point(4, 25)
         Me.FileSystemDrivesTabEN.Name = "FileSystemDrivesTabEN"
         Me.FileSystemDrivesTabEN.Padding = New System.Windows.Forms.Padding(3)
         Me.FileSystemDrivesTabEN.Size = New System.Drawing.Size(236, 74)
         Me.FileSystemDrivesTabEN.TabIndex = 1
         Me.FileSystemDrivesTabEN.Text = "Environment.Drives"
-        Me.FileSystemDrivesTabEN.UseVisualStyleBackColor = True
+        Me.FileSystemDrivesTabEN.UseVisualStyleBackColor = true
         '
         'FileSystemDriveListEN
         '
         Me.FileSystemDriveListEN.ColumnWidth = 40
         Me.FileSystemDriveListEN.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.FileSystemDriveListEN.Font = New System.Drawing.Font("Trebuchet MS", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.FileSystemDriveListEN.FormattingEnabled = True
-        Me.FileSystemDriveListEN.IntegralHeight = False
+        Me.FileSystemDriveListEN.Font = New System.Drawing.Font("Trebuchet MS", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0,Byte))
+        Me.FileSystemDriveListEN.FormattingEnabled = true
+        Me.FileSystemDriveListEN.IntegralHeight = false
         Me.FileSystemDriveListEN.ItemHeight = 16
         Me.FileSystemDriveListEN.Items.AddRange(New Object() {"Checking..."})
         Me.FileSystemDriveListEN.Location = New System.Drawing.Point(3, 3)
-        Me.FileSystemDriveListEN.MultiColumn = True
+        Me.FileSystemDriveListEN.MultiColumn = true
         Me.FileSystemDriveListEN.Name = "FileSystemDriveListEN"
         Me.FileSystemDriveListEN.SelectionMode = System.Windows.Forms.SelectionMode.None
         Me.FileSystemDriveListEN.Size = New System.Drawing.Size(230, 68)
@@ -228,8 +228,8 @@ Partial Class Dashy
         '
         'FileSystemFsCurrentDir
         '
-        Me.FileSystemFsCurrentDir.AutoSize = True
-        Me.FileSystemFsCurrentDir.Font = New System.Drawing.Font("Trebuchet MS", 9.75!, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.FileSystemFsCurrentDir.AutoSize = true
+        Me.FileSystemFsCurrentDir.Font = New System.Drawing.Font("Trebuchet MS", 9.75!, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, CType(0,Byte))
         Me.FileSystemFsCurrentDir.Location = New System.Drawing.Point(3, 196)
         Me.FileSystemFsCurrentDir.Name = "FileSystemFsCurrentDir"
         Me.FileSystemFsCurrentDir.Size = New System.Drawing.Size(76, 18)
@@ -238,8 +238,8 @@ Partial Class Dashy
         '
         'FileSystemFsCurrentDirLBL
         '
-        Me.FileSystemFsCurrentDirLBL.AutoSize = True
-        Me.FileSystemFsCurrentDirLBL.Font = New System.Drawing.Font("Trebuchet MS", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.FileSystemFsCurrentDirLBL.AutoSize = true
+        Me.FileSystemFsCurrentDirLBL.Font = New System.Drawing.Font("Trebuchet MS", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0,Byte))
         Me.FileSystemFsCurrentDirLBL.Location = New System.Drawing.Point(3, 178)
         Me.FileSystemFsCurrentDirLBL.Name = "FileSystemFsCurrentDirLBL"
         Me.FileSystemFsCurrentDirLBL.Size = New System.Drawing.Size(133, 18)
@@ -248,8 +248,8 @@ Partial Class Dashy
         '
         'FileSystemSysDir
         '
-        Me.FileSystemSysDir.AutoSize = True
-        Me.FileSystemSysDir.Font = New System.Drawing.Font("Trebuchet MS", 9.75!, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.FileSystemSysDir.AutoSize = true
+        Me.FileSystemSysDir.Font = New System.Drawing.Font("Trebuchet MS", 9.75!, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, CType(0,Byte))
         Me.FileSystemSysDir.Location = New System.Drawing.Point(3, 232)
         Me.FileSystemSysDir.Name = "FileSystemSysDir"
         Me.FileSystemSysDir.Size = New System.Drawing.Size(76, 18)
@@ -258,8 +258,8 @@ Partial Class Dashy
         '
         'FileSystemSysDirLBL
         '
-        Me.FileSystemSysDirLBL.AutoSize = True
-        Me.FileSystemSysDirLBL.Font = New System.Drawing.Font("Trebuchet MS", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.FileSystemSysDirLBL.AutoSize = true
+        Me.FileSystemSysDirLBL.Font = New System.Drawing.Font("Trebuchet MS", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0,Byte))
         Me.FileSystemSysDirLBL.Location = New System.Drawing.Point(3, 214)
         Me.FileSystemSysDirLBL.Name = "FileSystemSysDirLBL"
         Me.FileSystemSysDirLBL.Size = New System.Drawing.Size(112, 18)
@@ -268,8 +268,8 @@ Partial Class Dashy
         '
         'FileSystemEnCurrentDir
         '
-        Me.FileSystemEnCurrentDir.AutoSize = True
-        Me.FileSystemEnCurrentDir.Font = New System.Drawing.Font("Trebuchet MS", 9.75!, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.FileSystemEnCurrentDir.AutoSize = true
+        Me.FileSystemEnCurrentDir.Font = New System.Drawing.Font("Trebuchet MS", 9.75!, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, CType(0,Byte))
         Me.FileSystemEnCurrentDir.Location = New System.Drawing.Point(3, 160)
         Me.FileSystemEnCurrentDir.Name = "FileSystemEnCurrentDir"
         Me.FileSystemEnCurrentDir.Size = New System.Drawing.Size(76, 18)
@@ -278,8 +278,8 @@ Partial Class Dashy
         '
         'FileSystemEnCurrentDirLBL
         '
-        Me.FileSystemEnCurrentDirLBL.AutoSize = True
-        Me.FileSystemEnCurrentDirLBL.Font = New System.Drawing.Font("Trebuchet MS", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.FileSystemEnCurrentDirLBL.AutoSize = true
+        Me.FileSystemEnCurrentDirLBL.Font = New System.Drawing.Font("Trebuchet MS", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0,Byte))
         Me.FileSystemEnCurrentDirLBL.Location = New System.Drawing.Point(3, 142)
         Me.FileSystemEnCurrentDirLBL.Name = "FileSystemEnCurrentDirLBL"
         Me.FileSystemEnCurrentDirLBL.Size = New System.Drawing.Size(141, 18)
@@ -288,8 +288,8 @@ Partial Class Dashy
         '
         'FileSystemHomePath
         '
-        Me.FileSystemHomePath.AutoSize = True
-        Me.FileSystemHomePath.Font = New System.Drawing.Font("Trebuchet MS", 9.75!, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.FileSystemHomePath.AutoSize = true
+        Me.FileSystemHomePath.Font = New System.Drawing.Font("Trebuchet MS", 9.75!, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, CType(0,Byte))
         Me.FileSystemHomePath.Location = New System.Drawing.Point(3, 124)
         Me.FileSystemHomePath.Name = "FileSystemHomePath"
         Me.FileSystemHomePath.Size = New System.Drawing.Size(76, 18)
@@ -298,8 +298,8 @@ Partial Class Dashy
         '
         'FileSystemHomePathLBL
         '
-        Me.FileSystemHomePathLBL.AutoSize = True
-        Me.FileSystemHomePathLBL.Font = New System.Drawing.Font("Trebuchet MS", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.FileSystemHomePathLBL.AutoSize = true
+        Me.FileSystemHomePathLBL.Font = New System.Drawing.Font("Trebuchet MS", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0,Byte))
         Me.FileSystemHomePathLBL.Location = New System.Drawing.Point(3, 106)
         Me.FileSystemHomePathLBL.Name = "FileSystemHomePathLBL"
         Me.FileSystemHomePathLBL.Size = New System.Drawing.Size(77, 18)
@@ -308,8 +308,8 @@ Partial Class Dashy
         '
         'FileSystemProgramFilesDirectory
         '
-        Me.FileSystemProgramFilesDirectory.AutoSize = True
-        Me.FileSystemProgramFilesDirectory.Font = New System.Drawing.Font("Trebuchet MS", 9.75!, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.FileSystemProgramFilesDirectory.AutoSize = true
+        Me.FileSystemProgramFilesDirectory.Font = New System.Drawing.Font("Trebuchet MS", 9.75!, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, CType(0,Byte))
         Me.FileSystemProgramFilesDirectory.Location = New System.Drawing.Point(3, 88)
         Me.FileSystemProgramFilesDirectory.Name = "FileSystemProgramFilesDirectory"
         Me.FileSystemProgramFilesDirectory.Size = New System.Drawing.Size(76, 18)
@@ -318,8 +318,8 @@ Partial Class Dashy
         '
         'FileSystemProgramFilesDirectoryLBL
         '
-        Me.FileSystemProgramFilesDirectoryLBL.AutoSize = True
-        Me.FileSystemProgramFilesDirectoryLBL.Font = New System.Drawing.Font("Trebuchet MS", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.FileSystemProgramFilesDirectoryLBL.AutoSize = true
+        Me.FileSystemProgramFilesDirectoryLBL.Font = New System.Drawing.Font("Trebuchet MS", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0,Byte))
         Me.FileSystemProgramFilesDirectoryLBL.Location = New System.Drawing.Point(3, 70)
         Me.FileSystemProgramFilesDirectoryLBL.Name = "FileSystemProgramFilesDirectoryLBL"
         Me.FileSystemProgramFilesDirectoryLBL.Size = New System.Drawing.Size(149, 18)
@@ -328,8 +328,8 @@ Partial Class Dashy
         '
         'FileSystemNumberOfDrives
         '
-        Me.FileSystemNumberOfDrives.AutoSize = True
-        Me.FileSystemNumberOfDrives.Font = New System.Drawing.Font("Trebuchet MS", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.FileSystemNumberOfDrives.AutoSize = true
+        Me.FileSystemNumberOfDrives.Font = New System.Drawing.Font("Trebuchet MS", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0,Byte))
         Me.FileSystemNumberOfDrives.Location = New System.Drawing.Point(3, 250)
         Me.FileSystemNumberOfDrives.Name = "FileSystemNumberOfDrives"
         Me.FileSystemNumberOfDrives.Size = New System.Drawing.Size(161, 18)
@@ -338,8 +338,8 @@ Partial Class Dashy
         '
         'FileSystemDriveListLBL
         '
-        Me.FileSystemDriveListLBL.AutoSize = True
-        Me.FileSystemDriveListLBL.Font = New System.Drawing.Font("Trebuchet MS", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.FileSystemDriveListLBL.AutoSize = true
+        Me.FileSystemDriveListLBL.Font = New System.Drawing.Font("Trebuchet MS", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0,Byte))
         Me.FileSystemDriveListLBL.Location = New System.Drawing.Point(3, 268)
         Me.FileSystemDriveListLBL.Name = "FileSystemDriveListLBL"
         Me.FileSystemDriveListLBL.Size = New System.Drawing.Size(91, 18)
@@ -348,8 +348,8 @@ Partial Class Dashy
         '
         'FileSystemLbl
         '
-        Me.FileSystemLbl.AutoSize = True
-        Me.FileSystemLbl.Font = New System.Drawing.Font("Trebuchet MS", 15.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.FileSystemLbl.AutoSize = true
+        Me.FileSystemLbl.Font = New System.Drawing.Font("Trebuchet MS", 15.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0,Byte))
         Me.FileSystemLbl.Location = New System.Drawing.Point(70, 18)
         Me.FileSystemLbl.Name = "FileSystemLbl"
         Me.FileSystemLbl.Size = New System.Drawing.Size(110, 27)
@@ -358,13 +358,13 @@ Partial Class Dashy
         '
         'FileSystemImg
         '
-        Me.FileSystemImg.Image = CType(resources.GetObject("FileSystemImg.Image"), System.Drawing.Image)
+        Me.FileSystemImg.Image = CType(resources.GetObject("FileSystemImg.Image"),System.Drawing.Image)
         Me.FileSystemImg.Location = New System.Drawing.Point(3, 3)
         Me.FileSystemImg.Name = "FileSystemImg"
         Me.FileSystemImg.Size = New System.Drawing.Size(64, 64)
         Me.FileSystemImg.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
         Me.FileSystemImg.TabIndex = 2
-        Me.FileSystemImg.TabStop = False
+        Me.FileSystemImg.TabStop = false
         '
         'PerformancePanel
         '
@@ -392,8 +392,8 @@ Partial Class Dashy
         '
         'PerformanceClockLocal
         '
-        Me.PerformanceClockLocal.AutoSize = True
-        Me.PerformanceClockLocal.Font = New System.Drawing.Font("Trebuchet MS", 9.75!, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.PerformanceClockLocal.AutoSize = true
+        Me.PerformanceClockLocal.Font = New System.Drawing.Font("Trebuchet MS", 9.75!, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, CType(0,Byte))
         Me.PerformanceClockLocal.Location = New System.Drawing.Point(3, 241)
         Me.PerformanceClockLocal.Name = "PerformanceClockLocal"
         Me.PerformanceClockLocal.Size = New System.Drawing.Size(76, 18)
@@ -402,8 +402,8 @@ Partial Class Dashy
         '
         'PerformanceClockLocalLBL
         '
-        Me.PerformanceClockLocalLBL.AutoSize = True
-        Me.PerformanceClockLocalLBL.Font = New System.Drawing.Font("Trebuchet MS", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.PerformanceClockLocalLBL.AutoSize = true
+        Me.PerformanceClockLocalLBL.Font = New System.Drawing.Font("Trebuchet MS", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0,Byte))
         Me.PerformanceClockLocalLBL.Location = New System.Drawing.Point(3, 223)
         Me.PerformanceClockLocalLBL.Name = "PerformanceClockLocalLBL"
         Me.PerformanceClockLocalLBL.Size = New System.Drawing.Size(112, 18)
@@ -412,8 +412,8 @@ Partial Class Dashy
         '
         'PerformanceClockGMT
         '
-        Me.PerformanceClockGMT.AutoSize = True
-        Me.PerformanceClockGMT.Font = New System.Drawing.Font("Trebuchet MS", 9.75!, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.PerformanceClockGMT.AutoSize = true
+        Me.PerformanceClockGMT.Font = New System.Drawing.Font("Trebuchet MS", 9.75!, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, CType(0,Byte))
         Me.PerformanceClockGMT.Location = New System.Drawing.Point(3, 205)
         Me.PerformanceClockGMT.Name = "PerformanceClockGMT"
         Me.PerformanceClockGMT.Size = New System.Drawing.Size(76, 18)
@@ -422,8 +422,8 @@ Partial Class Dashy
         '
         'PerformanceClockGMTLBL
         '
-        Me.PerformanceClockGMTLBL.AutoSize = True
-        Me.PerformanceClockGMTLBL.Font = New System.Drawing.Font("Trebuchet MS", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.PerformanceClockGMTLBL.AutoSize = true
+        Me.PerformanceClockGMTLBL.Font = New System.Drawing.Font("Trebuchet MS", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0,Byte))
         Me.PerformanceClockGMTLBL.Location = New System.Drawing.Point(3, 187)
         Me.PerformanceClockGMTLBL.Name = "PerformanceClockGMTLBL"
         Me.PerformanceClockGMTLBL.Size = New System.Drawing.Size(109, 18)
@@ -432,8 +432,8 @@ Partial Class Dashy
         '
         'PerformanceClockTick
         '
-        Me.PerformanceClockTick.AutoSize = True
-        Me.PerformanceClockTick.Font = New System.Drawing.Font("Trebuchet MS", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.PerformanceClockTick.AutoSize = true
+        Me.PerformanceClockTick.Font = New System.Drawing.Font("Trebuchet MS", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0,Byte))
         Me.PerformanceClockTick.Location = New System.Drawing.Point(3, 259)
         Me.PerformanceClockTick.Name = "PerformanceClockTick"
         Me.PerformanceClockTick.Size = New System.Drawing.Size(185, 18)
@@ -442,8 +442,8 @@ Partial Class Dashy
         '
         'PerformanceClipboard
         '
-        Me.PerformanceClipboard.AutoSize = True
-        Me.PerformanceClipboard.Font = New System.Drawing.Font("Trebuchet MS", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.PerformanceClipboard.AutoSize = true
+        Me.PerformanceClipboard.Font = New System.Drawing.Font("Trebuchet MS", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0,Byte))
         Me.PerformanceClipboard.Location = New System.Drawing.Point(3, 286)
         Me.PerformanceClipboard.Name = "PerformanceClipboard"
         Me.PerformanceClipboard.Size = New System.Drawing.Size(196, 18)
@@ -452,8 +452,8 @@ Partial Class Dashy
         '
         'PerformancePagefile
         '
-        Me.PerformancePagefile.AutoSize = True
-        Me.PerformancePagefile.Font = New System.Drawing.Font("Trebuchet MS", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.PerformancePagefile.AutoSize = true
+        Me.PerformancePagefile.Font = New System.Drawing.Font("Trebuchet MS", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0,Byte))
         Me.PerformancePagefile.Location = New System.Drawing.Point(3, 124)
         Me.PerformancePagefile.Name = "PerformancePagefile"
         Me.PerformancePagefile.Size = New System.Drawing.Size(160, 18)
@@ -462,8 +462,8 @@ Partial Class Dashy
         '
         'PerformanceUptime
         '
-        Me.PerformanceUptime.AutoSize = True
-        Me.PerformanceUptime.Font = New System.Drawing.Font("Trebuchet MS", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.PerformanceUptime.AutoSize = true
+        Me.PerformanceUptime.Font = New System.Drawing.Font("Trebuchet MS", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0,Byte))
         Me.PerformanceUptime.Location = New System.Drawing.Point(3, 142)
         Me.PerformanceUptime.Name = "PerformanceUptime"
         Me.PerformanceUptime.Size = New System.Drawing.Size(132, 18)
@@ -472,8 +472,8 @@ Partial Class Dashy
         '
         'PerformanceMemoryUsedByDashy
         '
-        Me.PerformanceMemoryUsedByDashy.AutoSize = True
-        Me.PerformanceMemoryUsedByDashy.Font = New System.Drawing.Font("Trebuchet MS", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.PerformanceMemoryUsedByDashy.AutoSize = true
+        Me.PerformanceMemoryUsedByDashy.Font = New System.Drawing.Font("Trebuchet MS", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0,Byte))
         Me.PerformanceMemoryUsedByDashy.Location = New System.Drawing.Point(3, 160)
         Me.PerformanceMemoryUsedByDashy.Name = "PerformanceMemoryUsedByDashy"
         Me.PerformanceMemoryUsedByDashy.Size = New System.Drawing.Size(268, 18)
@@ -482,8 +482,8 @@ Partial Class Dashy
         '
         'PerformanceTotalVirtualMem
         '
-        Me.PerformanceTotalVirtualMem.AutoSize = True
-        Me.PerformanceTotalVirtualMem.Font = New System.Drawing.Font("Trebuchet MS", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.PerformanceTotalVirtualMem.AutoSize = true
+        Me.PerformanceTotalVirtualMem.Font = New System.Drawing.Font("Trebuchet MS", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0,Byte))
         Me.PerformanceTotalVirtualMem.Location = New System.Drawing.Point(3, 70)
         Me.PerformanceTotalVirtualMem.Name = "PerformanceTotalVirtualMem"
         Me.PerformanceTotalVirtualMem.Size = New System.Drawing.Size(208, 18)
@@ -492,8 +492,8 @@ Partial Class Dashy
         '
         'PerformanceAvailPhysicalMem
         '
-        Me.PerformanceAvailPhysicalMem.AutoSize = True
-        Me.PerformanceAvailPhysicalMem.Font = New System.Drawing.Font("Trebuchet MS", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.PerformanceAvailPhysicalMem.AutoSize = true
+        Me.PerformanceAvailPhysicalMem.Font = New System.Drawing.Font("Trebuchet MS", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0,Byte))
         Me.PerformanceAvailPhysicalMem.Location = New System.Drawing.Point(3, 88)
         Me.PerformanceAvailPhysicalMem.Name = "PerformanceAvailPhysicalMem"
         Me.PerformanceAvailPhysicalMem.Size = New System.Drawing.Size(239, 18)
@@ -502,8 +502,8 @@ Partial Class Dashy
         '
         'PerformanceAvailVirtualMem
         '
-        Me.PerformanceAvailVirtualMem.AutoSize = True
-        Me.PerformanceAvailVirtualMem.Font = New System.Drawing.Font("Trebuchet MS", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.PerformanceAvailVirtualMem.AutoSize = true
+        Me.PerformanceAvailVirtualMem.Font = New System.Drawing.Font("Trebuchet MS", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0,Byte))
         Me.PerformanceAvailVirtualMem.Location = New System.Drawing.Point(3, 106)
         Me.PerformanceAvailVirtualMem.Name = "PerformanceAvailVirtualMem"
         Me.PerformanceAvailVirtualMem.Size = New System.Drawing.Size(231, 18)
@@ -512,18 +512,18 @@ Partial Class Dashy
         '
         'PerformanceImg
         '
-        Me.PerformanceImg.Image = CType(resources.GetObject("PerformanceImg.Image"), System.Drawing.Image)
+        Me.PerformanceImg.Image = CType(resources.GetObject("PerformanceImg.Image"),System.Drawing.Image)
         Me.PerformanceImg.Location = New System.Drawing.Point(3, 3)
         Me.PerformanceImg.Name = "PerformanceImg"
         Me.PerformanceImg.Size = New System.Drawing.Size(64, 64)
         Me.PerformanceImg.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
         Me.PerformanceImg.TabIndex = 2
-        Me.PerformanceImg.TabStop = False
+        Me.PerformanceImg.TabStop = false
         '
         'PerformanceLbl
         '
-        Me.PerformanceLbl.AutoSize = True
-        Me.PerformanceLbl.Font = New System.Drawing.Font("Trebuchet MS", 15.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.PerformanceLbl.AutoSize = true
+        Me.PerformanceLbl.Font = New System.Drawing.Font("Trebuchet MS", 15.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0,Byte))
         Me.PerformanceLbl.Location = New System.Drawing.Point(70, 18)
         Me.PerformanceLbl.Name = "PerformanceLbl"
         Me.PerformanceLbl.Size = New System.Drawing.Size(131, 27)
@@ -532,8 +532,8 @@ Partial Class Dashy
         '
         'HardwareTotalPhysicalMem
         '
-        Me.HardwareTotalPhysicalMem.AutoSize = True
-        Me.HardwareTotalPhysicalMem.Font = New System.Drawing.Font("Trebuchet MS", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.HardwareTotalPhysicalMem.AutoSize = true
+        Me.HardwareTotalPhysicalMem.Font = New System.Drawing.Font("Trebuchet MS", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0,Byte))
         Me.HardwareTotalPhysicalMem.Location = New System.Drawing.Point(3, 88)
         Me.HardwareTotalPhysicalMem.Name = "HardwareTotalPhysicalMem"
         Me.HardwareTotalPhysicalMem.Size = New System.Drawing.Size(216, 18)
@@ -585,8 +585,8 @@ Partial Class Dashy
         '
         'HardwareScreenPrimary
         '
-        Me.HardwareScreenPrimary.AutoSize = True
-        Me.HardwareScreenPrimary.Font = New System.Drawing.Font("Trebuchet MS", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.HardwareScreenPrimary.AutoSize = true
+        Me.HardwareScreenPrimary.Font = New System.Drawing.Font("Trebuchet MS", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0,Byte))
         Me.HardwareScreenPrimary.Location = New System.Drawing.Point(3, 142)
         Me.HardwareScreenPrimary.Name = "HardwareScreenPrimary"
         Me.HardwareScreenPrimary.Size = New System.Drawing.Size(172, 18)
@@ -595,8 +595,8 @@ Partial Class Dashy
         '
         'HardwareScreenName
         '
-        Me.HardwareScreenName.AutoSize = True
-        Me.HardwareScreenName.Font = New System.Drawing.Font("Trebuchet MS", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.HardwareScreenName.AutoSize = true
+        Me.HardwareScreenName.Font = New System.Drawing.Font("Trebuchet MS", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0,Byte))
         Me.HardwareScreenName.Location = New System.Drawing.Point(3, 124)
         Me.HardwareScreenName.Name = "HardwareScreenName"
         Me.HardwareScreenName.Size = New System.Drawing.Size(204, 18)
@@ -605,8 +605,8 @@ Partial Class Dashy
         '
         'HardwareScreenBounds
         '
-        Me.HardwareScreenBounds.AutoSize = True
-        Me.HardwareScreenBounds.Font = New System.Drawing.Font("Trebuchet MS", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.HardwareScreenBounds.AutoSize = true
+        Me.HardwareScreenBounds.Font = New System.Drawing.Font("Trebuchet MS", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0,Byte))
         Me.HardwareScreenBounds.Location = New System.Drawing.Point(3, 160)
         Me.HardwareScreenBounds.Name = "HardwareScreenBounds"
         Me.HardwareScreenBounds.Size = New System.Drawing.Size(169, 18)
@@ -615,8 +615,8 @@ Partial Class Dashy
         '
         'HardwareMouseWheel
         '
-        Me.HardwareMouseWheel.AutoSize = True
-        Me.HardwareMouseWheel.Font = New System.Drawing.Font("Trebuchet MS", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.HardwareMouseWheel.AutoSize = true
+        Me.HardwareMouseWheel.Font = New System.Drawing.Font("Trebuchet MS", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0,Byte))
         Me.HardwareMouseWheel.Location = New System.Drawing.Point(3, 106)
         Me.HardwareMouseWheel.Name = "HardwareMouseWheel"
         Me.HardwareMouseWheel.Size = New System.Drawing.Size(162, 18)
@@ -625,8 +625,8 @@ Partial Class Dashy
         '
         'HardwareProcessorCount
         '
-        Me.HardwareProcessorCount.AutoSize = True
-        Me.HardwareProcessorCount.Font = New System.Drawing.Font("Trebuchet MS", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.HardwareProcessorCount.AutoSize = true
+        Me.HardwareProcessorCount.Font = New System.Drawing.Font("Trebuchet MS", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0,Byte))
         Me.HardwareProcessorCount.Location = New System.Drawing.Point(3, 70)
         Me.HardwareProcessorCount.Name = "HardwareProcessorCount"
         Me.HardwareProcessorCount.Size = New System.Drawing.Size(147, 18)
@@ -635,18 +635,18 @@ Partial Class Dashy
         '
         'HardwareImg
         '
-        Me.HardwareImg.Image = CType(resources.GetObject("HardwareImg.Image"), System.Drawing.Image)
+        Me.HardwareImg.Image = CType(resources.GetObject("HardwareImg.Image"),System.Drawing.Image)
         Me.HardwareImg.Location = New System.Drawing.Point(3, 3)
         Me.HardwareImg.Name = "HardwareImg"
         Me.HardwareImg.Size = New System.Drawing.Size(64, 64)
         Me.HardwareImg.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
         Me.HardwareImg.TabIndex = 2
-        Me.HardwareImg.TabStop = False
+        Me.HardwareImg.TabStop = false
         '
         'HardwareLbl
         '
-        Me.HardwareLbl.AutoSize = True
-        Me.HardwareLbl.Font = New System.Drawing.Font("Trebuchet MS", 15.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.HardwareLbl.AutoSize = true
+        Me.HardwareLbl.Font = New System.Drawing.Font("Trebuchet MS", 15.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0,Byte))
         Me.HardwareLbl.Location = New System.Drawing.Point(70, 18)
         Me.HardwareLbl.Name = "HardwareLbl"
         Me.HardwareLbl.Size = New System.Drawing.Size(105, 27)
@@ -655,8 +655,8 @@ Partial Class Dashy
         '
         'SystemOSArch
         '
-        Me.SystemOSArch.AutoSize = True
-        Me.SystemOSArch.Font = New System.Drawing.Font("Trebuchet MS", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.SystemOSArch.AutoSize = true
+        Me.SystemOSArch.Font = New System.Drawing.Font("Trebuchet MS", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0,Byte))
         Me.SystemOSArch.Location = New System.Drawing.Point(3, 151)
         Me.SystemOSArch.Name = "SystemOSArch"
         Me.SystemOSArch.Size = New System.Drawing.Size(131, 18)
@@ -692,8 +692,8 @@ Partial Class Dashy
         '
         'SystemWorkingArea
         '
-        Me.SystemWorkingArea.AutoSize = True
-        Me.SystemWorkingArea.Font = New System.Drawing.Font("Trebuchet MS", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.SystemWorkingArea.AutoSize = true
+        Me.SystemWorkingArea.Font = New System.Drawing.Font("Trebuchet MS", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0,Byte))
         Me.SystemWorkingArea.Location = New System.Drawing.Point(3, 350)
         Me.SystemWorkingArea.Name = "SystemWorkingArea"
         Me.SystemWorkingArea.Size = New System.Drawing.Size(204, 18)
@@ -702,8 +702,8 @@ Partial Class Dashy
         '
         'SystemScreenBitsPerPixel
         '
-        Me.SystemScreenBitsPerPixel.AutoSize = True
-        Me.SystemScreenBitsPerPixel.Font = New System.Drawing.Font("Trebuchet MS", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.SystemScreenBitsPerPixel.AutoSize = true
+        Me.SystemScreenBitsPerPixel.Font = New System.Drawing.Font("Trebuchet MS", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0,Byte))
         Me.SystemScreenBitsPerPixel.Location = New System.Drawing.Point(3, 332)
         Me.SystemScreenBitsPerPixel.Name = "SystemScreenBitsPerPixel"
         Me.SystemScreenBitsPerPixel.Size = New System.Drawing.Size(205, 18)
@@ -712,8 +712,8 @@ Partial Class Dashy
         '
         'SystemScrollLines
         '
-        Me.SystemScrollLines.AutoSize = True
-        Me.SystemScrollLines.Font = New System.Drawing.Font("Trebuchet MS", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.SystemScrollLines.AutoSize = true
+        Me.SystemScrollLines.Font = New System.Drawing.Font("Trebuchet MS", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0,Byte))
         Me.SystemScrollLines.Location = New System.Drawing.Point(3, 314)
         Me.SystemScrollLines.Name = "SystemScrollLines"
         Me.SystemScrollLines.Size = New System.Drawing.Size(266, 18)
@@ -722,8 +722,8 @@ Partial Class Dashy
         '
         'SystemDashyArch
         '
-        Me.SystemDashyArch.AutoSize = True
-        Me.SystemDashyArch.Font = New System.Drawing.Font("Trebuchet MS", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.SystemDashyArch.AutoSize = true
+        Me.SystemDashyArch.Font = New System.Drawing.Font("Trebuchet MS", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0,Byte))
         Me.SystemDashyArch.Location = New System.Drawing.Point(3, 286)
         Me.SystemDashyArch.Name = "SystemDashyArch"
         Me.SystemDashyArch.Size = New System.Drawing.Size(197, 18)
@@ -732,8 +732,8 @@ Partial Class Dashy
         '
         'SystemShutdownStarted
         '
-        Me.SystemShutdownStarted.AutoSize = True
-        Me.SystemShutdownStarted.Font = New System.Drawing.Font("Trebuchet MS", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.SystemShutdownStarted.AutoSize = true
+        Me.SystemShutdownStarted.Font = New System.Drawing.Font("Trebuchet MS", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0,Byte))
         Me.SystemShutdownStarted.Location = New System.Drawing.Point(3, 268)
         Me.SystemShutdownStarted.Name = "SystemShutdownStarted"
         Me.SystemShutdownStarted.Size = New System.Drawing.Size(187, 18)
@@ -742,8 +742,8 @@ Partial Class Dashy
         '
         'SystemInteractiveMode
         '
-        Me.SystemInteractiveMode.AutoSize = True
-        Me.SystemInteractiveMode.Font = New System.Drawing.Font("Trebuchet MS", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.SystemInteractiveMode.AutoSize = true
+        Me.SystemInteractiveMode.Font = New System.Drawing.Font("Trebuchet MS", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0,Byte))
         Me.SystemInteractiveMode.Location = New System.Drawing.Point(3, 250)
         Me.SystemInteractiveMode.Name = "SystemInteractiveMode"
         Me.SystemInteractiveMode.Size = New System.Drawing.Size(251, 18)
@@ -752,8 +752,8 @@ Partial Class Dashy
         '
         'SystemDomain
         '
-        Me.SystemDomain.AutoSize = True
-        Me.SystemDomain.Font = New System.Drawing.Font("Trebuchet MS", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.SystemDomain.AutoSize = true
+        Me.SystemDomain.Font = New System.Drawing.Font("Trebuchet MS", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0,Byte))
         Me.SystemDomain.Location = New System.Drawing.Point(3, 214)
         Me.SystemDomain.Name = "SystemDomain"
         Me.SystemDomain.Size = New System.Drawing.Size(129, 18)
@@ -762,8 +762,8 @@ Partial Class Dashy
         '
         'SystemNameComputer
         '
-        Me.SystemNameComputer.AutoSize = True
-        Me.SystemNameComputer.Font = New System.Drawing.Font("Trebuchet MS", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.SystemNameComputer.AutoSize = true
+        Me.SystemNameComputer.Font = New System.Drawing.Font("Trebuchet MS", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0,Byte))
         Me.SystemNameComputer.Location = New System.Drawing.Point(3, 196)
         Me.SystemNameComputer.Name = "SystemNameComputer"
         Me.SystemNameComputer.Size = New System.Drawing.Size(180, 18)
@@ -772,8 +772,8 @@ Partial Class Dashy
         '
         'SystemNameEN
         '
-        Me.SystemNameEN.AutoSize = True
-        Me.SystemNameEN.Font = New System.Drawing.Font("Trebuchet MS", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.SystemNameEN.AutoSize = true
+        Me.SystemNameEN.Font = New System.Drawing.Font("Trebuchet MS", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0,Byte))
         Me.SystemNameEN.Location = New System.Drawing.Point(3, 178)
         Me.SystemNameEN.Name = "SystemNameEN"
         Me.SystemNameEN.Size = New System.Drawing.Size(193, 18)
@@ -782,8 +782,8 @@ Partial Class Dashy
         '
         'SystemOSPlatform
         '
-        Me.SystemOSPlatform.AutoSize = True
-        Me.SystemOSPlatform.Font = New System.Drawing.Font("Trebuchet MS", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.SystemOSPlatform.AutoSize = true
+        Me.SystemOSPlatform.Font = New System.Drawing.Font("Trebuchet MS", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0,Byte))
         Me.SystemOSPlatform.Location = New System.Drawing.Point(3, 133)
         Me.SystemOSPlatform.Name = "SystemOSPlatform"
         Me.SystemOSPlatform.Size = New System.Drawing.Size(155, 18)
@@ -792,8 +792,8 @@ Partial Class Dashy
         '
         'SystemOSEnvironVersion
         '
-        Me.SystemOSEnvironVersion.AutoSize = True
-        Me.SystemOSEnvironVersion.Font = New System.Drawing.Font("Trebuchet MS", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.SystemOSEnvironVersion.AutoSize = true
+        Me.SystemOSEnvironVersion.Font = New System.Drawing.Font("Trebuchet MS", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0,Byte))
         Me.SystemOSEnvironVersion.Location = New System.Drawing.Point(3, 115)
         Me.SystemOSEnvironVersion.Name = "SystemOSEnvironVersion"
         Me.SystemOSEnvironVersion.Size = New System.Drawing.Size(162, 18)
@@ -802,8 +802,8 @@ Partial Class Dashy
         '
         'SystemLoggedInUser
         '
-        Me.SystemLoggedInUser.AutoSize = True
-        Me.SystemLoggedInUser.Font = New System.Drawing.Font("Trebuchet MS", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.SystemLoggedInUser.AutoSize = true
+        Me.SystemLoggedInUser.Font = New System.Drawing.Font("Trebuchet MS", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0,Byte))
         Me.SystemLoggedInUser.Location = New System.Drawing.Point(3, 232)
         Me.SystemLoggedInUser.Name = "SystemLoggedInUser"
         Me.SystemLoggedInUser.Size = New System.Drawing.Size(171, 18)
@@ -812,8 +812,8 @@ Partial Class Dashy
         '
         'SystemOSInfoVersion
         '
-        Me.SystemOSInfoVersion.AutoSize = True
-        Me.SystemOSInfoVersion.Font = New System.Drawing.Font("Trebuchet MS", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.SystemOSInfoVersion.AutoSize = true
+        Me.SystemOSInfoVersion.Font = New System.Drawing.Font("Trebuchet MS", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0,Byte))
         Me.SystemOSInfoVersion.Location = New System.Drawing.Point(3, 97)
         Me.SystemOSInfoVersion.Name = "SystemOSInfoVersion"
         Me.SystemOSInfoVersion.Size = New System.Drawing.Size(148, 18)
@@ -822,8 +822,8 @@ Partial Class Dashy
         '
         'SystemOS
         '
-        Me.SystemOS.AutoSize = True
-        Me.SystemOS.Font = New System.Drawing.Font("Trebuchet MS", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.SystemOS.AutoSize = true
+        Me.SystemOS.Font = New System.Drawing.Font("Trebuchet MS", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0,Byte))
         Me.SystemOS.Location = New System.Drawing.Point(3, 79)
         Me.SystemOS.Name = "SystemOS"
         Me.SystemOS.Size = New System.Drawing.Size(101, 18)
@@ -838,12 +838,12 @@ Partial Class Dashy
         Me.SystemImg.Size = New System.Drawing.Size(64, 64)
         Me.SystemImg.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
         Me.SystemImg.TabIndex = 2
-        Me.SystemImg.TabStop = False
+        Me.SystemImg.TabStop = false
         '
         'SystemLbl
         '
-        Me.SystemLbl.AutoSize = True
-        Me.SystemLbl.Font = New System.Drawing.Font("Trebuchet MS", 15.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.SystemLbl.AutoSize = true
+        Me.SystemLbl.Font = New System.Drawing.Font("Trebuchet MS", 15.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0,Byte))
         Me.SystemLbl.Location = New System.Drawing.Point(70, 18)
         Me.SystemLbl.Name = "SystemLbl"
         Me.SystemLbl.Size = New System.Drawing.Size(76, 27)
@@ -852,7 +852,7 @@ Partial Class Dashy
         '
         'NetworkPanel
         '
-        Me.NetworkPanel.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.NetworkPanel.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right),System.Windows.Forms.AnchorStyles)
         Me.NetworkPanel.BackColor = System.Drawing.SystemColors.ControlLight
         Me.NetworkPanel.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
         Me.NetworkPanel.Controls.Add(Me.NetworkSplitContainer)
@@ -865,7 +865,7 @@ Partial Class Dashy
         '
         Me.NetworkSplitContainer.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
         Me.NetworkSplitContainer.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.NetworkSplitContainer.Font = New System.Drawing.Font("Trebuchet MS", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.NetworkSplitContainer.Font = New System.Drawing.Font("Trebuchet MS", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0,Byte))
         Me.NetworkSplitContainer.Location = New System.Drawing.Point(0, 0)
         Me.NetworkSplitContainer.Name = "NetworkSplitContainer"
         Me.NetworkSplitContainer.Orientation = System.Windows.Forms.Orientation.Horizontal
@@ -884,7 +884,7 @@ Partial Class Dashy
         Me.NetworkSplitContainer.Panel2.Controls.Add(Me.NetworkSerialPortNames)
         Me.NetworkSplitContainer.Panel2MinSize = 50
         Me.NetworkSplitContainer.Size = New System.Drawing.Size(250, 395)
-        Me.NetworkSplitContainer.SplitterDistance = 121
+        Me.NetworkSplitContainer.SplitterDistance = 159
         Me.NetworkSplitContainer.TabIndex = 18
         '
         'NetworkImg
@@ -895,12 +895,12 @@ Partial Class Dashy
         Me.NetworkImg.Size = New System.Drawing.Size(64, 64)
         Me.NetworkImg.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
         Me.NetworkImg.TabIndex = 2
-        Me.NetworkImg.TabStop = False
+        Me.NetworkImg.TabStop = false
         '
         'NetworkInternetConnection
         '
-        Me.NetworkInternetConnection.AutoSize = True
-        Me.NetworkInternetConnection.Font = New System.Drawing.Font("Trebuchet MS", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.NetworkInternetConnection.AutoSize = true
+        Me.NetworkInternetConnection.Font = New System.Drawing.Font("Trebuchet MS", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0,Byte))
         Me.NetworkInternetConnection.Location = New System.Drawing.Point(3, 97)
         Me.NetworkInternetConnection.Name = "NetworkInternetConnection"
         Me.NetworkInternetConnection.Size = New System.Drawing.Size(154, 18)
@@ -909,8 +909,8 @@ Partial Class Dashy
         '
         'NetworkLbl
         '
-        Me.NetworkLbl.AutoSize = True
-        Me.NetworkLbl.Font = New System.Drawing.Font("Trebuchet MS", 15.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.NetworkLbl.AutoSize = true
+        Me.NetworkLbl.Font = New System.Drawing.Font("Trebuchet MS", 15.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0,Byte))
         Me.NetworkLbl.Location = New System.Drawing.Point(70, 18)
         Me.NetworkLbl.Name = "NetworkLbl"
         Me.NetworkLbl.Size = New System.Drawing.Size(91, 27)
@@ -919,8 +919,8 @@ Partial Class Dashy
         '
         'NetworkIsConnected
         '
-        Me.NetworkIsConnected.AutoSize = True
-        Me.NetworkIsConnected.Font = New System.Drawing.Font("Trebuchet MS", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.NetworkIsConnected.AutoSize = true
+        Me.NetworkIsConnected.Font = New System.Drawing.Font("Trebuchet MS", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0,Byte))
         Me.NetworkIsConnected.Location = New System.Drawing.Point(3, 79)
         Me.NetworkIsConnected.Name = "NetworkIsConnected"
         Me.NetworkIsConnected.Size = New System.Drawing.Size(213, 18)
@@ -930,8 +930,8 @@ Partial Class Dashy
         'NetworkSerialPortNamesLBL
         '
         Me.NetworkSerialPortNamesLBL.Anchor = System.Windows.Forms.AnchorStyles.Top
-        Me.NetworkSerialPortNamesLBL.AutoSize = True
-        Me.NetworkSerialPortNamesLBL.Font = New System.Drawing.Font("Trebuchet MS", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.NetworkSerialPortNamesLBL.AutoSize = true
+        Me.NetworkSerialPortNamesLBL.Font = New System.Drawing.Font("Trebuchet MS", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0,Byte))
         Me.NetworkSerialPortNamesLBL.Location = New System.Drawing.Point(2, 3)
         Me.NetworkSerialPortNamesLBL.Name = "NetworkSerialPortNamesLBL"
         Me.NetworkSerialPortNamesLBL.Size = New System.Drawing.Size(117, 18)
@@ -942,16 +942,16 @@ Partial Class Dashy
         '
         Me.NetworkSerialPortNames.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
             Or System.Windows.Forms.AnchorStyles.Left) _
-            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.NetworkSerialPortNames.Font = New System.Drawing.Font("Trebuchet MS", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.NetworkSerialPortNames.FormattingEnabled = True
-        Me.NetworkSerialPortNames.IntegralHeight = False
+            Or System.Windows.Forms.AnchorStyles.Right),System.Windows.Forms.AnchorStyles)
+        Me.NetworkSerialPortNames.Font = New System.Drawing.Font("Trebuchet MS", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0,Byte))
+        Me.NetworkSerialPortNames.FormattingEnabled = true
+        Me.NetworkSerialPortNames.IntegralHeight = false
         Me.NetworkSerialPortNames.ItemHeight = 16
         Me.NetworkSerialPortNames.Items.AddRange(New Object() {"Checking..."})
         Me.NetworkSerialPortNames.Location = New System.Drawing.Point(3, 24)
         Me.NetworkSerialPortNames.Name = "NetworkSerialPortNames"
         Me.NetworkSerialPortNames.SelectionMode = System.Windows.Forms.SelectionMode.None
-        Me.NetworkSerialPortNames.Size = New System.Drawing.Size(242, 240)
+        Me.NetworkSerialPortNames.Size = New System.Drawing.Size(242, 202)
         Me.NetworkSerialPortNames.TabIndex = 16
         '
         'TimerMonitorFast
@@ -965,13 +965,13 @@ Partial Class Dashy
         'btnRefresh
         '
         Me.btnRefresh.Anchor = System.Windows.Forms.AnchorStyles.Top
-        Me.btnRefresh.AutoSize = True
+        Me.btnRefresh.AutoSize = true
         Me.btnRefresh.Location = New System.Drawing.Point(528, 386)
         Me.btnRefresh.Name = "btnRefresh"
         Me.btnRefresh.Size = New System.Drawing.Size(159, 23)
         Me.btnRefresh.TabIndex = 9
         Me.btnRefresh.Text = "Refresh SlowTimer Now"
-        Me.btnRefresh.UseVisualStyleBackColor = True
+        Me.btnRefresh.UseVisualStyleBackColor = true
         '
         'btnExit
         '
@@ -982,12 +982,12 @@ Partial Class Dashy
         Me.btnExit.Size = New System.Drawing.Size(87, 23)
         Me.btnExit.TabIndex = 10
         Me.btnExit.Text = "Exit Dashy"
-        Me.btnExit.UseVisualStyleBackColor = True
+        Me.btnExit.UseVisualStyleBackColor = true
         '
         'SlowTimerRefreshLabel
         '
         Me.SlowTimerRefreshLabel.Anchor = System.Windows.Forms.AnchorStyles.Top
-        Me.SlowTimerRefreshLabel.AutoSize = True
+        Me.SlowTimerRefreshLabel.AutoSize = true
         Me.SlowTimerRefreshLabel.Location = New System.Drawing.Point(528, 344)
         Me.SlowTimerRefreshLabel.Name = "SlowTimerRefreshLabel"
         Me.SlowTimerRefreshLabel.Size = New System.Drawing.Size(154, 13)
@@ -998,7 +998,7 @@ Partial Class Dashy
         '
         Me.SlowTimerRefreshUnit.Anchor = System.Windows.Forms.AnchorStyles.Top
         Me.SlowTimerRefreshUnit.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
-        Me.SlowTimerRefreshUnit.FormattingEnabled = True
+        Me.SlowTimerRefreshUnit.FormattingEnabled = true
         Me.SlowTimerRefreshUnit.Items.AddRange(New Object() {"Millisecond(s)", "Centisecond(s)", "Second(s)", "Minute(s)", "Hour(s)"})
         Me.SlowTimerRefreshUnit.Location = New System.Drawing.Point(693, 359)
         Me.SlowTimerRefreshUnit.Name = "SlowTimerRefreshUnit"
@@ -1009,7 +1009,7 @@ Partial Class Dashy
         '
         Me.FastTimerRefreshUnit.Anchor = System.Windows.Forms.AnchorStyles.Top
         Me.FastTimerRefreshUnit.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
-        Me.FastTimerRefreshUnit.FormattingEnabled = True
+        Me.FastTimerRefreshUnit.FormattingEnabled = true
         Me.FastTimerRefreshUnit.Items.AddRange(New Object() {"Millisecond(s)", "Centisecond(s)", "Second(s)", "Minute(s)", "Hour(s)"})
         Me.FastTimerRefreshUnit.Location = New System.Drawing.Point(693, 320)
         Me.FastTimerRefreshUnit.Name = "FastTimerRefreshUnit"
@@ -1019,7 +1019,7 @@ Partial Class Dashy
         'FastTimerRefreshLabel
         '
         Me.FastTimerRefreshLabel.Anchor = System.Windows.Forms.AnchorStyles.Top
-        Me.FastTimerRefreshLabel.AutoSize = True
+        Me.FastTimerRefreshLabel.AutoSize = true
         Me.FastTimerRefreshLabel.Location = New System.Drawing.Point(528, 305)
         Me.FastTimerRefreshLabel.Name = "FastTimerRefreshLabel"
         Me.FastTimerRefreshLabel.Size = New System.Drawing.Size(151, 13)
@@ -1050,8 +1050,8 @@ Partial Class Dashy
         '
         'EnvVarsLBL
         '
-        Me.EnvVarsLBL.AutoSize = True
-        Me.EnvVarsLBL.Font = New System.Drawing.Font("Trebuchet MS", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.EnvVarsLBL.AutoSize = true
+        Me.EnvVarsLBL.Font = New System.Drawing.Font("Trebuchet MS", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0,Byte))
         Me.EnvVarsLBL.Location = New System.Drawing.Point(12, 407)
         Me.EnvVarsLBL.Name = "EnvVarsLBL"
         Me.EnvVarsLBL.Size = New System.Drawing.Size(144, 18)
@@ -1060,8 +1060,8 @@ Partial Class Dashy
         '
         'EnvVars
         '
-        Me.EnvVars.AutoSize = True
-        Me.EnvVars.Font = New System.Drawing.Font("Trebuchet MS", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.EnvVars.AutoSize = true
+        Me.EnvVars.Font = New System.Drawing.Font("Trebuchet MS", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0,Byte))
         Me.EnvVars.Location = New System.Drawing.Point(12, 425)
         Me.EnvVars.Name = "EnvVars"
         Me.EnvVars.Size = New System.Drawing.Size(76, 18)
@@ -1075,12 +1075,12 @@ Partial Class Dashy
         Me.btnExpand.Size = New System.Drawing.Size(75, 23)
         Me.btnExpand.TabIndex = 25
         Me.btnExpand.Text = "Expand"
-        Me.btnExpand.UseVisualStyleBackColor = True
+        Me.btnExpand.UseVisualStyleBackColor = true
         '
         'Dashy
         '
         Me.AcceptButton = Me.btnRefresh
-        Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
+        Me.AutoScaleDimensions = New System.Drawing.SizeF(6!, 13!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.CancelButton = Me.btnExit
         Me.ClientSize = New System.Drawing.Size(1310, 421)
@@ -1103,34 +1103,33 @@ Partial Class Dashy
         Me.Name = "Dashy"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "Dashy (GUI Revamped)"
-        Me.FileSystemPanel.ResumeLayout(False)
-        Me.FileSystemPanel.PerformLayout()
-        Me.FileSystemDrivesTabControl.ResumeLayout(False)
-        Me.FileSystemDrivesTabFS.ResumeLayout(False)
-        Me.FileSystemDrivesTabEN.ResumeLayout(False)
-        CType(Me.FileSystemImg, System.ComponentModel.ISupportInitialize).EndInit()
-        Me.PerformancePanel.ResumeLayout(False)
-        Me.PerformancePanel.PerformLayout()
-        CType(Me.PerformanceImg, System.ComponentModel.ISupportInitialize).EndInit()
-        Me.HardwarePanel.ResumeLayout(False)
-        Me.HardwarePanel.PerformLayout()
-        CType(Me.HardwareImg, System.ComponentModel.ISupportInitialize).EndInit()
-        Me.SystemPanel.ResumeLayout(False)
-        Me.SystemPanel.PerformLayout()
-        CType(Me.SystemImg, System.ComponentModel.ISupportInitialize).EndInit()
-        Me.NetworkPanel.ResumeLayout(False)
-        Me.NetworkSplitContainer.Panel1.ResumeLayout(False)
-        Me.NetworkSplitContainer.Panel1.PerformLayout()
-        Me.NetworkSplitContainer.Panel2.ResumeLayout(False)
-        Me.NetworkSplitContainer.Panel2.PerformLayout()
-        CType(Me.NetworkSplitContainer, System.ComponentModel.ISupportInitialize).EndInit()
-        Me.NetworkSplitContainer.ResumeLayout(False)
-        CType(Me.NetworkImg, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.FastTimerRefreshValue, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.SlowTimerRefreshValue, System.ComponentModel.ISupportInitialize).EndInit()
-        Me.ResumeLayout(False)
-        Me.PerformLayout()
-
+        Me.FileSystemPanel.ResumeLayout(false)
+        Me.FileSystemPanel.PerformLayout
+        Me.FileSystemDrivesTabControl.ResumeLayout(false)
+        Me.FileSystemDrivesTabFS.ResumeLayout(false)
+        Me.FileSystemDrivesTabEN.ResumeLayout(false)
+        CType(Me.FileSystemImg,System.ComponentModel.ISupportInitialize).EndInit
+        Me.PerformancePanel.ResumeLayout(false)
+        Me.PerformancePanel.PerformLayout
+        CType(Me.PerformanceImg,System.ComponentModel.ISupportInitialize).EndInit
+        Me.HardwarePanel.ResumeLayout(false)
+        Me.HardwarePanel.PerformLayout
+        CType(Me.HardwareImg,System.ComponentModel.ISupportInitialize).EndInit
+        Me.SystemPanel.ResumeLayout(false)
+        Me.SystemPanel.PerformLayout
+        CType(Me.SystemImg,System.ComponentModel.ISupportInitialize).EndInit
+        Me.NetworkPanel.ResumeLayout(false)
+        Me.NetworkSplitContainer.Panel1.ResumeLayout(false)
+        Me.NetworkSplitContainer.Panel1.PerformLayout
+        Me.NetworkSplitContainer.Panel2.ResumeLayout(false)
+        Me.NetworkSplitContainer.Panel2.PerformLayout
+        CType(Me.NetworkSplitContainer,System.ComponentModel.ISupportInitialize).EndInit
+        Me.NetworkSplitContainer.ResumeLayout(false)
+        CType(Me.NetworkImg,System.ComponentModel.ISupportInitialize).EndInit
+        CType(Me.FastTimerRefreshValue,System.ComponentModel.ISupportInitialize).EndInit
+        CType(Me.SlowTimerRefreshValue,System.ComponentModel.ISupportInitialize).EndInit
+        Me.ResumeLayout(false)
+        Me.PerformLayout
     End Sub
     Friend WithEvents FileSystemImg As System.Windows.Forms.PictureBox
     Friend WithEvents FileSystemPanel As System.Windows.Forms.Panel
