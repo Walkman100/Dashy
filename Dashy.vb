@@ -3,18 +3,21 @@
     Private Sub Dashy_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         FastTimerRefreshUnit.SelectedIndex = 2
         SlowTimerRefreshUnit.SelectedIndex = 2
-        
         If Environment.GetEnvironmentVariable("OS") = "Windows_NT" Then
-            TimerMonitorFast.Start()
-            TimerMonitorSlow.Start()
+            FastTimer.Start()
+            SlowTimer.Start()
             
-            TimerMonitorSlow.Interval = 5
+            SlowTimer.Interval = 5
+            chkAllowVars.Checked = True
             Me.Width = My.Computer.Screen.WorkingArea.Width
             Me.Location = New Size(0, Me.Location.Y)
+        Else
+            chkAllowVars.Visible = True
+            btnStartTimers.Visible = True
         End if
     End Sub
 
-    Private Sub TimerMonitorSlow_Tick(sender As Object, e As EventArgs) Handles TimerMonitorSlow.Tick, btnRefresh.Click
+    Private Sub SlowTimer_Tick(sender As Object, e As EventArgs) Handles SlowTimer.Tick, btnRefresh.Click
         SlowTimer_SetTick()
         'FileSystem:
         FileSystemProgramFilesDirectory.Text = GetVar("PROGRAMFILES")
@@ -116,7 +119,7 @@
         Next
     End Sub
 
-    Private Sub TimerMonitorFast_Tick(sender As Object, e As EventArgs) Handles TimerMonitorFast.Tick
+    Private Sub FastTimer_Tick(sender As Object, e As EventArgs) Handles FastTimer.Tick
         'FileSystem
         FileSystemNumberOfDrives.Text = "No. of drives: " & My.Computer.FileSystem.Drives.Count
 
@@ -166,30 +169,30 @@
     Private Sub FastTimer_SetTick() Handles FastTimerRefreshValue.TextChanged, FastTimerRefreshUnit.TextChanged
         Select Case FastTimerRefreshUnit.SelectedIndex
             Case 0 'Milliseconds
-                TimerMonitorFast.Interval = FastTimerRefreshValue.Text
+                FastTimer.Interval = FastTimerRefreshValue.Text
             Case 1 'Centiseconds
-                TimerMonitorFast.Interval = FastTimerRefreshValue.Text * 10
+                FastTimer.Interval = FastTimerRefreshValue.Text * 10
             Case 2 'Seconds
-                TimerMonitorFast.Interval = FastTimerRefreshValue.Text * 1000
+                FastTimer.Interval = FastTimerRefreshValue.Text * 1000
             Case 3 'Minutes
-                TimerMonitorFast.Interval = FastTimerRefreshValue.Text * 60000
+                FastTimer.Interval = FastTimerRefreshValue.Text * 60000
             Case 4 'Hours
-                TimerMonitorFast.Interval = FastTimerRefreshValue.Text * 3600000
+                FastTimer.Interval = FastTimerRefreshValue.Text * 3600000
         End Select
     End Sub
 
     Private Sub SlowTimer_SetTick() Handles SlowTimerRefreshValue.TextChanged, SlowTimerRefreshUnit.TextChanged
         Select Case SlowTimerRefreshUnit.SelectedIndex
             Case 0 'Milliseconds
-                TimerMonitorSlow.Interval = SlowTimerRefreshValue.Text
+                SlowTimer.Interval = SlowTimerRefreshValue.Text
             Case 1 'Centiseconds
-                TimerMonitorSlow.Interval = SlowTimerRefreshValue.Text * 10
+                SlowTimer.Interval = SlowTimerRefreshValue.Text * 10
             Case 2 'Seconds
-                TimerMonitorSlow.Interval = SlowTimerRefreshValue.Text * 1000
+                SlowTimer.Interval = SlowTimerRefreshValue.Text * 1000
             Case 3 'Minutes
-                TimerMonitorSlow.Interval = SlowTimerRefreshValue.Text * 60000
+                SlowTimer.Interval = SlowTimerRefreshValue.Text * 60000
             Case 4 'Hours
-                TimerMonitorSlow.Interval = SlowTimerRefreshValue.Text * 3600000
+                SlowTimer.Interval = SlowTimerRefreshValue.Text * 3600000
         End Select
     End Sub
 
@@ -208,7 +211,7 @@
     End Sub
 
     Public Function GetVar(EnvVar as string)
-        If Environment.GetEnvironmentVariable("OS") = "Windows_NT" Then
+      If Environment.GetEnvironmentVariable("OS") = "Windows_NT" or chkAllowVars.Checked Then
         Try
             If Environment.GetEnvironmentVariable(EnvVar) <> "" Then
                 Return Environment.GetEnvironmentVariable(EnvVar)
@@ -218,8 +221,15 @@
         Catch ex As Exception
             Return "Error getting variable: " & ex.Message
         End Try
-        else
+      else
         return "Variables disabled"
-        End if
+      End if
     End Function
+    
+    Private Sub btnStartTimers_Click(sender As Object, e As EventArgs) Handles btnStartTimers.Click
+        FastTimer.Start()
+        SlowTimer.Start()
+        SlowTimer.Interval = 5
+        btnStartTimers.Enabled = False
+    End Sub
 End Class

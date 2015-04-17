@@ -98,8 +98,8 @@ Partial Class Dashy
         Me.NetworkIsConnected = New System.Windows.Forms.Label()
         Me.NetworkSerialPortNamesLBL = New System.Windows.Forms.Label()
         Me.NetworkSerialPortNames = New System.Windows.Forms.ListBox()
-        Me.TimerMonitorFast = New System.Windows.Forms.Timer(Me.components)
-        Me.TimerMonitorSlow = New System.Windows.Forms.Timer(Me.components)
+        Me.FastTimer = New System.Windows.Forms.Timer(Me.components)
+        Me.SlowTimer = New System.Windows.Forms.Timer(Me.components)
         Me.btnRefresh = New System.Windows.Forms.Button()
         Me.btnExit = New System.Windows.Forms.Button()
         Me.SlowTimerRefreshLabel = New System.Windows.Forms.Label()
@@ -111,6 +111,8 @@ Partial Class Dashy
         Me.EnvVarsLBL = New System.Windows.Forms.Label()
         Me.EnvVars = New System.Windows.Forms.Label()
         Me.btnExpand = New System.Windows.Forms.Button()
+        Me.btnStartTimers = New System.Windows.Forms.Button()
+        Me.chkAllowVars = New System.Windows.Forms.CheckBox()
         Me.FileSystemPanel.SuspendLayout
         Me.FileSystemDrivesTabControl.SuspendLayout
         Me.FileSystemDrivesTabFS.SuspendLayout
@@ -954,13 +956,13 @@ Partial Class Dashy
         Me.NetworkSerialPortNames.Size = New System.Drawing.Size(242, 202)
         Me.NetworkSerialPortNames.TabIndex = 16
         '
-        'TimerMonitorFast
+        'FastTimer
         '
-        Me.TimerMonitorFast.Interval = 2000
+        Me.FastTimer.Interval = 2000
         '
-        'TimerMonitorSlow
+        'SlowTimer
         '
-        Me.TimerMonitorSlow.Interval = 30000
+        Me.SlowTimer.Interval = 30000
         '
         'btnRefresh
         '
@@ -990,9 +992,9 @@ Partial Class Dashy
         Me.SlowTimerRefreshLabel.AutoSize = true
         Me.SlowTimerRefreshLabel.Location = New System.Drawing.Point(528, 344)
         Me.SlowTimerRefreshLabel.Name = "SlowTimerRefreshLabel"
-        Me.SlowTimerRefreshLabel.Size = New System.Drawing.Size(154, 13)
+        Me.SlowTimerRefreshLabel.Size = New System.Drawing.Size(128, 13)
         Me.SlowTimerRefreshLabel.TabIndex = 11
-        Me.SlowTimerRefreshLabel.Text = "SlowTimer Refresh time: Every:"
+        Me.SlowTimerRefreshLabel.Text = "Refresh SlowTimer every:"
         '
         'SlowTimerRefreshUnit
         '
@@ -1000,7 +1002,7 @@ Partial Class Dashy
         Me.SlowTimerRefreshUnit.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
         Me.SlowTimerRefreshUnit.FormattingEnabled = true
         Me.SlowTimerRefreshUnit.Items.AddRange(New Object() {"Millisecond(s)", "Centisecond(s)", "Second(s)", "Minute(s)", "Hour(s)"})
-        Me.SlowTimerRefreshUnit.Location = New System.Drawing.Point(693, 359)
+        Me.SlowTimerRefreshUnit.Location = New System.Drawing.Point(580, 359)
         Me.SlowTimerRefreshUnit.Name = "SlowTimerRefreshUnit"
         Me.SlowTimerRefreshUnit.Size = New System.Drawing.Size(87, 21)
         Me.SlowTimerRefreshUnit.TabIndex = 13
@@ -1011,7 +1013,7 @@ Partial Class Dashy
         Me.FastTimerRefreshUnit.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
         Me.FastTimerRefreshUnit.FormattingEnabled = true
         Me.FastTimerRefreshUnit.Items.AddRange(New Object() {"Millisecond(s)", "Centisecond(s)", "Second(s)", "Minute(s)", "Hour(s)"})
-        Me.FastTimerRefreshUnit.Location = New System.Drawing.Point(693, 320)
+        Me.FastTimerRefreshUnit.Location = New System.Drawing.Point(580, 320)
         Me.FastTimerRefreshUnit.Name = "FastTimerRefreshUnit"
         Me.FastTimerRefreshUnit.Size = New System.Drawing.Size(87, 21)
         Me.FastTimerRefreshUnit.TabIndex = 16
@@ -1022,14 +1024,14 @@ Partial Class Dashy
         Me.FastTimerRefreshLabel.AutoSize = true
         Me.FastTimerRefreshLabel.Location = New System.Drawing.Point(528, 305)
         Me.FastTimerRefreshLabel.Name = "FastTimerRefreshLabel"
-        Me.FastTimerRefreshLabel.Size = New System.Drawing.Size(151, 13)
+        Me.FastTimerRefreshLabel.Size = New System.Drawing.Size(122, 13)
         Me.FastTimerRefreshLabel.TabIndex = 14
-        Me.FastTimerRefreshLabel.Text = "FastTimer Refresh time: Every:"
+        Me.FastTimerRefreshLabel.Text = "Refrest FastTimer every:"
         '
         'FastTimerRefreshValue
         '
         Me.FastTimerRefreshValue.Anchor = System.Windows.Forms.AnchorStyles.Top
-        Me.FastTimerRefreshValue.Location = New System.Drawing.Point(641, 321)
+        Me.FastTimerRefreshValue.Location = New System.Drawing.Point(528, 321)
         Me.FastTimerRefreshValue.Maximum = New Decimal(New Integer() {999, 0, 0, 0})
         Me.FastTimerRefreshValue.Name = "FastTimerRefreshValue"
         Me.FastTimerRefreshValue.Size = New System.Drawing.Size(46, 20)
@@ -1040,7 +1042,7 @@ Partial Class Dashy
         'SlowTimerRefreshValue
         '
         Me.SlowTimerRefreshValue.Anchor = System.Windows.Forms.AnchorStyles.Top
-        Me.SlowTimerRefreshValue.Location = New System.Drawing.Point(641, 360)
+        Me.SlowTimerRefreshValue.Location = New System.Drawing.Point(528, 360)
         Me.SlowTimerRefreshValue.Maximum = New Decimal(New Integer() {999, 0, 0, 0})
         Me.SlowTimerRefreshValue.Name = "SlowTimerRefreshValue"
         Me.SlowTimerRefreshValue.Size = New System.Drawing.Size(46, 20)
@@ -1077,6 +1079,28 @@ Partial Class Dashy
         Me.btnExpand.Text = "Expand"
         Me.btnExpand.UseVisualStyleBackColor = true
         '
+        'btnStartTimers
+        '
+        Me.btnStartTimers.Anchor = System.Windows.Forms.AnchorStyles.Top
+        Me.btnStartTimers.Location = New System.Drawing.Point(673, 308)
+        Me.btnStartTimers.Name = "btnStartTimers"
+        Me.btnStartTimers.Size = New System.Drawing.Size(107, 23)
+        Me.btnStartTimers.TabIndex = 26
+        Me.btnStartTimers.Text = "Start Timers"
+        Me.btnStartTimers.UseVisualStyleBackColor = true
+        Me.btnStartTimers.Visible = false
+        '
+        'chkAllowVars
+        '
+        Me.chkAllowVars.Anchor = System.Windows.Forms.AnchorStyles.Top
+        Me.chkAllowVars.Location = New System.Drawing.Point(673, 337)
+        Me.chkAllowVars.Name = "chkAllowVars"
+        Me.chkAllowVars.Size = New System.Drawing.Size(107, 43)
+        Me.chkAllowVars.TabIndex = 27
+        Me.chkAllowVars.Text = "Allow getting environment variables"
+        Me.chkAllowVars.UseVisualStyleBackColor = true
+        Me.chkAllowVars.Visible = false
+        '
         'Dashy
         '
         Me.AcceptButton = Me.btnRefresh
@@ -1084,12 +1108,12 @@ Partial Class Dashy
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.CancelButton = Me.btnExit
         Me.ClientSize = New System.Drawing.Size(1310, 421)
+        Me.Controls.Add(Me.btnStartTimers)
         Me.Controls.Add(Me.SlowTimerRefreshValue)
         Me.Controls.Add(Me.FastTimerRefreshValue)
         Me.Controls.Add(Me.FastTimerRefreshUnit)
         Me.Controls.Add(Me.FastTimerRefreshLabel)
         Me.Controls.Add(Me.SlowTimerRefreshUnit)
-        Me.Controls.Add(Me.SlowTimerRefreshLabel)
         Me.Controls.Add(Me.btnExit)
         Me.Controls.Add(Me.btnRefresh)
         Me.Controls.Add(Me.NetworkPanel)
@@ -1100,6 +1124,8 @@ Partial Class Dashy
         Me.Controls.Add(Me.EnvVars)
         Me.Controls.Add(Me.EnvVarsLBL)
         Me.Controls.Add(Me.btnExpand)
+        Me.Controls.Add(Me.chkAllowVars)
+        Me.Controls.Add(Me.SlowTimerRefreshLabel)
         Me.Name = "Dashy"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "Dashy (GUI Revamped)"
@@ -1131,6 +1157,10 @@ Partial Class Dashy
         Me.ResumeLayout(false)
         Me.PerformLayout
     End Sub
+    Friend WithEvents chkAllowVars As System.Windows.Forms.CheckBox
+    Friend WithEvents btnStartTimers As System.Windows.Forms.Button
+    Friend WithEvents SlowTimer As System.Windows.Forms.Timer
+    Friend WithEvents FastTimer As System.Windows.Forms.Timer
     Friend WithEvents FileSystemImg As System.Windows.Forms.PictureBox
     Friend WithEvents FileSystemPanel As System.Windows.Forms.Panel
     Friend WithEvents PerformancePanel As System.Windows.Forms.Panel
@@ -1167,8 +1197,6 @@ Partial Class Dashy
     Friend WithEvents NetworkLbl As System.Windows.Forms.Label
     Friend WithEvents FileSystemHomePath As System.Windows.Forms.Label
     Friend WithEvents FileSystemHomePathLBL As System.Windows.Forms.Label
-    Friend WithEvents TimerMonitorFast As System.Windows.Forms.Timer
-    Friend WithEvents TimerMonitorSlow As System.Windows.Forms.Timer
     Friend WithEvents FileSystemDriveListFS As System.Windows.Forms.ListBox
     Friend WithEvents HardwareScreenPrimary As System.Windows.Forms.Label
     Friend WithEvents HardwareScreenName As System.Windows.Forms.Label
