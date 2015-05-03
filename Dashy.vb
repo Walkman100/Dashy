@@ -210,20 +210,34 @@
         End If
     End Sub
 
-    Public Function GetVar(EnvVar as string)
-      If Environment.GetEnvironmentVariable("OS") = "Windows_NT" or chkAllowVars.Checked Then
-        Try
-            If Environment.GetEnvironmentVariable(EnvVar) <> "" Then
-                Return Environment.GetEnvironmentVariable(EnvVar)
+    Private Sub btnExpand_RightClick(sender As Object, e As MouseEventArgs) Handles btnExpand.MouseUp
+        If e.Button = Windows.Forms.MouseButtons.Right Then
+            If btnExpand.Text = "Expand" Then
+                Me.Height = 925
+                Me.Location = New Size(Me.Location.X, My.Computer.Screen.WorkingArea.Height/2 - 462.5) ' 462.5 is current height/2
+                btnExpand.Text = "Collapse"
             Else
-                Return "Variable is empty!"
+                Me.Height = 459
+                Me.Location = New Size(Me.Location.X, My.Computer.Screen.WorkingArea.Height/2 - 229.5) ' 229.5 is current height/2
+                btnExpand.Text = "Expand"
             End If
-        Catch ex As Exception
-            Return "Error getting variable: " & ex.Message
-        End Try
-      else
-        return "Variables disabled"
-      End if
+        End If
+    End Sub
+
+    Public Function GetVar(EnvVar as atring)
+        If Environment.GetEnvironmentVariable("OS") = "Windows_NT" or chkAllowVars.Checked Then
+            Try
+                If Environment.GetEnvironmentVariable(EnvVar) <> "" Then
+                    Return Environment.GetEnvironmentVariable(EnvVar)
+                Else
+                    Return "Variable is empty!"
+                End If
+            Catch ex As Exception
+                Return "Error getting variable: " & ex.Message
+            End Try
+        else
+            return "Variables disabled"
+        End if
     End Function
     
     Private Sub btnStartTimers_Click(sender As Object, e As EventArgs) Handles btnStartTimers.Click
