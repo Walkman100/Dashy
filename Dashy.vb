@@ -224,20 +224,20 @@
         End If
     End Sub
 
-    Public Function GetVar(EnvVar as atring)
-        If Environment.GetEnvironmentVariable("OS") = "Windows_NT" or chkAllowVars.Checked Then
+    Public Function GetVar(EnvVar As String)
+        If Environment.GetEnvironmentVariable("OS") = "Windows_NT" Or chkAllowVars.Checked Then
             Try
                 If Environment.GetEnvironmentVariable(EnvVar) <> "" Then
                     Return Environment.GetEnvironmentVariable(EnvVar)
                 Else
-                    Return "Variable is empty!"
+                    Return "Variable '"&EnvVar &"' is empty!"
                 End If
             Catch ex As Exception
-                Return "Error getting variable: " & ex.Message
+                Return "Error getting variable '"&EnvVar &"': " & ex.Message
             End Try
-        else
-            return "Variables disabled"
-        End if
+        Else
+            Return "Variables disabled"
+        End If
     End Function
     
     Private Sub btnStartTimers_Click(sender As Object, e As EventArgs) Handles btnStartTimers.Click
