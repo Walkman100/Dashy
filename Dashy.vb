@@ -148,6 +148,8 @@
         If My.Computer.Clipboard.ContainsText Then
             PerformanceClipboard.Text = PerformanceClipboard.Text & vbNewLine & " Text"
         End If
+        
+        lblWindowSize.Text = "Dashy Window Size:" & vbNewLine & Me.Size.ToString
 
         'Network:
         If My.Computer.Network.IsAvailable = True Then

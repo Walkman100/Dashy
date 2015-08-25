@@ -113,6 +113,7 @@ Partial Class Dashy
         Me.btnExpand = New System.Windows.Forms.Button()
         Me.btnStartTimers = New System.Windows.Forms.Button()
         Me.chkAllowVars = New System.Windows.Forms.CheckBox()
+        Me.lblWindowSize = New System.Windows.Forms.Label()
         Me.FileSystemPanel.SuspendLayout
         Me.FileSystemDrivesTabControl.SuspendLayout
         Me.FileSystemDrivesTabFS.SuspendLayout
@@ -160,9 +161,9 @@ Partial Class Dashy
         '
         'FileSystemDrivesTabControl
         '
-        Me.FileSystemDrivesTabControl.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
-            Or System.Windows.Forms.AnchorStyles.Left) _
-            Or System.Windows.Forms.AnchorStyles.Right),System.Windows.Forms.AnchorStyles)
+        Me.FileSystemDrivesTabControl.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom)  _
+                        Or System.Windows.Forms.AnchorStyles.Left)  _
+                        Or System.Windows.Forms.AnchorStyles.Right),System.Windows.Forms.AnchorStyles)
         Me.FileSystemDrivesTabControl.Controls.Add(Me.FileSystemDrivesTabFS)
         Me.FileSystemDrivesTabControl.Controls.Add(Me.FileSystemDrivesTabEN)
         Me.FileSystemDrivesTabControl.Font = New System.Drawing.Font("Trebuchet MS", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0,Byte))
@@ -572,6 +573,7 @@ Partial Class Dashy
         Me.HardwarePanel.Anchor = System.Windows.Forms.AnchorStyles.Top
         Me.HardwarePanel.BackColor = System.Drawing.SystemColors.ControlLight
         Me.HardwarePanel.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.HardwarePanel.Controls.Add(Me.lblWindowSize)
         Me.HardwarePanel.Controls.Add(Me.HardwareScreenPrimary)
         Me.HardwarePanel.Controls.Add(Me.HardwareScreenName)
         Me.HardwarePanel.Controls.Add(Me.HardwareScreenBounds)
@@ -942,9 +944,9 @@ Partial Class Dashy
         '
         'NetworkSerialPortNames
         '
-        Me.NetworkSerialPortNames.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
-            Or System.Windows.Forms.AnchorStyles.Left) _
-            Or System.Windows.Forms.AnchorStyles.Right),System.Windows.Forms.AnchorStyles)
+        Me.NetworkSerialPortNames.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom)  _
+                        Or System.Windows.Forms.AnchorStyles.Left)  _
+                        Or System.Windows.Forms.AnchorStyles.Right),System.Windows.Forms.AnchorStyles)
         Me.NetworkSerialPortNames.Font = New System.Drawing.Font("Trebuchet MS", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0,Byte))
         Me.NetworkSerialPortNames.FormattingEnabled = true
         Me.NetworkSerialPortNames.IntegralHeight = false
@@ -1101,6 +1103,16 @@ Partial Class Dashy
         Me.chkAllowVars.UseVisualStyleBackColor = true
         Me.chkAllowVars.Visible = false
         '
+        'lblWindowSize
+        '
+        Me.lblWindowSize.AutoSize = true
+        Me.lblWindowSize.Font = New System.Drawing.Font("Trebuchet MS", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0,Byte))
+        Me.lblWindowSize.Location = New System.Drawing.Point(3, 214)
+        Me.lblWindowSize.Name = "lblWindowSize"
+        Me.lblWindowSize.Size = New System.Drawing.Size(197, 18)
+        Me.lblWindowSize.TabIndex = 12
+        Me.lblWindowSize.Text = "Dashy Window Size: Checking..."
+        '
         'Dashy
         '
         Me.AcceptButton = Me.btnRefresh
@@ -1157,6 +1169,7 @@ Partial Class Dashy
         Me.ResumeLayout(false)
         Me.PerformLayout
     End Sub
+    Friend lblWindowSize As System.Windows.Forms.Label
     Friend WithEvents chkAllowVars As System.Windows.Forms.CheckBox
     Friend WithEvents btnStartTimers As System.Windows.Forms.Button
     Friend WithEvents SlowTimer As System.Windows.Forms.Timer
