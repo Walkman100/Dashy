@@ -1,4 +1,4 @@
-﻿Public Class Dashy
+Public Class Dashy
 
     Private Sub Dashy_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         FastTimerRefreshUnit.SelectedIndex = 2
