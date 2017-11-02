@@ -65,6 +65,7 @@ Partial Class Dashy
         Me.CheckForUpdatesToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.AboutDashyToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.HardwarePanel = New System.Windows.Forms.Panel()
+        Me.lblWindowSize = New System.Windows.Forms.Label()
         Me.HardwareScreenPrimary = New System.Windows.Forms.Label()
         Me.HardwareScreenName = New System.Windows.Forms.Label()
         Me.HardwareScreenBounds = New System.Windows.Forms.Label()
@@ -92,6 +93,7 @@ Partial Class Dashy
         Me.SystemLbl = New System.Windows.Forms.Label()
         Me.NetworkPanel = New System.Windows.Forms.Panel()
         Me.NetworkSplitContainer = New System.Windows.Forms.SplitContainer()
+        Me.NetworkIPAddrPublic = New System.Windows.Forms.Label()
         Me.NetworkImg = New System.Windows.Forms.PictureBox()
         Me.NetworkInternetConnection = New System.Windows.Forms.Label()
         Me.NetworkLbl = New System.Windows.Forms.Label()
@@ -113,7 +115,6 @@ Partial Class Dashy
         Me.btnExpand = New System.Windows.Forms.Button()
         Me.btnStartTimers = New System.Windows.Forms.Button()
         Me.chkAllowVars = New System.Windows.Forms.CheckBox()
-        Me.lblWindowSize = New System.Windows.Forms.Label()
         Me.FileSystemPanel.SuspendLayout
         Me.FileSystemDrivesTabControl.SuspendLayout
         Me.FileSystemDrivesTabFS.SuspendLayout
@@ -285,7 +286,7 @@ Partial Class Dashy
         Me.FileSystemEnCurrentDirLBL.Font = New System.Drawing.Font("Trebuchet MS", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0,Byte))
         Me.FileSystemEnCurrentDirLBL.Location = New System.Drawing.Point(3, 142)
         Me.FileSystemEnCurrentDirLBL.Name = "FileSystemEnCurrentDirLBL"
-        Me.FileSystemEnCurrentDirLBL.Size = New System.Drawing.Size(141, 18)
+        Me.FileSystemEnCurrentDirLBL.Size = New System.Drawing.Size(139, 18)
         Me.FileSystemEnCurrentDirLBL.TabIndex = 16
         Me.FileSystemEnCurrentDirLBL.Text = "ENV.Current Directory:"
         '
@@ -325,7 +326,7 @@ Partial Class Dashy
         Me.FileSystemProgramFilesDirectoryLBL.Font = New System.Drawing.Font("Trebuchet MS", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0,Byte))
         Me.FileSystemProgramFilesDirectoryLBL.Location = New System.Drawing.Point(3, 70)
         Me.FileSystemProgramFilesDirectoryLBL.Name = "FileSystemProgramFilesDirectoryLBL"
-        Me.FileSystemProgramFilesDirectoryLBL.Size = New System.Drawing.Size(149, 18)
+        Me.FileSystemProgramFilesDirectoryLBL.Size = New System.Drawing.Size(148, 18)
         Me.FileSystemProgramFilesDirectoryLBL.TabIndex = 11
         Me.FileSystemProgramFilesDirectoryLBL.Text = "Program Files directory:"
         '
@@ -409,7 +410,7 @@ Partial Class Dashy
         Me.PerformanceClockLocalLBL.Font = New System.Drawing.Font("Trebuchet MS", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0,Byte))
         Me.PerformanceClockLocalLBL.Location = New System.Drawing.Point(3, 223)
         Me.PerformanceClockLocalLBL.Name = "PerformanceClockLocalLBL"
-        Me.PerformanceClockLocalLBL.Size = New System.Drawing.Size(112, 18)
+        Me.PerformanceClockLocalLBL.Size = New System.Drawing.Size(111, 18)
         Me.PerformanceClockLocalLBL.TabIndex = 19
         Me.PerformanceClockLocalLBL.Text = "Clock Local Time:"
         '
@@ -429,7 +430,7 @@ Partial Class Dashy
         Me.PerformanceClockGMTLBL.Font = New System.Drawing.Font("Trebuchet MS", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0,Byte))
         Me.PerformanceClockGMTLBL.Location = New System.Drawing.Point(3, 187)
         Me.PerformanceClockGMTLBL.Name = "PerformanceClockGMTLBL"
-        Me.PerformanceClockGMTLBL.Size = New System.Drawing.Size(109, 18)
+        Me.PerformanceClockGMTLBL.Size = New System.Drawing.Size(108, 18)
         Me.PerformanceClockGMTLBL.TabIndex = 17
         Me.PerformanceClockGMTLBL.Text = "Clock GMT Time:"
         '
@@ -459,7 +460,7 @@ Partial Class Dashy
         Me.PerformancePagefile.Font = New System.Drawing.Font("Trebuchet MS", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0,Byte))
         Me.PerformancePagefile.Location = New System.Drawing.Point(3, 124)
         Me.PerformancePagefile.Name = "PerformancePagefile"
-        Me.PerformancePagefile.Size = New System.Drawing.Size(160, 18)
+        Me.PerformancePagefile.Size = New System.Drawing.Size(159, 18)
         Me.PerformancePagefile.TabIndex = 9
         Me.PerformancePagefile.Text = "Pagefile Size: Checking..."
         '
@@ -479,7 +480,7 @@ Partial Class Dashy
         Me.PerformanceMemoryUsedByDashy.Font = New System.Drawing.Font("Trebuchet MS", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0,Byte))
         Me.PerformanceMemoryUsedByDashy.Location = New System.Drawing.Point(3, 160)
         Me.PerformanceMemoryUsedByDashy.Name = "PerformanceMemoryUsedByDashy"
-        Me.PerformanceMemoryUsedByDashy.Size = New System.Drawing.Size(268, 18)
+        Me.PerformanceMemoryUsedByDashy.Size = New System.Drawing.Size(267, 18)
         Me.PerformanceMemoryUsedByDashy.TabIndex = 7
         Me.PerformanceMemoryUsedByDashy.Text = "Physical memory used by Dashy: Checking..."
         '
@@ -489,7 +490,7 @@ Partial Class Dashy
         Me.PerformanceTotalVirtualMem.Font = New System.Drawing.Font("Trebuchet MS", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0,Byte))
         Me.PerformanceTotalVirtualMem.Location = New System.Drawing.Point(3, 70)
         Me.PerformanceTotalVirtualMem.Name = "PerformanceTotalVirtualMem"
-        Me.PerformanceTotalVirtualMem.Size = New System.Drawing.Size(208, 18)
+        Me.PerformanceTotalVirtualMem.Size = New System.Drawing.Size(206, 18)
         Me.PerformanceTotalVirtualMem.TabIndex = 6
         Me.PerformanceTotalVirtualMem.Text = "Total virtual memory: Checking..."
         '
@@ -499,7 +500,7 @@ Partial Class Dashy
         Me.PerformanceAvailPhysicalMem.Font = New System.Drawing.Font("Trebuchet MS", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0,Byte))
         Me.PerformanceAvailPhysicalMem.Location = New System.Drawing.Point(3, 88)
         Me.PerformanceAvailPhysicalMem.Name = "PerformanceAvailPhysicalMem"
-        Me.PerformanceAvailPhysicalMem.Size = New System.Drawing.Size(239, 18)
+        Me.PerformanceAvailPhysicalMem.Size = New System.Drawing.Size(238, 18)
         Me.PerformanceAvailPhysicalMem.TabIndex = 5
         Me.PerformanceAvailPhysicalMem.Text = "Available physical memory: Checking..."
         '
@@ -509,7 +510,7 @@ Partial Class Dashy
         Me.PerformanceAvailVirtualMem.Font = New System.Drawing.Font("Trebuchet MS", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0,Byte))
         Me.PerformanceAvailVirtualMem.Location = New System.Drawing.Point(3, 106)
         Me.PerformanceAvailVirtualMem.Name = "PerformanceAvailVirtualMem"
-        Me.PerformanceAvailVirtualMem.Size = New System.Drawing.Size(231, 18)
+        Me.PerformanceAvailVirtualMem.Size = New System.Drawing.Size(230, 18)
         Me.PerformanceAvailVirtualMem.TabIndex = 4
         Me.PerformanceAvailVirtualMem.Text = "Available virtual memory: Checking..."
         '
@@ -529,7 +530,7 @@ Partial Class Dashy
         Me.PerformanceLbl.Font = New System.Drawing.Font("Trebuchet MS", 15.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0,Byte))
         Me.PerformanceLbl.Location = New System.Drawing.Point(70, 18)
         Me.PerformanceLbl.Name = "PerformanceLbl"
-        Me.PerformanceLbl.Size = New System.Drawing.Size(131, 27)
+        Me.PerformanceLbl.Size = New System.Drawing.Size(130, 27)
         Me.PerformanceLbl.TabIndex = 3
         Me.PerformanceLbl.Text = "Performance"
         '
@@ -539,7 +540,7 @@ Partial Class Dashy
         Me.HardwareTotalPhysicalMem.Font = New System.Drawing.Font("Trebuchet MS", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0,Byte))
         Me.HardwareTotalPhysicalMem.Location = New System.Drawing.Point(3, 88)
         Me.HardwareTotalPhysicalMem.Name = "HardwareTotalPhysicalMem"
-        Me.HardwareTotalPhysicalMem.Size = New System.Drawing.Size(216, 18)
+        Me.HardwareTotalPhysicalMem.Size = New System.Drawing.Size(214, 18)
         Me.HardwareTotalPhysicalMem.TabIndex = 7
         Me.HardwareTotalPhysicalMem.Text = "Total physical memory: Checking..."
         '
@@ -553,19 +554,19 @@ Partial Class Dashy
         'DocumentationToolStripMenuItem
         '
         Me.DocumentationToolStripMenuItem.Name = "DocumentationToolStripMenuItem"
-        Me.DocumentationToolStripMenuItem.Size = New System.Drawing.Size(179, 22)
+        Me.DocumentationToolStripMenuItem.Size = New System.Drawing.Size(170, 22)
         Me.DocumentationToolStripMenuItem.Text = "&Documentation"
         '
         'CheckForUpdatesToolStripMenuItem
         '
         Me.CheckForUpdatesToolStripMenuItem.Name = "CheckForUpdatesToolStripMenuItem"
-        Me.CheckForUpdatesToolStripMenuItem.Size = New System.Drawing.Size(179, 22)
+        Me.CheckForUpdatesToolStripMenuItem.Size = New System.Drawing.Size(170, 22)
         Me.CheckForUpdatesToolStripMenuItem.Text = "&Check for updates"
         '
         'AboutDashyToolStripMenuItem
         '
         Me.AboutDashyToolStripMenuItem.Name = "AboutDashyToolStripMenuItem"
-        Me.AboutDashyToolStripMenuItem.Size = New System.Drawing.Size(179, 22)
+        Me.AboutDashyToolStripMenuItem.Size = New System.Drawing.Size(170, 22)
         Me.AboutDashyToolStripMenuItem.Text = "&About Dashy"
         '
         'HardwarePanel
@@ -587,13 +588,23 @@ Partial Class Dashy
         Me.HardwarePanel.Size = New System.Drawing.Size(252, 290)
         Me.HardwarePanel.TabIndex = 6
         '
+        'lblWindowSize
+        '
+        Me.lblWindowSize.AutoSize = true
+        Me.lblWindowSize.Font = New System.Drawing.Font("Trebuchet MS", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0,Byte))
+        Me.lblWindowSize.Location = New System.Drawing.Point(3, 214)
+        Me.lblWindowSize.Name = "lblWindowSize"
+        Me.lblWindowSize.Size = New System.Drawing.Size(197, 18)
+        Me.lblWindowSize.TabIndex = 12
+        Me.lblWindowSize.Text = "Dashy Window Size: Checking..."
+        '
         'HardwareScreenPrimary
         '
         Me.HardwareScreenPrimary.AutoSize = true
         Me.HardwareScreenPrimary.Font = New System.Drawing.Font("Trebuchet MS", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0,Byte))
         Me.HardwareScreenPrimary.Location = New System.Drawing.Point(3, 142)
         Me.HardwareScreenPrimary.Name = "HardwareScreenPrimary"
-        Me.HardwareScreenPrimary.Size = New System.Drawing.Size(172, 18)
+        Me.HardwareScreenPrimary.Size = New System.Drawing.Size(171, 18)
         Me.HardwareScreenPrimary.TabIndex = 11
         Me.HardwareScreenPrimary.Text = "Primary screen: Checking..."
         '
@@ -633,7 +644,7 @@ Partial Class Dashy
         Me.HardwareProcessorCount.Font = New System.Drawing.Font("Trebuchet MS", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0,Byte))
         Me.HardwareProcessorCount.Location = New System.Drawing.Point(3, 70)
         Me.HardwareProcessorCount.Name = "HardwareProcessorCount"
-        Me.HardwareProcessorCount.Size = New System.Drawing.Size(147, 18)
+        Me.HardwareProcessorCount.Size = New System.Drawing.Size(146, 18)
         Me.HardwareProcessorCount.TabIndex = 5
         Me.HardwareProcessorCount.Text = "Processors: Checking..."
         '
@@ -663,7 +674,7 @@ Partial Class Dashy
         Me.SystemOSArch.Font = New System.Drawing.Font("Trebuchet MS", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0,Byte))
         Me.SystemOSArch.Location = New System.Drawing.Point(3, 151)
         Me.SystemOSArch.Name = "SystemOSArch"
-        Me.SystemOSArch.Size = New System.Drawing.Size(131, 18)
+        Me.SystemOSArch.Size = New System.Drawing.Size(130, 18)
         Me.SystemOSArch.TabIndex = 4
         Me.SystemOSArch.Text = "OS Arch: Checking..."
         '
@@ -730,7 +741,7 @@ Partial Class Dashy
         Me.SystemDashyArch.Font = New System.Drawing.Font("Trebuchet MS", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0,Byte))
         Me.SystemDashyArch.Location = New System.Drawing.Point(3, 286)
         Me.SystemDashyArch.Name = "SystemDashyArch"
-        Me.SystemDashyArch.Size = New System.Drawing.Size(197, 18)
+        Me.SystemDashyArch.Size = New System.Drawing.Size(195, 18)
         Me.SystemDashyArch.TabIndex = 14
         Me.SystemDashyArch.Text = "Dashy Process Arch: Checking..."
         '
@@ -770,7 +781,7 @@ Partial Class Dashy
         Me.SystemNameComputer.Font = New System.Drawing.Font("Trebuchet MS", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0,Byte))
         Me.SystemNameComputer.Location = New System.Drawing.Point(3, 196)
         Me.SystemNameComputer.Name = "SystemNameComputer"
-        Me.SystemNameComputer.Size = New System.Drawing.Size(180, 18)
+        Me.SystemNameComputer.Size = New System.Drawing.Size(178, 18)
         Me.SystemNameComputer.TabIndex = 10
         Me.SystemNameComputer.Text = "Computer.Name: Checking..."
         '
@@ -780,7 +791,7 @@ Partial Class Dashy
         Me.SystemNameEN.Font = New System.Drawing.Font("Trebuchet MS", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0,Byte))
         Me.SystemNameEN.Location = New System.Drawing.Point(3, 178)
         Me.SystemNameEN.Name = "SystemNameEN"
-        Me.SystemNameEN.Size = New System.Drawing.Size(193, 18)
+        Me.SystemNameEN.Size = New System.Drawing.Size(191, 18)
         Me.SystemNameEN.TabIndex = 9
         Me.SystemNameEN.Text = "ENV.MachineName: Checking..."
         '
@@ -820,7 +831,7 @@ Partial Class Dashy
         Me.SystemOSInfoVersion.Font = New System.Drawing.Font("Trebuchet MS", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0,Byte))
         Me.SystemOSInfoVersion.Location = New System.Drawing.Point(3, 97)
         Me.SystemOSInfoVersion.Name = "SystemOSInfoVersion"
-        Me.SystemOSInfoVersion.Size = New System.Drawing.Size(148, 18)
+        Me.SystemOSInfoVersion.Size = New System.Drawing.Size(147, 18)
         Me.SystemOSInfoVersion.TabIndex = 5
         Me.SystemOSInfoVersion.Text = "OS Version: Checking..."
         '
@@ -876,6 +887,7 @@ Partial Class Dashy
         '
         'NetworkSplitContainer.Panel1
         '
+        Me.NetworkSplitContainer.Panel1.Controls.Add(Me.NetworkIPAddrPublic)
         Me.NetworkSplitContainer.Panel1.Controls.Add(Me.NetworkImg)
         Me.NetworkSplitContainer.Panel1.Controls.Add(Me.NetworkInternetConnection)
         Me.NetworkSplitContainer.Panel1.Controls.Add(Me.NetworkLbl)
@@ -890,6 +902,16 @@ Partial Class Dashy
         Me.NetworkSplitContainer.Size = New System.Drawing.Size(250, 395)
         Me.NetworkSplitContainer.SplitterDistance = 159
         Me.NetworkSplitContainer.TabIndex = 18
+        '
+        'NetworkIPAddrPublic
+        '
+        Me.NetworkIPAddrPublic.AutoSize = true
+        Me.NetworkIPAddrPublic.Font = New System.Drawing.Font("Trebuchet MS", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0,Byte))
+        Me.NetworkIPAddrPublic.Location = New System.Drawing.Point(3, 115)
+        Me.NetworkIPAddrPublic.Name = "NetworkIPAddrPublic"
+        Me.NetworkIPAddrPublic.Size = New System.Drawing.Size(183, 18)
+        Me.NetworkIPAddrPublic.TabIndex = 6
+        Me.NetworkIPAddrPublic.Text = "Public IP Address: Checking..."
         '
         'NetworkImg
         '
@@ -938,7 +960,7 @@ Partial Class Dashy
         Me.NetworkSerialPortNamesLBL.Font = New System.Drawing.Font("Trebuchet MS", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0,Byte))
         Me.NetworkSerialPortNamesLBL.Location = New System.Drawing.Point(2, 3)
         Me.NetworkSerialPortNamesLBL.Name = "NetworkSerialPortNamesLBL"
-        Me.NetworkSerialPortNamesLBL.Size = New System.Drawing.Size(117, 18)
+        Me.NetworkSerialPortNamesLBL.Size = New System.Drawing.Size(116, 18)
         Me.NetworkSerialPortNamesLBL.TabIndex = 17
         Me.NetworkSerialPortNamesLBL.Text = "Serial Port Names:"
         '
@@ -1058,7 +1080,7 @@ Partial Class Dashy
         Me.EnvVarsLBL.Font = New System.Drawing.Font("Trebuchet MS", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0,Byte))
         Me.EnvVarsLBL.Location = New System.Drawing.Point(12, 407)
         Me.EnvVarsLBL.Name = "EnvVarsLBL"
-        Me.EnvVarsLBL.Size = New System.Drawing.Size(144, 18)
+        Me.EnvVarsLBL.Size = New System.Drawing.Size(143, 18)
         Me.EnvVarsLBL.TabIndex = 23
         Me.EnvVarsLBL.Text = "Environment Variables:"
         '
@@ -1102,16 +1124,6 @@ Partial Class Dashy
         Me.chkAllowVars.Text = "Allow getting environment variables"
         Me.chkAllowVars.UseVisualStyleBackColor = true
         Me.chkAllowVars.Visible = false
-        '
-        'lblWindowSize
-        '
-        Me.lblWindowSize.AutoSize = true
-        Me.lblWindowSize.Font = New System.Drawing.Font("Trebuchet MS", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0,Byte))
-        Me.lblWindowSize.Location = New System.Drawing.Point(3, 214)
-        Me.lblWindowSize.Name = "lblWindowSize"
-        Me.lblWindowSize.Size = New System.Drawing.Size(197, 18)
-        Me.lblWindowSize.TabIndex = 12
-        Me.lblWindowSize.Text = "Dashy Window Size: Checking..."
         '
         'Dashy
         '
@@ -1169,6 +1181,7 @@ Partial Class Dashy
         Me.ResumeLayout(false)
         Me.PerformLayout
     End Sub
+    Friend NetworkIPAddrPublic As System.Windows.Forms.Label
     Friend lblWindowSize As System.Windows.Forms.Label
     Friend WithEvents chkAllowVars As System.Windows.Forms.CheckBox
     Friend WithEvents btnStartTimers As System.Windows.Forms.Button
