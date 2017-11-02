@@ -109,9 +109,11 @@ Public Class Dashy
             Else
                 NetworkInternetConnection.Text = "Internet connection: No"
             End If
+            NetworkIPAddrPublic.Text = "Public IP Address: " & GetPublicIP()
         Else
             NetworkIsConnected.Text = "Connected to network: No"
             NetworkInternetConnection.Text = "Internet connection: N/A"
+            NetworkIPAddrPublic.Text = "Public IP Address: N/A"
         End If
         NetworkSerialPortNames.Items.Clear()
         For Each PortName In My.Computer.Ports.SerialPortNames
@@ -155,11 +157,13 @@ Public Class Dashy
         If My.Computer.Network.IsAvailable = True Then
             If NetworkIsConnected.Text = "Connected to network: No" Then
                 NetworkInternetConnection.Text = "Internet connection: Waiting for SlowTimer..."
+                NetworkIPAddrPublic.Text = "Public IP Address: Waiting for SlowTimer..."
             End If
             NetworkIsConnected.Text = "Connected to network: Yes"
         Else
             NetworkIsConnected.Text = "Connected to network: No"
             NetworkInternetConnection.Text = "Internet connection: N/A"
+            NetworkIPAddrPublic.Text = "Public IP Address: N/A"
         End If
     End Sub
 
@@ -240,6 +244,33 @@ Public Class Dashy
         Else
             Return "Variables disabled"
         End If
+    End Function
+    
+    Function GetPublicIP() As String
+        '  Thanks to https://stackoverflow.com/a/16642279/2999220
+        '  (Modified with help of https://stackoverflow.com/a/16369288/2999220)
+        Dim request As Net.HttpWebRequest = Net.WebRequest.Create("http://ipecho.net/plain")
+        Try
+            Using response As Net.HttpWebResponse = request.GetResponse()
+                If response.StatusCode = Net.HttpStatusCode.OK Then
+                    Using receiveStream As IO.Stream = response.GetResponseStream()
+                        If response.CharacterSet Is Nothing Then
+                            Using readStream As IO.StreamReader = New IO.StreamReader(receiveStream)
+                                Return readStream.ReadToEnd()
+                            End Using
+                        Else
+                            Using readStream As IO.StreamReader = New IO.StreamReader(receiveStream, System.Text.Encoding.GetEncoding(response.CharacterSet))
+                                Return readStream.ReadToEnd()
+                            End Using
+                        End If
+                    End Using
+                Else
+                    Return response.StatusCode
+                End If
+            End Using
+        Catch ex As System.Net.WebException
+            Return ex.Message
+        End Try
     End Function
     
     Private Sub btnStartTimers_Click(sender As Object, e As EventArgs) Handles btnStartTimers.Click
