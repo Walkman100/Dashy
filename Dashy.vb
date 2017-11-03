@@ -217,7 +217,7 @@ Public Class Dashy
     End Sub
 
     Private Sub btnExpand_RightClick(sender As Object, e As MouseEventArgs) Handles btnExpand.MouseUp
-        If e.Button = Windows.Forms.MouseButtons.Right Then
+        If e.Button = System.Windows.Forms.MouseButtons.Right Then
             If btnExpand.Text = "Expand" Then
                 Me.Height = 925
                 Me.Location = New Size(Me.Location.X, My.Computer.Screen.WorkingArea.Height/2 - 462.5) ' 462.5 is current height/2
