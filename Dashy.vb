@@ -60,12 +60,12 @@ Public Class Dashy
             "USERNAME: " & GetVar("USERNAME")
 
         'Performance:
-        PerformanceTotalVirtualMem.Text = "Total virtual memory: " & SafeGet(Function() (My.Computer.Info.TotalVirtualMemory * 1000 \ 1048576) / 1000 & " MB") 'My.Computer.Info.TotalVirtualMemory & " bytes"
+        PerformanceTotalVirtualMem.Text = "Total virtual memory: " & SafeGet(Function() BytesToMB(My.Computer.Info.TotalVirtualMemory))
         PerformancePagefile.Text = "Pagefile Size: " & SafeGet(Function() Environment.SystemPageSize)
 
         'Hardware:
         HardwareProcessorCount.Text = "Processors: " & SafeGet(Function() Environment.ProcessorCount)
-        HardwareTotalPhysicalMem.Text = "Total physical memory: " & SafeGet(Function() (My.Computer.Info.TotalPhysicalMemory * 1000 \ 1048576) / 1000 & " MB") 'My.Computer.Info.TotalPhysicalMemory & " bytes"
+        HardwareTotalPhysicalMem.Text = "Total physical memory: " & SafeGet(Function() BytesToMB(My.Computer.Info.TotalPhysicalMemory))
         If My.Computer.Mouse.WheelExists Then
             HardwareMouseWheel.Text = "Mouse Wheel: Exists"
         Else
@@ -130,10 +130,18 @@ Public Class Dashy
         FileSystemNumberOfDrives.Text = "No. of drives: " & SafeGet(Function() My.Computer.FileSystem.Drives.Count)
 
         'Performance:
-        PerformanceAvailPhysicalMem.Text = "Available physical memory: " & SafeGet(Function() (My.Computer.Info.AvailablePhysicalMemory * 1000 \ 1048576) / 1000 & " MB") 'My.Computer.Info.AvailablePhysicalMemory & " bytes"
-        PerformanceAvailVirtualMem.Text = "Available virtual memory: " & SafeGet(Function() (My.Computer.Info.AvailableVirtualMemory * 1000 \ 1048576) / 1000 & " MB") 'My.Computer.Info.AvailableVirtualMemory & " bytes"
+        PerformanceAvailPhysicalMem.Text = "Available physical memory: " & SafeGet(Function() BytesToMB(My.Computer.Info.AvailablePhysicalMemory))
+        PerformanceAvailVirtualMem.Text = "Available virtual memory: " & SafeGet(Function() BytesToMB(My.Computer.Info.AvailableVirtualMemory))
         PerformanceUptime.Text = "Up-time: " & SafeGet(Function() Environment.TickCount \ 1000 & " Seconds") 'Milliseconds (converted to seconds) since startup
-        PerformanceMemoryUsedByDashy.Text = "Physical memory used by Dashy: " & SafeGet(Function() (Environment.WorkingSet * 10 \ 1048576) / 10 & " MB") 'Environment.WorkingSet & " bytes"
+        PerformanceMemoryUsedByDashy.Text = "Physical memory used by Dashy: " & SafeGet(Function() BytesToMB(Environment.WorkingSet))
+
+        PerformanceAvailPhysicalMemPC.Text = "Available physical memory: " & SafeGet(Function() BytesToMB(New PerformanceCounter("Memory", "Available Bytes").RawValue))
+        PerformanceCommitCharge.Text = "Commit Charge: " & SafeGet(Function() BytesToMB(New PerformanceCounter("Memory", "Committed Bytes").RawValue) & " / " &
+                                                                              BytesToMB(New PerformanceCounter("Memory", "Commit Limit").RawValue))
+        PerformanceCachedMemory.Text = "Cached Memory: " & SafeGet(Function() BytesToMB(New PerformanceCounter("Memory", "Standby Cache Normal Priority Bytes").RawValue +
+                                                                                        New PerformanceCounter("Memory", "Standby Cache Reserve Bytes").RawValue))
+        PerformancePagedPool.Text = "Paged Pool: " & SafeGet(Function() BytesToMB(New PerformanceCounter("Memory", "Pool Paged Bytes").RawValue))
+        PerformanceNonPagedPool.Text = "Non-Paged Pool: " & SafeGet(Function() BytesToMB(New PerformanceCounter("Memory", "Pool Nonpaged Bytes").RawValue))
 
         ' Clock
         PerformanceClockGMT.Text = SafeGet(Function() My.Computer.Clock.GmtTime)
@@ -242,6 +250,8 @@ Public Class Dashy
         End If
     End Sub
 
+    ' ================== Helper Functions =====================
+
     Public Function GetVar(EnvVar As String)
         Try
             If Environment.GetEnvironmentVariable(EnvVar) <> "" Then
@@ -287,5 +297,10 @@ Public Class Dashy
         Catch ex As Exception
             Return ex.Message
         End Try
+    End Function
+
+    Function BytesToMB(bytes As ULong) As String
+        Dim mb As ULong = bytes / (1024 * 1024)
+        Return mb.ToString("#,##0") & " MiB"
     End Function
 End Class

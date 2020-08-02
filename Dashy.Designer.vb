@@ -45,6 +45,11 @@ Partial Class Dashy
         Me.FileSystemLbl = New System.Windows.Forms.Label()
         Me.FileSystemImg = New System.Windows.Forms.PictureBox()
         Me.PerformancePanel = New System.Windows.Forms.Panel()
+        Me.PerformanceCachedMemory = New System.Windows.Forms.Label()
+        Me.PerformancePagedPool = New System.Windows.Forms.Label()
+        Me.PerformanceNonPagedPool = New System.Windows.Forms.Label()
+        Me.PerformanceAvailPhysicalMemPC = New System.Windows.Forms.Label()
+        Me.PerformanceCommitCharge = New System.Windows.Forms.Label()
         Me.PerformanceClockLocal = New System.Windows.Forms.Label()
         Me.PerformanceClockLocalLBL = New System.Windows.Forms.Label()
         Me.PerformanceClockGMT = New System.Windows.Forms.Label()
@@ -373,6 +378,11 @@ Partial Class Dashy
         Me.PerformancePanel.Anchor = System.Windows.Forms.AnchorStyles.Top
         Me.PerformancePanel.BackColor = System.Drawing.SystemColors.ControlLight
         Me.PerformancePanel.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.PerformancePanel.Controls.Add(Me.PerformanceCachedMemory)
+        Me.PerformancePanel.Controls.Add(Me.PerformancePagedPool)
+        Me.PerformancePanel.Controls.Add(Me.PerformanceNonPagedPool)
+        Me.PerformancePanel.Controls.Add(Me.PerformanceAvailPhysicalMemPC)
+        Me.PerformancePanel.Controls.Add(Me.PerformanceCommitCharge)
         Me.PerformancePanel.Controls.Add(Me.PerformanceClockLocal)
         Me.PerformancePanel.Controls.Add(Me.PerformanceClockLocalLBL)
         Me.PerformancePanel.Controls.Add(Me.PerformanceClockGMT)
@@ -391,6 +401,56 @@ Partial Class Dashy
         Me.PerformancePanel.Name = "PerformancePanel"
         Me.PerformancePanel.Size = New System.Drawing.Size(252, 397)
         Me.PerformancePanel.TabIndex = 5
+        '
+        'PerformanceCachedMemory
+        '
+        Me.PerformanceCachedMemory.AutoSize = True
+        Me.PerformanceCachedMemory.Font = New System.Drawing.Font("Trebuchet MS", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.PerformanceCachedMemory.Location = New System.Drawing.Point(3, 342)
+        Me.PerformanceCachedMemory.Name = "PerformanceCachedMemory"
+        Me.PerformanceCachedMemory.Size = New System.Drawing.Size(177, 18)
+        Me.PerformanceCachedMemory.TabIndex = 25
+        Me.PerformanceCachedMemory.Text = "Cached Memory: Checking..."
+        '
+        'PerformancePagedPool
+        '
+        Me.PerformancePagedPool.AutoSize = True
+        Me.PerformancePagedPool.Font = New System.Drawing.Font("Trebuchet MS", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.PerformancePagedPool.Location = New System.Drawing.Point(3, 360)
+        Me.PerformancePagedPool.Name = "PerformancePagedPool"
+        Me.PerformancePagedPool.Size = New System.Drawing.Size(146, 18)
+        Me.PerformancePagedPool.TabIndex = 24
+        Me.PerformancePagedPool.Text = "Paged Pool: Checking..."
+        '
+        'PerformanceNonPagedPool
+        '
+        Me.PerformanceNonPagedPool.AutoSize = True
+        Me.PerformanceNonPagedPool.Font = New System.Drawing.Font("Trebuchet MS", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.PerformanceNonPagedPool.Location = New System.Drawing.Point(3, 378)
+        Me.PerformanceNonPagedPool.Name = "PerformanceNonPagedPool"
+        Me.PerformanceNonPagedPool.Size = New System.Drawing.Size(173, 18)
+        Me.PerformanceNonPagedPool.TabIndex = 23
+        Me.PerformanceNonPagedPool.Text = "Non-Paged Pool: Checking..."
+        '
+        'PerformanceAvailPhysicalMemPC
+        '
+        Me.PerformanceAvailPhysicalMemPC.AutoSize = True
+        Me.PerformanceAvailPhysicalMemPC.Font = New System.Drawing.Font("Trebuchet MS", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.PerformanceAvailPhysicalMemPC.Location = New System.Drawing.Point(3, 306)
+        Me.PerformanceAvailPhysicalMemPC.Name = "PerformanceAvailPhysicalMemPC"
+        Me.PerformanceAvailPhysicalMemPC.Size = New System.Drawing.Size(238, 18)
+        Me.PerformanceAvailPhysicalMemPC.TabIndex = 22
+        Me.PerformanceAvailPhysicalMemPC.Text = "Available physical memory: Checking..."
+        '
+        'PerformanceCommitCharge
+        '
+        Me.PerformanceCommitCharge.AutoSize = True
+        Me.PerformanceCommitCharge.Font = New System.Drawing.Font("Trebuchet MS", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.PerformanceCommitCharge.Location = New System.Drawing.Point(3, 324)
+        Me.PerformanceCommitCharge.Name = "PerformanceCommitCharge"
+        Me.PerformanceCommitCharge.Size = New System.Drawing.Size(176, 18)
+        Me.PerformanceCommitCharge.TabIndex = 21
+        Me.PerformanceCommitCharge.Text = "Commit Charge: Checking..."
         '
         'PerformanceClockLocal
         '
@@ -446,7 +506,7 @@ Partial Class Dashy
         '
         Me.PerformanceClipboard.AutoSize = True
         Me.PerformanceClipboard.Font = New System.Drawing.Font("Trebuchet MS", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.PerformanceClipboard.Location = New System.Drawing.Point(3, 286)
+        Me.PerformanceClipboard.Location = New System.Drawing.Point(3, 277)
         Me.PerformanceClipboard.Name = "PerformanceClipboard"
         Me.PerformanceClipboard.Size = New System.Drawing.Size(196, 18)
         Me.PerformanceClipboard.TabIndex = 10
@@ -1156,6 +1216,11 @@ Partial Class Dashy
         Me.PerformLayout()
 
     End Sub
+    Friend PerformanceCommitCharge As System.Windows.Forms.Label
+    Friend PerformanceAvailPhysicalMemPC As System.Windows.Forms.Label
+    Friend PerformanceNonPagedPool As System.Windows.Forms.Label
+    Friend PerformancePagedPool As System.Windows.Forms.Label
+    Friend PerformanceCachedMemory As System.Windows.Forms.Label
     Friend NetworkIPAddrPublic As System.Windows.Forms.Label
     Friend lblWindowSize As System.Windows.Forms.Label
     Friend WithEvents SlowTimer As System.Windows.Forms.Timer
