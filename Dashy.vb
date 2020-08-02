@@ -4,16 +4,16 @@ Public Class Dashy
         FastTimerRefreshUnit.SelectedIndex = 2
         SlowTimerRefreshUnit.SelectedIndex = 2
         If Environment.GetEnvironmentVariable("OS") = "Windows_NT" Then
+            SlowTimer.Interval = 5000
             FastTimer.Start()
             SlowTimer.Start()
 
-            SlowTimer.Interval = 5
-            chkAllowVars.Checked = True
             Me.Width = My.Computer.Screen.WorkingArea.Width
             Me.Location = New Size(0, Me.Location.Y)
         Else
-            chkAllowVars.Visible = True
-            btnStartTimers.Visible = True
+            SlowTimer.Interval = 5000
+            FastTimer.Start()
+            SlowTimer.Start()
         End If
     End Sub
 
@@ -22,9 +22,9 @@ Public Class Dashy
         'FileSystem:
         FileSystemProgramFilesDirectory.Text = GetVar("PROGRAMFILES")
         FileSystemHomePath.Text = GetVar("USERPROFILE")
-        FileSystemEnCurrentDir.Text = Environment.CurrentDirectory
-        FileSystemFsCurrentDir.Text = My.Computer.FileSystem.CurrentDirectory
-        FileSystemSysDir.Text = Environment.SystemDirectory
+        FileSystemEnCurrentDir.Text = SafeGet(Function() Environment.CurrentDirectory)
+        FileSystemFsCurrentDir.Text = SafeGet(Function() My.Computer.FileSystem.CurrentDirectory)
+        FileSystemSysDir.Text = SafeGet(Function() Environment.SystemDirectory)
         FileSystemDriveListFS.Items.Clear()
         For Each drive In My.Computer.FileSystem.Drives
             FileSystemDriveListFS.Items.Add(drive)
@@ -60,45 +60,45 @@ Public Class Dashy
             "USERNAME: " & GetVar("USERNAME")
 
         'Performance:
-        PerformanceTotalVirtualMem.Text = "Total virtual memory: " & (My.Computer.Info.TotalVirtualMemory * 1000 \ 1048576) / 1000 & " MB" 'My.Computer.Info.TotalVirtualMemory & " bytes"
-        PerformancePagefile.Text = "Pagefile Size: " & Environment.SystemPageSize
+        PerformanceTotalVirtualMem.Text = "Total virtual memory: " & SafeGet(Function() (My.Computer.Info.TotalVirtualMemory * 1000 \ 1048576) / 1000 & " MB") 'My.Computer.Info.TotalVirtualMemory & " bytes"
+        PerformancePagefile.Text = "Pagefile Size: " & SafeGet(Function() Environment.SystemPageSize)
 
         'Hardware:
-        HardwareProcessorCount.Text = "Processors: " & Environment.ProcessorCount
-        HardwareTotalPhysicalMem.Text = "Total physical memory: " & (My.Computer.Info.TotalPhysicalMemory * 1000 \ 1048576) / 1000 & " MB" 'My.Computer.Info.TotalPhysicalMemory & " bytes"
+        HardwareProcessorCount.Text = "Processors: " & SafeGet(Function() Environment.ProcessorCount)
+        HardwareTotalPhysicalMem.Text = "Total physical memory: " & SafeGet(Function() (My.Computer.Info.TotalPhysicalMemory * 1000 \ 1048576) / 1000 & " MB") 'My.Computer.Info.TotalPhysicalMemory & " bytes"
         If My.Computer.Mouse.WheelExists Then
             HardwareMouseWheel.Text = "Mouse Wheel: Exists"
         Else
             HardwareMouseWheel.Text = "Mouse Wheel: Doesn't exist"
         End If
-        HardwareScreenName.Text = "Screen Device Name: " & My.Computer.Screen.DeviceName
-        HardwareScreenPrimary.Text = "Primary screen: " & My.Computer.Screen.Primary
-        HardwareScreenBounds.Text = "Screen Bounds:" & vbNewLine &  My.Computer.Screen.Bounds.ToString
+        HardwareScreenName.Text = "Screen Device Name: " & SafeGet(Function() My.Computer.Screen.DeviceName)
+        HardwareScreenPrimary.Text = "Primary screen: " & SafeGet(Function() My.Computer.Screen.Primary)
+        HardwareScreenBounds.Text = "Screen Bounds:" & vbNewLine & SafeGet(Function() My.Computer.Screen.Bounds.ToString)
 
         'System:
-        SystemOS.Text = "OS: " & My.Computer.Info.OSFullName
-        SystemOSInfoVersion.Text = "OS Version: " & My.Computer.Info.OSVersion
-        SystemOSEnvironVersion.Text = "Full OS Name: " & Environment.OSVersion.ToString
-        SystemOSPlatform.Text = "OS Platform: " & My.Computer.Info.OSPlatform
+        SystemOS.Text = "OS: " & SafeGet(Function() My.Computer.Info.OSFullName)
+        SystemOSInfoVersion.Text = "OS Version: " & SafeGet(Function() My.Computer.Info.OSVersion)
+        SystemOSEnvironVersion.Text = "Full OS Name: " & SafeGet(Function() Environment.OSVersion.ToString)
+        SystemOSPlatform.Text = "OS Platform: " & SafeGet(Function() My.Computer.Info.OSPlatform)
         If Environment.Is64BitOperatingSystem Then
             SystemOSArch.Text = "OS Arch: 64-Bit"
         Else
             SystemOSArch.Text = "OS Arch: 32-Bit"
         End If
-        SystemNameEN.Text = "ENV.MachineName: " & Environment.MachineName
-        SystemNameComputer.Text = "Computer.Name: " & My.Computer.Name
-        SystemDomain.Text = "Domain: " & Environment.UserDomainName
-        SystemLoggedInUser.Text = "Logged in user: " & Environment.UserName
-        SystemInteractiveMode.Text = "Running in interactive mode: " & Environment.UserInteractive
-        SystemShutdownStarted.Text = "Shutdown started: " & Environment.HasShutdownStarted
+        SystemNameEN.Text = "ENV.MachineName: " & SafeGet(Function() Environment.MachineName)
+        SystemNameComputer.Text = "Computer.Name: " & SafeGet(Function() My.Computer.Name)
+        SystemDomain.Text = "Domain: " & SafeGet(Function() Environment.UserDomainName)
+        SystemLoggedInUser.Text = "Logged in user: " & SafeGet(Function() Environment.UserName)
+        SystemInteractiveMode.Text = "Running in interactive mode: " & SafeGet(Function() Environment.UserInteractive)
+        SystemShutdownStarted.Text = "Shutdown started: " & SafeGet(Function() Environment.HasShutdownStarted)
         If Environment.Is64BitProcess Then
             SystemDashyArch.Text = "Dashy Process Arch: 64-Bit"
         Else
             SystemDashyArch.Text = "Dashy Process Arch: 32-Bit"
         End If
-        SystemScrollLines.Text = "Lines to scroll with scroll wheel: " & My.Computer.Mouse.WheelScrollLines
-        SystemScreenBitsPerPixel.Text = "Screen Bits per pixel: " & My.Computer.Screen.BitsPerPixel
-        SystemWorkingArea.Text = "Screen working area: " & vbNewLine & My.Computer.Screen.WorkingArea.ToString
+        SystemScrollLines.Text = "Lines to scroll with scroll wheel: " & SafeGet(Function() My.Computer.Mouse.WheelScrollLines)
+        SystemScreenBitsPerPixel.Text = "Screen Bits per pixel: " & SafeGet(Function() My.Computer.Screen.BitsPerPixel)
+        SystemWorkingArea.Text = "Screen working area: " & vbNewLine & SafeGet(Function() My.Computer.Screen.WorkingArea.ToString)
 
         'Network:
         If My.Computer.Network.IsAvailable = True Then
@@ -116,25 +116,29 @@ Public Class Dashy
             NetworkIPAddrPublic.Text = "Public IP Address: N/A"
         End If
         NetworkSerialPortNames.Items.Clear()
-        For Each PortName In My.Computer.Ports.SerialPortNames
-            NetworkSerialPortNames.Items.Add(PortName)
-        Next
+        Try
+            For Each PortName In My.Computer.Ports.SerialPortNames
+                NetworkSerialPortNames.Items.Add(PortName)
+            Next
+        Catch ex As Exception
+            NetworkSerialPortNames.Items.Add(ex.Message)
+        End Try
     End Sub
 
     Private Sub FastTimer_Tick(sender As Object, e As EventArgs) Handles FastTimer.Tick
         'FileSystem
-        FileSystemNumberOfDrives.Text = "No. of drives: " & My.Computer.FileSystem.Drives.Count
+        FileSystemNumberOfDrives.Text = "No. of drives: " & SafeGet(Function() My.Computer.FileSystem.Drives.Count)
 
         'Performance:
-        PerformanceAvailPhysicalMem.Text = "Available physical memory: " & (My.Computer.Info.AvailablePhysicalMemory * 1000 \ 1048576) / 1000 & " MB" 'My.Computer.Info.AvailablePhysicalMemory & " bytes"
-        PerformanceAvailVirtualMem.Text = "Available virtual memory: " & (My.Computer.Info.AvailableVirtualMemory * 1000 \ 1048576) / 1000 & " MB" 'My.Computer.Info.AvailableVirtualMemory & " bytes"
-        PerformanceUptime.Text = "Up-time: " & Environment.TickCount \ 1000 & " Seconds" 'Milliseconds (converted to seconds) since startup
-        PerformanceMemoryUsedByDashy.Text = "Physical memory used by Dashy: " & (Environment.WorkingSet * 10 \ 1048576) / 10 & " MB" 'Environment.WorkingSet & " bytes"
+        PerformanceAvailPhysicalMem.Text = "Available physical memory: " & SafeGet(Function() (My.Computer.Info.AvailablePhysicalMemory * 1000 \ 1048576) / 1000 & " MB") 'My.Computer.Info.AvailablePhysicalMemory & " bytes"
+        PerformanceAvailVirtualMem.Text = "Available virtual memory: " & SafeGet(Function() (My.Computer.Info.AvailableVirtualMemory * 1000 \ 1048576) / 1000 & " MB") 'My.Computer.Info.AvailableVirtualMemory & " bytes"
+        PerformanceUptime.Text = "Up-time: " & SafeGet(Function() Environment.TickCount \ 1000 & " Seconds") 'Milliseconds (converted to seconds) since startup
+        PerformanceMemoryUsedByDashy.Text = "Physical memory used by Dashy: " & SafeGet(Function() (Environment.WorkingSet * 10 \ 1048576) / 10 & " MB") 'Environment.WorkingSet & " bytes"
 
         ' Clock
-        PerformanceClockGMT.Text = My.Computer.Clock.GmtTime
-        PerformanceClockLocal.Text = My.Computer.Clock.LocalTime
-        PerformanceClockTick.Text = "Millisecond count: " & My.Computer.Clock.TickCount / 1000 & " (Seconds)"
+        PerformanceClockGMT.Text = SafeGet(Function() My.Computer.Clock.GmtTime)
+        PerformanceClockLocal.Text = SafeGet(Function() My.Computer.Clock.LocalTime)
+        PerformanceClockTick.Text = "Millisecond count: " & SafeGet(Function() My.Computer.Clock.TickCount / 1000) & " (Seconds)"
 
         ' Clipboard
         PerformanceClipboard.Text = "Clipboard Contents:"
@@ -151,7 +155,7 @@ Public Class Dashy
             PerformanceClipboard.Text = PerformanceClipboard.Text & vbNewLine & " Text"
         End If
 
-        lblWindowSize.Text = "Dashy Window Size:" & vbNewLine & Me.Size.ToString
+        lblWindowSize.Text = "Dashy Window Size:" & vbNewLine & SafeGet(Function() Me.Size.ToString)
 
         'Network:
         If My.Computer.Network.IsAvailable = True Then
@@ -173,33 +177,41 @@ Public Class Dashy
     End Sub
 
     Private Sub FastTimer_SetTick() Handles FastTimerRefreshValue.TextChanged, FastTimerRefreshUnit.TextChanged
-        Select Case FastTimerRefreshUnit.SelectedIndex
-            Case 0 'Milliseconds
-                FastTimer.Interval = FastTimerRefreshValue.Value
-            Case 1 'Centiseconds
-                FastTimer.Interval = FastTimerRefreshValue.Value * 10
-            Case 2 'Seconds
-                FastTimer.Interval = FastTimerRefreshValue.Value * 1000
-            Case 3 'Minutes
-                FastTimer.Interval = FastTimerRefreshValue.Value * 60000
-            Case 4 'Hours
-                FastTimer.Interval = FastTimerRefreshValue.Value * 3600000
-        End Select
+        Try
+            Select Case FastTimerRefreshUnit.SelectedIndex
+                Case 0 'Milliseconds
+                    FastTimer.Interval = FastTimerRefreshValue.Value
+                Case 1 'Centiseconds
+                    FastTimer.Interval = FastTimerRefreshValue.Value * 10
+                Case 2 'Seconds
+                    FastTimer.Interval = FastTimerRefreshValue.Value * 1000
+                Case 3 'Minutes
+                    FastTimer.Interval = FastTimerRefreshValue.Value * 60000
+                Case 4 'Hours
+                    FastTimer.Interval = FastTimerRefreshValue.Value * 3600000
+            End Select
+        Catch ex As Exception
+            MsgBox("Couldn't set interval!")
+        End Try
     End Sub
 
     Private Sub SlowTimer_SetTick() Handles SlowTimerRefreshValue.TextChanged, SlowTimerRefreshUnit.TextChanged
-        Select Case SlowTimerRefreshUnit.SelectedIndex
-            Case 0 'Milliseconds
-                SlowTimer.Interval = SlowTimerRefreshValue.Value
-            Case 1 'Centiseconds
-                SlowTimer.Interval = SlowTimerRefreshValue.Value * 10
-            Case 2 'Seconds
-                SlowTimer.Interval = SlowTimerRefreshValue.Value * 1000
-            Case 3 'Minutes
-                SlowTimer.Interval = SlowTimerRefreshValue.Value * 60000
-            Case 4 'Hours
-                SlowTimer.Interval = SlowTimerRefreshValue.Value * 3600000
-        End Select
+        Try
+            Select Case SlowTimerRefreshUnit.SelectedIndex
+                Case 0 'Milliseconds
+                    SlowTimer.Interval = SlowTimerRefreshValue.Value
+                Case 1 'Centiseconds
+                    SlowTimer.Interval = SlowTimerRefreshValue.Value * 10
+                Case 2 'Seconds
+                    SlowTimer.Interval = SlowTimerRefreshValue.Value * 1000
+                Case 3 'Minutes
+                    SlowTimer.Interval = SlowTimerRefreshValue.Value * 60000
+                Case 4 'Hours
+                    SlowTimer.Interval = SlowTimerRefreshValue.Value * 3600000
+            End Select
+        Catch ex As Exception
+            MsgBox("Couldn't set interval!")
+        End Try
     End Sub
 
     Private Sub btnExit_Click(sender As Object, e As EventArgs) Handles btnExit.Click
@@ -231,19 +243,15 @@ Public Class Dashy
     End Sub
 
     Public Function GetVar(EnvVar As String)
-        If Environment.GetEnvironmentVariable("OS") = "Windows_NT" Or chkAllowVars.Checked Then
-            Try
-                If Environment.GetEnvironmentVariable(EnvVar) <> "" Then
-                    Return Environment.GetEnvironmentVariable(EnvVar)
-                Else
-                    Return "Variable '" & EnvVar & "' is empty!"
-                End If
-            Catch ex As Exception
-                Return "Error getting variable '" & EnvVar & "': " & ex.Message
-            End Try
-        Else
-            Return "Variables disabled"
-        End If
+        Try
+            If Environment.GetEnvironmentVariable(EnvVar) <> "" Then
+                Return Environment.GetEnvironmentVariable(EnvVar)
+            Else
+                Return "Variable '" & EnvVar & "' is empty!"
+            End If
+        Catch ex As Exception
+            Return "Error getting variable '" & EnvVar & "': " & ex.Message
+        End Try
     End Function
 
     Function GetPublicIP() As String
@@ -273,10 +281,11 @@ Public Class Dashy
         End Try
     End Function
 
-    Private Sub btnStartTimers_Click(sender As Object, e As EventArgs) Handles btnStartTimers.Click
-        FastTimer.Start()
-        SlowTimer.Start()
-        SlowTimer.Interval = 5
-        btnStartTimers.Enabled = False
-    End Sub
+    Function SafeGet(action As Func(Of String)) As String
+        Try
+            Return action()
+        Catch ex As Exception
+            Return ex.Message
+        End Try
+    End Function
 End Class

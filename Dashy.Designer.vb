@@ -113,8 +113,6 @@ Partial Class Dashy
         Me.EnvVarsLBL = New System.Windows.Forms.Label()
         Me.EnvVars = New System.Windows.Forms.Label()
         Me.btnExpand = New System.Windows.Forms.Button()
-        Me.btnStartTimers = New System.Windows.Forms.Button()
-        Me.chkAllowVars = New System.Windows.Forms.CheckBox()
         Me.FileSystemPanel.SuspendLayout()
         Me.FileSystemDrivesTabControl.SuspendLayout()
         Me.FileSystemDrivesTabFS.SuspendLayout()
@@ -1050,7 +1048,7 @@ Partial Class Dashy
         Me.FastTimerRefreshLabel.Name = "FastTimerRefreshLabel"
         Me.FastTimerRefreshLabel.Size = New System.Drawing.Size(125, 13)
         Me.FastTimerRefreshLabel.TabIndex = 14
-        Me.FastTimerRefreshLabel.Text = "Refrest FastTimer every:"
+        Me.FastTimerRefreshLabel.Text = "Refresh FastTimer every:"
         '
         'FastTimerRefreshValue
         '
@@ -1103,28 +1101,6 @@ Partial Class Dashy
         Me.btnExpand.Text = "Expand"
         Me.btnExpand.UseVisualStyleBackColor = True
         '
-        'btnStartTimers
-        '
-        Me.btnStartTimers.Anchor = System.Windows.Forms.AnchorStyles.Top
-        Me.btnStartTimers.Location = New System.Drawing.Point(673, 308)
-        Me.btnStartTimers.Name = "btnStartTimers"
-        Me.btnStartTimers.Size = New System.Drawing.Size(107, 23)
-        Me.btnStartTimers.TabIndex = 26
-        Me.btnStartTimers.Text = "Start Timers"
-        Me.btnStartTimers.UseVisualStyleBackColor = True
-        Me.btnStartTimers.Visible = False
-        '
-        'chkAllowVars
-        '
-        Me.chkAllowVars.Anchor = System.Windows.Forms.AnchorStyles.Top
-        Me.chkAllowVars.Location = New System.Drawing.Point(673, 337)
-        Me.chkAllowVars.Name = "chkAllowVars"
-        Me.chkAllowVars.Size = New System.Drawing.Size(107, 43)
-        Me.chkAllowVars.TabIndex = 27
-        Me.chkAllowVars.Text = "Allow getting environment variables"
-        Me.chkAllowVars.UseVisualStyleBackColor = True
-        Me.chkAllowVars.Visible = False
-        '
         'Dashy
         '
         Me.AcceptButton = Me.btnRefresh
@@ -1132,7 +1108,6 @@ Partial Class Dashy
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.CancelButton = Me.btnExit
         Me.ClientSize = New System.Drawing.Size(1310, 421)
-        Me.Controls.Add(Me.btnStartTimers)
         Me.Controls.Add(Me.SlowTimerRefreshValue)
         Me.Controls.Add(Me.FastTimerRefreshValue)
         Me.Controls.Add(Me.FastTimerRefreshUnit)
@@ -1148,7 +1123,6 @@ Partial Class Dashy
         Me.Controls.Add(Me.EnvVars)
         Me.Controls.Add(Me.EnvVarsLBL)
         Me.Controls.Add(Me.btnExpand)
-        Me.Controls.Add(Me.chkAllowVars)
         Me.Controls.Add(Me.SlowTimerRefreshLabel)
         Me.Name = "Dashy"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
@@ -1184,8 +1158,6 @@ Partial Class Dashy
     End Sub
     Friend NetworkIPAddrPublic As System.Windows.Forms.Label
     Friend lblWindowSize As System.Windows.Forms.Label
-    Friend WithEvents chkAllowVars As System.Windows.Forms.CheckBox
-    Friend WithEvents btnStartTimers As System.Windows.Forms.Button
     Friend WithEvents SlowTimer As System.Windows.Forms.Timer
     Friend WithEvents FastTimer As System.Windows.Forms.Timer
     Friend WithEvents FileSystemImg As System.Windows.Forms.PictureBox
