@@ -6,7 +6,7 @@ Public Class Dashy
         If Environment.GetEnvironmentVariable("OS") = "Windows_NT" Then
             FastTimer.Start()
             SlowTimer.Start()
-            
+
             SlowTimer.Interval = 5
             chkAllowVars.Checked = True
             Me.Width = My.Computer.Screen.WorkingArea.Width
@@ -14,7 +14,7 @@ Public Class Dashy
         Else
             chkAllowVars.Visible = True
             btnStartTimers.Visible = True
-        End if
+        End If
     End Sub
 
     Private Sub SlowTimer_Tick(sender As Object, e As EventArgs) Handles SlowTimer.Tick, btnRefresh.Click
@@ -33,30 +33,30 @@ Public Class Dashy
         For Each drive In Environment.GetLogicalDrives
             FileSystemDriveListEN.Items.Add(drive)
         Next
-        EnvVars.Text = "HOMEDRIVE: " & GetVar("HOMEDRIVE") & vbNewLine & _
-            "SystemDrive: " & GetVar("SystemDrive") & vbNewLine & _
-            "ProgramFiles: " & GetVar("ProgramFiles") & vbNewLine & _
-            "ProgramFiles(x86): " & GetVar("ProgramFiles(x86)") & vbNewLine & _
-            "ProgramW6432: " & GetVar("ProgramW6432") & vbNewLine & _
-            "ProgramData: " & GetVar("ProgramData") & vbNewLine & _
-            "ALLUSERSPROFILE: " & GetVar("ALLUSERSPROFILE") & vbNewLine & _
-            "CommonProgramFiles: " & GetVar("CommonProgramFiles") & vbNewLine & _
-            "CommonProgramFiles(x86): " & GetVar("CommonProgramFiles(x86)") & vbNewLine & _
-            "CommonProgramW6432: " & GetVar("CommonProgramW6432") & vbNewLine & _
-            "SystemRoot: " & GetVar("SystemRoot") & vbNewLine & _
-            "windir: " & GetVar("windir") & vbNewLine & _
-            "ComSpec: " & GetVar("ComSpec") & vbNewLine & _
-            "PSModulePath: " & GetVar("PSModulePath") & vbNewLine & _
-            "PUBLIC: " & GetVar("PUBLIC") & vbNewLine & _
-            "HOMEPATH: " & GetVar("HOMEPATH") & vbNewLine & _
-            "USERPROFILE: " & GetVar("USERPROFILE") & vbNewLine & _
-            "APPDATA: " & GetVar("APPDATA") & vbNewLine & _
-            "LOCALAPPDATA: " & GetVar("LOCALAPPDATA") & vbNewLine & _
-            "TEMP: " & GetVar("TEMP") & vbNewLine & _
-            "TMP: " & GetVar("TMP") & vbNewLine & _
-            "USERDOMAIN: " & GetVar("USERDOMAIN") & vbNewLine & _
-            "COMPUTERNAME: " & GetVar("COMPUTERNAME") & vbNewLine & _
-            "LOGONSERVER: " & GetVar("LOGONSERVER") & vbNewLine & _
+        EnvVars.Text = "HOMEDRIVE: " & GetVar("HOMEDRIVE") & vbNewLine &
+            "SystemDrive: " & GetVar("SystemDrive") & vbNewLine &
+            "ProgramFiles: " & GetVar("ProgramFiles") & vbNewLine &
+            "ProgramFiles(x86): " & GetVar("ProgramFiles(x86)") & vbNewLine &
+            "ProgramW6432: " & GetVar("ProgramW6432") & vbNewLine &
+            "ProgramData: " & GetVar("ProgramData") & vbNewLine &
+            "ALLUSERSPROFILE: " & GetVar("ALLUSERSPROFILE") & vbNewLine &
+            "CommonProgramFiles: " & GetVar("CommonProgramFiles") & vbNewLine &
+            "CommonProgramFiles(x86): " & GetVar("CommonProgramFiles(x86)") & vbNewLine &
+            "CommonProgramW6432: " & GetVar("CommonProgramW6432") & vbNewLine &
+            "SystemRoot: " & GetVar("SystemRoot") & vbNewLine &
+            "windir: " & GetVar("windir") & vbNewLine &
+            "ComSpec: " & GetVar("ComSpec") & vbNewLine &
+            "PSModulePath: " & GetVar("PSModulePath") & vbNewLine &
+            "PUBLIC: " & GetVar("PUBLIC") & vbNewLine &
+            "HOMEPATH: " & GetVar("HOMEPATH") & vbNewLine &
+            "USERPROFILE: " & GetVar("USERPROFILE") & vbNewLine &
+            "APPDATA: " & GetVar("APPDATA") & vbNewLine &
+            "LOCALAPPDATA: " & GetVar("LOCALAPPDATA") & vbNewLine &
+            "TEMP: " & GetVar("TEMP") & vbNewLine &
+            "TMP: " & GetVar("TMP") & vbNewLine &
+            "USERDOMAIN: " & GetVar("USERDOMAIN") & vbNewLine &
+            "COMPUTERNAME: " & GetVar("COMPUTERNAME") & vbNewLine &
+            "LOGONSERVER: " & GetVar("LOGONSERVER") & vbNewLine &
             "USERNAME: " & GetVar("USERNAME")
 
         'Performance:
@@ -73,7 +73,7 @@ Public Class Dashy
         End If
         HardwareScreenName.Text = "Screen Device Name: " & My.Computer.Screen.DeviceName
         HardwareScreenPrimary.Text = "Primary screen: " & My.Computer.Screen.Primary
-        HardwareScreenBounds.Text = "Screen Bounds:" & vbNewLine & My.Computer.Screen.Bounds.ToString
+        HardwareScreenBounds.Text = "Screen Bounds:" & vbNewLine &  My.Computer.Screen.Bounds.ToString
 
         'System:
         SystemOS.Text = "OS: " & My.Computer.Info.OSFullName
@@ -150,7 +150,7 @@ Public Class Dashy
         If My.Computer.Clipboard.ContainsText Then
             PerformanceClipboard.Text = PerformanceClipboard.Text & vbNewLine & " Text"
         End If
-        
+
         lblWindowSize.Text = "Dashy Window Size:" & vbNewLine & Me.Size.ToString
 
         'Network:
@@ -175,30 +175,30 @@ Public Class Dashy
     Private Sub FastTimer_SetTick() Handles FastTimerRefreshValue.TextChanged, FastTimerRefreshUnit.TextChanged
         Select Case FastTimerRefreshUnit.SelectedIndex
             Case 0 'Milliseconds
-                FastTimer.Interval = FastTimerRefreshValue.Text
+                FastTimer.Interval = FastTimerRefreshValue.Value
             Case 1 'Centiseconds
-                FastTimer.Interval = FastTimerRefreshValue.Text * 10
+                FastTimer.Interval = FastTimerRefreshValue.Value * 10
             Case 2 'Seconds
-                FastTimer.Interval = FastTimerRefreshValue.Text * 1000
+                FastTimer.Interval = FastTimerRefreshValue.Value * 1000
             Case 3 'Minutes
-                FastTimer.Interval = FastTimerRefreshValue.Text * 60000
+                FastTimer.Interval = FastTimerRefreshValue.Value * 60000
             Case 4 'Hours
-                FastTimer.Interval = FastTimerRefreshValue.Text * 3600000
+                FastTimer.Interval = FastTimerRefreshValue.Value * 3600000
         End Select
     End Sub
 
     Private Sub SlowTimer_SetTick() Handles SlowTimerRefreshValue.TextChanged, SlowTimerRefreshUnit.TextChanged
         Select Case SlowTimerRefreshUnit.SelectedIndex
             Case 0 'Milliseconds
-                SlowTimer.Interval = SlowTimerRefreshValue.Text
+                SlowTimer.Interval = SlowTimerRefreshValue.Value
             Case 1 'Centiseconds
-                SlowTimer.Interval = SlowTimerRefreshValue.Text * 10
+                SlowTimer.Interval = SlowTimerRefreshValue.Value * 10
             Case 2 'Seconds
-                SlowTimer.Interval = SlowTimerRefreshValue.Text * 1000
+                SlowTimer.Interval = SlowTimerRefreshValue.Value * 1000
             Case 3 'Minutes
-                SlowTimer.Interval = SlowTimerRefreshValue.Text * 60000
+                SlowTimer.Interval = SlowTimerRefreshValue.Value * 60000
             Case 4 'Hours
-                SlowTimer.Interval = SlowTimerRefreshValue.Text * 3600000
+                SlowTimer.Interval = SlowTimerRefreshValue.Value * 3600000
         End Select
     End Sub
 
@@ -220,11 +220,11 @@ Public Class Dashy
         If e.Button = System.Windows.Forms.MouseButtons.Right Then
             If btnExpand.Text = "Expand" Then
                 Me.Height = 925
-                Me.Location = New Size(Me.Location.X, My.Computer.Screen.WorkingArea.Height/2 - 462.5) ' 462.5 is current height/2
+                Me.Location = New Size(Me.Location.X, My.Computer.Screen.WorkingArea.Height / 2 - 462.5) ' 462.5 is current height/2
                 btnExpand.Text = "Collapse"
             Else
                 Me.Height = 459
-                Me.Location = New Size(Me.Location.X, My.Computer.Screen.WorkingArea.Height/2 - 229.5) ' 229.5 is current height/2
+                Me.Location = New Size(Me.Location.X, My.Computer.Screen.WorkingArea.Height / 2 - 229.5) ' 229.5 is current height/2
                 btnExpand.Text = "Expand"
             End If
         End If
@@ -236,16 +236,16 @@ Public Class Dashy
                 If Environment.GetEnvironmentVariable(EnvVar) <> "" Then
                     Return Environment.GetEnvironmentVariable(EnvVar)
                 Else
-                    Return "Variable '"&EnvVar &"' is empty!"
+                    Return "Variable '" & EnvVar & "' is empty!"
                 End If
             Catch ex As Exception
-                Return "Error getting variable '"&EnvVar &"': " & ex.Message
+                Return "Error getting variable '" & EnvVar & "': " & ex.Message
             End Try
         Else
             Return "Variables disabled"
         End If
     End Function
-    
+
     Function GetPublicIP() As String
         '  Thanks to https://stackoverflow.com/a/16642279/2999220
         '  (Modified with help of https://stackoverflow.com/a/16369288/2999220)
@@ -268,11 +268,11 @@ Public Class Dashy
                     Return response.StatusCode
                 End If
             End Using
-        Catch ex As System.Net.WebException
+        Catch ex As Net.WebException
             Return ex.Message
         End Try
     End Function
-    
+
     Private Sub btnStartTimers_Click(sender As Object, e As EventArgs) Handles btnStartTimers.Click
         FastTimer.Start()
         SlowTimer.Start()
