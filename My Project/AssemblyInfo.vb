@@ -12,7 +12,7 @@ Imports System.Runtime.InteropServices
 <Assembly: AssemblyDescription("One dashboard for all your system info")> 
 <Assembly: AssemblyCompany("WalkmanOSS")> 
 <Assembly: AssemblyProduct("Dashy")> 
-<Assembly: AssemblyCopyright("FOSS from Walkman 2014-15")> 
+<Assembly: AssemblyCopyright("FOSS from Walkman 2014-20")> 
 <Assembly: AssemblyTrademark("")> 
 
 <Assembly: ComVisible(False)>
